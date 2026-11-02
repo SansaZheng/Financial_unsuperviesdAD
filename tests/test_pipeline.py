@@ -6,6 +6,8 @@ import pytest
 
 from finad.experiment import benchmark
 from finad.predict import predict
+from finad.report import collect, export
+from finad.verify import verify
 
 
 def test_full_pipeline_without_train_or_calibration_labels(tmp_path):
@@ -31,7 +33,19 @@ def test_full_pipeline_without_train_or_calibration_labels(tmp_path):
     pd.DataFrame(test,columns=manifest['features']).to_csv(tmp_path/'query.csv',index=False)
     predict(run,tmp_path/'query.csv',tmp_path/'prediction.csv',chunksize=7)
     np.testing.assert_allclose(pd.read_csv(tmp_path/'prediction.csv').anomaly_score,original)
+    audit=verify(args.output,args.cache)
+    assert audit['verified_runs']==1
+    export(args.output,tmp_path/'report')
+    assert len(pd.read_csv(tmp_path/'report'/'metrics.csv'))==2
+    assert json.loads((tmp_path/'report'/'environment.json').read_text())['configuration']['cache']=='/path/to/private/feature_cache'
     benchmark(args)  # Exact resumption is safe.
     args.train_cap=63
     with pytest.raises(ValueError,match='different sweep'):
         benchmark(args)
+
+
+def test_report_refuses_missing_experiments(tmp_path):
+    (tmp_path/'environment.json').write_text(json.dumps({'configuration':{
+        'datasets':['toy'],'methods':['iforest'],'seeds':[42,43,44]}}))
+    with pytest.raises(ValueError,match='Incomplete/duplicate sweep'):
+        collect(tmp_path)

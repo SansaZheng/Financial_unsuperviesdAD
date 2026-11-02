@@ -17,6 +17,8 @@
 
 `latent=min(16,max(1,F//2))`。所有分数都统一为“越大越异常”。GMM 和 SVM 分数允许为负，POT 拟合的是正的超额值，不需要截断原始分数或用测试值决定平移量。
 
+VAE 编码器为 F→128→64 后接均值／log variance 两个 latent 头，解码器为 latent→64→128→F，隐藏层 ReLU。SVDD 编码器为 F→128→64→latent，隐藏层 LeakyReLU(0.1)；预训练解码器结构反向，无 bias。SVDD 预训练 weight_decay=5e-4，正式单类阶段为 5e-7；中心从预训练后的全部训练抽样求均值，绝对值小于 0.1 的坐标按符号设为 ±0.1（恰为零设为 +0.1）。这些均为已运行代码中的固定配置。
+
 实现接口可对照 [scikit-learn 1.7 的异常检测文档](https://scikit-learn.org/1.7/modules/outlier_detection.html)、[GaussianMixture 文档](https://scikit-learn.org/1.7/modules/generated/sklearn.mixture.GaussianMixture.html)。库包装与自行实现的边界在上表明确列出，包装不代表独立重写底层求解器。
 
 金融任务背景可见 [Schreyer 等的会计分录异常检测研究（2017）](https://arxiv.org/abs/1709.05254)及[信用卡监督／无监督方法比较研究（2019）](https://arxiv.org/abs/1904.10604)。这两项研究支持金融场景背景，不表示本仓库复现了它们全部特征工程或论文结果，也不将其额外计为两种方法。
