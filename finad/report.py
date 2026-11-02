@@ -32,6 +32,14 @@ def export(runs,output):
     env['configuration']['output']='.local_data/runs_v1'
     write_json(output/'environment.json',env)
     write_json(output/'runs.json',records)
+    provenance=[]
+    descriptions={'splits.json':'数据分区与特征定义','cache_files_sha256.json':'输入缓存文件哈希',
+                  'execution_notes.json':'实际执行与耗时解释'}
+    for name in ('splits.json','cache_files_sha256.json','execution_notes.json'):
+        path=Path(runs)/name
+        if path.exists():
+            write_json(output/name,json.loads(path.read_text()))
+            provenance.append(f'[{descriptions[name]}]({name})')
     flat=[]
     for r in records:
         for policy,value in r['thresholds'].items():
@@ -102,6 +110,7 @@ def export(runs,output):
            '## 完整指标与复现证据','',
            f'- [{len(records)*2} 套逐种子操作点及完整混淆矩阵](metrics.csv)：Precision、Recall、F1、FPR、AP、梯形 PR-AUC、ROC-AUC、TP/FP/FN/TN、正例率及两套阈值。',
            '- [均值与标准差](summary.csv) · [全部聚合记录、训练损失、阈值和评分 SHA256](runs.json) · [环境与代码指纹](environment.json)。',
+           *((['- '+' · '.join(provenance)+'。耗时受并行任务及共享设备影响，不作方法速度排名。']) if provenance else []),
            '- [方法来源与适配边界](../../docs/METHODS_CN.md) · [预先固定的协议](../../docs/PROTOCOL_CN.md) · [本地评分／混淆矩阵核验](verification.json)。','',
            f'- 执行代码提交：`{env["code_git_commit"]}`；代码指纹：`{env["code_fingerprint"]}`；适配神经网络设备 `{plan["device"]}`，传统方法／POT 为 CPU。','',
            '公开的是聚合证据；模型、完整逐行分数和预处理保存在本地私有运行目录。原始第三方数据不随本代码的 MIT 许可证重新授权。']
