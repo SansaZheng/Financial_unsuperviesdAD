@@ -14,7 +14,9 @@ Python 3.10+，正式运行环境为 Python 3.12；锁定文件适用于该版�
 python -m venv .venv
 source .venv/bin/activate
 pip install -e '.[report,test]'
-# 精确依赖版本可参照 requirements-lock.txt
+# 使用本轮 Python 3.12 的完整依赖版本：
+# pip install -r requirements-lock.txt
+# pip install -e . --no-deps
 ```
 
 已有上一轮缓存时可直接运行：
@@ -36,6 +38,8 @@ python -m finad benchmark --cache /path/to/feature_cache --output .local_data/ul
 ```
 
 同一输出目录只允许完全相同配置续跑；改变参数需用新目录。`report` 拒绝缺失／重复运行，并拒绝覆盖既有报告。
+
+`--batch-size` 控制校准／测试评分的分块，默认 8192；神经网络训练 batch 固定最多 256。不同设备／底层库不保证逐位相同，报告保留实际环境与逐种子结果。
 
 ## 获取／准备数据
 
