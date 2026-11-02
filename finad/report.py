@@ -73,9 +73,18 @@ def export(runs,output):
             lines.append('| '+d+' | '+' | '.join('N/A' if pd.isna(v) else f'{v*100:.2f}' for v in row)+' |')
         return lines
     groups={('sd_fmm' if d in ('sd_stock','sd_crypto') else 'sapienza' if d.startswith('sapienza_') else d) for d in datasets}
+    counts=['| 任务 | 测试总行数 | 已知标签评价数 | 正例数 | 已知标签正例率 |',
+            '| --- | ---: | ---: | ---: | ---: |']
+    for d in datasets:
+        r=next(r for r in records if r['dataset']==d)
+        e=r['metrics'];prevalence=e['prevalence']
+        counts.append(f'| {d} | {e["evaluated"]+e["unknown_excluded"]:,} | {e["evaluated"]:,} | {e["positives"]:,} | '+
+                      ('N/A' if prevalence is None else f'{prevalence*100:.4f}%')+' |')
     lines=['# 经典金融无监督异常检测：实验结果 v1','',
            f'完成 **{len(datasets)} 个任务、{len(methods)} 种方法、{len(plan["seeds"])} 个种子，共 {len(records)} 次真实运行**，覆盖 {len(groups)} 组源数据。SD-FMM 的股票和加密货币为同一来源的两个任务。本轮是经典算法核心在金融特征上的复现，不是原论文数据／网络／数值成绩的逐项复刻。','',
            f'训练每种子统一最多 {plan["train_cap"]:,} 条、校准最多 {plan["calibration_cap"]:,} 条；**测试分区全量、不平衡类别、不做 point adjustment**。标签只在最终评价打开。沿用旧数据划分，但训练上限与统一截断评分不同于此前 Kronos 实验，不能直接混排两轮成绩。','',
+           '## 留出测试组成','',*counts,'',
+           'AP 的随机排序参照水平与正例率有关；不能把正例率差异当作模型性能差异。所有方法在各任务上的测试对象相同。','',
            '## 主结果：固定 POT 的 F1（%）','',
            f'每格为全部 {len(plan["seeds"])} 个种子的均值；任一种子 POT 失败时该格明确 N/A，不仅平均成功种子。当前共有 **{len(failures)} 次 POT 拟合失败**，原因见 [POT 失败记录](pot_failures.json)。','',
            *table(pot,'f1'),'','## 排序能力：Average Precision（%）','',
