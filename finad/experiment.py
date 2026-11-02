@@ -118,6 +118,8 @@ def benchmark(args):
         raise ValueError('Datasets, methods and seeds must not contain duplicates')
     if min(args.train_cap, args.calibration_cap, args.batch_size, args.steps) < 1 or args.pretrain_steps < 1:
         raise ValueError('Caps, training steps and batch sizes must be positive')
+    if args.train_cap < 2:
+        raise ValueError('Training requires at least two points')
     if not 0 < args.risk < 1-args.initial_quantile < 1:
         raise ValueError('Invalid risk/quantile')
     args.output.mkdir(parents=True, exist_ok=True); args.output.chmod(0o700)
@@ -126,7 +128,8 @@ def benchmark(args):
     # Preserve the full sweep definition when resuming exactly the same plan.
     if (args.output/'environment.json').exists():
         old = json.loads((args.output/'environment.json').read_text())
-        if old['configuration'] != env['configuration'] or old['code_fingerprint'] != env['code_fingerprint']:
+        if (old['configuration'] != env['configuration'] or old['code_fingerprint'] != env['code_fingerprint']
+                or old['packages'] != env['packages']):
             raise ValueError('Output belongs to a different sweep; use a new output directory')
     else:
         write_json(args.output/'environment.json', env)
