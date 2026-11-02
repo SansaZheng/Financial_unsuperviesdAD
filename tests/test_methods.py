@@ -80,3 +80,13 @@ def test_train_only_imputation_clipping_and_reload(tmp_path):
     np.testing.assert_array_equal(prep.center, center)
     prep.save(tmp_path/'prep.npz')
     np.testing.assert_array_equal(z, Preprocessor.load(tmp_path/'prep.npz').transform(query))
+
+
+def test_gmm_sparse_near_constant_features_have_finite_scores():
+    rng=np.random.default_rng(7)
+    x=np.full((1024,8),7.999,dtype=np.float32)
+    x[:,0]=rng.normal(size=len(x));x[:,1]=rng.choice([0.,1.],len(x),p=[.999,.001])
+    x[:,2]+=rng.normal(0,1e-6,len(x)).astype(np.float32)
+    model=ClassicalDetector('gmm').fit(x)
+    assert np.isfinite(model.score(x)).all()
+    assert (model.model.covariances_>0).all()

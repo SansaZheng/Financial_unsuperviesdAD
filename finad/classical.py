@@ -58,11 +58,14 @@ class ClassicalDetector:
                 self.info.update(bins=10, binning='equal_width', pseudocount=1,
                                  density_normalization='maximum_per_feature')
             else:
+                # Diagonal variance uses E[x^2]-E[x]^2: float32 cancellation
+                # on sparse/near-constant financial features can make it negative.
+                # Keep fixed components/reg_covar, use float64 EM arithmetic.
                 self.model = GaussianMixture(n_components=min(4, len(z)), covariance_type='diag',
-                    random_state=self.seed, reg_covar=1e-4, max_iter=200, n_init=1).fit(z)
+                    random_state=self.seed, reg_covar=1e-4, max_iter=200, n_init=1).fit(z.astype(np.float64))
                 self.info.update(n_components=self.model.n_components, covariance_type='diag',
                                  reg_covar=1e-4, converged=bool(self.model.converged_),
-                                 iterations=int(self.model.n_iter_))
+                                 iterations=int(self.model.n_iter_), fit_dtype='float64')
             self.info['warnings'] = sorted(set(str(w.message) for w in captured))
         return self
 
