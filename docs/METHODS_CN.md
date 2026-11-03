@@ -10,7 +10,7 @@
 | One-Class SVM | [Schölkopf 等，Neural Computation 2001](https://research.google/pubs/estimating-the-support-of-a-high-dimensional-distribution/) | `-decision_function`，越远离支持域越异常 | scikit-learn RBF、nu=0.05、gamma=scale；不利用标签估计 nu，不预筛正常训练样本 |
 | PCA-SPE | [Jackson、Mudholkar，Technometrics 1979](https://www.tandfonline.com/doi/abs/10.1080/00401706.1979.10489779) | `sum((x-PCA_reconstruct(x))**2)` | 训练方差保留目标 95%，至少留下一个残差方向；不照搬该论文解析阈值，统一用独立校准 |
 | HBOS | [Goldstein、Dengel，KI 2012](https://www.dfki.de/en/web/research/projects-and-publications/publication/6431) | 各维归一化直方图密度的负对数和 | 自行实现等宽 10 bins、加一平滑、各维峰值密度归一化；超出训练范围按未见 bin 计分；未实现可变宽 bins 变体 |
-| GMM | [Dempster、Laird、Rubin，JRSS-B 1977](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x) 的 EM／有限混合模型基础 | `-log p(x)` | scikit-learn 4 个对角高斯分量、reg_covar=1e-4、最多 200 轮；EM 论文是估计方法基础，不是这套金融检测器的原始论文 |
+| GMM | [Dempster、Laird、Rubin，JRSS-B 1977](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x) 的 EM／有限混合模型基础 | `-log p(x)` | scikit-learn 4 个对角高斯分量、reg_covar=1e-4、最多 200 轮、float64 EM；EM 论文是估计方法基础，不是这套金融检测器的原始论文 |
 | Autoencoder | [Hawkins 等，DaWaK 2002](https://togaware.com/papers/dawak02.pdf) 的 replicator／重构异常思想 | 平均平方重构误差 | 自行实现数值特征 MLP：F→128→latent→128→F、ReLU、MSE、Adam；不是原论文特殊离散激活／训练器的逐行重写 |
 | VAE | [Kingma、Welling，2013／ICLR 2014](https://arxiv.org/abs/1312.6114) | 高斯重构负对数似然期望＋解析 KL，即负 ELBO 的 MC 估计 | 自行实现对角高斯编码器、单位方差高斯解码器、KL 权重 1；训练重参数化，评分固定 8 个对偶随机样本，确保不随查询顺序／batch 改变统计分布 |
 | Deep SVDD | [Ruff 等，ICML 2018](https://proceedings.mlr.press/v80/ruff18a.html) · [作者 PyTorch 实现](https://github.com/lukasruff/Deep-SVDD-PyTorch) | `sum((encoder(x)-c)**2)` | 自行实现 one-class 目标，固定非零中心、无 bias、无有界激活、无 BN；无标签 AE 预训练 200 步，再训练 400 步；用金融 MLP 替代原图像 LeNet，不使用 normal_class 标签筛选 |

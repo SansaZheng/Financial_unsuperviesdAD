@@ -1,0 +1,9 @@
+{
+  "execution_date_local": "2026-11-03",
+  "timezone": "Asia/Singapore",
+  "compute": "local macOS CPU and MPS; no paid cloud rental",
+  "parallelism": "Three disjoint local workers: first seven tasks; TabFormer; IEEE-CIS then IBM AML. Each uses two CPU threads, the same frozen source fingerprint and full-sweep arguments. Completed records are reused only by exact-config resume. Final full-sweep command validates all 300 records. After the other datasets completed, TabFormer was split into disjoint SVM versus PCA/HBOS/GMM/neural workers; completed SVM seeds were preserved and the pending seed resumed from a fresh identical fit. All use the original full-sweep run configuration.",
+  "timing_limitations": "Per-run elapsed times include concurrent workloads and shared hardware activity; not a controlled runtime comparison.",
+  "numerical_fix": "Full fresh sweep after GMM float64 covariance fix; old 219 successful preliminary runs preserved separately and excluded.",
+  "environment_isolation": "Task venv used system-site-packages over the bundled Python runtime. All experiment dependency versions are recorded in requirements-lock.txt and environment.json; unrelated workspace packages are not part of the dependency closure."
+}
