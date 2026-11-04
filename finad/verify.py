@@ -10,6 +10,7 @@ from .data import Cache, sha256
 from .neural import NeuralDetector
 from .preprocessing import Preprocessor
 from .report import collect
+from .detectors import load_detector, extension
 
 
 def verify(runs,cache_root):
@@ -27,9 +28,13 @@ def verify(runs,cache_root):
     for result in records:
         root=Path(runs)/result['dataset']/f'{result["method"]}_seed{result["seed"]}'
         cache=Cache(cache_root,result['dataset'])
-        assert sha256(root/'test_scores.npy')==result['test_scores_sha256']
+        score_file=result.get('test_scores_file','test_scores.npy')
+        assert sha256(root/score_file)==result['test_scores_sha256']
         assert sha256(cache.path/'manifest.json')==result['run_config']['data_manifest_sha256']
-        scores=np.load(root/'test_scores.npy',mmap_mode='r');y=cache.y('test')
+        if score_file.endswith('.npz'):
+            with np.load(root/score_file,allow_pickle=False) as archive:scores=archive['scores']
+        else:scores=np.load(root/score_file,mmap_mode='r')
+        y=cache.y('test')
         assert scores.shape==y.shape and np.isfinite(scores).all()
         thresholds=json.loads((root/'thresholds.json').read_text())
         assert thresholds==result['thresholds']
@@ -51,8 +56,7 @@ def verify(runs,cache_root):
         # CPU/MPS kernels may differ by float32 rounding, so disclose tolerance.
         indices=np.linspace(0,len(scores)-1,min(32,len(scores)),dtype=np.int64)
         prep=Preprocessor.load(root/'preprocessor.npz')
-        model=(ClassicalDetector.load(root/'model.joblib') if result['method'] in CLASSICAL else
-               NeuralDetector.load(root/'model.pt',device='cpu'))
+        model=load_detector(result['method'],root/f'model.{extension(result["method"])}',device='cpu')
         with threadpool_limits(limits=2):
             reproduced=model.score(prep.transform(np.asarray(cache.x('test')[indices])))
         np.testing.assert_allclose(reproduced,scores[indices],rtol=5e-4,atol=1e-5)

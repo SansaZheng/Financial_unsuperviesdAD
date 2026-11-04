@@ -8,6 +8,7 @@ from .experiment import write_json
 
 LABELS = {'iforest':'Isolation Forest','lof':'LOF','knn':'kNN','ocsvm':'OCSVM','pca':'PCA-SPE',
           'hbos':'HBOS','gmm':'GMM','ae':'AE','vae':'VAE','deep_svdd':'Deep SVDD'}
+LABELS.update(rgld2026='RGLD-ID (2026)',rttad2026='RTTAD-TTA (2026)')
 OPERATING = ['precision','recall','f1','fpr','alarm_fraction']
 RANKING = ['average_precision','pr_auc_trapezoid','roc_auc']
 
@@ -88,7 +89,10 @@ def export(runs,output):
         e=r['metrics'];prevalence=e['prevalence']
         counts.append(f'| {d} | {e["evaluated"]+e["unknown_excluded"]:,} | {e["evaluated"]:,} | {e["positives"]:,} | '+
                       ('N/A' if prevalence is None else f'{prevalence*100:.4f}%')+' |')
-    lines=['# 经典金融无监督异常检测：实验结果 v1','',
+    modern=any(m.endswith('2026') for m in methods)
+    heading='# 2026 方法金融适配：实验结果' if modern else '# 经典金融无监督异常检测：实验结果 v1'
+    note=('RGLD-ID 使用训练集固定标准化／排名；RTTAD-TTA 先在最多 8192 条无标签测试特征上自适应，再用该最终模型校准和评分。两者分别是归纳和 transductive 实验，后者的测试特征访问必须单独标注。新分数以无损 NPZ 保存。' if modern else '')
+    lines=[heading,'',note,'',
            f'完成 **{len(datasets)} 个任务、{len(methods)} 种方法、{len(plan["seeds"])} 个种子，共 {len(records)} 次真实运行**，覆盖 {len(groups)} 组源数据。SD-FMM 的股票和加密货币为同一来源的两个任务。本轮是经典算法核心在金融特征上的复现，不是原论文数据／网络／数值成绩的逐项复刻。','',
            f'训练每种子统一最多 {plan["train_cap"]:,} 条、校准最多 {plan["calibration_cap"]:,} 条；**测试分区全量、不平衡类别、不做 point adjustment**。标签只在最终评价打开。沿用旧数据划分，但训练上限与统一截断评分不同于此前 Kronos 实验，不能直接混排两轮成绩。','',
            '## 留出测试组成','',*counts,'',
@@ -112,6 +116,7 @@ def export(runs,output):
            '- [均值与标准差](summary.csv) · [全部聚合记录、训练损失、阈值和评分 SHA256](runs.json) · [环境与代码指纹](environment.json)。',
            *((['- '+' · '.join(provenance)+'。耗时受并行任务及共享设备影响，不作方法速度排名。']) if provenance else []),
            '- [方法来源与适配边界](../../docs/METHODS_CN.md) · [预先固定的协议](../../docs/PROTOCOL_CN.md) · [本地评分／混淆矩阵核验](verification.json)。','',
+           *(['- [2026 论文来源、公式映射与适配边界](../../docs/METHODS_2026_CN.md) · [新增实验固定协议](../../docs/PROTOCOL_2026_CN.md)。',''] if modern else []),
            f'- 执行代码提交：`{env["code_git_commit"]}`；代码指纹：`{env["code_fingerprint"]}`；适配神经网络设备 `{plan["device"]}`，传统方法／POT 为 CPU。','',
            '公开的是聚合证据；模型、完整逐行分数和预处理保存在本地私有运行目录。原始第三方数据不随本代码的 MIT 许可证重新授权。']
     (output/'README_CN.md').write_text('\n'.join(lines)+'\n')

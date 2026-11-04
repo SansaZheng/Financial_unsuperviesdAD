@@ -7,6 +7,7 @@ import pandas as pd
 from .classical import ClassicalDetector, METHODS as CLASSICAL
 from .neural import NeuralDetector
 from .preprocessing import Preprocessor
+from .detectors import load_detector, extension
 
 
 def predict(run, csv, output, device='cpu', chunksize=8192):
@@ -16,7 +17,7 @@ def predict(run, csv, output, device='cpu', chunksize=8192):
     thresholds = json.loads((run/'thresholds.json').read_text())
     prep = Preprocessor.load(run/'preprocessor.npz')
     method = config['method']
-    model = ClassicalDetector.load(run/'model.joblib') if method in CLASSICAL else NeuralDetector.load(run/'model.pt', device)
+    model = load_detector(method,run/f'model.{extension(method)}',device)
     # Refuse overwrite. Output contains scores and row positions, not source personal identifiers.
     with output.open('x') as destination:
         offset, header = 0, True

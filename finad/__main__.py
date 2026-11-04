@@ -5,7 +5,7 @@ from .data import DATASETS
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Ten classic unsupervised financial anomaly detectors')
+    parser = argparse.ArgumentParser(description='Classic and 2026 financial anomaly detectors')
     sub = parser.add_subparsers(dest='command', required=True)
     p = sub.add_parser('benchmark', help='label-blind fit/calibration and full held-out metrics')
     p.add_argument('--cache', type=Path, required=True)

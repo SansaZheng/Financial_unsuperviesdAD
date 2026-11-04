@@ -1,0 +1,5 @@
+# Use with requirements-lock.txt (actual v1 Python 3.12 dependency versions).
+# GammaGMM path needs numpy/scipy/scikit-learn only; install optional metadata
+# dependency PyOD through the regular modern2026 extra if using a clean env.
+-r requirements-lock.txt
+pythresh==1.1.1

@@ -17,8 +17,8 @@ from .evaluation import metrics
 from .neural import NeuralDetector, METHODS as NEURAL
 from .preprocessing import Preprocessor
 from .thresholds import calibrate
+from .detectors import METHODS, MODERN, make_detector, extension, load_detector
 
-METHODS = CLASSICAL+NEURAL
 
 
 def write_json(path, value):
@@ -38,6 +38,7 @@ def code_fingerprint():
 
 def environment(args):
     packages = ['numpy', 'pandas', 'scipy', 'scikit-learn', 'torch', 'joblib', 'threadpoolctl']
+    if 'rttad2026' in args.methods:packages.append('pythresh')
     try:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True, stderr=subprocess.DEVNULL).strip()
     except subprocess.CalledProcessError:
@@ -54,7 +55,7 @@ def run_one(args, dataset, method, seed, fingerprint):
     destination = args.output / dataset / f'{method}_seed{seed}'
     config = dict(dataset=dataset, method=method, seed=seed, train_cap=args.train_cap,
                   calibration_cap=args.calibration_cap, steps=args.steps, pretrain_steps=args.pretrain_steps,
-                  device=args.device if method in NEURAL else 'cpu', batch_size=args.batch_size,
+                  device=args.device if method in NEURAL or method=='rttad2026' else 'cpu', batch_size=args.batch_size,
                   risk=args.risk, initial_quantile=args.initial_quantile,
                   data_manifest_sha256=sha256(cache.path/'manifest.json'), code_fingerprint=fingerprint)
     result_path = destination/'result.json'
@@ -72,10 +73,15 @@ def run_one(args, dataset, method, seed, fingerprint):
     train = prep.transform(raw_train); del raw_train
     prep.save(destination/'preprocessor.npz'); np.save(destination/'train_indices.npy', indices)
     write_json(destination/'features.json', {'features': cache.features})
-    model = (ClassicalDetector(method, seed) if method in CLASSICAL else
-             NeuralDetector(method, seed, args.device, args.steps, args.pretrain_steps)).fit(train)
-    extension = 'joblib' if method in CLASSICAL else 'pt'
-    model.save(destination/f'model.{extension}')
+    model = make_detector(method,seed,args.device,args.steps,args.pretrain_steps).fit(train)
+    if method=='rttad2026':
+        model.save(destination/'model_base.pt')
+        # Transductive variant: feature-only pool is read BEFORE calibration;
+        # no training/calibration/test target file has been opened here.
+        pool,pool_indices=sample(cache.x('test'),8192,seed+2000)
+        np.save(destination/'adaptation_indices.npy',pool_indices)
+        model.adapt(prep.transform(pool));del pool
+    model.save(destination/f'model.{extension(method)}')
     info = model.info
     train_seconds = time.monotonic()-start
     del train; gc.collect()
@@ -95,19 +101,31 @@ def run_one(args, dataset, method, seed, fingerprint):
     for i in range(0, len(test), args.batch_size):
         test_scores[i:i+args.batch_size] = model.score(prep.transform(test[i:i+args.batch_size]))
     test_scores.flush()
+    if method=='rttad2026' and args.device=='mps':
+        model.model.to('cpu');torch.mps.empty_cache()
     # This is the first target-file read. Training/calibration targets are never opened.
     evaluation = metrics(cache.y('test'), test_scores, thresholds)
+    score_file='test_scores.npy'
+    if method in MODERN:
+        # Lossless ZIP compression, never precision reduction. Only the new
+        # sweep's own temporary uncompressed score file is removed.
+        np.savez_compressed(destination/'test_scores.npz',scores=np.asarray(test_scores))
+        del test_scores
+        (destination/'test_scores.npy').unlink()
+        score_file='test_scores.npz'
     result = dict(status='complete', dataset=dataset, method=method, seed=seed,
                   run_config=config, train_rows_used=len(indices), calibration_rows_used=len(cal_indices),
                   split_counts=cache.manifest['splits'], data_protocol=cache.manifest['protocol'],
                   training=info, train_seconds=train_seconds, total_seconds=time.monotonic()-start,
                   thresholds=thresholds, metrics=evaluation,
-                  test_scores_sha256=sha256(destination/'test_scores.npy'))
+                  test_scores_file=score_file,test_scores_sha256=sha256(destination/score_file))
     write_json(result_path, result)
     op = evaluation['operating_points']['pot']
     f1 = op['f1'] if op is not None else None
     print(f'DONE {dataset} {method} seed={seed} F1_POT={f1} AP={evaluation["average_precision"]} seconds={result["total_seconds"]:.1f}', flush=True)
-    del model, test_scores, test; gc.collect()
+    del model, test
+    if method not in MODERN:del test_scores
+    gc.collect()
     if args.device == 'mps':
         torch.mps.empty_cache()
     return result
