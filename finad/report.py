@@ -30,7 +30,7 @@ def export(runs,output):
     output=Path(output);output.mkdir(parents=True,exist_ok=False)
     # Do not publish workstation usernames/absolute data paths.
     env['configuration']['cache']='/path/to/private/feature_cache'
-    env['configuration']['output']='.local_data/runs_v1'
+    env['configuration']['output']=('.local_data/runs_2026' if any(m.endswith('2026') for m in env['configuration']['methods']) else '.local_data/runs_v1')
     write_json(output/'environment.json',env)
     write_json(output/'runs.json',records)
     provenance=[]

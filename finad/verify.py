@@ -24,7 +24,7 @@ def verify(runs,cache_root):
             assert path.stat().st_size==entry['bytes'] and sha256(path)==entry['sha256']
             input_files+=1
     total=0
-    adaptation_checks=0;unchanged_base_checks=0
+    adaptation_checks=0;unchanged_base_checks=0;rgld_strict_checks=0
     shared_indices={}
     for result in records:
         root=Path(runs)/result['dataset']/f'{result["method"]}_seed{result["seed"]}'
@@ -59,10 +59,10 @@ def verify(runs,cache_root):
         prep=Preprocessor.load(root/'preprocessor.npz')
         model=load_detector(result['method'],root/f'model.{extension(result["method"])}',device='cpu')
         if result['method']=='rttad2026':
-            indices=np.load(root/'adaptation_indices.npy')
+            adaptation_indices=np.load(root/'adaptation_indices.npy')
             expected=np.sort(np.random.default_rng(result['seed']+2000).choice(len(scores),min(8192,len(scores)),replace=False))
-            np.testing.assert_array_equal(indices,expected)
-            assert len(indices)==result['training']['adaptation_pool_rows']
+            np.testing.assert_array_equal(adaptation_indices,expected)
+            assert len(adaptation_indices)==result['training']['adaptation_pool_rows']
             assert (root/'model_base.pt').exists();adaptation_checks+=1
             if not any(r.get('status')=='updated' for r in result['training']['adaptation']):
                 base=load_detector(result['method'],root/'model_base.pt',device='cpu')
@@ -70,7 +70,11 @@ def verify(runs,cache_root):
                 unchanged_base_checks+=1;del base
         with threadpool_limits(limits=2):
             reproduced=model.score(prep.transform(np.asarray(cache.x('test')[indices])))
-        np.testing.assert_allclose(reproduced,scores[indices],rtol=5e-4,atol=1e-5)
+        if result['method']=='rgld2026':
+            np.testing.assert_allclose(reproduced,scores[indices],rtol=0,atol=1e-12)
+            rgld_strict_checks+=1
+        else:
+            np.testing.assert_allclose(reproduced,scores[indices],rtol=5e-4,atol=1e-5)
         del model
         for policy,value in thresholds.items():
             op=result['metrics']['operating_points'][policy]
@@ -95,5 +99,6 @@ def verify(runs,cache_root):
                 sample_indices_unique_and_in_bounds=True,pot_peak_counts_match_scores=True,
                 same_seed_sampling_shared_between_methods=True,input_files_sha256_verified=input_files,
                 checkpoint_predictions_reproduced_on_cpu=dict(rows_per_run_up_to=32,rtol=5e-4,atol=1e-5),
+                rgld_stricter_batch_verification=dict(verified_runs=rgld_strict_checks,rtol=0,atol=1e-12),
                 adaptation_pool_indices_verified=adaptation_checks,unchanged_base_verified_when_no_update=unchanged_base_checks,
                 raw_rows_in_report=False)

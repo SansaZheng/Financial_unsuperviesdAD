@@ -4,7 +4,7 @@
 
 ## RGLD-ID：随机全局／局部密度
 
-来源：[RGLD，arXiv:2606.28970v1，2026-06-27](https://arxiv.org/abs/2606.28970)，算法 1、正文第 4 节及附录 D/E。论文称代码在补充材料中，正式开源待接收；本次没有把其他项目的旧算法冒充作者实现。
+来源：[RGLD: Randomized Global-Local Density Estimation for Tabular Anomaly Detection，arXiv:2606.28970v1，2026-06-27](https://arxiv.org/abs/2606.28970)，算法 1、正文第 4 节及附录 D/E。论文称代码在补充材料中，正式开源待接收；本次没有把其他项目的旧算法冒充作者实现。
 
 实现 [rgld.py](../finad/rgld.py)：约 30% 特征分袋（至少 3 列，受总维度限制）与 Gaussian 随机投影；自动投影维度 2/5/8/12/16；40 个全局视图、10 个局部视图；每个全局视图 10 维 scrambled Sobol→标准正态 QMC 随机 Fourier 特征，随机相位服从 Uniform(0,2π)。以 8192 对训练投影样本的距离中位数作为基础带宽，乘数为 0.25/0.5/1/2。各尺度负密度先标准化再平均。局部分支每视图无放回选择最多 400 条参考记录，以最近 10 个参考的**均方根距离**评分；参考训练记录不使用自己作为邻居。
 
@@ -16,7 +16,7 @@
 
 ## RTTAD-TTA：风险感知测试时自适应
 
-来源：[RTTAD，arXiv:2605.10242v1，2026-05-11](https://arxiv.org/abs/2605.10242)，公式 (4)–(15)。实现 [rttad.py](../finad/rttad.py)。
+来源：[When Normality Shifts: Risk-Aware Test-Time Adaptation for Unsupervised Tabular Anomaly Detection，arXiv:2605.10242v1，2026-05-11](https://arxiv.org/abs/2605.10242)，公式 (4)–(15)。实现 [rttad.py](../finad/rttad.py)。
 
 - 学习 sigmoid 特征掩码，共享编码器；主任务重构输入，辅助 MLP 重构未掩码嵌入；掩码间内积经排除对角线的 log-sum-exp 构成多样性损失。
 - 训练目标为 `Lm + λ La + γ Ldiv`，`λ=min(1,1/Lm)`（停止 λ 的梯度），`γ=0.01`。掩码数 4，温度 1，diversity scale=1/F；MLP 隐藏宽度 128，latent=min(32,max(2,F//2))。这些未完整披露的结构／常数是本实现的固定选择，不冒称作者超参数。
