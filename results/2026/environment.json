@@ -1,0 +1,52 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "torch": "2.6.0",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "pythresh": "1.1.1"
+  },
+  "code_git_commit": "0ff9d9863f27357d5d5c17627de1203f20b603e3",
+  "code_fingerprint": "ebb08cad9293d67252e67a8cf2ef620c228efcda7475111db26ac0666144906d",
+  "configuration": {
+    "command": "benchmark",
+    "cache": "/path/to/private/feature_cache",
+    "output": ".local_data/runs_2026",
+    "datasets": [
+      "sapienza_15S",
+      "tstr",
+      "sd_stock",
+      "sd_crypto",
+      "ulb",
+      "elliptic",
+      "paysim",
+      "tabformer",
+      "ibm_aml",
+      "ieee_cis"
+    ],
+    "methods": [
+      "rgld2026",
+      "rttad2026"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "train_cap": 8192,
+    "calibration_cap": 100000,
+    "steps": 400,
+    "pretrain_steps": 200,
+    "batch_size": 8192,
+    "risk": 0.01,
+    "initial_quantile": 0.85,
+    "device": "mps"
+  },
+  "training_labels_used": false,
+  "calibration_labels_used": false
+}

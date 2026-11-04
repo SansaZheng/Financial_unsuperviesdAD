@@ -92,6 +92,10 @@ def export(runs,output):
     modern=any(m.endswith('2026') for m in methods)
     heading='# 2026 方法金融适配：实验结果' if modern else '# 经典金融无监督异常检测：实验结果 v1'
     note=('RGLD-ID 使用训练集固定标准化／排名；RTTAD-TTA 先在最多 8192 条无标签测试特征上自适应，再用该最终模型校准和评分。两者分别是归纳和 transductive 实验，后者的测试特征访问必须单独标注。新分数以无损 NPZ 保存。' if modern else '')
+    adapted=[r for r in records if r['method']=='rttad2026']
+    if adapted:
+        zero=sum(not any(a.get('status')=='updated' for a in r['training']['adaptation']) for r in adapted)
+        note+=f' RTTAD 的 {len(adapted)} 次运行中有 {zero} 次没有实际更新，保留基础网络评分；选择／更新状态见 runs.json。'
     scope='2026 预印本方法核心的金融特征适配' if modern else '经典算法核心在金融特征上的复现'
     lines=[heading,'',note,'',
            f'完成 **{len(datasets)} 个任务、{len(methods)} 种方法、{len(plan["seeds"])} 个种子，共 {len(records)} 次真实运行**，覆盖 {len(groups)} 组源数据。SD-FMM 的股票和加密货币为同一来源的两个任务。本轮是{scope}，不是原论文数据／网络／数值成绩的逐项复刻。','',

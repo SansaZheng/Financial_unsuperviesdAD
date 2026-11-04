@@ -1,0 +1,23 @@
+{
+  "purpose": "2026 preprint core financial adaptations; not original-paper numerical reproduction",
+  "execution": "Local CPU for RGLD, MPS for RTTAD training/adaptation; no CQ submissions or cloud rentals",
+  "algorithm_commit": "0ff9d9863f27357d5d5c17627de1203f20b603e3",
+  "planned_runs": 60,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "old_v1_runs_preserved": 300,
+  "preliminary_runs": "38 candidate runs preserved privately; excluded after batch-dependent duplicate-distance bug",
+  "numerical_fix": "RGLD direct squared differences with scipy cdist; no norm-dot cancellation for duplicate points; fresh full sweep",
+  "preflight": "34 tests passed; problematic PaySim and Sapienza observations batch-consistent at 1e-12 after fix",
+  "score_storage": "Lossless float64 NPZ; old score files unchanged",
+  "test_feature_access": {
+    "rgld2026": "train-only inductive",
+    "rttad2026": "bounded transductive; up to 8192 unlabelled test feature rows"
+  },
+  "labels": "Training/calibration labels never read; test labels only read after final adaptation, calibration and complete scoring",
+  "timing": "Local machine shared with unrelated work; elapsed times are not controlled speed comparisons",
+  "local_parallelism": "A second local process ran disjoint ibm_aml/ieee_cis tasks using the same frozen environment/configuration and run_one function. A guard pauses the first worker after TabFormer seed42 RTTAD completes if needed, resuming only when the second worker exits, to prevent duplicate writes. Completed runs are skipped by exact configuration."
+}
