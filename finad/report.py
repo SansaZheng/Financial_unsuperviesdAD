@@ -92,8 +92,9 @@ def export(runs,output):
     modern=any(m.endswith('2026') for m in methods)
     heading='# 2026 方法金融适配：实验结果' if modern else '# 经典金融无监督异常检测：实验结果 v1'
     note=('RGLD-ID 使用训练集固定标准化／排名；RTTAD-TTA 先在最多 8192 条无标签测试特征上自适应，再用该最终模型校准和评分。两者分别是归纳和 transductive 实验，后者的测试特征访问必须单独标注。新分数以无损 NPZ 保存。' if modern else '')
+    scope='2026 预印本方法核心的金融特征适配' if modern else '经典算法核心在金融特征上的复现'
     lines=[heading,'',note,'',
-           f'完成 **{len(datasets)} 个任务、{len(methods)} 种方法、{len(plan["seeds"])} 个种子，共 {len(records)} 次真实运行**，覆盖 {len(groups)} 组源数据。SD-FMM 的股票和加密货币为同一来源的两个任务。本轮是经典算法核心在金融特征上的复现，不是原论文数据／网络／数值成绩的逐项复刻。','',
+           f'完成 **{len(datasets)} 个任务、{len(methods)} 种方法、{len(plan["seeds"])} 个种子，共 {len(records)} 次真实运行**，覆盖 {len(groups)} 组源数据。SD-FMM 的股票和加密货币为同一来源的两个任务。本轮是{scope}，不是原论文数据／网络／数值成绩的逐项复刻。','',
            f'训练每种子统一最多 {plan["train_cap"]:,} 条、校准最多 {plan["calibration_cap"]:,} 条；**测试分区全量、不平衡类别、不做 point adjustment**。标签只在最终评价打开。沿用旧数据划分，但训练上限与统一截断评分不同于此前 Kronos 实验，不能直接混排两轮成绩。','',
            '## 留出测试组成','',*counts,'',
            'AP 的随机排序参照水平与正例率有关；不能把正例率差异当作模型性能差异。所有方法在各任务上的测试对象相同。','',
@@ -139,5 +140,7 @@ def _plot(summary,datasets,methods,destination,seeds):
                 axis.text(j,i,'N/A' if np.isnan(v) else f'{v:.1f}',ha='center',va='center',fontsize=8,
                           color='white' if np.isfinite(v) and v>im.norm.vmax*.6 else 'black')
         fig.colorbar(im,ax=axis,fraction=.035,pad=.02)
-    fig.suptitle(f'Classic financial anomaly detectors: {seeds} seeds; label-blind training/calibration\nDifferent label granularities/prevalences; compare methods within each row',fontsize=12)
+    title='2026 core financial adaptations' if any(m.endswith('2026') for m in methods) else 'Classic financial anomaly detectors'
+    subtitle='RTTAD uses an unlabelled test pool; information budgets differ' if any(m.endswith('2026') for m in methods) else 'Different label granularities/prevalences; compare methods within each row'
+    fig.suptitle(f'{title}: {seeds} seeds; label-blind training/calibration\n{subtitle}',fontsize=12)
     fig.tight_layout();fig.savefig(destination,dpi=180);plt.close(fig)

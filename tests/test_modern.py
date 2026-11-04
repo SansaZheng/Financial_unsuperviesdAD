@@ -3,7 +3,7 @@ import numpy as np
 import pytest
 import torch
 
-from finad.rgld import RGLD, rank_reference
+from finad.rgld import RGLD, rank_reference, local_rms
 from finad.rttad import RTTAD, gamma_confidence
 
 
@@ -26,6 +26,24 @@ def test_rgld_query_chunking_order_and_checkpoint(tmp_path):
 def test_rgld_constant_training_is_explicitly_finite():
     model=RGLD(global_views=2,local_views=2,random_features=2,references=20).fit(np.ones((30,3),np.float32))
     np.testing.assert_allclose(model.score(np.ones((4,3),np.float32)),.5)
+
+
+def test_local_distance_duplicate_ties_are_zero_in_every_query_batch():
+    reference=np.tile(np.array([.1,.2,.3,.4,.5],dtype=np.float64),(20,1))
+    query=np.tile(reference[0],(1025,1))
+    direct=np.sqrt(((query[:3,None]-reference[None])**2).sum(-1)).mean(1)
+    np.testing.assert_array_equal(local_rms(query,reference,10),np.zeros(len(query)))
+    np.testing.assert_array_equal(local_rms(query[:3],reference,10),direct)
+
+
+def test_rgld_discrete_financial_like_duplicates_are_chunk_invariant():
+    rng=np.random.default_rng(123)
+    train=(rng.integers(0,3,(1000,8))*.1).astype(np.float32)
+    query=np.tile(train[:120],(9,1))
+    model=RGLD(42,global_views=4,local_views=3,random_features=4,references=100).fit(train)
+    large=model.score(query)
+    small=np.concatenate([model.score(query[i:i+7]) for i in range(0,len(query),7)])
+    np.testing.assert_allclose(large,small,rtol=0,atol=1e-12)
 
 
 def test_rttad_uses_both_adaptation_signs_and_persists_frozen_state(tmp_path,monkeypatch):
@@ -56,7 +74,9 @@ def test_real_gamma_gmm_keeps_rng_and_reports_failure_instead_of_fallback():
     json.dumps(record,allow_nan=False)
 
 
-def test_modern_pipeline_without_train_or_calibration_labels(tmp_path):
+@pytest.mark.parametrize('method',['rgld2026','rttad2026'])
+def test_modern_pipeline_without_train_or_calibration_labels(tmp_path,method):
+    if method=='rttad2026':pytest.importorskip('pythresh')
     from argparse import Namespace
     from finad.experiment import benchmark
     from finad.verify import verify
@@ -65,9 +85,9 @@ def test_modern_pipeline_without_train_or_calibration_labels(tmp_path):
     for split,n in [('train',80),('calibration',200),('test',40)]:
         rng.normal(size=(n,3)).astype(np.float32).tofile(root/f'{split}.x.f32');manifest['splits'][split]={'rows':n}
     np.array([0]*30+[1]*10,np.int8).tofile(root/'test.y.i8');(root/'manifest.json').write_text(json.dumps(manifest))
-    args=Namespace(command='benchmark',cache=tmp_path/'cache',output=tmp_path/'runs',datasets=['toy'],methods=['rgld2026'],
+    args=Namespace(command='benchmark',cache=tmp_path/'cache',output=tmp_path/'runs',datasets=['toy'],methods=[method],
         seeds=[42],train_cap=64,calibration_cap=200,steps=2,pretrain_steps=2,batch_size=32,risk=.01,initial_quantile=.85,device='cpu')
-    benchmark(args);r=args.output/'toy'/'rgld2026_seed42'
+    benchmark(args);r=args.output/'toy'/f'{method}_seed42'
     assert (r/'test_scores.npz').exists() and not (r/'test_scores.npy').exists()
     result=json.loads((r/'result.json').read_text());assert result['metrics']['evaluated']==40
     assert verify(args.output,args.cache)['verified_runs']==1

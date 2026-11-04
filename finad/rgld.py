@@ -7,7 +7,7 @@ import joblib
 import numpy as np
 from scipy.special import ndtri
 from scipy.stats import qmc
-from sklearn.neighbors import NearestNeighbors
+from scipy.spatial.distance import cdist
 
 
 def rank_reference(sorted_training, values):
@@ -16,6 +16,22 @@ def rank_reference(sorted_training, values):
     left=np.searchsorted(sorted_training,values,side='left')
     right=np.searchsorted(sorted_training,values,side='right')
     return np.clip((left+right-1)/(2*max(1,len(sorted_training)-1)),0.,1.)
+
+
+def local_rms(query,reference,k,query_ids=None,reference_ids=None):
+    """Direct squared differences avoid norm-dot cancellation near duplicates.
+
+    Financial categorical/engineered features often create exact duplicates;
+    sqrt(||x||²-2x·y+||y||²) can turn zero into 1e-8 and corrupt ECDF ties.
+    """
+    result=[]
+    for i in range(0,len(query),512):
+        squared=cdist(query[i:i+512],reference,metric='sqeuclidean')
+        if query_ids is not None:
+            squared[query_ids[i:i+512,None]==reference_ids[None,:]]=np.inf
+        nearest=np.partition(squared,k-1,axis=1)[:,:k]
+        result.append(np.sqrt(nearest.mean(1)))
+    return np.concatenate(result)
 
 
 class RGLD:
@@ -61,13 +77,9 @@ class RGLD:
             columns,projection=self._view(x.shape[1],rng);z=x[:,columns].astype(np.float64)@projection
             ids=np.sort(rng.choice(len(x),min(self.references,len(x)),replace=False))
             # A reference training row must not become its own nearest neighbor.
-            k=min(10,len(ids)-1);nn=NearestNeighbors(n_neighbors=k+1,algorithm='brute',n_jobs=2).fit(z[ids])
-            distances,neighbors=nn.kneighbors(z)
-            distances[ids[neighbors]==np.arange(len(x))[:,None]]=np.inf
-            closest=np.sort(distances,axis=1)[:,:k]
-            score=np.sqrt(np.mean(closest.astype(np.float64)**2,axis=1));order=np.sort(score)
-            nn.set_params(n_neighbors=k)
-            self.locals.append((columns,projection,nn,order))
+            k=min(10,len(ids)-1);reference=z[ids].copy()
+            score=local_rms(z,reference,k,np.arange(len(x)),ids);order=np.sort(score)
+            self.locals.append((columns,projection,reference,k,order))
             local_rank.append(rank_reference(order,score))
         g=np.mean(global_rank,axis=0);l=np.mean(local_rank,axis=0)
         self.branch_reference=(np.sort(g),np.sort(l))
@@ -76,6 +88,7 @@ class RGLD:
                        reference_cap=self.references,neighbors=10,qmc='scrambled_Sobol_inverse_normal',
                        bandwidth_multipliers=[.25,.5,1.,2.],rank_fit='training_only_average_ties',
                        local_reference_training_self_excluded=True,preprocessing='shared_v1_robust_clipped')
+        self.info['local_distance_backend']='float64_direct_squared_differences_cdist'
         return self
 
     def score(self,x):
@@ -83,9 +96,8 @@ class RGLD:
         for view in self.globals:
             raw=self._global_raw(x,view);center,std,reference=view[-3:]
             g+=rank_reference(reference,((raw-center)/std).mean(1))/len(self.globals)
-        for columns,projection,nn,reference in self.locals:
-            distances=nn.kneighbors(x[:,columns].astype(np.float64)@projection,return_distance=True)[0]
-            score=np.sqrt(np.mean(distances.astype(np.float64)**2,axis=1))
+        for columns,projection,points,k,reference in self.locals:
+            score=local_rms(x[:,columns].astype(np.float64)@projection,points,k)
             l+=rank_reference(reference,score)/len(self.locals)
         return .5*(rank_reference(self.branch_reference[0],g)+rank_reference(self.branch_reference[1],l))
 
