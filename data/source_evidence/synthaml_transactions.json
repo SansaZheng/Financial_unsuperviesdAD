@@ -1,0 +1,23 @@
+{
+  "id": 22396057,
+  "doi": "10.6084/m9.figshare.22396057.v1",
+  "title": "synthetic_transactions",
+  "license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "files": [
+    {
+      "id": 39841711,
+      "name": "synthetic_transactions.csv",
+      "size": 934561137,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/39841711",
+      "supplied_md5": "a7769f595209870ea86ce302bf2bf0da",
+      "computed_md5": "a7769f595209870ea86ce302bf2bf0da",
+      "mimetype": "text/plain"
+    }
+  ],
+  "url": "https://api.figshare.com/v2/articles/22396057"
+}

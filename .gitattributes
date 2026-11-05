@@ -1,0 +1,2 @@
+# Preserve downloaded source bytes, including original CRLF line endings.
+data/raw/** -text

@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/mlg-ulb/creditcardfraud",
+  "metadata": {
+    "title": "Credit Card Fraud Detection",
+    "licenseName": "Database: Open Database, Contents: Database Contents",
+    "totalBytes": 150828752,
+    "currentVersionNumber": 3
+  }
+}

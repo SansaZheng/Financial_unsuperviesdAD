@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://www.kaggle.com/datasets/kartik2112/fraud-detection",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/kartik2112/fraud-detection",
+  "metadata": {
+    "title": "Credit Card Transactions Fraud Detection Dataset",
+    "licenseName": "CC0: Public Domain",
+    "totalBytes": 501592535,
+    "currentVersionNumber": 1
+  }
+}

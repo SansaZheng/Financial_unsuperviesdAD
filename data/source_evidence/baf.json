@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://github.com/feedzai/bank-account-fraud",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/sgpjesus/bank-account-fraud-dataset-neurips-2022",
+  "metadata": {
+    "title": "Bank Account Fraud Dataset Suite (NeurIPS 2022)",
+    "licenseName": "CC BY-NC-SA 4.0",
+    "totalBytes": 1358322706,
+    "currentVersionNumber": 2
+  }
+}

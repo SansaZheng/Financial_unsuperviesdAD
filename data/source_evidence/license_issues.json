@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-11-06",
+  "issues": [
+    {
+      "id": "baf",
+      "source": "https://github.com/feedzai/bank-account-fraud",
+      "finding": "CONFLICT: Kaggle CC-BY-NC-SA-4.0 vs original datasheet CC-BY-NC-ND-4.0"
+    },
+    {
+      "id": "figraph",
+      "source": "https://github.com/XNetLab/FiGraph",
+      "finding": "CONFLICT: README says CC-BY-NC-4.0 while LICENSE says CC-BY-4.0"
+    },
+    {
+      "id": "ms_ffsd",
+      "source": "https://github.com/AI4Risk/MS-FFSD",
+      "finding": "Apache-2.0 (repository); derived from S-FFSD, whose repository is GPL-3.0"
+    },
+    {
+      "id": "elliptic_plus",
+      "source": "https://github.com/git-disl/EllipticPlusPlus",
+      "finding": "No standalone license in inspected repository; original Elliptic has CC-BY-NC-ND-4.0"
+    },
+    {
+      "id": "midsummer_memes",
+      "source": "https://zenodo.org/records/17830944",
+      "finding": "No explicit license shown in Zenodo/GitHub inspected metadata"
+    }
+  ]
+}

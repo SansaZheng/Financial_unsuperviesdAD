@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/ellipticco/elliptic-data-set",
+  "metadata": {
+    "title": "Elliptic Data Set",
+    "licenseName": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+    "totalBytes": 697459499,
+    "currentVersionNumber": 1
+  }
+}

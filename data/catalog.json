@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-06",
+  "scope": "Public financial transaction anomaly/fraud datasets plus explicitly separated adjacent datasets; non-exhaustive",
+  "datasets": [
+    {
+      "id": "sapienza_pump_dump",
+      "name": "Sapienza cryptocurrency pump-and-dump (ICCCN 2020)",
+      "category": "market_manipulation",
+      "source": "https://github.com/SystemsLab-Sapienza/pump-and-dump-dataset",
+      "license": "MIT (upstream repository)",
+      "labels": "event list and binary chunk labels",
+      "time_field": "UTC event date/hour; feature chunk timestamps",
+      "kronos_compatibility": "needs_original_trades_or_ohlcv",
+      "notes": "发布的是事件表和5/15/25秒特征，不是原始逐笔交易；原始交易需上游 downloader 从 Binance 获取。三个分辨率是同一数据集，不计作三个独立数据集。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/LICENSE",
+          "expected_bytes": 1076,
+          "role": "license"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/README.md",
+          "expected_bytes": 4893,
+          "role": "documentation"
+        },
+        {
+          "path": "groups.csv",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/groups.csv",
+          "expected_bytes": 820,
+          "role": "data"
+        },
+        {
+          "path": "pump_telegram.csv",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/pump_telegram.csv",
+          "expected_bytes": 36788,
+          "role": "data"
+        },
+        {
+          "path": "labeled_features/features_5S.csv.gz",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/labeled_features/features_5S.csv.gz",
+          "expected_bytes": 7048463,
+          "role": "data"
+        },
+        {
+          "path": "labeled_features/features_15S.csv.gz",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/labeled_features/features_15S.csv.gz",
+          "expected_bytes": 5237042,
+          "role": "data"
+        },
+        {
+          "path": "labeled_features/features_25S.csv.gz",
+          "url": "https://raw.githubusercontent.com/SystemsLab-Sapienza/pump-and-dump-dataset/d71250d4cb055dde2d415c8cba38a0dcd6eb6e16/labeled_features/features_25S.csv.gz",
+          "expected_bytes": 4585635,
+          "role": "data"
+        }
+      ],
+      "source_revision": "d71250d4cb055dde2d415c8cba38a0dcd6eb6e16",
+      "observed_release": "1110 event rows; feature rows:5s=821307,15s=584104,25s=482157"
+    },
+    {
+      "id": "s_ffsd",
+      "name": "S-FFSD",
+      "category": "payment_fraud",
+      "source": "https://github.com/AI4Risk/antifraud",
+      "license": "GPL-3.0 (repository-wide license; no separate dataset license found)",
+      "labels": "Labels: 0 normal, 1 fraud, 2 unlabeled",
+      "time_field": "Time (transaction-order index, not real clock time)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "模拟的小型金融欺诈数据；2不能当正常，训练不读Labels；保留上游原始ZIP和仓库许可。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/AI4Risk/antifraud/65e583f03ac5c5983e49cc35179fe7a65908b9c1/LICENSE",
+          "expected_bytes": 35149,
+          "role": "license"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/AI4Risk/antifraud/65e583f03ac5c5983e49cc35179fe7a65908b9c1/README.md",
+          "expected_bytes": 10384,
+          "role": "documentation"
+        },
+        {
+          "path": "data/S-FFSD.zip",
+          "url": "https://raw.githubusercontent.com/AI4Risk/antifraud/65e583f03ac5c5983e49cc35179fe7a65908b9c1/data/S-FFSD.zip",
+          "expected_bytes": 581456,
+          "role": "data"
+        }
+      ],
+      "source_revision": "65e583f03ac5c5983e49cc35179fe7a65908b9c1"
+    },
+    {
+      "id": "ms_ffsd",
+      "name": "MS-FFSD",
+      "category": "payment_fraud",
+      "source": "https://github.com/AI4Risk/MS-FFSD",
+      "license": "Apache-2.0 (repository); derived from S-FFSD, whose repository is GPL-3.0",
+      "labels": "Labels: 0 normal, 1 fraud, 2 unlabeled",
+      "time_field": "Datetime (synthesized using IEEE-CIS temporal priors)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "S-FFSD语义增强派生数据，非独立金融来源；因上游派生许可关系未厘清，本次仅记录原始入口。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "sd_fmm",
+      "name": "SD-FMM released financial manipulation arrays",
+      "category": "market_manipulation",
+      "source": "https://github.com/ys-Dai/SD-FMM",
+      "license": "MIT (upstream project)",
+      "labels": "released test label/interval arrays",
+      "time_field": "array index; metadata varies by file",
+      "kronos_compatibility": "not_direct_ohlcv",
+      "notes": "发布数组包含中国股票案例、加密货币和合成扰动，不能声称获得原始25案例完整行情；部分dictionary NPY是object，禁止自动allow_pickle。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/LICENSE",
+          "expected_bytes": 1057,
+          "role": "license"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/README.md",
+          "expected_bytes": 3605,
+          "role": "documentation"
+        },
+        {
+          "path": "cryptocurrency cases/test_data.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/cryptocurrency%20cases/test_data.npy",
+          "expected_bytes": 215808,
+          "role": "data"
+        },
+        {
+          "path": "cryptocurrency cases/test_label.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/cryptocurrency%20cases/test_label.npy",
+          "expected_bytes": 215808,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_ano_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_ano_02.npy",
+          "expected_bytes": 256,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_ano_dict_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_ano_dict_02.npy",
+          "expected_bytes": 1385,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_data_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_data_02.npy",
+          "expected_bytes": 20608,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_data_dict_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_data_dict_02.npy",
+          "expected_bytes": 21753,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_label_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_label_02.npy",
+          "expected_bytes": 20608,
+          "role": "data"
+        },
+        {
+          "path": "prices/test_label__dict_02.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/prices/test_label__dict_02.npy",
+          "expected_bytes": 21753,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/dict_test_ano_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/dict_test_ano_bs.npy",
+          "expected_bytes": 2117,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/dict_test_data_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/dict_test_data_bs.npy",
+          "expected_bytes": 36488,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/dict_test_label_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/dict_test_label_bs.npy",
+          "expected_bytes": 36488,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/test_ano_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/test_ano_bs.npy",
+          "expected_bytes": 344,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/test_data_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/test_data_bs.npy",
+          "expected_bytes": 34688,
+          "role": "data"
+        },
+        {
+          "path": "stock cases/test_label_bs.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/stock%20cases/test_label_bs.npy",
+          "expected_bytes": 34688,
+          "role": "data"
+        },
+        {
+          "path": "systhesis/all_DTWsim_data.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/systhesis/all_DTWsim_data.npy",
+          "expected_bytes": 1278848,
+          "role": "data"
+        },
+        {
+          "path": "systhesis/all_DTWsim_label.npy",
+          "url": "https://raw.githubusercontent.com/ys-Dai/SD-FMM/0d1a2158ee849fdc31a127bd049e622174f5c893/systhesis/all_DTWsim_label.npy",
+          "expected_bytes": 1278848,
+          "role": "data"
+        }
+      ],
+      "source_revision": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "observed_release": "cryptocurrency array:337x160x1; stock array:27x160x1; differs from paper description338/25"
+    },
+    {
+      "id": "ulb_creditcard",
+      "name": "ULB/Worldline credit card fraud (2013)",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+      "license": "ODbL-1.0 database / DbCL-1.0 contents",
+      "labels": "Class (0/1)",
+      "time_field": "Time (seconds since first transaction)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "284807交易、492欺诈；V1-V28是匿名PCA特征，不能重命名为OHLC。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "ulb_creditcard.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/mlg-ulb/creditcardfraud?datasetVersionNumber=3",
+          "expected_bytes": 69155672,
+          "role": "data"
+        },
+        {
+          "path": "ODbL-1.0.txt",
+          "url": "https://opendatacommons.org/licenses/odbl/odbl-10.txt",
+          "role": "license"
+        },
+        {
+          "path": "DbCL-1.0.txt",
+          "url": "https://opendatacommons.org/licenses/dbcl/dbcl-10.txt",
+          "role": "license"
+        }
+      ],
+      "kaggle_ref": "mlg-ulb/creditcardfraud",
+      "version": 3
+    },
+    {
+      "id": "banksim",
+      "name": "BankSim",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/datasets/ealaxi/banksim1",
+      "license": "CC-BY-NC-SA-4.0",
+      "labels": "fraud (0/1)",
+      "time_field": "step (day)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "594643模拟支付；原始包还包含网络版本，勿重复算独立数据集。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "banksim.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealaxi/banksim1?datasetVersionNumber=1",
+          "expected_bytes": 13712256,
+          "role": "data"
+        },
+        {
+          "path": "CC-BY-NC-SA-4.0.txt",
+          "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt",
+          "role": "license"
+        }
+      ],
+      "kaggle_ref": "ealaxi/banksim1",
+      "version": 1
+    },
+    {
+      "id": "paysim",
+      "name": "PaySim",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+      "license": "CC-BY-SA-4.0",
+      "labels": "isFraud; isFlaggedFraud is a rule output, not ground truth",
+      "time_field": "step (hour)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "6362620模拟交易；上游提示余额变量受到欺诈取消影响，不能把事后信息作输入。大文件不写入普通Git。",
+      "access": "large_download",
+      "artifacts": [],
+      "kaggle_ref": "ealaxi/paysim1",
+      "version": 2,
+      "large_artifacts": [
+        {
+          "path": "paysim.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealaxi/paysim1?datasetVersionNumber=2",
+          "role": "data"
+        }
+      ]
+    },
+    {
+      "id": "ieee_cis",
+      "name": "IEEE-CIS / Vesta Fraud Detection",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/competitions/ieee-fraud-detection",
+      "license": "Kaggle competition rules",
+      "labels": "isFraud only in labeled train files",
+      "time_field": "TransactionDT (relative seconds)",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "真实匿名电商支付；需登录并接受竞赛规则；不能使用未获标签的比赛test计算检测指标。",
+      "access": "competition_terms",
+      "artifacts": []
+    },
+    {
+      "id": "sparkov",
+      "name": "Sparkov / Kartik Shenoy synthetic card fraud",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/datasets/kartik2112/fraud-detection",
+      "license": "CC0-1.0 (Kaggle listing)",
+      "labels": "is_fraud",
+      "time_field": "trans_date_trans_time / unix_time",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "模拟信用卡支付，保留官方train/test；不是ULB真实交易。",
+      "access": "large_download",
+      "artifacts": [],
+      "kaggle_ref": "kartik2112/fraud-detection",
+      "version": 1,
+      "large_artifacts": [
+        {
+          "path": "sparkov.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/kartik2112/fraud-detection?datasetVersionNumber=1",
+          "role": "data"
+        }
+      ]
+    },
+    {
+      "id": "fraud_handbook",
+      "name": "Fraud Detection Handbook simulated transactions",
+      "category": "payment_fraud",
+      "source": "https://github.com/Fraud-Detection-Handbook/simulated-data-raw",
+      "license": "Data repository has no license file in inspected snapshot; handbook code GPL-3.0 is not assumed to license separate data",
+      "labels": "TX_FRAUD / TX_FRAUD_SCENARIO",
+      "time_field": "TX_DATETIME",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "183日pickle文件；原始和transformed版本不是独立数据集。未自动反序列化远程pickle。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "tabformer",
+      "name": "IBM TabFormer synthetic credit card transactions",
+      "category": "payment_fraud",
+      "source": "https://github.com/IBM/TabFormer",
+      "license": "Apache-2.0 (repository; verify data-specific terms at Box)",
+      "labels": "Is Fraud?",
+      "time_field": "Year/Month/Day/Time",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "约24M合成记录，Git LFS/Box分发；不将LFS指针误记为数据。",
+      "access": "large_download",
+      "artifacts": []
+    },
+    {
+      "id": "amlworld",
+      "name": "IBM AMLworld / AML-Data",
+      "category": "anti_money_laundering",
+      "source": "https://github.com/IBM/AML-Data",
+      "license": "CDLA-Sharing-1.0 data; Apache-2.0 repository code",
+      "labels": "Is Laundering",
+      "time_field": "Timestamp",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "HI/LI与small/medium/large是一个数据家族；当前Kaggle全包约41.6GB原始数据。",
+      "access": "large_download",
+      "artifacts": [],
+      "kaggle_ref": "ealtman2019/ibm-transactions-for-anti-money-laundering-aml",
+      "version": 8,
+      "large_artifacts": [
+        {
+          "path": "amlworld.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml?datasetVersionNumber=8",
+          "role": "data"
+        }
+      ]
+    },
+    {
+      "id": "amlsim",
+      "name": "IBM AMLSim simulator",
+      "category": "anti_money_laundering",
+      "source": "https://github.com/IBM/AMLSim",
+      "license": "Apache-2.0 code",
+      "labels": "SAR/alert patterns depend on simulator configuration",
+      "time_field": "simulation step / timestamp",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "模拟器和参数不是已下载交易数据；须运行Java/Python生成并记录seed。",
+      "access": "generator_only",
+      "artifacts": []
+    },
+    {
+      "id": "synthaml",
+      "name": "SynthAML",
+      "category": "anti_money_laundering",
+      "source": "https://doi.org/10.6084/m9.figshare.c.6504421.v1",
+      "license": "CC0-1.0 (both original Figshare file records)",
+      "labels": "alert-level outcome; transactions linked to alerts",
+      "time_field": "transaction time; alert date",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "20000告警和16M以上交易；标签粒度是告警，不能直接当每笔交易的确诊洗钱标签。",
+      "access": "direct_partial",
+      "artifacts": [
+        {
+          "path": "synthetic_alerts.csv",
+          "url": "https://ndownloader.figshare.com/files/39841687",
+          "expected_bytes": 505481,
+          "md5": "c2b84f8de684c6dc1cfdb3d2bde17cd5",
+          "role": "data"
+        }
+      ],
+      "large_artifacts": [
+        {
+          "path": "synthetic_transactions.csv",
+          "url": "https://ndownloader.figshare.com/files/39841711",
+          "expected_bytes": 934561137,
+          "md5": "a7769f595209870ea86ce302bf2bf0da",
+          "role": "data"
+        }
+      ]
+    },
+    {
+      "id": "amlnet",
+      "name": "AMLNet",
+      "category": "anti_money_laundering",
+      "source": "https://zenodo.org/records/16736515",
+      "license": "CC-BY-NC-4.0",
+      "labels": "laundering label and scenario metadata",
+      "time_field": "timestamp / metadata.timestamp",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "1090173模拟交易；CSV约691.3MB，元数据包含风险评分等潜在答案泄漏字段；旧DOI 16482144已弃用。",
+      "access": "large_download",
+      "artifacts": [],
+      "large_artifacts": [
+        {
+          "path": "AMLNet_August_2025.csv",
+          "url": "https://zenodo.org/records/16736515/files/AMLNet_August%202025.csv?download=1",
+          "role": "data",
+          "md5": "7668fc7d74c787e07546ce85c6f790b9"
+        }
+      ],
+      "versions": [
+        {
+          "version": "1.0",
+          "source": "https://zenodo.org/records/16736515",
+          "notes": "约691.3MB；1745洗钱交易"
+        },
+        {
+          "version": "2.0",
+          "source": "https://zenodo.org/records/21237971",
+          "notes": "约764.6MB；1411可疑交易；使用前核对新版本许可及字段定义，不混用版本统计"
+        }
+      ]
+    },
+    {
+      "id": "elliptic",
+      "name": "Elliptic Bitcoin transaction graph",
+      "category": "blockchain_fraud",
+      "source": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set",
+      "license": "CC-BY-NC-ND-4.0",
+      "labels": "class: illicit/licit/unknown",
+      "time_field": "49 time steps",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "unknown不能作正常；非商业、不得分发改编版本；保留原始获取入口。",
+      "access": "large_download",
+      "artifacts": [],
+      "kaggle_ref": "ellipticco/elliptic-data-set",
+      "version": 1,
+      "large_artifacts": [
+        {
+          "path": "elliptic.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ellipticco/elliptic-data-set?datasetVersionNumber=1",
+          "role": "data"
+        }
+      ]
+    },
+    {
+      "id": "elliptic_plus",
+      "name": "Elliptic++",
+      "category": "blockchain_fraud",
+      "source": "https://github.com/git-disl/EllipticPlusPlus",
+      "license": "No standalone license in inspected repository; original Elliptic has CC-BY-NC-ND-4.0",
+      "labels": "transaction and wallet class labels, including unknown",
+      "time_field": "time step",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "交易节点203k、钱包822k；Git LFS/Drive，钱包版与交易版有来源重叠；不重分发许可不明的派生数据。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "hu_pump_dump",
+      "name": "Hu et al. cryptocurrency pump-and-dump",
+      "category": "market_manipulation",
+      "source": "https://github.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency",
+      "license": "No license file found in inspected repository",
+      "labels": "Telegram event/session and target coin labels",
+      "time_field": "event/session timestamps",
+      "kronos_compatibility": "requires_market_data",
+      "notes": "含Telegram会话pickle与市场特征；未自动加载pickle或发布无明确许可的内容。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "adma21",
+      "name": "ADMA 2021 labeled stock manipulation intervals",
+      "category": "market_manipulation",
+      "source": "https://github.com/zhuye88/ADMA21",
+      "license": "GPL-3.0 repository; Yahoo market prices have separate provider terms",
+      "labels": "published anomaly intervals for TRBO/APPB/AEMD/NBDR/GME",
+      "time_field": "calendar date",
+      "kronos_compatibility": "labels_only_need_ohlcv",
+      "notes": "下载论文作者发布的5个事件区间表；行情不在该仓库，需要另从Yahoo获取，部分股票已退市。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/zhuye88/ADMA21/3d8bef34de61b8384959cf908ec4eac5dbb018fd/LICENSE",
+          "expected_bytes": 35149,
+          "role": "license"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/zhuye88/ADMA21/3d8bef34de61b8384959cf908ec4eac5dbb018fd/README.md",
+          "expected_bytes": 1596,
+          "role": "documentation"
+        },
+        {
+          "path": "data.md",
+          "url": "https://raw.githubusercontent.com/zhuye88/ADMA21/3d8bef34de61b8384959cf908ec4eac5dbb018fd/data.md",
+          "expected_bytes": 2488,
+          "role": "labels"
+        }
+      ],
+      "source_revision": "3d8bef34de61b8384959cf908ec4eac5dbb018fd"
+    },
+    {
+      "id": "midsummer_memes",
+      "name": "A Midsummer Meme’s Dream (USENIX Security 2026)",
+      "category": "market_manipulation",
+      "source": "https://zenodo.org/records/17830944",
+      "license": "No explicit license shown in Zenodo/GitHub inspected metadata",
+      "labels": "wash trading/LPI/rug pull/pump-and-dump study outputs",
+      "time_field": "daily/hourly OHLCV by token",
+      "kronos_compatibility": "ohlcv_available_but_license_unresolved",
+      "notes": "包含小时/日OHLCV和操纵研究结果，26.4MB归档；未把潜在操纵算法输出当监管确认真值。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "cardsim",
+      "name": "Federal Reserve CardSim",
+      "category": "payment_fraud",
+      "source": "https://www.federalreserve.gov/econres/feds/cardsim-a-bayesian-simulator-for-payment-card-fraud-detection-research.htm",
+      "license": "Public domain US Federal Reserve Board materials, unless otherwise indicated; see package third-party notices",
+      "labels": "simulation-dependent fraud indicators",
+      "time_field": "simulation-dependent",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "已下载官方Python包与2022/2023 Survey and Diary of Consumer Payment Choice公共输入表；包内未含已生成欺诈交易，不把公共调查交易数据当有欺诈真值的基准。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "feds-2025017-python.zip",
+          "url": "https://www.federalreserve.gov/econres/feds/files/feds-2025017-python.zip",
+          "expected_bytes": 4279464,
+          "role": "code_and_inputs"
+        }
+      ]
+    },
+    {
+      "id": "baf",
+      "name": "Feedzai Bank Account Fraud suite",
+      "category": "related_application_fraud",
+      "source": "https://github.com/feedzai/bank-account-fraud",
+      "license": "CONFLICT: Kaggle CC-BY-NC-SA-4.0 vs original datasheet CC-BY-NC-ND-4.0",
+      "labels": "fraud_bool",
+      "time_field": "month",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "6个百万行合成开户申请表，非交易流水；许可冲突本次不镜像。",
+      "access": "license_review",
+      "artifacts": [],
+      "kaggle_ref": "sgpjesus/bank-account-fraud-dataset-neurips-2022",
+      "version": 2
+    },
+    {
+      "id": "dgraphfin",
+      "name": "DGraphFin",
+      "category": "related_financial_social_graph",
+      "source": "https://github.com/DGraphXinye/DGraphFin_baseline",
+      "license": "Provider registration/terms",
+      "labels": "fraud-user labels; background classes",
+      "time_field": "edge time 1..821",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "3700550节点/4300999边；边是紧急联系人关系，不是资金交易；需原站获取。",
+      "access": "registration",
+      "artifacts": []
+    },
+    {
+      "id": "t_finance",
+      "name": "T-Finance (BWGNN)",
+      "category": "related_financial_user_graph",
+      "source": "https://github.com/squareRoot3/Rethinking-Anomaly-Detection",
+      "license": "Verify original dataset terms; repository license does not automatically cover external download",
+      "labels": "anomalous user",
+      "time_field": "aggregated graph",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "39357用户、约42M边，静态金融用户图；Google Drive/Baidu大文件，缺原始交易时序。",
+      "access": "external_download",
+      "artifacts": []
+    },
+    {
+      "id": "figraph",
+      "name": "FiGraph",
+      "category": "related_company_fraud",
+      "source": "https://github.com/XNetLab/FiGraph",
+      "license": "CONFLICT: README says CC-BY-NC-4.0 while LICENSE says CC-BY-4.0",
+      "labels": "company abnormality labels",
+      "time_field": "year 2014..2022",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "上市公司属性/关系/年报文本，非支付或K线交易数据；许可冲突暂不镜像。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "bitcoin_alpha",
+      "name": "Bitcoin Alpha trust network",
+      "category": "related_trust_ratings",
+      "source": "https://snap.stanford.edu/data/soc-sign-bitcoin-alpha.html",
+      "license": "SNAP source page; verify reuse terms",
+      "labels": "signed trust ratings, not fraud labels",
+      "time_field": "rating timestamp",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "这是交易平台信任评分网络，不是交易流水，也没有确诊欺诈标签。",
+      "access": "reference_only",
+      "artifacts": []
+    },
+    {
+      "id": "bitcoin_otc",
+      "name": "Bitcoin OTC trust network",
+      "category": "related_trust_ratings",
+      "source": "https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html",
+      "license": "SNAP source page; verify reuse terms",
+      "labels": "signed trust ratings, not fraud labels",
+      "time_field": "rating timestamp",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "负评分不等于洗钱/交易异常，不作为主异常基准。",
+      "access": "reference_only",
+      "artifacts": []
+    },
+    {
+      "id": "fi2010",
+      "name": "FI-2010 limit order book benchmark",
+      "category": "related_unlabeled_market",
+      "source": "https://arxiv.org/abs/1705.03233",
+      "license": "Original provider research terms",
+      "labels": "future mid-price direction, not manipulation labels",
+      "time_field": "LOB event sequence",
+      "kronos_compatibility": "needs_ohlcv_aggregation",
+      "notes": "可研究无监督市场状态异常；价格方向标签不能改称操纵真值。",
+      "access": "external_download",
+      "artifacts": []
+    },
+    {
+      "id": "lobster_sample",
+      "name": "LOBSTER public sample data",
+      "category": "related_unlabeled_market",
+      "source": "https://lobsterdata.com/info/DataSamples.php",
+      "license": "LOBSTER sample terms; no blanket redistribution inferred",
+      "labels": "order event type, not anomaly labels",
+      "time_field": "seconds since midnight",
+      "kronos_compatibility": "needs_trade_bar_aggregation",
+      "notes": "样本订单簿与消息可聚合成交K线；取消/隐藏订单不是自动异常标签。",
+      "access": "external_download",
+      "artifacts": []
+    },
+    {
+      "id": "binance_public",
+      "name": "Binance Public Data archive",
+      "category": "related_unlabeled_market",
+      "source": "https://github.com/binance/binance-public-data",
+      "license": "Market data provider terms; repository code MIT is not assumed to license raw market data",
+      "labels": "none",
+      "time_field": "trade time / kline open time",
+      "kronos_compatibility": "ohlcv_with_quote_volume",
+      "notes": "原生K线有OHLC、base volume、quote volume，可用于无标签推理，未提供金融异常真值；全量是持续增长档案，不能有限下载穷尽。",
+      "access": "provider_archive",
+      "artifacts": []
+    },
+    {
+      "id": "ecommerce_fraud",
+      "name": "E-commerce Fraud_Data benchmark",
+      "category": "payment_fraud",
+      "source": "https://www.kaggle.com/datasets/vbinh002/fraud-ecommerce",
+      "license": "No license listed per Amazon FDB; verify original provider",
+      "labels": "class",
+      "time_field": "signup_time / purchase_time",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "电商购买欺诈，带IP/设备/时间等；原始权属和许可不清，保留入口。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "elliptic2",
+      "name": "Elliptic2",
+      "category": "blockchain_fraud",
+      "source": "https://github.com/MITIBMxGraph/Elliptic2",
+      "license": "Apache-2.0 code; data download governed by Elliptic provider terms",
+      "labels": "122k labeled subgraphs",
+      "time_field": "graph context; verify temporal availability",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "49M背景节点、196M交易边，子图洗钱检测；体积巨大、需原提供方页面下载，不能把代码许可当数据许可。",
+      "access": "external_download",
+      "artifacts": []
+    },
+    {
+      "id": "berka",
+      "name": "PKDD 1999 / Berka financial transactions",
+      "category": "unlabeled_banking_transactions",
+      "source": "https://relational.fel.cvut.cz/dataset/Financial",
+      "license": "Verify original PKDD provider terms; no explicit redistribution grant confirmed",
+      "labels": "no transaction fraud labels; loan default status is a different target",
+      "time_field": "transaction date",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "约1056320笔银行交易，可做无标签异常探索；贷款违约标签不能当交易欺诈标签，原站访问不稳定。",
+      "access": "license_review",
+      "artifacts": []
+    },
+    {
+      "id": "fifar",
+      "name": "FiFAR / OpenL2D",
+      "category": "related_application_fraud",
+      "source": "https://github.com/feedzai/fifar-dataset",
+      "license": "Check FiFAR data license and underlying BAF terms",
+      "labels": "fraud label plus 50 synthetic analyst predictions",
+      "time_field": "underlying BAF month",
+      "kronos_compatibility": "not_ohlcv",
+      "notes": "基于BAF开户申请和模拟分析员，不是新的支付流水；OpenL2D是后续版本入口，预测分数不应作为无监督输入。",
+      "access": "external_download",
+      "artifacts": []
+    },
+    {
+      "id": "unified_crypto_pd",
+      "name": "Unified cryptocurrency P&D OHLCV 2017–2025",
+      "category": "market_manipulation",
+      "source": "https://zenodo.org/records/21377192",
+      "license": "Restricted record; no public file license established",
+      "labels": "author-provided unified P&D labels",
+      "time_field": "daily/intraday OHLCV",
+      "kronos_compatibility": "ohlcv_but_access_restricted",
+      "notes": "记录公开但文件Restricted，需登录检查权限；不是可匿名下载公开数据，未计入下载成功数。",
+      "access": "restricted",
+      "artifacts": []
+    }
+  ]
+}

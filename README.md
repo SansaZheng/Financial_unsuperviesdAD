@@ -75,7 +75,11 @@ python -m finad benchmark --cache /path/to/feature_cache --output .local_data/ul
 
 ## 获取／准备数据
 
-本仓库不再重复上传大体积数据。公开数据及各自许可保留在 [KronosAD 固定版本](https://github.com/SansaZheng/KronosAD/tree/2c0e70eb9461081c49a4ef4cfd62f4560f345477/data/supervised_financial)，IEEE-CIS 原始数据只存本地。准备包装器只调用该固定版本的数据读取工具，检测器本身独立运行：
+本仓库的 [`data/`](data/) 已完整复制 [KronosAnomalyDetection 的固定版本](https://github.com/SansaZheng/KronosAnomalyDetection/tree/1552ed05cf66fa219868a038bd327c9f5cf69212/data)，共 **55 个文件、108,614,628 字节（约 103.6 MiB）**，保留原始目录、压缩包、NPY、来源说明、许可及校验记录。全部文件与源版本的 Git blob 哈希一致，逐文件 SHA256 见[复制核验记录](docs/data_copy_20261106.json)。
+
+[数据目录说明](data/README.md) · [数据源清单与获取状态](data/CATALOG.md) · [原始文件](data/raw/)。各数据使用其原许可；目录说明中的下载／审计命令使用[源仓库对应版本的脚本](https://github.com/SansaZheng/KronosAnomalyDetection/tree/1552ed05cf66fa219868a038bd327c9f5cf69212/scripts)。
+
+复现此前 360 次实验时，数据版本与划分以各结果目录的记录为准。历史缓存使用 [KronosAD 固定版本](https://github.com/SansaZheng/KronosAD/tree/2c0e70eb9461081c49a4ef4cfd62f4560f345477/data/supervised_financial) 的数据读取工具，IEEE-CIS 原始数据只存本地；准备方式如下：
 
 ```bash
 git clone https://github.com/SansaZheng/KronosAD.git /path/to/KronosAD

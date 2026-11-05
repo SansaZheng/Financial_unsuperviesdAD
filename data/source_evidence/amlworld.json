@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://github.com/IBM/AML-Data",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/ealtman2019/ibm-transactions-for-anti-money-laundering-aml",
+  "metadata": {
+    "title": "IBM Transactions for Anti Money Laundering (AML)",
+    "licenseName": "Community Data License Agreement - Sharing - Version 1.0",
+    "totalBytes": 41608549656,
+    "currentVersionNumber": 8
+  }
+}

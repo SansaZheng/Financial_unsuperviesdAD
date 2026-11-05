@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-06",
+  "source": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+  "metadata_endpoint": "https://www.kaggle.com/api/v1/datasets/view/ealaxi/paysim1",
+  "metadata": {
+    "title": "Synthetic Financial Datasets For Fraud Detection",
+    "licenseName": "CC BY-SA 4.0",
+    "totalBytes": 493534783,
+    "currentVersionNumber": 2
+  }
+}

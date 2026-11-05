@@ -1,0 +1,23 @@
+{
+  "id": 22396054,
+  "doi": "10.6084/m9.figshare.22396054.v1",
+  "title": "synthetic_alerts",
+  "license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "files": [
+    {
+      "id": 39841687,
+      "name": "synthetic_alerts.csv",
+      "size": 505481,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/39841687",
+      "supplied_md5": "c2b84f8de684c6dc1cfdb3d2bde17cd5",
+      "computed_md5": "c2b84f8de684c6dc1cfdb3d2bde17cd5",
+      "mimetype": "text/plain"
+    }
+  ],
+  "url": "https://api.figshare.com/v2/articles/22396054"
+}

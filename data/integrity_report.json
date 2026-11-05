@@ -1,0 +1,670 @@
+{
+  "files": 38,
+  "total_bytes": 108507464,
+  "dataset_ids": [
+    "adma21",
+    "banksim",
+    "cardsim",
+    "s_ffsd",
+    "sapienza_pump_dump",
+    "sd_fmm",
+    "synthaml",
+    "ulb_creditcard"
+  ],
+  "artifacts": [
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/LICENSE",
+      "bytes": 1076,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/README.md",
+      "bytes": 4893,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/groups.csv",
+      "bytes": 820,
+      "sha256_verified": true,
+      "table": {
+        "rows": 13,
+        "columns": [
+          "group_name",
+          "group_code",
+          "last_time_checked",
+          " telegram_link"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/pump_telegram.csv",
+      "bytes": 36788,
+      "sha256_verified": true,
+      "table": {
+        "rows": 1110,
+        "columns": [
+          "symbol",
+          "group",
+          "date",
+          "hour",
+          "exchange"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+      "bytes": 7048463,
+      "sha256_verified": true,
+      "table": {
+        "rows": 821307,
+        "columns": [
+          "date",
+          "pump_index",
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos",
+          "symbol",
+          "gt"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+      "bytes": 5237042,
+      "sha256_verified": true,
+      "table": {
+        "rows": 584104,
+        "columns": [
+          "date",
+          "pump_index",
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos",
+          "symbol",
+          "gt"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "sapienza_pump_dump",
+      "path": "sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+      "bytes": 4585635,
+      "sha256_verified": true,
+      "table": {
+        "rows": 482157,
+        "columns": [
+          "date",
+          "pump_index",
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos",
+          "symbol",
+          "gt"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "s_ffsd",
+      "path": "s_ffsd/LICENSE",
+      "bytes": 35149,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "s_ffsd",
+      "path": "s_ffsd/README.md",
+      "bytes": 10384,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "s_ffsd",
+      "path": "s_ffsd/data/S-FFSD.zip",
+      "bytes": 581456,
+      "sha256_verified": true,
+      "members": [
+        {
+          "path": "S-FFSD.csv",
+          "bytes": 2894099
+        }
+      ],
+      "tables": {
+        "S-FFSD.csv": {
+          "rows": 77881,
+          "columns": [
+            "Time",
+            "Source",
+            "Target",
+            "Amount",
+            "Location",
+            "Type",
+            "Labels"
+          ],
+          "labels": {
+            "Labels": {
+              "2": 48238,
+              "0": 24387,
+              "1": 5256
+            }
+          }
+        }
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/LICENSE",
+      "bytes": 1057,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/README.md",
+      "bytes": 3605,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/cryptocurrency cases/test_data.npy",
+      "bytes": 215808,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          337,
+          160,
+          1
+        ],
+        "dtype": "float32",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/cryptocurrency cases/test_label.npy",
+      "bytes": 215808,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          337,
+          160
+        ],
+        "dtype": "int32",
+        "object_array": false,
+        "finite": true,
+        "values": {
+          "0": 53583,
+          "1": 337
+        }
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_ano_02.npy",
+      "bytes": 256,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          16,
+          1,
+          2
+        ],
+        "dtype": "int32",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_ano_dict_02.npy",
+      "bytes": 1385,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_data_02.npy",
+      "bytes": 20608,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          16,
+          160,
+          1
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_data_dict_02.npy",
+      "bytes": 21753,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_label_02.npy",
+      "bytes": 20608,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          16,
+          160
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true,
+        "values": {
+          "0.0": 2137,
+          "1.0": 423
+        }
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/prices/test_label__dict_02.npy",
+      "bytes": 21753,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/dict_test_ano_bs.npy",
+      "bytes": 2117,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/dict_test_data_bs.npy",
+      "bytes": 36488,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/dict_test_label_bs.npy",
+      "bytes": 36488,
+      "sha256_verified": true,
+      "array": {
+        "shape": [],
+        "dtype": "object",
+        "object_array": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/test_ano_bs.npy",
+      "bytes": 344,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          27,
+          1,
+          2
+        ],
+        "dtype": "int32",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/test_data_bs.npy",
+      "bytes": 34688,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          27,
+          160,
+          1
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/stock cases/test_label_bs.npy",
+      "bytes": 34688,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          27,
+          160
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true,
+        "values": {
+          "0.0": 3827,
+          "1.0": 493
+        }
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/systhesis/all_DTWsim_data.npy",
+      "bytes": 1278848,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          999,
+          160,
+          1
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true
+      }
+    },
+    {
+      "dataset": "sd_fmm",
+      "path": "sd_fmm/systhesis/all_DTWsim_label.npy",
+      "bytes": 1278848,
+      "sha256_verified": true,
+      "array": {
+        "shape": [
+          999,
+          160
+        ],
+        "dtype": "float64",
+        "object_array": false,
+        "finite": true,
+        "values": {
+          "0.0": 152108,
+          "1.0": 7732
+        }
+      }
+    },
+    {
+      "dataset": "ulb_creditcard",
+      "path": "ulb_creditcard/ulb_creditcard.zip",
+      "bytes": 69155672,
+      "sha256_verified": true,
+      "members": [
+        {
+          "path": "creditcard.csv",
+          "bytes": 150828752
+        }
+      ],
+      "tables": {
+        "creditcard.csv": {
+          "rows": 284807,
+          "columns": [
+            "Time",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+            "Class"
+          ],
+          "labels": {
+            "Class": {
+              "0": 284315,
+              "1": 492
+            }
+          }
+        }
+      }
+    },
+    {
+      "dataset": "banksim",
+      "path": "banksim/banksim.zip",
+      "bytes": 13712256,
+      "sha256_verified": true,
+      "members": [
+        {
+          "path": "bs140513_032310.csv",
+          "bytes": 48986035
+        },
+        {
+          "path": "bsNET140513_032310.csv",
+          "bytes": 32665953
+        }
+      ],
+      "tables": {
+        "bs140513_032310.csv": {
+          "rows": 594643,
+          "columns": [
+            "step",
+            "customer",
+            "age",
+            "gender",
+            "zipcodeOri",
+            "merchant",
+            "zipMerchant",
+            "category",
+            "amount",
+            "fraud"
+          ],
+          "labels": {
+            "fraud": {
+              "0": 587443,
+              "1": 7200
+            }
+          }
+        },
+        "bsNET140513_032310.csv": {
+          "rows": 594643,
+          "columns": [
+            "Source",
+            "Target",
+            "Weight",
+            "typeTrans",
+            "fraud"
+          ],
+          "labels": {
+            "fraud": {
+              "0": 587443,
+              "1": 7200
+            }
+          }
+        }
+      }
+    },
+    {
+      "dataset": "synthaml",
+      "path": "synthaml/synthetic_alerts.csv",
+      "bytes": 505481,
+      "sha256_verified": true,
+      "table": {
+        "rows": 20000,
+        "columns": [
+          "AlertID",
+          "Date",
+          "Outcome"
+        ],
+        "labels": {}
+      }
+    },
+    {
+      "dataset": "adma21",
+      "path": "adma21/LICENSE",
+      "bytes": 35149,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "adma21",
+      "path": "adma21/README.md",
+      "bytes": 1596,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "ulb_creditcard",
+      "path": "ulb_creditcard/ODbL-1.0.txt",
+      "bytes": 25278,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "ulb_creditcard",
+      "path": "ulb_creditcard/DbCL-1.0.txt",
+      "bytes": 2374,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "banksim",
+      "path": "banksim/CC-BY-NC-SA-4.0.txt",
+      "bytes": 20850,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "adma21",
+      "path": "adma21/data.md",
+      "bytes": 2488,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "cardsim",
+      "path": "cardsim/feds-2025017-python.zip",
+      "bytes": 4279464,
+      "sha256_verified": true,
+      "members": [
+        {
+          "path": "cardsim/.gitignore",
+          "bytes": 71
+        },
+        {
+          "path": "cardsim/cardsim/cardsim.py",
+          "bytes": 55111
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2022_daylevel_public_xls.csv",
+          "bytes": 5172861
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2022_indlevel_public_xls.csv",
+          "bytes": 3469054
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2022_tranlevel_public_xls.csv",
+          "bytes": 4945759
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2023_daylevel_public_xls.csv",
+          "bytes": 6715306
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2023_indlevel_public_xls.csv",
+          "bytes": 3534613
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/dcpc_2023_tranlevel_public_xls.csv",
+          "bytes": 5351679
+        },
+        {
+          "path": "cardsim/cardsim/dcpc/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": "cardsim/cardsim/__init__.py",
+          "bytes": 125
+        },
+        {
+          "path": "cardsim/LICENSE",
+          "bytes": 202
+        },
+        {
+          "path": "cardsim/pyproject.toml",
+          "bytes": 452
+        },
+        {
+          "path": "cardsim/README.md",
+          "bytes": 3012
+        },
+        {
+          "path": "cardsim/requirements.txt",
+          "bytes": 254
+        },
+        {
+          "path": "cardsim/vignette.py",
+          "bytes": 391
+        }
+      ]
+    }
+  ]
+}
