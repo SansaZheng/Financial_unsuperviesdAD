@@ -1,0 +1,10 @@
+# Evaluation-only packages for scripts/evaluate_modern.py (results/data_2026).
+# TSB-AD and PATE pin old numpy/scikit-learn versions in their metadata although the metric
+# code itself runs on the current stack, so install them WITHOUT dependency resolution, after
+# the core dependencies and statsmodels (needed by pate's buffer helper):
+#   pip install statsmodels==0.15.0
+#   pip install --no-deps TSB-AD==1.5 PATE==0.1.1
+# Only TSB_AD.evaluation (VUS, affiliation, PA/event/range F1) and pate are imported.
+statsmodels==0.15.0
+TSB-AD==1.5
+PATE==0.1.1
