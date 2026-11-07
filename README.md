@@ -38,6 +38,27 @@ python scripts/compare_2026.py --old results/v1 --new results/2026
 
 支持 MPS／CUDA；正式新增实验使用本地 CPU／MPS。模型、原模型、适配索引及无损压缩测试分数保存在私有运行目录，不随聚合报告上传。两种实现均从头拟合，不依赖预训练权重；PyThresh 用于 RTTAD 的 GammaGMM 选择。`benchmark` 不指定 `--methods` 时仍默认运行原十种方法。
 
+## 仓库自带数据的完整实验与现代评价指标（results/data_2026）
+
+直接在本仓库 [`data/raw`](data/raw) 上构建缓存并运行：**10 个任务 × 12 种方法 × 3 个种子 = 360 次真实运行**（ulb、banksim、s_ffsd、sapienza_5S/15S/25S、sd_stock、sd_crypto、sd_synth、cardsim；后两者为合成数据）。训练／校准仍不读标签；评价在原有 AP／ROC-AUC／固定阈值 F1 之外，加入 **MCC、Precision@n**，以及对序列任务按 **TSB-AD（NeurIPS 2024）协议** 逐序列计算并宏平均的 **VUS-PR／VUS-ROC（VLDB 2022）、PATE（KDD 2024）、Affiliation P/R/F1（KDD 2022）、PA%K-F1（AAAI 2022）、事件级 F1、范围 F1、PATE-F1**，以及合并的容差事件召回与报警片段精度。
+
+**[完整结果与表格](results/data_2026/README_CN.md)** · [协议、任务与指标定义](docs/PROTOCOL_DATA_2026_CN.md) · [逐种子指标](results/data_2026/metrics.csv) · [均值与标准差](results/data_2026/summary.csv) · [核验记录](results/data_2026/verification.json)
+
+**主要发现**（详见结果页的逐表说明）：
+- **没有通吃的方法**。按 10 个任务的 AUC-PR 平均排名：HBOS 3.1、GMM 4.4、kNN 4.4、RGLD-ID 4.7、VAE 4.7；按 6 个序列任务的 VUS-PR 与 PATE，RGLD-ID 平均排名最好（2.5），其次 HBOS（3.0）、kNN。
+- **阈值无关的排序能力远好于固定阈值下的操作点**：Sapienza 上 kNN／GMM 的 VUS-PR 达 85–90%，但 POT 阈值下事件级 F1 仅 15–41%、报警片段精度 6–20%——几乎所有 pump 都被报警覆盖（容差内事件召回约 97–99%），但误报片段多。Affiliation-F1 在 Sapienza 上各方法都在 66–79%，区分度很低，应与其它指标合看。
+- **LOF、Deep SVDD 在污染训练数据上整体最弱**；RTTAD-TTA 的测试时自适应未带来稳定收益。s_ffsd 的排序接近随机（AUC-ROC 41–73%），固定阈值下 MCC 全为负。
+- 0 次 POT 失败；360 次运行的评分哈希、混淆矩阵、抽样索引与检查点重载全部核验通过（1 处 LOF 重载批次差异已说明，不影响存储结果）。
+
+```bash
+pip install statsmodels==0.15.0 && pip install --no-deps TSB-AD==1.5 PATE==0.1.1   # 评价指标包，见 requirements-metrics-2026.txt
+python scripts/prepare_repo_data.py --output .local_data/feature_cache               # 从 data/raw 构建 10 个任务的缓存
+python -m finad benchmark --cache .local_data/feature_cache --output .local_data/runs_data2026 \
+  --datasets ulb banksim s_ffsd sapienza_5S sapienza_15S sapienza_25S sd_stock sd_crypto sd_synth cardsim \
+  --methods iforest lof knn ocsvm pca hbos gmm ae vae deep_svdd rgld2026 rttad2026 --device cpu
+python scripts/evaluate_modern.py --runs .local_data/runs_data2026 --cache .local_data/feature_cache --output results/data_2026
+```
+
 ## 安装与运行
 
 Python 3.10+，正式运行环境为 Python 3.12；锁定文件适用于该版本。

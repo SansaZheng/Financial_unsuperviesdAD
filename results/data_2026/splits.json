@@ -1,0 +1,561 @@
+{
+  "ulb": {
+    "dataset": "ulb",
+    "protocol": "Time<=86400 train; <=129600 calibration; later test. Time/label excluded from features.",
+    "splits": {
+      "train": {
+        "rows": 144787,
+        "positive": 281,
+        "normal": 144506,
+        "unknown": 0
+      },
+      "calibration": {
+        "rows": 47445,
+        "positive": 96,
+        "normal": 47349,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 92575,
+        "positive": 115,
+        "normal": 92460,
+        "unknown": 0
+      }
+    },
+    "source": "data/raw/ulb_creditcard/ulb_creditcard.zip",
+    "features": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "log_Amount"
+    ]
+  },
+  "banksim": {
+    "dataset": "banksim",
+    "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+    "splits": {
+      "train": {
+        "rows": 357136,
+        "positive": 4600,
+        "normal": 352536,
+        "unknown": 0
+      },
+      "calibration": {
+        "rows": 118869,
+        "positive": 1320,
+        "normal": 117549,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 118638,
+        "positive": 1280,
+        "normal": 117358,
+        "unknown": 0
+      }
+    },
+    "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+    "time_boundaries": [
+      114,
+      147
+    ],
+    "features": [
+      "log_amount",
+      "age_0",
+      "age_1",
+      "age_2",
+      "age_3",
+      "age_4",
+      "age_5",
+      "age_6",
+      "age_U",
+      "gender_F",
+      "gender_M",
+      "gender_E",
+      "gender_U",
+      "category_hash_0",
+      "category_hash_1",
+      "category_hash_2",
+      "category_hash_3",
+      "category_hash_4",
+      "category_hash_5",
+      "category_hash_6",
+      "category_hash_7",
+      "category_hash_8",
+      "category_hash_9",
+      "category_hash_10",
+      "category_hash_11",
+      "category_hash_12",
+      "category_hash_13",
+      "category_hash_14",
+      "category_hash_15",
+      "category_hash_16",
+      "category_hash_17",
+      "category_hash_18",
+      "category_hash_19",
+      "category_hash_20",
+      "category_hash_21",
+      "category_hash_22",
+      "category_hash_23",
+      "category_hash_24",
+      "category_hash_25",
+      "category_hash_26",
+      "category_hash_27",
+      "category_hash_28",
+      "category_hash_29",
+      "category_hash_30",
+      "category_hash_31",
+      "merchant_hash_0",
+      "merchant_hash_1",
+      "merchant_hash_2",
+      "merchant_hash_3",
+      "merchant_hash_4",
+      "merchant_hash_5",
+      "merchant_hash_6",
+      "merchant_hash_7",
+      "merchant_hash_8",
+      "merchant_hash_9",
+      "merchant_hash_10",
+      "merchant_hash_11",
+      "merchant_hash_12",
+      "merchant_hash_13",
+      "merchant_hash_14",
+      "merchant_hash_15"
+    ]
+  },
+  "s_ffsd": {
+    "dataset": "s_ffsd",
+    "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+    "splits": {
+      "train": {
+        "rows": 46729,
+        "positive": 2090,
+        "normal": 14876,
+        "unknown": 29763
+      },
+      "calibration": {
+        "rows": 15576,
+        "positive": 772,
+        "normal": 5746,
+        "unknown": 9058
+      },
+      "test": {
+        "rows": 15576,
+        "positive": 2394,
+        "normal": 3765,
+        "unknown": 9417
+      }
+    },
+    "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+    "time_boundaries": [
+      46728,
+      62304
+    ],
+    "features": [
+      "log_amount",
+      "location_hash_0",
+      "location_hash_1",
+      "location_hash_2",
+      "location_hash_3",
+      "location_hash_4",
+      "location_hash_5",
+      "location_hash_6",
+      "location_hash_7",
+      "location_hash_8",
+      "location_hash_9",
+      "location_hash_10",
+      "location_hash_11",
+      "location_hash_12",
+      "location_hash_13",
+      "location_hash_14",
+      "location_hash_15",
+      "type_hash_0",
+      "type_hash_1",
+      "type_hash_2",
+      "type_hash_3",
+      "type_hash_4",
+      "type_hash_5",
+      "type_hash_6",
+      "type_hash_7",
+      "type_hash_8",
+      "type_hash_9",
+      "type_hash_10",
+      "type_hash_11",
+      "type_hash_12",
+      "type_hash_13",
+      "type_hash_14",
+      "type_hash_15",
+      "target_hash_0",
+      "target_hash_1",
+      "target_hash_2",
+      "target_hash_3",
+      "target_hash_4",
+      "target_hash_5",
+      "target_hash_6",
+      "target_hash_7",
+      "target_hash_8",
+      "target_hash_9",
+      "target_hash_10",
+      "target_hash_11",
+      "target_hash_12",
+      "target_hash_13",
+      "target_hash_14",
+      "target_hash_15"
+    ]
+  },
+  "sd_stock": {
+    "dataset": "sd_stock",
+    "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+    "splits": {
+      "train": {
+        "rows": 2560,
+        "positive": 333,
+        "normal": 2227,
+        "unknown": 0,
+        "sequences": 16
+      },
+      "calibration": {
+        "rows": 800,
+        "positive": 61,
+        "normal": 739,
+        "unknown": 0,
+        "sequences": 5
+      },
+      "test": {
+        "rows": 960,
+        "positive": 99,
+        "normal": 861,
+        "unknown": 0,
+        "sequences": 6
+      }
+    },
+    "source": "data/raw/sd_fmm/stock cases",
+    "temporal": true,
+    "sequence_unit": "sequence_index",
+    "sequence_id_file": "test.seq.i32",
+    "sequence_length": 160,
+    "tolerance_rows": 8,
+    "features": [
+      "publisher_value",
+      "change",
+      "mean_4",
+      "std_4",
+      "range_4",
+      "mean_16",
+      "std_16",
+      "range_16",
+      "mean_32",
+      "std_32",
+      "range_32"
+    ]
+  },
+  "sd_crypto": {
+    "dataset": "sd_crypto",
+    "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+    "splits": {
+      "train": {
+        "rows": 32320,
+        "positive": 202,
+        "normal": 32118,
+        "unknown": 0,
+        "sequences": 202
+      },
+      "calibration": {
+        "rows": 10720,
+        "positive": 67,
+        "normal": 10653,
+        "unknown": 0,
+        "sequences": 67
+      },
+      "test": {
+        "rows": 10880,
+        "positive": 68,
+        "normal": 10812,
+        "unknown": 0,
+        "sequences": 68
+      }
+    },
+    "source": "data/raw/sd_fmm/cryptocurrency cases",
+    "temporal": true,
+    "sequence_unit": "sequence_index",
+    "sequence_id_file": "test.seq.i32",
+    "sequence_length": 160,
+    "tolerance_rows": 8,
+    "features": [
+      "publisher_value",
+      "change",
+      "mean_4",
+      "std_4",
+      "range_4",
+      "mean_16",
+      "std_16",
+      "range_16",
+      "mean_32",
+      "std_32",
+      "range_32"
+    ]
+  },
+  "sapienza_5S": {
+    "dataset": "sapienza_5S",
+    "protocol": "Existing coin-group split; same event/coin never split by row.",
+    "splits": {
+      "train": {
+        "rows": 456267,
+        "positive": 190,
+        "normal": 456077,
+        "unknown": 0,
+        "sequences": 193
+      },
+      "calibration": {
+        "rows": 157773,
+        "positive": 50,
+        "normal": 157723,
+        "unknown": 0,
+        "sequences": 55
+      },
+      "test": {
+        "rows": 207267,
+        "positive": 77,
+        "normal": 207190,
+        "unknown": 0,
+        "sequences": 79
+      }
+    },
+    "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+    "temporal": true,
+    "sequence_unit": "pump_index",
+    "sequence_id_file": "test.seq.i32",
+    "tolerance_rows": 24,
+    "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+    "features": [
+      "std_rush_order",
+      "avg_rush_order",
+      "std_trades",
+      "std_volume",
+      "avg_volume",
+      "std_price",
+      "avg_price",
+      "avg_price_max",
+      "hour_sin",
+      "hour_cos",
+      "minute_sin",
+      "minute_cos"
+    ]
+  },
+  "sapienza_15S": {
+    "dataset": "sapienza_15S",
+    "protocol": "Existing coin-group split; same event/coin never split by row.",
+    "splits": {
+      "train": {
+        "rows": 327103,
+        "positive": 190,
+        "normal": 326913,
+        "unknown": 0,
+        "sequences": 193
+      },
+      "calibration": {
+        "rows": 111451,
+        "positive": 50,
+        "normal": 111401,
+        "unknown": 0,
+        "sequences": 55
+      },
+      "test": {
+        "rows": 145550,
+        "positive": 77,
+        "normal": 145473,
+        "unknown": 0,
+        "sequences": 79
+      }
+    },
+    "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+    "temporal": true,
+    "sequence_unit": "pump_index",
+    "sequence_id_file": "test.seq.i32",
+    "tolerance_rows": 8,
+    "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+    "features": [
+      "std_rush_order",
+      "avg_rush_order",
+      "std_trades",
+      "std_volume",
+      "avg_volume",
+      "std_price",
+      "avg_price",
+      "avg_price_max",
+      "hour_sin",
+      "hour_cos",
+      "minute_sin",
+      "minute_cos"
+    ]
+  },
+  "sapienza_25S": {
+    "dataset": "sapienza_25S",
+    "protocol": "Existing coin-group split; same event/coin never split by row.",
+    "splits": {
+      "train": {
+        "rows": 271761,
+        "positive": 190,
+        "normal": 271571,
+        "unknown": 0,
+        "sequences": 193
+      },
+      "calibration": {
+        "rows": 90927,
+        "positive": 50,
+        "normal": 90877,
+        "unknown": 0,
+        "sequences": 55
+      },
+      "test": {
+        "rows": 119469,
+        "positive": 77,
+        "normal": 119392,
+        "unknown": 0,
+        "sequences": 79
+      }
+    },
+    "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+    "temporal": true,
+    "sequence_unit": "pump_index",
+    "sequence_id_file": "test.seq.i32",
+    "tolerance_rows": 5,
+    "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+    "features": [
+      "std_rush_order",
+      "avg_rush_order",
+      "std_trades",
+      "std_volume",
+      "avg_volume",
+      "std_price",
+      "avg_price",
+      "avg_price_max",
+      "hour_sin",
+      "hour_cos",
+      "minute_sin",
+      "minute_cos"
+    ]
+  },
+  "sd_synth": {
+    "dataset": "sd_synth",
+    "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+    "splits": {
+      "train": {
+        "rows": 95840,
+        "positive": 4675,
+        "normal": 91165,
+        "unknown": 0,
+        "sequences": 599
+      },
+      "calibration": {
+        "rows": 32000,
+        "positive": 1468,
+        "normal": 30532,
+        "unknown": 0,
+        "sequences": 200
+      },
+      "test": {
+        "rows": 32000,
+        "positive": 1589,
+        "normal": 30411,
+        "unknown": 0,
+        "sequences": 200
+      }
+    },
+    "source": "data/raw/sd_fmm/systhesis",
+    "temporal": true,
+    "sequence_unit": "sequence_index",
+    "sequence_id_file": "test.seq.i32",
+    "sequence_length": 160,
+    "tolerance_rows": 8,
+    "features": [
+      "publisher_value",
+      "change",
+      "mean_4",
+      "std_4",
+      "range_4",
+      "mean_16",
+      "std_16",
+      "range_16",
+      "mean_32",
+      "std_32",
+      "range_32"
+    ]
+  },
+  "cardsim": {
+    "dataset": "cardsim",
+    "protocol": "Fixed-parameter run of the shipped Federal Reserve CardSim simulator (synthetic). Chronological 60/20/20 by cumulative counts over whole simulated days. No payer/payee IDs.",
+    "splits": {
+      "train": {
+        "rows": 378908,
+        "positive": 3746,
+        "normal": 375162,
+        "unknown": 0
+      },
+      "calibration": {
+        "rows": 125119,
+        "positive": 1285,
+        "normal": 123834,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 121982,
+        "positive": 1230,
+        "normal": 120752,
+        "unknown": 0
+      }
+    },
+    "source": "data/raw/cardsim/feds-2025017-python.zip",
+    "simulator_parameters": {
+      "seed": 42,
+      "n_payers": 4000,
+      "n_days": 180
+    },
+    "generated_rows": 626009,
+    "generated_sha256": "ae8de7b93f4dc93acb22e6e2269857c3270ed3469d983ba992130250d8c12fa4",
+    "time_boundaries": [
+      108,
+      144
+    ],
+    "synthetic": true,
+    "features": [
+      "log_amount",
+      "credit_card",
+      "remote",
+      "log_distance",
+      "tod_sin",
+      "tod_cos",
+      "weekday_0",
+      "weekday_1",
+      "weekday_2",
+      "weekday_3",
+      "weekday_4",
+      "weekday_5",
+      "weekday_6"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "sweeps": {
+    "ulb_banksim_s_ffsd_sd_stock_sd_crypto": {
+      "verified_runs": 180,
+      "score_sha256_verified": true,
+      "confusion_matrices_independently_recomputed": true,
+      "sample_indices_unique_and_in_bounds": true,
+      "pot_peak_counts_match_scores": true,
+      "same_seed_sampling_shared_between_methods": true,
+      "input_files_sha256_verified": 0,
+      "checkpoint_predictions_reproduced_on_cpu": {
+        "rows_per_run_up_to": 32,
+        "rtol": 0.0005,
+        "atol": 1e-05
+      },
+      "rgld_stricter_batch_verification": {
+        "verified_runs": 15,
+        "rtol": 0,
+        "atol": 1e-12
+      },
+      "adaptation_pool_indices_verified": 15,
+      "unchanged_base_verified_when_no_update": 7,
+      "raw_rows_in_report": false
+    },
+    "sapienza_5S_15S_25S_sd_synth": {
+      "verified_runs": 144,
+      "score_sha256_verified": true,
+      "confusion_matrices_independently_recomputed": true,
+      "sample_indices_unique_and_in_bounds": true,
+      "pot_peak_counts_match_scores": true,
+      "same_seed_sampling_shared_between_methods": true,
+      "input_files_sha256_verified": 0,
+      "checkpoint_predictions_reproduced_on_cpu": {
+        "rows_per_run_up_to": 32,
+        "rtol": 0.0005,
+        "atol": 1e-05
+      },
+      "rgld_stricter_batch_verification": {
+        "verified_runs": 12,
+        "rtol": 0,
+        "atol": 1e-12
+      },
+      "adaptation_pool_indices_verified": 12,
+      "unchanged_base_verified_when_no_update": 7,
+      "raw_rows_in_report": false,
+      "reload_tolerance_exceptions": [
+        {
+          "mismatched": 1,
+          "of": 32,
+          "max_rel": 0.0028357083634609056
+        }
+      ]
+    },
+    "cardsim": {
+      "verified_runs": 36,
+      "score_sha256_verified": true,
+      "confusion_matrices_independently_recomputed": true,
+      "sample_indices_unique_and_in_bounds": true,
+      "pot_peak_counts_match_scores": true,
+      "same_seed_sampling_shared_between_methods": true,
+      "input_files_sha256_verified": 0,
+      "checkpoint_predictions_reproduced_on_cpu": {
+        "rows_per_run_up_to": 32,
+        "rtol": 0.0005,
+        "atol": 1e-05
+      },
+      "rgld_stricter_batch_verification": {
+        "verified_runs": 3,
+        "rtol": 0,
+        "atol": 1e-12
+      },
+      "adaptation_pool_indices_verified": 3,
+      "unchanged_base_verified_when_no_update": 2,
+      "raw_rows_in_report": false
+    }
+  },
+  "verified_runs_total": 360,
+  "input_cache_files_sha256_verified": 88,
+  "reload_note": "One of 32 sampled rows of sapienza_5S/lof seed 43 differs by 0.28% when rescored in a 32-row batch; the stored value is reproduced exactly when rescored in its original 8192-row batch or as a single row (float32 brute-force distance near-tie in the LOF neighbour set). Stored scores and metrics are unaffected.",
+  "modern_metrics": "see verification_modern.json"
+}

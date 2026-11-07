@@ -1,0 +1,353 @@
+{
+  "runs_available": 360,
+  "runs_recomputed": 30,
+  "tolerance": 1e-09,
+  "independent_code_paths": [
+    "sklearn average_precision_score/roc_auc_score on the raw score file",
+    "TSB_AD.evaluation.metrics.get_metrics per sequence, macro-averaged"
+  ],
+  "runs": [
+    {
+      "dataset": "banksim",
+      "method": "ae",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "banksim",
+      "method": "gmm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "banksim",
+      "method": "rgld2026",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "cardsim",
+      "method": "ae",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "cardsim",
+      "method": "iforest",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "cardsim",
+      "method": "knn",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "s_ffsd",
+      "method": "pca",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "s_ffsd",
+      "method": "rgld2026",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "s_ffsd",
+      "method": "rgld2026",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_15S",
+      "method": "gmm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_15S",
+      "method": "ocsvm",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_15S",
+      "method": "rttad2026",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_25S",
+      "method": "deep_svdd",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_25S",
+      "method": "pca",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_25S",
+      "method": "vae",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_5S",
+      "method": "ocsvm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_5S",
+      "method": "rgld2026",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sapienza_5S",
+      "method": "vae",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_crypto",
+      "method": "ocsvm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_crypto",
+      "method": "ocsvm",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_crypto",
+      "method": "rgld2026",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_stock",
+      "method": "deep_svdd",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_stock",
+      "method": "hbos",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_stock",
+      "method": "hbos",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_synth",
+      "method": "deep_svdd",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_synth",
+      "method": "lof",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "sd_synth",
+      "method": "rgld2026",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "ulb",
+      "method": "ae",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "ulb",
+      "method": "ocsvm",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    },
+    {
+      "dataset": "ulb",
+      "method": "rgld2026",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc"
+      ]
+    }
+  ]
+}
