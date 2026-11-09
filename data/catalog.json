@@ -511,13 +511,27 @@
       "name": "Hu et al. cryptocurrency pump-and-dump",
       "category": "market_manipulation",
       "source": "https://github.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency",
-      "license": "No license file found in inspected repository",
-      "labels": "Telegram event/session and target coin labels",
-      "time_field": "event/session timestamps",
-      "kronos_compatibility": "requires_market_data",
-      "notes": "含Telegram会话pickle与市场特征；未自动加载pickle或发布无明确许可的内容。",
-      "access": "license_review",
-      "artifacts": []
+      "license": "NO LICENSE FILE in upstream repository; verify before redistribution. Binance market data has separate provider terms.",
+      "labels": "1,335 Telegram pump samples / 709 events (channel, coin, exchange, pair, UTC timestamp)",
+      "time_field": "UTC timestamp 2019-01..2022-01",
+      "kronos_compatibility": "labels_only_need_ohlcva",
+      "notes": "仅事件标签（PD_logs_cleaned.txt）。K线需从 data.binance.vision 获取；本环境网络无法访问，未下载行情。Telegram 会话 pickle 未下载、不执行反序列化。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency/17e398f99558c52a472728d4a5856f15313be079/README.md",
+          "expected_bytes": 5806,
+          "role": "documentation"
+        },
+        {
+          "path": "PD_logs_cleaned.txt",
+          "url": "https://raw.githubusercontent.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency/17e398f99558c52a472728d4a5856f15313be079/Data/Telegram/Labeled/PD_logs_cleaned.txt",
+          "expected_bytes": 75476,
+          "role": "labels"
+        }
+      ],
+      "source_revision": "17e398f99558c52a472728d4a5856f15313be079"
     },
     {
       "id": "adma21",
@@ -768,6 +782,108 @@
       "notes": "记录公开但文件Restricted，需登录检查权限；不是可匿名下载公开数据，未计入下载成功数。",
       "access": "restricted",
       "artifacts": []
+    },
+    {
+      "id": "xu_livshits_pumpdump",
+      "name": "Xu & Livshits pump-and-dump with CryptoCompare hourly OHLCVA (USENIX Security 2019)",
+      "category": "market_manipulation",
+      "source": "https://github.com/xujiahuayz/pumpdump",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "labels": "435 PumpOlymp pump signals (coin, exchange, Telegram channel, UTC signal time); coin-hour Cryptopia panel with pumped flag (119 positive of 70,320)",
+      "time_field": "hourly UTC candles 2018-05-15..2018-10-29; signals 2018..2019-02",
+      "kronos_compatibility": "ohlcva_hourly_with_labels",
+      "notes": "cryptocompare.RData 的 hourprice 为 578 个币、1,499 个币×交易所序列的小时K线：open/high/low/close/volumefrom（成交量）/volumeto（BTC计价成交额），即 OHLCVA；共 5,998,998 根。435 个信号中 197 个落在K线覆盖期内（Cryptopia 127、Yobit 38、Binance 21、Bittrex 11）；其余多晚于 2018-10-29，1 条上游时间为 1999 年（数据错误，保留原样）。约 61% 的K线成交量为 0（低流动性币种及 CCCAGG 聚合）。用 scripts/prepare_ohlcva_klines.py 转为标准 OHLCVA 表；R 对象只按数据解析，不执行 R 代码。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/README.md",
+          "expected_bytes": 527,
+          "role": "documentation"
+        },
+        {
+          "path": "cryptocompare.RData",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/cryptocompare.RData",
+          "expected_bytes": 85863522,
+          "role": "data"
+        },
+        {
+          "path": "rawpumpolymp.json",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/rawpumpolymp.json",
+          "expected_bytes": 25365725,
+          "role": "labels"
+        },
+        {
+          "path": "reg_cryptopia.RData",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/reg_cryptopia.RData",
+          "expected_bytes": 12285291,
+          "role": "labels"
+        },
+        {
+          "path": "cryptopiacointable.txt",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/cryptopiacointable.txt",
+          "expected_bytes": 474306,
+          "role": "data"
+        },
+        {
+          "path": "pumpdump.Rmd",
+          "url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/pumpdump.Rmd",
+          "expected_bytes": 64595,
+          "role": "code"
+        }
+      ],
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "id": "binance_pump_labels_b0r0koko",
+      "name": "Binance BTC-pair pump-and-dump announcements 2018–2022 (B0R0koko)",
+      "category": "market_manipulation",
+      "source": "https://github.com/B0R0koko/pump-and-dump-prediction",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "labels": "498 Binance spot BTC-pair pump announcements (symbol, UTC time) with evidence and exclusion records; 25 listed as dropped upstream",
+      "time_field": "UTC announcement time 2018-01..2022-08",
+      "kronos_compatibility": "labels_only_need_ohlcva",
+      "notes": "仅事件标签。K线需从 data.binance.vision 获取（spot klines 含 quote_asset_volume，即成交额），本环境网络无法访问该站，未下载行情。",
+      "access": "direct",
+      "artifacts": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/LICENSE",
+          "expected_bytes": 1071,
+          "role": "license"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/README.md",
+          "expected_bytes": 4388,
+          "role": "documentation"
+        },
+        {
+          "path": "pumps.json",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pumps.json",
+          "expected_bytes": 49937,
+          "role": "labels"
+        },
+        {
+          "path": "dropped_pumps.json",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/dropped_pumps.json",
+          "expected_bytes": 2701,
+          "role": "labels"
+        },
+        {
+          "path": "pump_event_evidence.json",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pump_event_evidence.json",
+          "expected_bytes": 277719,
+          "role": "labels"
+        },
+        {
+          "path": "pump_event_exclusions.json",
+          "url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pump_event_exclusions.json",
+          "expected_bytes": 93647,
+          "role": "labels"
+        }
+      ],
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
     }
   ]
 }

@@ -1,8 +1,8 @@
 # 金融交易异常检测数据目录
 
-检索日期：**2026-11-06**。本次整理 **35 个数据源/数据家族**，覆盖支付欺诈、反洗钱、区块链及市场操纵，并把开户申请、公司财务异常、信任评分等相邻任务单独标出。**这不是“全球所有数据均已搜全或下载”的声明。** 可匿名访问的网页、可下载数据和可再分发数据是三种不同状态。
+检索日期：**2026-11-06**，**2026-11-10** 补充 OHLCVA K线异常数据检索。共整理 **37 个数据源/数据家族**，覆盖支付欺诈、反洗钱、区块链及市场操纵，并把开户申请、公司财务异常、信任评分等相邻任务单独标出。**这不是“全球所有数据均已搜全或下载”的声明。** 可匿名访问的网页、可下载数据和可再分发数据是三种不同状态。
 
-实际存入本仓库的是 **8 个来源包的 38 个文件，共 108,507,464 字节（约 103.5 MiB）**。其中只有下表前五项是已获取完整的所选上游数据发布件；其余是告警表、标注或模拟器与输入，不冒充完整欺诈交易数据。
+实际存入本仓库的是 **11 个来源包的 52 个文件，共 233,072,175 字节（约 222.3 MiB）**。其中只有下表前五项是已获取完整的所选上游数据发布件；其余是告警表、标注或模拟器与输入，不冒充完整欺诈交易数据。
 
 ## 已下载内容
 
@@ -16,8 +16,20 @@
 | SynthAML | **仅**完整 `synthetic_alerts.csv` | 20,000 告警；**未下载934.6MB交易表** | 不可直接使用 |
 | ADMA 2021 | 作者原始 `data.md` 中的5个股票异常区间及说明 | TRBO、APPB、AEMD、NBDR、GME；**不含行情** | 需另外取得对应 OHLCV |
 | Federal Reserve CardSim | 完整官方 Python ZIP，含2022/2023公共支付调查输入表 | ZIP CRC通过；**未生成带欺诈标签的模拟交易** | 不可直接使用 |
+| **Xu & Livshits P&D（USENIX Sec 2019）** | CryptoCompare 小时K线 RData、PumpOlymp 信号、Cryptopia 面板 | 5,998,998 根 **OHLCVA** 小时K线（578 币、1,499 序列，2018-05–10）；435 信号，197 个在K线覆盖期内 | **可直接使用**：open/high/low/close/volume/amount 齐全；`scripts/prepare_ohlcva_klines.py` 生成带 pump 标签的标准表。**上游无许可证文件** |
+| Binance P&D 公告（B0R0koko） | 事件标签 JSON（MIT） | 498 个 BTC 交易对公告，2018–2022；**不含行情** | 需从 data.binance.vision 取K线（含 quote volume 即成交额） |
+| Hu et al.（SIGMOD 2023） | Telegram 事件日志 | 1,335 样本 / 709 事件，2019–2022；**不含行情**；上游无许可证文件 | 同上 |
 
 SD-FMM 的论文介绍提到25个中国股票案例、338个加密货币案例，但当前发布数组的数量如表所示。保留上游原文件，不擅自修正或声称已获取论文完整原始数据。NPY中6个object数组只读头部，不使用 `allow_pickle=True` 执行反序列化。
+
+### OHLCVA K线说明（2026-11-10）
+
+Kronos 的输入是 OHLCVA K线（开、高、低、收、成交量、成交额）。可匿名下载、同时带异常标签的公开 OHLCVA 数据很少：本次新增的 Xu & Livshits 小时K线是唯一完整同时含 volume 与 amount（`volumeto`，BTC 计价）且附操纵事件的公开发布件。Binance 系的两份事件表只有标签，K线需从 Binance 公开档案另取；统一 P&D OHLCV（Zenodo 21377192）与 Midsummer Memes 仍为文件受限或许可未明。Xu & Livshits 与 Hu et al. 的上游仓库都没有许可证文件，是应用户明确要求下载的，再分发或商用前请自行核实。
+
+```bash
+pip install rdata   # 只解析 R 数据，不执行 R 代码
+python scripts/prepare_ohlcva_klines.py   # → .local_data/ohlcva/xu_livshits/{klines_1h.csv.gz,events.csv,summary.json}
+```
 
 ## 文件入口
 

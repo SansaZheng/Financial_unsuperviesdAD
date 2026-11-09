@@ -418,6 +418,160 @@
       "license": "Public domain US Federal Reserve Board materials, unless otherwise indicated; see package third-party notices",
       "retrieved_at": "2026-11-05T19:09:22.454069+00:00",
       "source_revision": null
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/README.md",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/README.md",
+      "role": "documentation",
+      "bytes": 527,
+      "sha256": "ddf5d69718d60b780a43c51201f5ccab78530243910bcb43b6bcbbb5cc3c94fb",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/cryptocompare.RData",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/cryptocompare.RData",
+      "role": "data",
+      "bytes": 85863522,
+      "sha256": "db1072bdbb2d873dab4a749611f7e8e3ff51865bdbcd23b153b04331b3164b9f",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/rawpumpolymp.json",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/rawpumpolymp.json",
+      "role": "labels",
+      "bytes": 25365725,
+      "sha256": "d1b9cc5c394d196210b9562430f917618731909c2c22919c5dee5ba2eeb65bc5",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/reg_cryptopia.RData",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/reg_cryptopia.RData",
+      "role": "labels",
+      "bytes": 12285291,
+      "sha256": "91195035ac9411254b83fa4252970b67ee2c6ba64e13fd4e20391830b1a6743e",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/cryptopiacointable.txt",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/cryptopiacointable.txt",
+      "role": "data",
+      "bytes": 474306,
+      "sha256": "8f068cc78ef6d432def5f5af8731070632036ce7c9e0ebaa1e9655a6f7570a26",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/pumpdump.Rmd",
+      "source_url": "https://raw.githubusercontent.com/xujiahuayz/pumpdump/ed140368e7b70b720b60ed1c1951eda743a725b2/code%20and%20data/pumpdump.Rmd",
+      "role": "code",
+      "bytes": 64595,
+      "sha256": "8b6a24b26d83eb18a0b29344cf2f1e80492d368febff2d9b854b8120ee68902d",
+      "license": "NO LICENSE FILE in upstream repository (authors released data publicly with the USENIX Security 2019 paper); CryptoCompare market-data provider terms apply. Verify before redistribution or commercial use.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ed140368e7b70b720b60ed1c1951eda743a725b2"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/LICENSE",
+      "role": "license",
+      "bytes": 1071,
+      "sha256": "6fb3ec01f3b223dd31bb09994e9b5a9d39c4dc5fadcc0ad7812ce897c6a9f0a6",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/README.md",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/README.md",
+      "role": "documentation",
+      "bytes": 4388,
+      "sha256": "77db1abe20064df3ea7d195e67778c4e21ee8c51b9fc987541ce26531ec5fd02",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pumps.json",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pumps.json",
+      "role": "labels",
+      "bytes": 49937,
+      "sha256": "3f0cab25093a2c304d15b071b7b40344a7ce58c03ef79dd7b1e9b3a29b319467",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/dropped_pumps.json",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/dropped_pumps.json",
+      "role": "labels",
+      "bytes": 2701,
+      "sha256": "ff16500dce73763527f06cbee5fb32cec90572445e0fb1b206ef28440bab7500",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pump_event_evidence.json",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pump_event_evidence.json",
+      "role": "labels",
+      "bytes": 277719,
+      "sha256": "c5904fd7a41ab1ea58af4e44b9d57e9f59a16d93fad523a07b657dcbc3044e19",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pump_event_exclusions.json",
+      "source_url": "https://raw.githubusercontent.com/B0R0koko/pump-and-dump-prediction/ce3f3f7b4db522e3f241b0121faf942f92ec06ec/resources/pump_event_exclusions.json",
+      "role": "labels",
+      "bytes": 93647,
+      "sha256": "75ff1810e27649f1a5b6e02a8ec6a0091c992405a837499fadd574b3eff5bd85",
+      "license": "MIT (upstream repository); Binance market data has separate provider terms",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "ce3f3f7b4db522e3f241b0121faf942f92ec06ec"
+    },
+    {
+      "dataset": "hu_pump_dump",
+      "path": "hu_pump_dump/README.md",
+      "source_url": "https://raw.githubusercontent.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency/17e398f99558c52a472728d4a5856f15313be079/README.md",
+      "role": "documentation",
+      "bytes": 5806,
+      "sha256": "30ba36595dcb879fda9971f880e66936d53b32871431ebda4a46ad98c2c45e98",
+      "license": "NO LICENSE FILE in upstream repository; verify before redistribution. Binance market data has separate provider terms.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "17e398f99558c52a472728d4a5856f15313be079"
+    },
+    {
+      "dataset": "hu_pump_dump",
+      "path": "hu_pump_dump/PD_logs_cleaned.txt",
+      "source_url": "https://raw.githubusercontent.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency/17e398f99558c52a472728d4a5856f15313be079/Data/Telegram/Labeled/PD_logs_cleaned.txt",
+      "role": "labels",
+      "bytes": 75476,
+      "sha256": "22fb861c9dec8521690d3bd0cff5d88937770ff10266325c542c8d77ff086544",
+      "license": "NO LICENSE FILE in upstream repository; verify before redistribution. Binance market data has separate provider terms.",
+      "retrieved_at": "2026-11-09T16:11:38.466619+00:00",
+      "source_revision": "17e398f99558c52a472728d4a5856f15313be079"
     }
   ]
 }
