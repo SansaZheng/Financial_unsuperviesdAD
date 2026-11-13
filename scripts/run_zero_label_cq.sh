@@ -2,6 +2,19 @@
 set -euo pipefail
 export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
 export PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" PIP_CACHE_DIR="$CQ_OUTPUT_DIR/pip-cache"
+# pytest tmp_path creates '*current' symlinks; CQ correctly rejects links in
+# collected archives. Remove only links generated in this job's pytest scratch.
+cleanup_test_links() {
+  python - <<'CLEAN'
+import os
+from pathlib import Path
+root=Path(os.environ['CQ_OUTPUT_DIR'])/'pytest'
+if root.exists():
+    for path in root.rglob('*'):
+        if path.is_symlink(): path.unlink()
+CLEAN
+}
+trap cleanup_test_links EXIT
 python -m pip install -q 'numpy>=2,<3' 'scipy>=1.15,<2' 'pandas>=2.2,<3' 'scikit-learn==1.7.2' 'torch-geometric==2.6.1' 'pytest>=8' 'joblib>=1.3' 'threadpoolctl>=3'
 mode="${1:-smoke}"
 if [[ "$mode" == env ]]; then
