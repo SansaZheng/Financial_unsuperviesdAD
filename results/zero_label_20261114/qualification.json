@@ -1,0 +1,35 @@
+{
+  "benchmark_source_commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd",
+  "environment_job": "j-1114-3ddefa",
+  "gpu_smoke_job": "j-1114-4c5e7d",
+  "benchmark_job": "j-1114-2e8178",
+  "local_tests": {
+    "passed": 42,
+    "python": "3.12",
+    "torch": "2.6.0"
+  },
+  "gpu_smoke": {
+    "status": "passed",
+    "ebgad_permutation_spearman": 1.0,
+    "ebgad_selected": "DR@0.03",
+    "audit_reload_max_abs": 0.0,
+    "torch": "2.11.0+cu130",
+    "cuda": true,
+    "device": "cuda",
+    "cae_latent": 12,
+    "cae_reload_max_abs": 0.0
+  },
+  "real_graph_smoke_resources": {
+    "status": "passed",
+    "seconds": 77.931114213,
+    "peak_cuda_allocated_gb": 0.8581876754760742,
+    "peak_cuda_reserved_gb": 0.953125,
+    "gpu": "Tesla T4"
+  },
+  "gpu_smoke_tests": "........                                                                 [100%]\n8 passed in 19.86s",
+  "smoke_financial_budget_updates": 1,
+  "smoke_excluded_from_formal_results": true,
+  "paid_rental_used": false,
+  "qualification_note": "Unchanged CPU dependencies reused; final GPU smoke reran all 8 zero-label tests and real-graph gates at the exact fast benchmark commit. Masked padding optimization was selected by target-free runtime/gradient diagnostics, never financial metrics.",
+  "padding_equivalence_profile_job": "j-1114-4f8bf4"
+}

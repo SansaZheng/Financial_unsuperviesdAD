@@ -1,0 +1,45 @@
+{
+  "python": "3.13.16",
+  "numpy": "2.1.3",
+  "scipy": "1.16.3",
+  "sklearn": "1.7.2",
+  "torch": "2.11.0+cu130",
+  "device": "cuda",
+  "source_sha256": {
+    "finad/classical.py": "c8ebd9693af62766412d8db9d13e77507fb46b8fa70cf87b61ad8c046fa8b9ea",
+    "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+    "finad/neural.py": "cf92b4bb03492d019bf4d215c0b671183537d49ec5dda0b2d895fa15ae49e448",
+    "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+    "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+    "finad_zero/__init__.py": "aee9c1fe9d700a14c87aecad6cdf69c6beda3167e0bfa95832edd84f7f5146b6",
+    "finad_zero/audit_hcl.py": "b030df76f0a936e4272b66d74223774aa22f8eaa28c00e7cfe164742b08f587b",
+    "finad_zero/cae_if.py": "c1fe5086ddcaa5ff98e3aa106929953b76295b645207e9a8051d98da4ba4b689",
+    "finad_zero/ebgad.py": "dd33474dabd93e3b83111698549c590221772601bc6c19735a7c1c70f44097b5",
+    "finad_zero/experiment.py": "977c04b250d168636a6c28b0ad35028ee3f53a0f1811695781d2343c06fca5d8",
+    "finad_zero/graph_data.py": "bbccc0717f9597068b920f5ad3f37fa30e0dbdd577795cf4e7b61c01f9a05bdd",
+    "scripts/prepare_repo_data.py": "b0868d2f8c61e7cb9cad5e99341cda31c4eddc111ddac99d75602155c2e5324f"
+  },
+  "git_commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd",
+  "steps": 400,
+  "audit_steps": 200,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "tasks": [
+    "ulb",
+    "banksim",
+    "s_ffsd",
+    "sapienza_5S",
+    "sapienza_15S",
+    "sapienza_25S",
+    "sd_stock",
+    "sd_crypto",
+    "sd_synth"
+  ],
+  "tracks": [
+    "tabular",
+    "graph"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "base_commit": "5e3c7aeadca1147b47ebb133cb6df5c70227acd6",
+  "benchmark_commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd",
+  "preserved_trees": {
+    "data": {
+      "base_tree": "3639f97a4b0ebf21ad0f55ec9f671d01e8500deb",
+      "benchmark_tree": "3639f97a4b0ebf21ad0f55ec9f671d01e8500deb",
+      "unchanged": true
+    },
+    "results/v1": {
+      "base_tree": "185e2c07e47b2d2609ca118ce52855e541d1ac5e",
+      "benchmark_tree": "185e2c07e47b2d2609ca118ce52855e541d1ac5e",
+      "unchanged": true
+    },
+    "results/2026": {
+      "base_tree": "f8d1cb3335b79a4899a766a279dd4f9c7d00d394",
+      "benchmark_tree": "f8d1cb3335b79a4899a766a279dd4f9c7d00d394",
+      "unchanged": true
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "benchmark_commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd",
+  "source_files": {
+    "finad/classical.py": "c8ebd9693af62766412d8db9d13e77507fb46b8fa70cf87b61ad8c046fa8b9ea",
+    "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+    "finad/neural.py": "cf92b4bb03492d019bf4d215c0b671183537d49ec5dda0b2d895fa15ae49e448",
+    "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+    "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+    "finad_zero/__init__.py": "aee9c1fe9d700a14c87aecad6cdf69c6beda3167e0bfa95832edd84f7f5146b6",
+    "finad_zero/audit_hcl.py": "b030df76f0a936e4272b66d74223774aa22f8eaa28c00e7cfe164742b08f587b",
+    "finad_zero/cae_if.py": "c1fe5086ddcaa5ff98e3aa106929953b76295b645207e9a8051d98da4ba4b689",
+    "finad_zero/ebgad.py": "dd33474dabd93e3b83111698549c590221772601bc6c19735a7c1c70f44097b5",
+    "finad_zero/experiment.py": "977c04b250d168636a6c28b0ad35028ee3f53a0f1811695781d2343c06fca5d8",
+    "finad_zero/graph_data.py": "bbccc0717f9597068b920f5ad3f37fa30e0dbdd577795cf4e7b61c01f9a05bdd",
+    "scripts/prepare_repo_data.py": "b0868d2f8c61e7cb9cad5e99341cda31c4eddc111ddac99d75602155c2e5324f"
+  },
+  "input_archive": {
+    "file": "prepared_tabular_inputs.tar.gz",
+    "sha256": "ab36533057d62c8cff003b7d9efb457a8dced77ef3f8953d4a10725e8c54fe37",
+    "bytes": 53954523
+  },
+  "prepared_input_files": 81,
+  "prepared_input_bytes": 305090380,
+  "upstream_commit": "cba2969e390ae6cd4381fe86393fa6cfcfc40d13",
+  "upstream_archive_sha256": "f1a43e1136212d63ec82dcb6084d32ea00d8720e99987e0b6f2300b754b19f2c",
+  "graph_files": {
+    "banksim/calibration.graph.npz": {
+      "bytes": 304702,
+      "sha256": "1aaf556bd812f2eb0e0a16ecc214720cd2df3178f3c60c6beda3a0753a842e19"
+    },
+    "banksim/calibration.ids.json": {
+      "bytes": 67958,
+      "sha256": "42da0bc44bcfb002cf1c1a7efaa55dc3c214511246897eb99a3a7f8b0bc334a9"
+    },
+    "banksim/calibration.y.npy": {
+      "bytes": 4250,
+      "sha256": "c9b87900e46aa38f2b9f1ddd35fe78c7853f3db7593aa9a9bd00085406b9b4d1"
+    },
+    "banksim/manifest.json": {
+      "bytes": 1366,
+      "sha256": "b98c684e285a281643a67b7cd5e2eed02112bfed0861d4ff59773dd4a5084c26"
+    },
+    "banksim/test.graph.npz": {
+      "bytes": 305666,
+      "sha256": "c6d92ea8477351c2d972492c833a4512959b7ec6cbeaf435691efa1551529681"
+    },
+    "banksim/test.ids.json": {
+      "bytes": 68109,
+      "sha256": "ad1e754fc10c8571feaf7c8671f36ea7d38f0846ecd8f1ea92f013be869c629b"
+    },
+    "banksim/test.y.npy": {
+      "bytes": 4259,
+      "sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d"
+    },
+    "banksim/train.graph.npz": {
+      "bytes": 372603,
+      "sha256": "3aa8629f120da89fcd07dd1553394d93eae6bc6ab1435bd7c23a7204c8744145"
+    },
+    "banksim/train.ids.json": {
+      "bytes": 68355,
+      "sha256": "b41682c7408bb3ef15e5eb299c2892e503ecd49a7803699c138a4a04dae3e919"
+    },
+    "banksim/train.y.npy": {
+      "bytes": 4274,
+      "sha256": "fd5a806b7ad2b96a5ac0e6f1e9f9ba200ccdede75ee019f728bd7f64508f7397"
+    },
+    "s_ffsd/calibration.graph.npz": {
+      "bytes": 68749,
+      "sha256": "16d2306995dd6dd30332e31ceacbd78dafbbe42ead001e78a491c9aa8efb0196"
+    },
+    "s_ffsd/calibration.ids.json": {
+      "bytes": 52100,
+      "sha256": "32352bff494e1838524e40187084fa2bd06b144471ae7ad6a90dcf61dc2fa0d1"
+    },
+    "s_ffsd/calibration.y.npy": {
+      "bytes": 4492,
+      "sha256": "a0c632b03086325f87a37332962f14cdb6a70592a77fa3d54f4388ec52cc4a37"
+    },
+    "s_ffsd/manifest.json": {
+      "bytes": 1392,
+      "sha256": "2d59988885853c9976bee7fae192ad86b236b718b7405193fdc6cd7bccbf17b1"
+    },
+    "s_ffsd/test.graph.npz": {
+      "bytes": 57002,
+      "sha256": "a9d2a6cc34ad1178305692195fa914a841353f3e420af507f28027bf7fb5a0f6"
+    },
+    "s_ffsd/test.ids.json": {
+      "bytes": 51638,
+      "sha256": "16a3f29d1f2c6138c19345dc481361776059320719abdd78e15cbc8b86e18275"
+    },
+    "s_ffsd/test.y.npy": {
+      "bytes": 4450,
+      "sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7"
+    },
+    "s_ffsd/train.graph.npz": {
+      "bytes": 71479,
+      "sha256": "ede59e016d84dc784c0697a291f724bb0b4c0486c6db1126822731b12aecfb9c"
+    },
+    "s_ffsd/train.ids.json": {
+      "bytes": 52881,
+      "sha256": "9c07750914b84bbae4098602f3161ee8bee44d6e4bfc1828ddca7e45de0dace1"
+    },
+    "s_ffsd/train.y.npy": {
+      "bytes": 4563,
+      "sha256": "40ffa2f1808e0b9b11820333ba03d6c1100730caee424f3eed9554ef05103c81"
+    }
+  }
+}

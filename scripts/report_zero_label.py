@@ -50,6 +50,19 @@ for key in sorted({(r['track'],r['dataset'],r['method'],r['operating_point']) fo
         out[metric+'_std']=float(np.std(vals,ddof=1)) if len(vals)>1 else None
     summary.append(out)
 save_csv(args.output/'summary.csv',summary)
+def pick(track,dataset,method,op='pot'):
+    return next(r for r in summary if (r['track'],r['dataset'],r['method'],r['operating_point'])==(track,dataset,method,op))
+eb_rows=[]
+for r in records:
+    if r['method']!='ebgad_release_zero':continue
+    cal,test=r['model_info']['calibration'],r['model_info']['test']
+    row={'dataset':r['dataset'],'seed':r['seed'],'calibration_member':cal['selected'],'test_member':test['selected'],
+         'selected_member_changed':cal['selected']!=test['selected']}
+    for phase,value in [('calibration',cal),('test',test)]:
+        row.update({phase+'_'+k:value['fit'][k] for k in ('gamma','rho','kappa')})
+    eb_rows.append(row)
+save_csv(args.output/'ebgad_selection_audit.csv',eb_rows)
+eb_changed={r['dataset'] for r in eb_rows if r['selected_member_changed']}
 def fmt(row,metric):
     mean,std=row[metric+'_mean'],row[metric+'_std']
     value='N/A' if mean is None else (f'{100*mean:.2f} ± {100*std:.2f}' if std is not None else f'{100*mean:.2f}')
@@ -58,22 +71,45 @@ def fmt(row,metric):
     return value
 names={'cae_if_core':'CAE-IF 核心适配','ebgad_release_zero':'EB-GAD 作者发布版','audit_hcl_zero_adapted':'Audit-HCL 零标签适配',
        'iforest':'Isolation Forest','ae':'AE','pca':'PCA-SPE'}
+pot_ok=sum(r['thresholds']['pot']['status']=='ok' for r in threshold_records)
+quantile_ok=sum(r['thresholds']['quantile']['status']=='ok' for r in threshold_records)
+wins=sum(pick('tabular',d,'cae_if_core')['average_precision_mean']>pick('tabular',d,'iforest')['average_precision_mean'] for d in tabular)
+def percent(row,key):return f"{100*row[key+'_mean']:.2f}"
+ulb_c=pick('tabular','ulb','cae_if_core');ulb_i=pick('tabular','ulb','iforest');ulb_p=pick('tabular','ulb','pca')
+bank_e=pick('graph','banksim','ebgad_release_zero');s_a=pick('graph','s_ffsd','audit_hcl_zero_adapted')
+s_a_q=pick('graph','s_ffsd','audit_hcl_zero_adapted','quantile')
+s_meta=next(r['metrics'] for r in records if r['track']=='graph' and r['dataset']=='s_ffsd')
 lines=['# 零标签金融异常检测：144次真实运行（2026-11-14）','',
-       '**本结果为仓库金融数据上的独立适配实验，不是原论文成绩复刻。** CAE-IF只取得公开摘要；EB-GAD复现作者发布选择器，非论文附录有序选择器；Audit-HCL为真实支付关系和固定200更新预算的公式适配。详见[冻结协议](../../docs/zero_label_protocol_CN.md)。','',
+       f"**完成144次运行、288条阈值评价记录。POT成功{pot_ok}/144，99%分位阈值成功{quantile_ok}/144。** 保存分数的指标复算、33组配对样本及共同训练缩放器核验均已通过；源码和精确输入的SHA256已核对。",'',
+       '**本结果为仓库金融数据上的独立适配实验，不是原论文成绩复刻。** CAE-IF只取得公开摘要；EB-GAD复现作者发布选择器，非论文附录有序选择器；Audit-HCL为原生支付关系和固定200更新预算的公式适配。详见[冻结协议](../../docs/zero_label_protocol_CN.md)。','',
        '数据来自5种完整可用来源：ULB、BankSim、S-FFSD、Sapienza和SD-FMM。Sapienza按3种时间粒度、SD-FMM按stock/crypto/synth分成9个交易/时序任务，并非9个相互独立的数据来源。仅有区间标签的ADMA21、仅有告警表的SynthAML和未生成交易的CardSim输入不纳入。','',
        '种子42/43/44，数值为百分数的均值 ± 样本标准差。所有模型与阈值均不使用标签；POT失败按N/A记录。AP是Average Precision，另在CSV提供梯形PR-AUC。无点调整、无标签阈值搜索。EB为确定性过程，只需计算4个不同的校准/测试图，三种子记录复用这些分数；零标准差不代表三次独立拟合，其缓存命中耗时也不宜与训练模型直接排名。','',
-       '[288套逐种子操作点](metrics.csv) · [96组阈值汇总](summary.csv) · [模型配置与逐种子记录](per_seed.json) · [阈值、GPD参数及失败原因](thresholds.json) · [独立复算核验](verification.json) · [软件/源码版本](run_manifest.json)','']
+       '[288条逐种子评价记录](metrics.csv) · [96组阈值汇总](summary.csv) · [模型配置与逐种子记录](per_seed.json) · [阈值、GPD参数及失败原因](thresholds.json) · [独立复算核验](verification.json) · [软件/源码版本](run_manifest.json)','',
+       '[配对样本和共同训练缩放器核验](cohort_verification.json) · [源码/输入完整性](artifact_verification.json) · [执行与版本记录](execution.json) · [EB-GAD评分选择明细](ebgad_selection_audit.csv) · [历史数据/结果保留证明](preservation.json)','',
+       '## 主要观察','',
+       f"- **新方法没有普遍超过经典基线。** CAE-IF的AP均值在9个交易/时序任务中有{wins}个高于IF；这些是本次留出集的均值比较，不是显著性检验。ULB中CAE-IF的AP为{percent(ulb_c,'average_precision')}%，IF为{percent(ulb_i,'average_precision')}%，PCA为{percent(ulb_p,'average_precision')}%。",'',
+       f"- **EB-GAD在BankSim账户图上的排序较好，但固定阈值误报很高。** AP为{percent(bank_e,'average_precision')}%、ROC-AUC为{percent(bank_e,'roc_auc')}%；POT F1为{percent(bank_e,'f1')}%，同时FPR达到{percent(bank_e,'fpr')}%。该运行校准图选择`D@0.01`、测试图选择`P`，不能假定两个原始统计量共享绝对分数标尺。",'',
+       f"- **Audit-HCL结果依赖数据和阈值。** BankSim账户图POT F1为0；S-FFSD账户图AP为{percent(s_a,'average_precision')}%、ROC-AUC为{percent(s_a,'roc_auc')}%，POT F1为{percent(s_a,'f1')}%、99%分位F1为{percent(s_a_q,'f1')}%。S-FFSD排除{s_meta['unknown_excluded']}个未知账户后，已知样本中异常占{100*s_meta['prevalence']:.2f}%；常数评分的AP就等于这一占比，不能仅凭90%左右的AP判断分辨能力很强。",'']
 for track,title in [('tabular','交易/时序轨道：9组数据，完整测试分区'),('graph','原生支付关系图轨道：仅评价固定子图中的付款账户')]:
     lines+=['## '+title,'','| 数据集 | 方法 | AP | ROC-AUC | POT F1 | 99%分位 F1 |','|---|---|---:|---:|---:|---:|']
     for row in summary:
         if row['track']!=track or row['operating_point']!='pot':continue
         q=next(v for v in summary if (v['track'],v['dataset'],v['method'],v['operating_point'])==(track,row['dataset'],row['method'],'quantile'))
-        lines.append(f"| {row['dataset']} | {names[row['method']]} | {fmt(row,'average_precision')} | {fmt(row,'roc_auc')} | {fmt(row,'f1')} | {fmt(q,'f1')} |")
+        tag='†' if row['method']=='ebgad_release_zero' and row['dataset'] in eb_changed else ''
+        lines.append(f"| {row['dataset']} | {names[row['method']]}{tag} | {fmt(row,'average_precision')} | {fmt(row,'roc_auc')} | {fmt(row,'f1')} | {fmt(q,'f1')} |")
     lines+=['','| 数据集 | 测试总数 | 已知正常 | 已知异常 | 排除未知 | 已知样本异常占比 |','|---|---:|---:|---:|---:|---:|']
     for dataset in sorted({r['dataset'] for r in records if r['track']==track}):
         m=next(r['metrics'] for r in records if r['track']==track and r['dataset']==dataset)
         lines.append(f"| {dataset} | {m['evaluated']+m['unknown_excluded']} | {m['normal']} | {m['positives']} | {m['unknown_excluded']} | {100*m['prevalence']:.2f}% |")
     lines+=['']
+    if track=='graph':
+        lines+=['† 校准图与测试图选中的EB-GAD原始统计量不同。阈值操作点仅描述本适配管线；具体选择和拟合参数见[评分选择明细](ebgad_selection_audit.csv)。','',
+                '### 图轨道的POT操作点','',
+                '| 数据集 | 方法 | Precision | Recall | F1 | FPR |','|---|---|---:|---:|---:|---:|']
+        for row in summary:
+            if row['track']=='graph' and row['operating_point']=='pot':
+                lines.append(f"| {row['dataset']} | {names[row['method']]} | {fmt(row,'precision')} | {fmt(row,'recall')} | {fmt(row,'f1')} | {fmt(row,'fpr')} |")
+        lines+=['']
 lines+=['## 结果应如何理解','',
  '零标签指模型训练与阈值校准不用异常标签，不代表训练集无异常。BankSim是模拟器生成的合成支付数据；SD-FMM synth也是合成数据。图中的“原生关系”指直接保留发布数据中的付款/收款边，不表示BankSim来自真实银行业务。',
  '两轨道检测单位和信息范围不同，不能混合排名。交易轨道比较CAE-IF和相同新划分/预算的IF、AE、PCA；图轨道比较六种方法，其中图方法还看到真实交易关系及收款方属性。图每阶段仅选择最多4096个付款账户，保留其全部交易及对手方；不是全量交易评估。',

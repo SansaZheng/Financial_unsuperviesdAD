@@ -122,3 +122,7 @@ pytest -q
 ## 2026-11-14 零标签金融适配实验
 
 CAE-IF、EB-GAD 作者发布版及 Audit-HCL 的新增协议与复现边界见 [零标签协议](docs/zero_label_protocol_CN.md)。独立入口为 `python -m finad_zero.experiment`；与原有结果分开保存，不覆盖历史实验。
+
+**144次正式运行已完成并独立核验**：5种数据来源展开为9个交易/时序任务，另有BankSim和S-FFSD两个账户图任务，种子42/43/44；POT与99%分位阈值共288条评价记录。训练、校准和方法选择均不使用标签。三个新增方法没有普遍超过经典基线；尤其EB-GAD的跨图分数尺度、S-FFSD的高异常占比需要结合误报率和ROC-AUC解读。
+
+[完整中文结果与限制](results/zero_label_20261114/README_CN.md) · [逐种子指标](results/zero_label_20261114/metrics.csv) · [配对比较核验](results/zero_label_20261114/cohort_verification.json) · [源码及精确输入核验](results/zero_label_20261114/artifact_verification.json)。本轮本地功能测试42项、GPU新增方法测试8项通过；具体配置、运行源提交、环境和阈值参数均随报告保存。这是公开资料支持范围内的金融数据适配实验，不能称为三篇原论文架构及成绩的精确复刻。

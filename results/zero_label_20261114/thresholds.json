@@ -1,0 +1,3458 @@
+[
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6763896032105283,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6679686515253431,
+        "initial_threshold": 0.4897917564091054,
+        "shape": -0.16570293240509146,
+        "scale": 0.08165700674875936,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6975375197865438,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6831511052613082,
+        "initial_threshold": 0.5057818611315502,
+        "shape": -0.16347394389440345,
+        "scale": 0.08106001356314692,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7000514415169712,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6874282806451009,
+        "initial_threshold": 0.5161764212329686,
+        "shape": -0.21818128950209312,
+        "scale": 0.08374832471145444,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6127318859373754,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6015783027557846,
+        "initial_threshold": 0.46303018780482347,
+        "shape": 0.08012772895820072,
+        "scale": 0.04581072787006369,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.606345705909447,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.5980581783893628,
+        "initial_threshold": 0.4711029321333556,
+        "shape": 0.030108224201071204,
+        "scale": 0.04499484649545844,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6073609001498509,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6024782690115494,
+        "initial_threshold": 0.47990428978788524,
+        "shape": -0.003880606794663732,
+        "scale": 0.04550047660698554,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.462333011627192,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 2.616132168697053,
+        "initial_threshold": 0.8835813879966736,
+        "shape": 0.3696415850340309,
+        "scale": 0.3721098512601873,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.6023770999908438,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 2.6997051145709587,
+        "initial_threshold": 0.9532186388969421,
+        "shape": 0.30401646575499336,
+        "scale": 0.415458709074212,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.830350885391235,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 2.932186064356408,
+        "initial_threshold": 0.9243213534355165,
+        "shape": 0.4904581025985434,
+        "scale": 0.3549689366117856,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 32.89199136866128,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 33.374296676912536,
+        "initial_threshold": 11.949967119987221,
+        "shape": 0.3861572630396801,
+        "scale": 4.482827508228048,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 34.22161570586264,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 36.02993648942517,
+        "initial_threshold": 11.865825905844677,
+        "shape": 0.5201541556555103,
+        "scale": 4.06724394609611,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.181855593118456,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 49.92378185407306,
+        "initial_threshold": 12.245614766700117,
+        "shape": 0.8157608365258977,
+        "scale": 3.7908834995491874,
+        "n_calibration": 47445,
+        "n_peaks": 7117,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6863232181862693,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7274212828468267,
+        "initial_threshold": 0.4346623662437168,
+        "shape": -0.6274335748678505,
+        "scale": 0.22478790731087947,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6871620167419822,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6988426901680271,
+        "initial_threshold": 0.5141649825980281,
+        "shape": -0.5993291009394968,
+        "scale": 0.13793881817571685,
+        "n_calibration": 100000,
+        "n_peaks": 14963,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6685426366398534,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7012889998303949,
+        "initial_threshold": 0.48988599116036186,
+        "shape": -0.6215950740372537,
+        "scale": 0.1613888127010648,
+        "n_calibration": 100000,
+        "n_peaks": 14998,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.557300478082112,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.5701424063618592,
+        "initial_threshold": 0.45904087038083113,
+        "shape": -0.4356502500261707,
+        "scale": 0.06990131428979138,
+        "n_calibration": 100000,
+        "n_peaks": 14975,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.5655476294920097,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.5818150991218415,
+        "initial_threshold": 0.45185289292938463,
+        "shape": -0.6217461686843198,
+        "scale": 0.09924533730478685,
+        "n_calibration": 100000,
+        "n_peaks": 14982,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.5569752808877373,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.5729855974974566,
+        "initial_threshold": 0.4473654114349586,
+        "shape": -0.533296278391919,
+        "scale": 0.08770754581082546,
+        "n_calibration": 100000,
+        "n_peaks": 14971,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.23275316223502082,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.250201071889725,
+        "initial_threshold": 0.002618513174820691,
+        "shape": 1.3767306699874844,
+        "scale": 0.008394092682855011,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.5703755599260318,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.2763221132877453,
+        "initial_threshold": 0.0030275886645540506,
+        "shape": 1.1876993947499597,
+        "scale": 0.013560294776650106,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.27045761883258695,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.26850897952863295,
+        "initial_threshold": 0.0038189608487300573,
+        "shape": 1.2828645439261641,
+        "scale": 0.01085987273040439,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 55.028322931162336,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 29.15488295142951,
+        "initial_threshold": 0.01713470231000672,
+        "shape": 2.8188640888335526,
+        "scale": 0.03976481036177652,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 39.1625944087312,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 14.695245122961133,
+        "initial_threshold": 0.009302206055541242,
+        "shape": 2.172698417310876,
+        "scale": 0.08908827255942088,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 24.16360752898239,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 14.96172133790533,
+        "initial_threshold": 0.006265850223105872,
+        "shape": 2.396478062865115,
+        "scale": 0.05453751343352956,
+        "n_calibration": 100000,
+        "n_peaks": 14998,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6304160102920724,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6286563657514631,
+        "initial_threshold": 0.5565675507910984,
+        "shape": -0.303146093736837,
+        "scale": 0.03906294158825098,
+        "n_calibration": 15576,
+        "n_peaks": 2327,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6510229622638755,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6476205508450598,
+        "initial_threshold": 0.5658869605865876,
+        "shape": -0.22492661416160767,
+        "scale": 0.04042452546131612,
+        "n_calibration": 15576,
+        "n_peaks": 2310,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6575146066944799,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6510390857313436,
+        "initial_threshold": 0.5604084390366199,
+        "shape": -0.29813308664067906,
+        "scale": 0.048843071154232365,
+        "n_calibration": 15576,
+        "n_peaks": 2323,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.457898238388231,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.4589586303616266,
+        "initial_threshold": 0.43120798339340494,
+        "shape": -0.16640765119437873,
+        "scale": 0.012728302986054846,
+        "n_calibration": 15576,
+        "n_peaks": 2337,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.4622372129474931,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.4695756698158838,
+        "initial_threshold": 0.43086608989139125,
+        "shape": -0.30664821510668194,
+        "scale": 0.021040243569776504,
+        "n_calibration": 15576,
+        "n_peaks": 2337,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.4603339562442944,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.459850636809847,
+        "initial_threshold": 0.4316969867304552,
+        "shape": -0.01652836934231226,
+        "scale": 0.010632984510260476,
+        "n_calibration": 15576,
+        "n_peaks": 2335,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 1.3740443587303162,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 1.4274930069285574,
+        "initial_threshold": 0.13554178178310394,
+        "shape": 0.25766816146592864,
+        "scale": 0.33022446041586234,
+        "n_calibration": 15576,
+        "n_peaks": 2331,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 1.3750309646129608,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 1.5696404992314417,
+        "initial_threshold": 0.146180659532547,
+        "shape": 0.636256007469366,
+        "scale": 0.1971165345312505,
+        "n_calibration": 15576,
+        "n_peaks": 2332,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 1.3249982297420502,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 1.3297787937937058,
+        "initial_threshold": 0.1436283327639103,
+        "shape": 0.3723768384117815,
+        "scale": 0.25362680676437344,
+        "n_calibration": 15576,
+        "n_peaks": 2337,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 64.2761794440232,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 82.59470168688956,
+        "initial_threshold": 3.4243313257866363,
+        "shape": 1.82841204754741,
+        "scale": 1.0307059347838354,
+        "n_calibration": 15576,
+        "n_peaks": 2337,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 63.70328856128377,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 74.84081941050187,
+        "initial_threshold": 3.191916440628075,
+        "shape": 1.8242325238489525,
+        "scale": 0.9547926668800231,
+        "n_calibration": 15576,
+        "n_peaks": 2319,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 62.030464161855384,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 36.362116484188284,
+        "initial_threshold": 3.084764543012242,
+        "shape": 1.2245153859395925,
+        "scale": 1.5342134508602614,
+        "n_calibration": 15576,
+        "n_peaks": 2337,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6970791715513389,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7006921512119508,
+        "initial_threshold": 0.4935813921713214,
+        "shape": -0.37365176902354935,
+        "scale": 0.1215900792983208,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6961907971172379,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6899985677302223,
+        "initial_threshold": 0.5009465942160984,
+        "shape": -0.3074830792195652,
+        "scale": 0.10286404742781434,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.698954149624244,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6816252166221656,
+        "initial_threshold": 0.5250059572929124,
+        "shape": -0.20342452872395367,
+        "scale": 0.07522005629357789,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6084831132974371,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6027711650835068,
+        "initial_threshold": 0.4598782534825534,
+        "shape": -0.08285356953026907,
+        "scale": 0.058906749081285396,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6020949736063035,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6002618171210461,
+        "initial_threshold": 0.4689852012155023,
+        "shape": -0.0794114464667866,
+        "scale": 0.05387554523705793,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6158136562643849,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6098402957548446,
+        "initial_threshold": 0.47644429783111897,
+        "shape": -0.02519498223462733,
+        "scale": 0.05095861931002099,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.4355287349224085,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.43449575026743714,
+        "initial_threshold": 0.09740160480141638,
+        "shape": 0.9462105528274307,
+        "scale": 0.026654101960374703,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.596776340007781,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.5983555656228362,
+        "initial_threshold": 0.14228037893772125,
+        "shape": 0.8001992277742553,
+        "scale": 0.04720086590578164,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 1.4864398634433722,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 1.0328768401375499,
+        "initial_threshold": 0.142940416932106,
+        "shape": 1.1669202813309352,
+        "scale": 0.04600673884395702,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 4.428980816843743,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.4288309172979146,
+        "initial_threshold": 0.2830921918319343,
+        "shape": 0.936939727147236,
+        "scale": 0.25309662334253946,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 5.452649458630863,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.861182529056192,
+        "initial_threshold": 0.27175366454826805,
+        "shape": 1.1326375378836913,
+        "scale": 0.19848744286955256,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 17.871801747714944,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 14.21211955415119,
+        "initial_threshold": 0.45467843944956093,
+        "shape": 1.7008950113912311,
+        "scale": 0.2361392084522755,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7273312222315702,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7019050491462688,
+        "initial_threshold": 0.480458368458016,
+        "shape": -0.010748877733301056,
+        "scale": 0.08296940243361511,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7482213191740567,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7113359113882428,
+        "initial_threshold": 0.47647969965123205,
+        "shape": -0.06531258936548305,
+        "scale": 0.09462070671589878,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7254369540030752,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7081611588294998,
+        "initial_threshold": 0.47574306982066844,
+        "shape": -0.16395325919195786,
+        "scale": 0.10628301391656828,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6277150591506341,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.616134710890573,
+        "initial_threshold": 0.4452848956673479,
+        "shape": 0.048806685531076185,
+        "scale": 0.05901211436363202,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6277857118582924,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6142340807305621,
+        "initial_threshold": 0.44746309790965005,
+        "shape": 0.07824490998529152,
+        "scale": 0.05528916738712091,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6256696468995978,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6139988892170919,
+        "initial_threshold": 0.4514611872213175,
+        "shape": 0.04720061810430302,
+        "scale": 0.056265952431361864,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6407355457544268,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6234047604004838,
+        "initial_threshold": 0.09171896986663342,
+        "shape": 0.7902948542751355,
+        "scale": 0.05601929958456492,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6733757340908038,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6336472103198963,
+        "initial_threshold": 0.09145482629537582,
+        "shape": 0.6906254400372513,
+        "scale": 0.06821473467660388,
+        "n_calibration": 100000,
+        "n_peaks": 14998,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6515523260831828,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6262192459380231,
+        "initial_threshold": 0.101995462924242,
+        "shape": 0.710209449841992,
+        "scale": 0.06371453042944031,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 3.6186730307387704,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.7197055872256977,
+        "initial_threshold": 0.22747592147750095,
+        "shape": 0.41185875333377575,
+        "scale": 0.7014113706813598,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 4.109814722878178,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.979304668259794,
+        "initial_threshold": 0.32182753077560994,
+        "shape": 1.332057946062854,
+        "scale": 0.13583954729046804,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 6.519928606393228,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 5.12089617757535,
+        "initial_threshold": 0.3873649314197928,
+        "shape": 1.10146862321974,
+        "scale": 0.2781653474727312,
+        "n_calibration": 100000,
+        "n_peaks": 15000,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7199894005745662,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6996092793274598,
+        "initial_threshold": 0.4894229572523804,
+        "shape": -0.14434245259864315,
+        "scale": 0.09377062508609035,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7233443383364665,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7027399189244027,
+        "initial_threshold": 0.485152028681848,
+        "shape": -0.09979325219375727,
+        "scale": 0.09169396348682649,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7190671002930632,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7025041452545564,
+        "initial_threshold": 0.48483441434942903,
+        "shape": -0.3492927076301159,
+        "scale": 0.1242996968200791,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.635529988304525,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6218205749042469,
+        "initial_threshold": 0.45191775623426234,
+        "shape": 0.004215154310883961,
+        "scale": 0.06238259020831646,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6395849387983308,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6281794310554938,
+        "initial_threshold": 0.45514862621044877,
+        "shape": -0.007753174391578707,
+        "scale": 0.06456817954779961,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6466722880329644,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6304562260396891,
+        "initial_threshold": 0.4533005152962404,
+        "shape": 0.007092534971438963,
+        "scale": 0.06479203634770264,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.42594606757164727,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.39641103250052356,
+        "initial_threshold": 0.05336075872182844,
+        "shape": 0.6840560687774591,
+        "scale": 0.04365501420444178,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6752517461776798,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.597999058540214,
+        "initial_threshold": 0.1060935191810131,
+        "shape": 0.905868517169983,
+        "scale": 0.041940081942081195,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.5521221554279356,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.541937977252223,
+        "initial_threshold": 0.09239135831594462,
+        "shape": 0.7112469619134887,
+        "scale": 0.05453849144073679,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 5.511058848096493,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 5.0235745362658335,
+        "initial_threshold": 0.5613393033757845,
+        "shape": 0.6668174082735164,
+        "scale": 0.5851895703189527,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 3.7069550108664773,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.8747996990410396,
+        "initial_threshold": 0.3152191190128652,
+        "shape": 0.43753058095305253,
+        "scale": 0.6860280186514337,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 4.9510833656220665,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 4.487040748811179,
+        "initial_threshold": 0.6903767299133973,
+        "shape": 0.7378733489490834,
+        "scale": 0.43939370403471667,
+        "n_calibration": 90927,
+        "n_peaks": 13639,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6504277522090349,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6462951842562544,
+        "initial_threshold": 0.5050467859936604,
+        "shape": -0.20594297201456277,
+        "scale": 0.06804823428330015,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6799333191974826,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6752966711600462,
+        "initial_threshold": 0.5211886995176456,
+        "shape": 0.016525925276288034,
+        "scale": 0.05564346334376541,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6452266706432342,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6432293253017352,
+        "initial_threshold": 0.5127798707479011,
+        "shape": -0.3728788894998001,
+        "scale": 0.07651710940568304,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6438640858067273,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6480042248597533,
+        "initial_threshold": 0.5042407842249353,
+        "shape": -0.32704404940180964,
+        "scale": 0.08002144696192244,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6557561873528449,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6491741023270164,
+        "initial_threshold": 0.5219465703206185,
+        "shape": -0.4539598395079757,
+        "scale": 0.08163232042744141,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6621775175497955,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6538611031214009,
+        "initial_threshold": 0.5140092955242367,
+        "shape": -0.3620814435818781,
+        "scale": 0.08103471326269643,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.2123116798698902,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.24501458592702016,
+        "initial_threshold": 0.0521755862981081,
+        "shape": 0.28793168549282167,
+        "scale": 0.0470191265143452,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.21165678486227985,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.24450287476469088,
+        "initial_threshold": 0.05352766588330268,
+        "shape": 0.5120498879083999,
+        "scale": 0.03258053056177229,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.22623254179954524,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.22651773684857032,
+        "initial_threshold": 0.05125474277883768,
+        "shape": 0.3151382732242576,
+        "scale": 0.04098431819054309,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 3.8335206480491006,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 4.207643826652818,
+        "initial_threshold": 0.9027737318834816,
+        "shape": -0.08241812606590795,
+        "scale": 1.361639825203242,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 3.8335206480491006,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 4.207643826652818,
+        "initial_threshold": 0.9027737318834816,
+        "shape": -0.08241812606590795,
+        "scale": 1.361639825203242,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 3.8335206480491006,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 4.207643826652818,
+        "initial_threshold": 0.9027737318834816,
+        "shape": -0.08241812606590795,
+        "scale": 1.361639825203242,
+        "n_calibration": 800,
+        "n_peaks": 120,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.678050394290449,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6866230569017927,
+        "initial_threshold": 0.5542975483599926,
+        "shape": -0.5062610628708097,
+        "scale": 0.08978351196843068,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.69819230498078,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6969670590740663,
+        "initial_threshold": 0.5381480801509279,
+        "shape": -0.5912466263862621,
+        "scale": 0.11762192974141902,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.675951200722532,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6777440669828911,
+        "initial_threshold": 0.5400813651650154,
+        "shape": -0.6180060909075789,
+        "scale": 0.10471870446486103,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6549973398472012,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6598738844662017,
+        "initial_threshold": 0.555971658396805,
+        "shape": -0.6744782183619236,
+        "scale": 0.08352503332931413,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6481754467749249,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6553806730750086,
+        "initial_threshold": 0.5536810673723209,
+        "shape": -0.5131067962461088,
+        "scale": 0.06950242625519468,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6581796143234457,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6617116132183167,
+        "initial_threshold": 0.5539036902875918,
+        "shape": -0.7011086364847317,
+        "scale": 0.0888998196656913,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.22408268287777866,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.2264621139629609,
+        "initial_threshold": 0.05696655735373495,
+        "shape": 0.06572580780935511,
+        "scale": 0.05718455092956561,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.2072524461150157,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.21831269034795298,
+        "initial_threshold": 0.049023565649986264,
+        "shape": 0.1142837327493304,
+        "scale": 0.053337966443420155,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.25297695249319013,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.24885062363891433,
+        "initial_threshold": 0.05549968555569646,
+        "shape": 0.11899472243238451,
+        "scale": 0.06051148403594277,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 8.761708375532537,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 8.56898877633289,
+        "initial_threshold": 2.0769111113845895,
+        "shape": 0.030336733311699865,
+        "scale": 2.300199415092229,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 8.047441755982524,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 7.814229317912313,
+        "initial_threshold": 1.9967247607990335,
+        "shape": 0.054891131677577816,
+        "scale": 1.992515738549673,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 7.984313212844449,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 7.8595213430107265,
+        "initial_threshold": 1.9508286062819749,
+        "shape": 0.019445052938704355,
+        "scale": 2.124955997156574,
+        "n_calibration": 10720,
+        "n_peaks": 1608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6822548440147628,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6714199553359748,
+        "initial_threshold": 0.5462450109277723,
+        "shape": -0.13086464007324045,
+        "scale": 0.054896519078407015,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7009181606375076,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6908285998676266,
+        "initial_threshold": 0.5529167383581713,
+        "shape": -0.3081220010957695,
+        "scale": 0.07509449961903333,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.705382816964664,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6958070813877003,
+        "initial_threshold": 0.5414897689977457,
+        "shape": -0.4303954998754611,
+        "scale": 0.09650288533482068,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6718922863439678,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6771418372173538,
+        "initial_threshold": 0.5300403554785306,
+        "shape": -0.4475641972016646,
+        "scale": 0.09373115229421076,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6674000416257999,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6754855053771739,
+        "initial_threshold": 0.535594536867657,
+        "shape": -0.46007718546923115,
+        "scale": 0.09035334939983869,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6603914232184437,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6682075395791559,
+        "initial_threshold": 0.5370362121538047,
+        "shape": -0.40903975681429544,
+        "scale": 0.08011902394482082,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7994140011072112,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7781992564291982,
+        "initial_threshold": 0.11735700555145728,
+        "shape": 0.36854702251942917,
+        "scale": 0.14218083029815526,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.514684257507323,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.4954424998903971,
+        "initial_threshold": 0.09866447262465951,
+        "shape": 0.290418241208613,
+        "scale": 0.09637761448110096,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6211434221267682,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6482882791553559,
+        "initial_threshold": 0.11529757641255853,
+        "shape": 0.33136399126142596,
+        "scale": 0.12154331071687544,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 10.800342441475623,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 10.807943241155318,
+        "initial_threshold": 1.511118866789368,
+        "shape": 0.3438917774736479,
+        "scale": 2.0790832328893507,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 10.846461488973182,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 11.110559923474893,
+        "initial_threshold": 1.5748856285801207,
+        "shape": 0.3659501114121219,
+        "scale": 2.0600169915730593,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 10.581596670572607,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 10.821149404559636,
+        "initial_threshold": 1.501475650067985,
+        "shape": 0.3413196092077382,
+        "scale": 2.0925753842105426,
+        "n_calibration": 32000,
+        "n_peaks": 4800,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7086818365088065,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7044971818607004,
+        "initial_threshold": 0.5351503968438941,
+        "shape": -0.821271075858722,
+        "scale": 0.15594363827879903,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6373195809285448,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.659124387702187,
+        "initial_threshold": 0.5036570998124502,
+        "shape": -0.4597546009420005,
+        "scale": 0.10037276151460206,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6965042090528873,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.694382327225785,
+        "initial_threshold": 0.5558050913889611,
+        "shape": -0.7919827400764301,
+        "scale": 0.12430283847146677,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6741512904618974,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6776237494710554,
+        "initial_threshold": 0.538339186951311,
+        "shape": -0.6953416770555569,
+        "scale": 0.11422317177952139,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6678422565263099,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.670392673344235,
+        "initial_threshold": 0.5429953514477536,
+        "shape": -0.7081761670581621,
+        "scale": 0.105755087746763,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6873560445236871,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6905858641546497,
+        "initial_threshold": 0.5230592392896558,
+        "shape": -0.701346100367208,
+        "scale": 0.13817019841882833,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.1657734984159467,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.169541990833511,
+        "initial_threshold": 0.0688936274498701,
+        "shape": 0.23081437365875396,
+        "scale": 0.026748720280006515,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.17672403335571288,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.18277099939759445,
+        "initial_threshold": 0.07327342070639133,
+        "shape": 0.20377140452927173,
+        "scale": 0.030293974336309114,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.16436459168791767,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.16846280709911016,
+        "initial_threshold": 0.05686293337494134,
+        "shape": 0.2259495345007167,
+        "scale": 0.02987543080654522,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 14.714376504026689,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 15.052869163715894,
+        "initial_threshold": 5.597550636955362,
+        "shape": 0.09246584947805622,
+        "scale": 3.0722173808908018,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 14.714376504026689,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 15.052869163715894,
+        "initial_threshold": 5.597550636955362,
+        "shape": 0.09246584947805622,
+        "scale": 3.0722173808908018,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 14.714376504026689,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 15.052869163715894,
+        "initial_threshold": 5.597550636955362,
+        "shape": 0.09246584947805622,
+        "scale": 3.0722173808908018,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ebgad_release_zero",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.13338235178144,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 44.2532773628039,
+        "initial_threshold": 5.930209488792073,
+        "shape": -0.4094872642006477,
+        "scale": 23.417679302412747,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ebgad_release_zero",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.13338235178144,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 44.2532773628039,
+        "initial_threshold": 5.930209488792073,
+        "shape": -0.4094872642006477,
+        "scale": 23.417679302412747,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "ebgad_release_zero",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.13338235178144,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 44.2532773628039,
+        "initial_threshold": 5.930209488792073,
+        "shape": -0.4094872642006477,
+        "scale": 23.417679302412747,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.134797053337097,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 9.921605256064657,
+        "initial_threshold": 1.1149576485157013,
+        "shape": 2.5053024172537306,
+        "scale": 0.024965567232720448,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.4631002235412596,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 6.2947793751124586,
+        "initial_threshold": 1.1191782176494598,
+        "shape": 1.7101881808059547,
+        "scale": 0.08703091810325422,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.191428906917572,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 59.87873698314042,
+        "initial_threshold": 1.5099229216575623,
+        "shape": 5.063464592456334,
+        "scale": 0.0003271995871979305,
+        "n_calibration": 4072,
+        "n_peaks": 611,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7071780833814753,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7128989017966971,
+        "initial_threshold": 0.48549556540282524,
+        "shape": -0.44743793612062155,
+        "scale": 0.14485175485193136,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6978847537857994,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7092932409621651,
+        "initial_threshold": 0.4929847042623765,
+        "shape": -0.4480992490591065,
+        "scale": 0.1378836672137388,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "cae_if_core",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6982105206566158,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.7044706325816047,
+        "initial_threshold": 0.4836210816490906,
+        "shape": -0.4384817253007765,
+        "scale": 0.13931059249795485,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7001791208446596,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6901471159115453,
+        "initial_threshold": 0.4655146496029471,
+        "shape": -0.3717906424947469,
+        "scale": 0.13157213550649013,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.7043761336769796,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6985940291794241,
+        "initial_threshold": 0.4587372015349792,
+        "shape": -0.422528847057589,
+        "scale": 0.14867547264462694,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "iforest",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.6978235326561655,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.6959484830676002,
+        "initial_threshold": 0.47262337219746364,
+        "shape": -0.39969441489947505,
+        "scale": 0.13496945617555198,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.16718451976776164,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.1555776404844382,
+        "initial_threshold": 0.011335453018546104,
+        "shape": 0.5455589458042245,
+        "scale": 0.02325516335428239,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.13632188960909847,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.14577983542994075,
+        "initial_threshold": 0.012309434823691845,
+        "shape": 0.5479027673491198,
+        "scale": 0.021608783202752526,
+        "n_calibration": 4096,
+        "n_peaks": 608,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ae",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 0.1754251748323443,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 0.18212368341367235,
+        "initial_threshold": 0.011617121286690235,
+        "shape": 0.640239569479844,
+        "scale": 0.023637101083250713,
+        "n_calibration": 4096,
+        "n_peaks": 607,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.78519901624786,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 42.05372127240918,
+        "initial_threshold": 1.450824067217203,
+        "shape": 0.5915920741719255,
+        "scale": 6.1914359379242585,
+        "n_calibration": 4096,
+        "n_peaks": 597,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.78519901624786,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 42.05372127240918,
+        "initial_threshold": 1.450824067217203,
+        "shape": 0.5915920741719255,
+        "scale": 6.1914359379242585,
+        "n_calibration": 4096,
+        "n_peaks": 597,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "pca",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 41.78519901624786,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 42.05372127240918,
+        "initial_threshold": 1.450824067217203,
+        "shape": 0.5915920741719255,
+        "scale": 6.1914359379242585,
+        "n_calibration": 4096,
+        "n_peaks": 597,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ebgad_release_zero",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 153.000443056858,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 165.39438190395302,
+        "initial_threshold": 42.85497193432413,
+        "shape": 0.11891778181183957,
+        "scale": 38.33821696599384,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ebgad_release_zero",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 153.000443056858,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 165.39438190395302,
+        "initial_threshold": 42.85497193432413,
+        "shape": 0.11891778181183957,
+        "scale": 38.33821696599384,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "ebgad_release_zero",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 153.000443056858,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 165.39438190395302,
+        "initial_threshold": 42.85497193432413,
+        "shape": 0.11891778181183957,
+        "scale": 38.33821696599384,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 42,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.9210747957229617,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.1617562152599494,
+        "initial_threshold": 0.509328305721283,
+        "shape": -1.7857138459050246,
+        "scale": 4.774655396546838,
+        "n_calibration": 4096,
+        "n_peaks": 612,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 43,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.4439423203468325,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 2.6791407799136358,
+        "initial_threshold": 0.5601755827665329,
+        "shape": -1.5043158988224201,
+        "scale": 3.2426806162791753,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "audit_hcl_zero_adapted",
+    "seed": 44,
+    "thresholds": {
+      "quantile": {
+        "status": "ok",
+        "threshold": 2.3092630863189703,
+        "quantile": 0.99
+      },
+      "pot": {
+        "status": "ok",
+        "threshold": 3.523201131991877,
+        "initial_threshold": 0.47167202830314636,
+        "shape": -0.451500936528645,
+        "scale": 1.9523652751124327,
+        "n_calibration": 4096,
+        "n_peaks": 615,
+        "initial_quantile": 0.85,
+        "risk": 0.01
+      }
+    }
+  }
+]

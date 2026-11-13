@@ -1,0 +1,26 @@
+{
+  "primary_job": "j-1114-2e8178",
+  "primary_source_commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd",
+  "selection_rule": "First completed and independently verified whole 144-run cohort; selected before reading financial metrics. No cross-cohort mixing.",
+  "reference_job": "j-1114-c8d2b6",
+  "reference_source_commit": "960673f3a61a4c93fb5033ccbba8f8a3d670ccbd",
+  "reference_included_in_primary": false,
+  "qualification_job": "j-1114-4c5e7d",
+  "target_free_padding_profile_job": "j-1114-4f8bf4",
+  "provider": "Kaggle",
+  "gpu": "Tesla T4",
+  "paid_rental_used": false,
+  "local_independent_audits": [
+    "exact input archive SHA256 and per-file hashes",
+    "immutable git scientific source SHA256",
+    "upstream pinned archive SHA256",
+    "144 score-file hashes and metric/threshold replay",
+    "33 paired-sample groups and shared train-only scaler reconstruction"
+  ],
+  "local_functional_tests_passed": 42,
+  "local_zero_label_tests_passed": 8,
+  "gpu_zero_label_tests_passed": 8,
+  "raw_models_and_scores": "Retained in private CQ archive and local downloaded job output; aggregate metrics and integrity evidence published here.",
+  "reference_cancel_requested_after_primary_verified": true,
+  "reference_cancellation_note": "Kaggle provider may keep running after CQ cancellation request; CQ continues tracking and preserves retrieved artifacts. Reference outputs excluded from primary results."
+}

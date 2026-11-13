@@ -40,3 +40,22 @@ python -m finad_zero.experiment --data /data/financial-zero/tabular --graph-data
 `/data/...`为示例，可替换为可用工作目录；生成文件不写入Git原始数据目录。CQ执行脚本为 `scripts/run_zero_label_cq.sh`，只使用免费Kaggle配额，不租赁付费机器。以通过的同提交GPU smoke为完整实验前置门禁。
 
 如果使用GitHub ZIP或CQ源码归档而没有 `.git`，须将 `FINAD_CODE_COMMIT` 环境变量设为源码对应的完整40位小写SHA；程序同时保存各科学源文件的SHA256。若存在Git目录，声明SHA必须与实际提交一致。正式实验源版本以结果 `run_manifest.json` 为准；报告导出与说明文档可有后续提交。
+
+## 已完成结果与独立核验
+
+[144次正式运行报告](../results/zero_label_20261114/README_CN.md)对应源提交 `847238664dc06077271e06430e5ef7ac8b2e9cfd`，CQ作业 `j-1114-2e8178`。整轮完成且通过独立核验后才查看金融成绩；未从不同执行版本拼接有利结果。报告保留288条阈值记录、逐种子配置、校准参数、运行环境及完整性证明。原始模型、保存分数及精确输入归档保留在本地和CQ归档，未将大型二进制检查点加入Git。
+
+持有完整CQ输出时，可依次复核源码和输入、分数指标、配对样本与共同训练缩放器，再导出报告；第一步需要本仓库包含上述源提交的Git历史，归档解包核验建议使用Python 3.12或更新版本：
+
+```bash
+python scripts/verify_zero_label_artifacts.py --job-output /path/to/job-output
+python scripts/verify_zero_label.py --results /path/to/job-output/results \
+  --data /path/to/job-output/exact_inputs/tabular --graph-data /path/to/job-output/work/graphs
+python scripts/verify_zero_label_cohort.py --runs /path/to/job-output/results \
+  --data /path/to/job-output/exact_inputs/tabular --graph-data /path/to/job-output/work/graphs \
+  --output /path/to/job-output/results/cohort_verification.json
+python scripts/report_zero_label.py --runs /path/to/job-output/results \
+  --output /path/to/report
+```
+
+报告目录还包含人工整理的执行记录、CQ配置和门禁证据；这些不由报告导出器伪造。独立核验共同缩放器不意味着EB-GAD额外的转导标准化也只使用训练图，见前述信息预算说明。

@@ -1,0 +1,410 @@
+{
+  "status": "passed",
+  "groups": 33,
+  "runs": 144,
+  "notes": "The audit verifies the shared train-only robust scaler and paired graph evaluation accounts. EB-GAD additionally re-standardizes each evaluation graph and fits its EB parameters transductively; algorithm-internal transforms are not claimed train-only.",
+  "verified": [
+    {
+      "track": "graph",
+      "dataset": "banksim",
+      "seed": 42,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "81b32f4e44d74e1ab6424afd2cc084faba942411904b51ebcf19165b9dd16da5",
+        "test": "2ae14fba67ec1b6add25def3d5b8b5ec538d972b8f3dd65cb3cf8dad26e6aec0"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d"
+    },
+    {
+      "track": "graph",
+      "dataset": "banksim",
+      "seed": 43,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "81b32f4e44d74e1ab6424afd2cc084faba942411904b51ebcf19165b9dd16da5",
+        "test": "2ae14fba67ec1b6add25def3d5b8b5ec538d972b8f3dd65cb3cf8dad26e6aec0"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d"
+    },
+    {
+      "track": "graph",
+      "dataset": "banksim",
+      "seed": 44,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "81b32f4e44d74e1ab6424afd2cc084faba942411904b51ebcf19165b9dd16da5",
+        "test": "2ae14fba67ec1b6add25def3d5b8b5ec538d972b8f3dd65cb3cf8dad26e6aec0"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d"
+    },
+    {
+      "track": "graph",
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "test": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7"
+    },
+    {
+      "track": "graph",
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "test": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7"
+    },
+    {
+      "track": "graph",
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "methods": 6,
+      "shared_indices": {
+        "train": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "calibration": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3",
+        "test": "b83e23eb1db808bf694ae4894d62b50c9840bcd869ba7ac2456f40ddf0530bf3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7"
+    },
+    {
+      "track": "tabular",
+      "dataset": "banksim",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "0768f8172f1db961dd0a4ce13b601494223a86d6a5dd7a6a1652c47cd18c3ca3",
+        "calibration": "446125ce66051d9aef0f14a8753bfa7e52258706900fabb9b4151774380a25ca"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "banksim",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "f30b8545a4c381d50783cdb6e1ea7f4a6c15a92efcb512654b44e0dd7636165e",
+        "calibration": "3300521cab10f2d524ef5967b746e3c9e9e4d7252a17069a54ebedc989d1a0ab"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "banksim",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "31eea97eb3da745a5596b2caeed51182ec870dba75bc138ad53d0f2574e50a29",
+        "calibration": "b5aa0ccaa2a4cae7cbb21a2ff49e633776b14c4c85e25c10940f350290793dbc"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "dca7121ee10fa3b81375f7c4b87b2d1fb842f2ee204e4a6df4eaf097ba629525",
+        "calibration": "51acc18be195ff640c1dc9b7f523e71b319c80e85553575506c396e69289de4b"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694"
+    },
+    {
+      "track": "tabular",
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "23ad2b6dbf06e508a5b65d2130f377cc53364bdcd47fdd04051926d41043340c",
+        "calibration": "51acc18be195ff640c1dc9b7f523e71b319c80e85553575506c396e69289de4b"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694"
+    },
+    {
+      "track": "tabular",
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "c6a51d4ebf32aa50247c4ee5512811abf355030457ae449cd1b3ce5ea5ee5047",
+        "calibration": "51acc18be195ff640c1dc9b7f523e71b319c80e85553575506c396e69289de4b"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "6b9955c96e886da16ceacf8f6b6fcfeff9bca0ba188e911240d3fc2829290fed",
+        "calibration": "a97552cbd47aebaff59367ec34fbc9a4e12c3f531456219fe8634d4bc65af2a1"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "d2847aed2b8e219170a9216b8b840c9332e3bc1d28e3a6ff44f295bc0a34edf1",
+        "calibration": "d0a3da882e1540863eb1a6d99c85eeeaec59784d597efb6629fbb6c0ebca60b4"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "7cbaf1cd3f18e489bc0582b011647a90e4460253a76dd748802e76b3087e273f",
+        "calibration": "03a61a2ed93a37a6e51fee5fb721b1d52c02f9a039c70c7ef7c55c445a2b6520"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "d39a486383f36ccd2f21d808541c49f2291241abbaeb9e243b2f4ef7c9b4ece8",
+        "calibration": "962db0aed399c87b6d9d6975d95cf8612af0bfb967a7b0f3bb07a4f5aff5c9f1"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "31958e8794c330197f12d8a45b83b5de5bf4538d5a180252a82d0918fe65686b",
+        "calibration": "962db0aed399c87b6d9d6975d95cf8612af0bfb967a7b0f3bb07a4f5aff5c9f1"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "20153d951dcdaad74a1c25ef228c53badb1549a8c72e3a089a68668dcb754f9f",
+        "calibration": "962db0aed399c87b6d9d6975d95cf8612af0bfb967a7b0f3bb07a4f5aff5c9f1"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "21d943653c64ff76218be18e37817088e7076ddef644612cbe833ad3aab9517c",
+        "calibration": "534b471aef9f3e0606c026d91a26493d5d6cd1dc46766d77e3c41e867e3af6cb"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "02e3f3223a5659a50b369935dbb973404e17650e83c4c001b19018e81a86d472",
+        "calibration": "ef17bd76bccade4604272b4eb384e841fd3d290dcd29474f34eff321e0581af9"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "4197e0ac607116acc1ec83f690206ba4b447a40501c15a7c208710038b7424c3",
+        "calibration": "ee4baa6586dc578a049245a3d33deb9a994323d921af173c6dd0e2674815bdb0"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "00c7d7d961a0641290c04af7511f03ba134b6e0ccca262b2febd1e8352c12565",
+        "calibration": "27a1ae52ca02249928a0e9db2a0eab7465c20802caee4fddf8f5d87fe220d2fc"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "484d0dcf35dd56b2b094a25bd48c4ac1d8c38d848a576b8713db5e9c8f05b846",
+        "calibration": "27a1ae52ca02249928a0e9db2a0eab7465c20802caee4fddf8f5d87fe220d2fc"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "fc66b6bdd39a136310e01af4f96865fa16b6089910839a7dd4143af2d8c4e633",
+        "calibration": "27a1ae52ca02249928a0e9db2a0eab7465c20802caee4fddf8f5d87fe220d2fc"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_stock",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "b5a05466a6056549e33d7dd7bc8d6d45998abe32a778589bdee3928436e1d5d0",
+        "calibration": "a5c12ea608c160e7cac7f21b04d10a28f1e1c6b3448daa018f2410b69b9901b3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_stock",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "b5a05466a6056549e33d7dd7bc8d6d45998abe32a778589bdee3928436e1d5d0",
+        "calibration": "a5c12ea608c160e7cac7f21b04d10a28f1e1c6b3448daa018f2410b69b9901b3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_stock",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "b5a05466a6056549e33d7dd7bc8d6d45998abe32a778589bdee3928436e1d5d0",
+        "calibration": "a5c12ea608c160e7cac7f21b04d10a28f1e1c6b3448daa018f2410b69b9901b3"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_synth",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "d6f58e16d145c0db56e8eb4f5bd688d4e64a000ab612c725f42aa6279ee746f8",
+        "calibration": "6cea5699c2c4476622c0b7d6643cdc29fd180fdd604cc3e23ebadb33e90408f6"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_synth",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "90891bdac1cbcde373beda158bfdf36cfb0c7161b2c0cd0ca33e290764eba575",
+        "calibration": "6cea5699c2c4476622c0b7d6643cdc29fd180fdd604cc3e23ebadb33e90408f6"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "sd_synth",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "468e4a378f831e8e0db95f7a8ed86110fce16e1554d85514525d517012cc0f71",
+        "calibration": "6cea5699c2c4476622c0b7d6643cdc29fd180fdd604cc3e23ebadb33e90408f6"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c"
+    },
+    {
+      "track": "tabular",
+      "dataset": "ulb",
+      "seed": 42,
+      "methods": 4,
+      "shared_indices": {
+        "train": "85d6cc0123cc3e27044c07cd03c02a7248da9c48e99ac4510f96d266e1a81356",
+        "calibration": "f3c7e5bc13b66620edb722328634690558650fc92e4ee774e7523e0d972c2d3c"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421"
+    },
+    {
+      "track": "tabular",
+      "dataset": "ulb",
+      "seed": 43,
+      "methods": 4,
+      "shared_indices": {
+        "train": "4edc7937a897df6de3bee5668d6566e93e77bd971abd7d815ef7fdafcecec707",
+        "calibration": "f3c7e5bc13b66620edb722328634690558650fc92e4ee774e7523e0d972c2d3c"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421"
+    },
+    {
+      "track": "tabular",
+      "dataset": "ulb",
+      "seed": 44,
+      "methods": 4,
+      "shared_indices": {
+        "train": "32339c5a774b5a242c195070256aa5a6b21c614e20964028bfce12d8a374fd90",
+        "calibration": "f3c7e5bc13b66620edb722328634690558650fc92e4ee774e7523e0d972c2d3c"
+      },
+      "shared_preprocessing_recomputed_from_training_only": true,
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421"
+    }
+  ]
+}

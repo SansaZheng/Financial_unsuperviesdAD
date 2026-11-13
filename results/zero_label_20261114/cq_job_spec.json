@@ -1,0 +1,53 @@
+{
+  "work": "FinancialAD",
+  "code": {
+    "github": "SansaZheng/Financial_unsuperviesdAD",
+    "commit": "847238664dc06077271e06430e5ef7ac8b2e9cfd"
+  },
+  "placement": {
+    "target": "kaggle"
+  },
+  "env": {
+    "FINAD_CODE_COMMIT": "847238664dc06077271e06430e5ef7ac8b2e9cfd"
+  },
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 2,
+    "cpus": 4,
+    "ram_gb": 24
+  },
+  "limits": {
+    "max_hours": 1.5,
+    "max_attempts": 1
+  },
+  "name": "FinancialAD equivalent fast-padding full 20261114",
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail\nfinalize_outputs() {\npython - <<'FINALIZE'\nimport hashlib,json,os,shutil,tarfile\nfrom pathlib import Path\nout=Path(os.environ['CQ_OUTPUT_DIR'])\n# Pure eigensolver caches are regenerable from preserved graph inputs and pinned code.\nfor parent in (out/'ebcache',out/'work'/'eb_cache'):\n    if parent.exists():\n        for directory in list(parent.rglob('spectrum')):\n            if directory.is_dir(): shutil.rmtree(directory)\n# Preserve exact prepared inputs in a nested compressed archive to respect CQ's\n# 500 MiB expanded outer archive ceiling; keep models, scores and logs unchanged.\ntab=out/'work'/'tabular'\nif tab.exists():\n    results=out/'results';results.mkdir(exist_ok=True)\n    if (tab/'cache_files_sha256.json').exists():\n        shutil.copyfile(tab/'cache_files_sha256.json',results/'input_cache_files_sha256.json')\n    archive=out/'prepared_tabular_inputs.tar.gz'\n    with tarfile.open(archive,'w:gz') as tf:tf.add(tab,arcname='tabular',recursive=True)\n    digest=hashlib.sha256(archive.read_bytes()).hexdigest()\n    (results/'input_archive.json').write_text(json.dumps(dict(file=archive.name,sha256=digest,bytes=archive.stat().st_size)))\n    shutil.rmtree(tab)\ncache=out/'pip-cache'\nif cache.exists():shutil.rmtree(cache)\nfiles=[p for p in out.rglob('*') if p.is_file()]\nfor diagnostic in ('tests.txt','progress.log','financial_smoke/failures.json'):\n    file=out/diagnostic\n    if file.exists(): print('DIAGNOSTIC '+diagnostic+'\\n'+file.read_text(errors='replace')[-16000:],flush=True)\nprint('OUTPUT_BYTES',sum(p.stat().st_size for p in files),flush=True)\nFINALIZE\n}\ntrap finalize_outputs EXIT\nbash scripts/run_zero_label_cq.sh full"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/FinancialAD/zero-label-20261114-full-v2-safe-r4-diagnostics-final6-clean-temporal-fast-padding",
+    "expect": [
+      {
+        "path": "results/complete.json",
+        "contains": "\"finished\": 144"
+      },
+      {
+        "path": "results/verification.json",
+        "contains": "\"status\": \"passed\""
+      },
+      {
+        "path": "results/records.json",
+        "min_lines": 145
+      }
+    ],
+    "progress": {
+      "path": "progress.log",
+      "stall_min": 45
+    }
+  },
+  "depends_on": [
+    "j-1114-4c5e7d"
+  ]
+}
