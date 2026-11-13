@@ -294,8 +294,87 @@ def prepare_cardsim(root):
     w.close()
 
 
+OHLCVA_FEATURES = ['log_return', 'log_range', 'log_body', 'log_upper_wick', 'log_lower_wick', 'log_gap',
+                   'log_amount_btc', 'rel_amount_24h', 'rel_amount_168h', 'rel_volume_24h', 'past_vol_24h',
+                   'return_z_24h', 'rel_range_24h', 'traded']
+# Pump labels mark the hour of the announcement; buying ahead of it and the dump can fall into
+# the adjacent hour, so +/-2 hourly bars is fixed as the tolerance before looking at test labels.
+TOLERANCE.update({'xu_pump_1h': 2, 'b0r0_binance_1h': 2})
+DATASETS = DATASETS+('xu_pump_1h', 'b0r0_binance_1h')
+OHLCVA_BOUNDS = None
+
+
+def ohlcva_features(k):
+    """Causal per-series features from hourly OHLCVA bars; baselines use strictly earlier bars."""
+    eps = 1e-12
+    k = k.sort_values(['series', 'timestamp'], kind='stable').reset_index(drop=True)
+    g = k.groupby('series', sort=False)
+    o, h, l, c = (np.log(np.maximum(k[x].to_numpy(dtype=np.float64), eps)) for x in ('open', 'high', 'low', 'close'))
+    prev_c = g['close'].shift(1).fillna(k['open']).to_numpy(dtype=np.float64)
+    prev_c = np.log(np.maximum(prev_c, eps))
+    f = pd.DataFrame({'series': k.series})
+    f['log_return'] = c-prev_c
+    f['log_range'] = h-l
+    f['log_body'] = c-o
+    f['log_upper_wick'] = h-np.maximum(o, c)
+    f['log_lower_wick'] = np.minimum(o, c)-l
+    f['log_gap'] = o-prev_c
+    la, lv = np.log1p(k.amount.to_numpy(dtype=np.float64)*100), np.log1p(k.volume.to_numpy(dtype=np.float64))
+    f['log_amount_btc'] = la
+    past = lambda values, width, stat: (pd.Series(values).groupby(k.series.to_numpy(), sort=False)
+                                        .transform(lambda s: getattr(s.shift(1).rolling(width, min_periods=1), stat)()).to_numpy())
+    f['rel_amount_24h'] = la-np.nan_to_num(past(la, 24, 'mean'), nan=0.)
+    f['rel_amount_168h'] = la-np.nan_to_num(past(la, 168, 'mean'), nan=0.)
+    f['rel_volume_24h'] = lv-np.nan_to_num(past(lv, 24, 'mean'), nan=0.)
+    vol = np.nan_to_num(past(f.log_return.to_numpy(), 24, 'std'), nan=0.)
+    f['past_vol_24h'] = vol
+    f['return_z_24h'] = np.clip(f.log_return.to_numpy()/(vol+1e-4), -50, 50)
+    f['rel_range_24h'] = f.log_range.to_numpy()-np.nan_to_num(past(f.log_range.to_numpy(), 24, 'mean'), nan=0.)
+    f['traded'] = (k.volume.to_numpy() > 0).astype(np.float64)
+    return k, f[OHLCVA_FEATURES].to_numpy(dtype=np.float64)
+
+
+def prepare_ohlcva(root, name):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('prepare_ohlcva_klines', ROOT/'scripts'/'prepare_ohlcva_klines.py')
+    ok = importlib.util.module_from_spec(spec); spec.loader.exec_module(ok)
+    k = ok.klines(RAW/'xu_livshits_pumpdump')
+    k = k[k.exchange != 'CCCAGG']  # CryptoCompare aggregate duplicates the exchange series and carries no label
+    events = ok.events(RAW/'xu_livshits_pumpdump')
+    if name == 'b0r0_binance_1h':
+        k = k[k.exchange == 'Binance']
+        b = pd.DataFrame(json.loads((RAW/'binance_pump_labels_b0r0koko'/'pumps.json').read_text()))
+        b = b[b.exchange.eq('BINANCE_SPOT') & b.symbol.str.endswith('-BTC')]
+        keys = set(zip(b.symbol.str.split('-').str[0], ['Binance']*len(b), pd.to_datetime(b.time, utc=True).dt.floor('h')))
+        source = 'B0R0koko Binance BTC-pair announcements (MIT) on Xu & Livshits Binance candles'
+    else:
+        keys = set(zip(events.coin, events.exchange, events.hour))
+        source = 'Xu & Livshits PumpOlymp signals on CryptoCompare exchange candles (CCCAGG excluded)'
+    k = k.assign(series=k.coin+'|'+k.exchange)
+    k, x = ohlcva_features(k)
+    # Chronological 60/20/20 by cumulative bar counts over whole hours of the full exchange panel,
+    # computed without labels and shared by both OHLCVA tasks.
+    global OHLCVA_BOUNDS
+    if OHLCVA_BOUNDS is None:
+        panel = ok.klines(RAW/'xu_livshits_pumpdump')
+        OHLCVA_BOUNDS = cumulative_time_boundaries(panel[panel.exchange != 'CCCAGG'].timestamp)
+    split = temporal_split(k.timestamp, *OHLCVA_BOUNDS)
+    y = np.fromiter(((c, e, t) in keys for c, e, t in zip(k.coin, k.exchange, k.timestamp)), dtype=np.int8, count=len(k))
+    series_id = pd.factorize(k.series)[0].astype(np.int32)
+    w = Writer(root, name, 'Chronological 60/20/20 by cumulative hourly-bar counts (shared boundaries); '
+               'features are causal per coin x exchange series; labels mark the signal hour.',
+               {'source': source, 'temporal': True, 'sequence_unit': 'coin x exchange series (test period)',
+                'sequence_id_file': 'test.seq.i32', 'tolerance_rows': TOLERANCE[name],
+                'time_boundaries': [str(b) for b in OHLCVA_BOUNDS], 'bar': '1h', 'quote': 'BTC',
+                'tolerance_note': '+/-2 hourly bars around the labelled signal hour (pre-pump buying, dump spill-over).'})
+    w.append(x, y, split, OHLCVA_FEATURES, series_id)
+    w.close()
+
+
 def prepare(name, root):
-    if name == 'cardsim':
+    if name in ('xu_pump_1h', 'b0r0_binance_1h'):
+        prepare_ohlcva(root, name)
+    elif name == 'cardsim':
         prepare_cardsim(root)
     elif name == 'ulb':
         prepare_ulb(root)
