@@ -1,15 +1,18 @@
 {
-  "files": 38,
-  "total_bytes": 108507464,
+  "files": 52,
+  "total_bytes": 233072175,
   "dataset_ids": [
     "adma21",
     "banksim",
+    "binance_pump_labels_b0r0koko",
     "cardsim",
+    "hu_pump_dump",
     "s_ffsd",
     "sapienza_pump_dump",
     "sd_fmm",
     "synthaml",
-    "ulb_creditcard"
+    "ulb_creditcard",
+    "xu_livshits_pumpdump"
   ],
   "artifacts": [
     {
@@ -665,6 +668,161 @@
           "bytes": 391
         }
       ]
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/README.md",
+      "bytes": 527,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/cryptocompare.RData",
+      "bytes": 85863522,
+      "sha256_verified": true,
+      "ohlcva": {
+        "candles": 5998998,
+        "series": 1499,
+        "coins": 578,
+        "exchanges": {
+          "CCCAGG": 2313156,
+          "Cryptopia": 2089044,
+          "Yobit": 760380,
+          "Bittrex": 604302,
+          "Binance": 232116
+        },
+        "time_range_utc": [
+          "2018-05-15 23:00:00+00:00",
+          "2018-10-29 16:00:00+00:00"
+        ],
+        "nonfinite_values": 0,
+        "ohlc_violations": 0,
+        "zero_volume_share": 0.6105934691093413,
+        "events": 435,
+        "events_by_exchange": {
+          "Cryptopia": 216,
+          "Yobit": 121,
+          "Binance": 71,
+          "Bittrex": 27
+        },
+        "events_with_series": 297,
+        "events_in_candles": 197,
+        "events_in_candles_by_exchange": {
+          "Cryptopia": 127,
+          "Yobit": 38,
+          "Binance": 21,
+          "Bittrex": 11
+        },
+        "pump_hours": 192,
+        "event_time_range_utc": [
+          "1999-01-14 17:00:37+00:00",
+          "2019-02-26 20:00:00.946000+00:00"
+        ],
+        "reg_cryptopia_panel": {
+          "rows": 70320,
+          "columns": 54,
+          "pumped_rows": 119,
+          "time_range_utc": [
+            "2018-07-21 15:00:25+00:00",
+            "2018-10-28 20:00:16+00:00"
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/rawpumpolymp.json",
+      "bytes": 25365725,
+      "sha256_verified": true,
+      "table": {
+        "rows": 435,
+        "parsed_as": "json"
+      }
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/reg_cryptopia.RData",
+      "bytes": 12285291,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/cryptopiacointable.txt",
+      "bytes": 474306,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "xu_livshits_pumpdump",
+      "path": "xu_livshits_pumpdump/pumpdump.Rmd",
+      "bytes": 64595,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/LICENSE",
+      "bytes": 1071,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/README.md",
+      "bytes": 4388,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pumps.json",
+      "bytes": 49937,
+      "sha256_verified": true,
+      "table": {
+        "rows": 498,
+        "columns": [
+          "symbol",
+          "exchange",
+          "time"
+        ]
+      }
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/dropped_pumps.json",
+      "bytes": 2701,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pump_event_evidence.json",
+      "bytes": 277719,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "binance_pump_labels_b0r0koko",
+      "path": "binance_pump_labels_b0r0koko/pump_event_exclusions.json",
+      "bytes": 93647,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "hu_pump_dump",
+      "path": "hu_pump_dump/README.md",
+      "bytes": 5806,
+      "sha256_verified": true
+    },
+    {
+      "dataset": "hu_pump_dump",
+      "path": "hu_pump_dump/PD_logs_cleaned.txt",
+      "bytes": 75476,
+      "sha256_verified": true,
+      "table": {
+        "rows": 1335,
+        "columns": [
+          "channel_id",
+          "session_id",
+          "coin",
+          "exchange",
+          "pair",
+          "timestamp"
+        ]
+      }
     }
   ]
 }

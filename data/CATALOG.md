@@ -1,6 +1,6 @@
 # 完整金融异常检测数据源清单
 
-核对日期：2026-11-06；共35项，含相邻任务，不表示独立可下载基准的数量。
+核对日期：2026-11-06，2026-11-10 补充 OHLCVA K线检索；共37项，含相邻任务，不表示独立可下载基准的数量。
 
 | ID / 来源 | 类型 | 当前状态 | 许可声明 | Kronos适配 |
 | --- | --- | --- | --- | --- |
@@ -21,7 +21,7 @@
 | `amlnet` · [AMLNet](https://zenodo.org/records/16736515) | anti_money_laundering | 仅入口：大文件 | CC-BY-NC-4.0 | not_ohlcv |
 | `elliptic` · [Elliptic Bitcoin transaction graph](https://www.kaggle.com/datasets/ellipticco/elliptic-data-set) | blockchain_fraud | 仅入口：大文件 | CC-BY-NC-ND-4.0 | not_ohlcv |
 | `elliptic_plus` · [Elliptic++](https://github.com/git-disl/EllipticPlusPlus) | blockchain_fraud | 仅入口：许可待核实 | No standalone license in inspected repository; original Elliptic has CC-BY-NC-ND-4.0 | not_ohlcv |
-| `hu_pump_dump` · [Hu et al. cryptocurrency pump-and-dump](https://github.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency) | market_manipulation | 仅入口：许可待核实 | No license file found in inspected repository | requires_market_data |
+| `hu_pump_dump` · [Hu et al. cryptocurrency pump-and-dump](https://github.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency) | market_manipulation | 已下载标注；未下载行情 | NO LICENSE FILE in upstream repository; verify before redistribution | labels_only_need_ohlcva |
 | `adma21` · [ADMA 2021 labeled stock manipulation intervals](https://github.com/zhuye88/ADMA21) | market_manipulation | 已下载标注；未下载行情 | GPL-3.0 repository; Yahoo market prices have separate provider terms | labels_only_need_ohlcv |
 | `midsummer_memes` · [A Midsummer Meme’s Dream (USENIX Security 2026)](https://zenodo.org/records/17830944) | market_manipulation | 仅入口：许可待核实 | No explicit license shown in Zenodo/GitHub inspected metadata | ohlcv_available_but_license_unresolved |
 | `cardsim` · [Federal Reserve CardSim](https://www.federalreserve.gov/econres/feds/cardsim-a-bayesian-simulator-for-payment-card-fraud-detection-research.htm) | payment_fraud | 已下载代码及公共调查输入；未生成欺诈交易 | Public domain US Federal Reserve Board materials, unless otherwise indicated; see package third-party notices | not_ohlcv |
@@ -39,6 +39,8 @@
 | `berka` · [PKDD 1999 / Berka financial transactions](https://relational.fel.cvut.cz/dataset/Financial) | unlabeled_banking_transactions | 仅入口：许可待核实 | Verify original PKDD provider terms; no explicit redistribution grant confirmed | not_ohlcv |
 | `fifar` · [FiFAR / OpenL2D](https://github.com/feedzai/fifar-dataset) | related_application_fraud | 原提供方入口 | Check FiFAR data license and underlying BAF terms | not_ohlcv |
 | `unified_crypto_pd` · [Unified cryptocurrency P&D OHLCV 2017–2025](https://zenodo.org/records/21377192) | market_manipulation | 文件访问受限 | Restricted record; no public file license established | ohlcv_but_access_restricted |
+| `xu_livshits_pumpdump` · [Xu & Livshits pump-and-dump (USENIX Security 2019)](https://github.com/xujiahuayz/pumpdump) | market_manipulation | 已下载所列完整发布件 | NO LICENSE FILE in upstream repository; CryptoCompare provider terms | ohlcva_hourly_with_labels |
+| `binance_pump_labels_b0r0koko` · [Binance BTC-pair P&D announcements 2018–2022](https://github.com/B0R0koko/pump-and-dump-prediction) | market_manipulation | 已下载标注；未下载行情 | MIT (upstream repository); Binance data provider terms | labels_only_need_ohlcva |
 
 ## 逐项说明
 
@@ -192,9 +194,11 @@ unknown不能作正常；非商业、不得分发改编版本；保留原始获�
 
 ### hu_pump_dump — Hu et al. cryptocurrency pump-and-dump
 
-含Telegram会话pickle与市场特征；未自动加载pickle或发布无明确许可的内容。
+2026-11-10 应用户要求下载作者整理的 Telegram 事件日志 `PD_logs_cleaned.txt`（1,335 条样本 / 709 个事件，2019-01 至 2022-01，Binance 为主，含 channel、coin、exchange、pair、UTC 时间）。**上游仓库没有许可证文件**，再分发前应核实。Telegram 会话 pickle 未下载、不反序列化。K线需另从 Binance 公开档案取得（含 quote_asset_volume 成交额）。
 
-标签：Telegram event/session and target coin labels。时间字段：event/session timestamps。
+标签：Telegram event/session and target coin labels。时间字段：UTC timestamp。
+
+实际保存 2 文件，81,282 字节；见 [原始目录](raw/hu_pump_dump/)。固定提交 `17e398f99558c52a472728d4a5856f15313be079`。
 
 获取入口：[Hu et al. cryptocurrency pump-and-dump](https://github.com/Bayi-Hu/Pump-and-Dump-Detection-on-Cryptocurrency)。
 
@@ -337,3 +341,25 @@ unknown不能作正常；非商业、不得分发改编版本；保留原始获�
 标签：author-provided unified P&D labels。时间字段：daily/intraday OHLCV。
 
 获取入口：[Unified cryptocurrency P&D OHLCV 2017–2025](https://zenodo.org/records/21377192)。
+
+### xu_livshits_pumpdump — Xu & Livshits pump-and-dump with hourly OHLCVA (USENIX Security 2019)
+
+论文 *The Anatomy of a Cryptocurrency Pump-and-Dump Scheme* 随附数据。`cryptocompare.RData` 中的 `hourprice` 是 CryptoCompare 小时K线：578 个币、1,499 个币×交易所序列（CCCAGG、Cryptopia、Yobit、Bittrex、Binance），字段 open/high/low/close/volumefrom（成交量）/volumeto（BTC 计价成交额），**即 OHLCVA**，共 5,998,998 根，2018-05-15 至 2018-10-29 UTC；无非有限值，无 OHLC 矛盾，约 61% 的K线成交量为 0。`rawpumpolymp.json` 为 435 个 PumpOlymp 拉盘信号，其中 197 个落在K线覆盖期内（Cryptopia 127、Yobit 38、Binance 21、Bittrex 11），其余多晚于覆盖期，1 条时间为 1999 年（上游错误，原样保留）。`reg_cryptopia.RData` 为作者的 Cryptopia 币×小时回归面板（70,320 行，119 行 pumped）。
+
+**上游仓库没有许可证文件**；作者随论文公开发布，行情另受 CryptoCompare 条款约束，再分发或商用前应核实。`python scripts/prepare_ohlcva_klines.py` 把 RData 按数据解析（不执行 R 代码）并输出标准表 `coin, exchange, quote, timestamp, open, high, low, close, volume, amount, pump` 到本地 `.local_data/ohlcva/`，不提交解压副本。
+
+标签：PumpOlymp signal hour per coin×exchange；Cryptopia panel pumped flag。时间字段：UTC hourly candles。
+
+实际保存 6 文件，124,053,966 字节；见 [原始目录](raw/xu_livshits_pumpdump/)。固定提交 `ed140368e7b70b720b60ed1c1951eda743a725b2`。
+
+获取入口：[Xu & Livshits pump-and-dump](https://github.com/xujiahuayz/pumpdump)。
+
+### binance_pump_labels_b0r0koko — Binance BTC-pair pump-and-dump announcements 2018–2022
+
+498 个 Binance 现货 BTC 交易对拉盘公告（symbol、UTC 时间，2018-01 至 2022-08），附证据与排除记录；上游列出 25 个因缺数据而弃用。MIT 许可。仅标签：K线需从 data.binance.vision 获取（spot klines 自带 quote_asset_volume 即成交额，可直接组成 OHLCVA）；本次运行环境无法访问该站，未下载行情。
+
+标签：announcement time per symbol。时间字段：UTC。
+
+实际保存 6 文件，429,463 字节；见 [原始目录](raw/binance_pump_labels_b0r0koko/)。固定提交 `ce3f3f7b4db522e3f241b0121faf942f92ec06ec`。
+
+获取入口：[B0R0koko/pump-and-dump-prediction](https://github.com/B0R0koko/pump-and-dump-prediction)。
