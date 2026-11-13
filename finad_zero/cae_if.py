@@ -10,7 +10,8 @@ class CAE(nn.Module):
     def __init__(self, features):
         super().__init__()
         self.encoder = nn.Sequential(nn.Conv1d(1, 16, 3, padding=1), nn.ReLU(),
-                                     nn.Conv1d(16, 4, 3, stride=2, padding=1), nn.ReLU())
+                                     nn.Conv1d(16, 4, 3, stride=2, padding=1), nn.ReLU(),
+                                     nn.AdaptiveAvgPool1d(max(1, features//8)))
         self.decoder = nn.Sequential(nn.Conv1d(4, 16, 3, padding=1), nn.ReLU(),
                                      nn.Upsample(size=features, mode='linear', align_corners=False),
                                      nn.Conv1d(16, 1, 3, padding=1))
@@ -49,6 +50,7 @@ class CAEIF:
                                       random_state=self.seed, contamination='auto', n_jobs=2).fit(self.encode(z))
         self.info = dict(method='cae_if_core', steps=self.steps, input_axis='fixed engineered feature order',
                          channels=[1, 16, 4], kernel=3, stride=2, latent=self.encode(z[:1]).shape[1],
+                         pooled_positions=max(1,self.features//8),
                          losses=self.losses, n_estimators=100, max_samples=min(256, len(z)))
         return self
 

@@ -6,10 +6,15 @@ import numpy as np
 import torch
 from scipy.stats import spearmanr
 from finad_zero.audit_hcl import AuditHCL
+from finad_zero.cae_if import CAEIF
 from finad_zero.ebgad import fetch_upstream,score_graph
 
 p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--device',default='cpu')
 args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True);torch.set_num_threads(4)
+z=np.random.default_rng(43).normal(size=(100,29)).astype('float32')
+cae=CAEIF(42,args.device,steps=2).fit(z);cae.save(args.output/'cae')
+cs=cae.score(z);cr=CAEIF.load(args.output/'cae',args.device).score(z)
+assert cae.info['latent']<z.shape[1] and np.isfinite(cs).all() and np.allclose(cs,cr)
 fetch_upstream(args.output/'upstream')
 rng=np.random.default_rng(18);n=80
 e=np.stack([np.repeat(np.arange(60),3),60+rng.integers(20,size=180)])
@@ -27,5 +32,6 @@ rho=float(spearmanr(base,other[inv]).statistic)
 assert rho>.99999 and info['selected']==other_info['selected'],(rho,info['selected'],other_info['selected'])
 (args.output/'smoke.json').write_text(json.dumps({'status':'passed','ebgad_permutation_spearman':rho,
  'ebgad_selected':info['selected'],'audit_reload_max_abs':float(np.max(np.abs(s-ss))),'torch':torch.__version__,
- 'cuda':torch.cuda.is_available(),'device':args.device},indent=2)+'\n')
+ 'cuda':torch.cuda.is_available(),'device':args.device,'cae_latent':cae.info['latent'],
+ 'cae_reload_max_abs':float(np.max(np.abs(cs-cr)))},indent=2)+'\n')
 print('ZERO_LABEL_SMOKE_PASSED',flush=True)

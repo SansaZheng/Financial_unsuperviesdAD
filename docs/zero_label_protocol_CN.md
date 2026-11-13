@@ -1,10 +1,10 @@
 # CAE-IF、EB-GAD、Audit-HCL：零标签金融适配协议（2026-11-14）
 
-本协议在首次金融测试成绩产生前冻结。目标是仓库金融数据上的可审计零标签比较，**不是原论文数据集或成绩的精确复刻**。原有 `results/v1`、`results/2026` 和原始数据不改动。
+本协议在正式金融计分前冻结。门禁检查使用固定1/2更新的烟雾预算，不作为金融实验结果；正式评估前的架构核对补充了CAE紧凑瓶颈及其GPU重载门禁，未按金融指标选择配置。目标是仓库金融数据上的可审计零标签比较，**不是原论文数据集或成绩的精确复刻**。原有 `results/v1`、`results/2026` 和原始数据不改动。
 
 ## 方法依据与复现边界
 
-1. **CAE-IF**：[IEEE 原文入口](https://ieeexplore.ieee.org/document/11471437)，DOI `10.1109/ICMLA66185.2025.00066`。只取得公开摘要，未取得全文、原架构及官方代码。本实现 `cae_if_core` 是独立核心适配：特征轴上的 Conv1d（1→16→4，核3，第二层步长2），解码后以 MSE 无监督训练；编码展平后拟合100棵 Isolation Forest，max_samples=256。Adam lr=.001、400次更新、batch≤256。工程特征顺序固定但没有天然空间邻接，因此卷积假设本身需由实验检验。不可称原架构精确复现。
+1. **CAE-IF**：[IEEE 原文入口](https://ieeexplore.ieee.org/document/11471437)，DOI `10.1109/ICMLA66185.2025.00066`；另核对[作者博士论文的大学元数据](https://digitalcommons.fau.edu/etd_general/223/)，下载全文返回403。只取得公开摘要，未取得全文、原架构及官方代码。本实现 `cae_if_core` 是独立核心适配：特征轴上的 Conv1d（1→16→4，核3，第二层步长2），自适应均值池化到 `max(1,floor(d/8))` 个位置、4通道，展平潜在维约为输入的一半；解码后以 MSE 无监督训练。编码展平后拟合100棵 Isolation Forest，max_samples=256。Adam lr=.001、400次更新、batch≤256。工程特征顺序固定但没有天然空间邻接，因此卷积假设本身需由实验检验。不可称原架构精确复现。
 2. **EB-GAD**：[论文](https://arxiv.org/html/2609.38424v1)、[作者仓库](https://github.com/heraclixus/EBGAD)，固定提交 `cba2969e390ae6cd4381fe86393fa6cfcfc40d13`。使用作者库的模板、经验贝叶斯边缘似然拟合、J*/R/轨迹 profile/条件残差候选以及发布入口的无标签 mirror-null 选择器；**该选择器与论文附录 B.4 有序规则不同**，标记 `ebgad_release_zero`。保持发布入口选中统计量的原始分数。采用 paper 特征预处理顺序、无PCA、完整float64谱、无标签子图筛选。训练免费；每个校准/测试图独立转导拟合，评估图特征及拓扑可见，标签完全不可见。跨阶段原始分数尺度可能漂移，统一校准阈值的表现应照实报告。固定算法seed=0，三种子重复不代表三次独立随机拟合。上游无 LICENSE，因此不将其代码复制进本仓库；运行时下载到外部缓存并验证完整归档SHA256。
 3. **Audit-HCL**：[Scientific Reports 原文](https://www.nature.com/articles/s41598-026-58938-5)。无公开官方代码，本实现 `audit_hcl_zero_adapted` 按公式独立实现：类型投影→两层多头元路径注意力（128维、8头，第二层残差，LayerNorm）→四快照GRU；结构/时间两个128→256→64投影头、对称InfoNCE、256个无标签困难负例，温度.07，负例采样温度.5；边丢弃.3、特征遮蔽.2、每路径最多64邻居。AdamW lr=.0005、weight_decay=.00001、梯度裁剪1。**不做监督微调、标签筛选、标签验证早停、标签阈值搜索。**
 
@@ -31,7 +31,7 @@ Audit-HCL 明确适配：原金融审计模式中的所有权/设备关系在现
 ## 运行
 
 ```bash
-pip install -e . torch-geometric==2.6.1 pytest
+pip install -e '.[zero2026,test]'
 python scripts/prepare_repo_data.py --output /data/financial-zero/tabular --datasets ulb banksim s_ffsd sapienza_5S sapienza_15S sapienza_25S sd_stock sd_crypto sd_synth
 python -m finad_zero.graph_data --output /data/financial-zero/graphs
 python -m finad_zero.experiment --data /data/financial-zero/tabular --graph-data /data/financial-zero/graphs --output /data/financial-zero/results --cache /data/financial-zero/eb_cache --upstream /data/financial-zero/upstream --device cuda

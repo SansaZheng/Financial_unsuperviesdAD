@@ -32,6 +32,7 @@ def test_cae_gradient_reload_chunk(tmp_path):
     torch.set_num_threads(2);z=np.random.default_rng(5).normal(size=(80,11)).astype('float32')
     m=CAEIF(42,steps=3).fit(z);m.save(tmp_path/'m');loaded=CAEIF.load(tmp_path/'m')
     assert m.losses[-1]['loss']>0
+    assert m.info['latent'] < z.shape[1]  # Compact representation on financial schemas (d >= 7).
     assert any(p.grad is not None and torch.count_nonzero(p.grad)>0 for p in m.model.parameters())
     np.testing.assert_allclose(m.score(z),loaded.score(z),rtol=1e-7)
     np.testing.assert_allclose(m.score(z),np.r_[m.score(z[:7]),m.score(z[7:])],rtol=1e-7)
