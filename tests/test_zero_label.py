@@ -19,6 +19,18 @@ def test_label_blind_interfaces():
         assert not {'y','labels','targets'}&set(inspect.signature(function).parameters)
 
 
+def test_source_archive_requires_pinned_sha(monkeypatch):
+    import subprocess
+    import pytest
+    from finad_zero.experiment import code_commit
+    def no_git(*args,**kwargs):raise subprocess.CalledProcessError(128,args[0])
+    monkeypatch.setattr(subprocess,'check_output',no_git);monkeypatch.delenv('FINAD_CODE_COMMIT',raising=False)
+    with pytest.raises(ValueError,match='requires FINAD_CODE_COMMIT'):code_commit()
+    monkeypatch.setenv('FINAD_CODE_COMMIT','a'*40);assert code_commit()=='a'*40
+    monkeypatch.setenv('FINAD_CODE_COMMIT','truncated')
+    with pytest.raises(ValueError,match='complete lowercase'):code_commit()
+
+
 def test_graph_features_targets_separated():
     a,b=np.array(['a','a','b']),np.array(['c','d','c'])
     first=make_phase(a,b,np.arange(3),np.arange(3.))

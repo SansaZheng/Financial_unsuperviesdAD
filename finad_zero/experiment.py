@@ -6,8 +6,10 @@ Original benchmark files are not modified. Private scores permit independent aud
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import platform
+import re
 import subprocess
 import time
 import traceback
@@ -47,6 +49,25 @@ def source_fingerprint():
     files=list((root/'finad_zero').glob('*.py'))+[root/'finad'/f for f in
         ('classical.py','neural.py','preprocessing.py','thresholds.py','evaluation.py')]+[root/'scripts/prepare_repo_data.py']
     return {str(p.relative_to(root)):sha(p) for p in sorted(files)}
+
+
+def code_commit():
+    """CQ stages GitHub tarballs without .git; accept its explicitly pinned SHA.
+
+Never substitute 'unknown'. Local git and a supplied SHA must agree when both
+are available. Source-content fingerprints are recorded independently as well.
+"""
+    declared=os.environ.get('FINAD_CODE_COMMIT')
+    if declared is not None and not re.fullmatch('[0-9a-f]{40}',declared):
+        raise ValueError('FINAD_CODE_COMMIT must be a complete lowercase Git SHA')
+    try:
+        actual=subprocess.check_output(['git','-C',str(Path(__file__).resolve().parents[1]),'rev-parse','HEAD'],
+                                       stderr=subprocess.DEVNULL,text=True).strip()
+    except (subprocess.CalledProcessError,FileNotFoundError):
+        if declared is None:raise ValueError('Source archive requires FINAD_CODE_COMMIT from the pinned job spec')
+        return declared
+    if declared is not None and actual!=declared:raise ValueError('Declared SHA differs from local checkout')
+    return actual
 
 
 def make_model(method,seed,device,steps):
@@ -153,7 +174,7 @@ def main():
         torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
     env={'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'sklearn':sklearn.__version__,
          'torch':torch.__version__,'device':args.device,'source_sha256':source_fingerprint(),
-         'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+         'git_commit':code_commit(),
          'steps':args.steps,'audit_steps':args.audit_steps,'seeds':args.seeds,'tasks':args.tasks,'tracks':args.tracks}
     manifest=args.output/'run_manifest.json'
     if manifest.exists() and json.loads(manifest.read_text())!=env:raise ValueError('Resume config/source mismatch')
