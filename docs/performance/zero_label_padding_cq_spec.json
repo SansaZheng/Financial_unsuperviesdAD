@@ -1,0 +1,42 @@
+{
+  "name": "FinancialAD label-free padding performance diagnostic 20261114",
+  "work": "FinancialAD",
+  "code": {
+    "github": "SansaZheng/Financial_unsuperviesdAD",
+    "commit": "960673f3a61a4c93fb5033ccbba8f8a3d670ccbd"
+  },
+  "depends_on": [
+    "j-1114-7f1d38"
+  ],
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail\nexport PYTHONPATH=\"$PWD\" PYTHONDONTWRITEBYTECODE=1\ntrap 'tail -n 100 \"$CQ_OUTPUT_DIR/progress.log\" 2>/dev/null || true' EXIT\npython - <<'PROFILE' > \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\nimport copy,inspect,json,os,textwrap,time\nfrom pathlib import Path\nimport numpy as np\nimport torch\nfrom finad_zero.audit_hcl import MetaLayer,AuditHCL,path_tables\nout=Path(os.environ['CQ_OUTPUT_DIR']);torch.set_num_threads(4)\ntorch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False\ntorch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True\noriginal=MetaLayer.attend_chunk\ntext=textwrap.dedent(inspect.getsource(original))\nassert text.count('safe = nb.clamp_min(0)')==1\ntext=text.replace('safe = nb.clamp_min(0)','safe = torch.where(mask, nb, torch.arange(start, stop, device=nb.device)[:, None])')\nnamespace=dict(original.__globals__);exec(text,namespace);distributed=namespace['attend_chunk']\n# Compare the SAME fixed weights, inputs and deterministic objective before timings.\ntorch.manual_seed(18);n=64\nedge=np.stack([np.arange(56),56+np.arange(56)%8]);tables=torch.as_tensor(path_tables(edge,n,64),device='cuda')\nlayer=MetaLayer().cuda();other=copy.deepcopy(layer);h=torch.randn(n,128,device='cuda',requires_grad=True)\nhh=h.detach().clone().requires_grad_(True);probe=torch.randn(n,128,device='cuda')\nbase=layer(h,tables,augment=False);(base*probe).mean().backward()\nMetaLayer.attend_chunk=distributed\nalt=other(hh,tables,augment=False);(alt*probe).mean().backward()\nforward_error=float((base-alt).abs().max());gradient_error=float((h.grad-hh.grad).abs().max())\nassert torch.allclose(base,alt,rtol=1e-5,atol=1e-6)\nassert torch.allclose(h.grad,hh.grad,rtol=1e-4,atol=1e-6)\nfor a,b in zip(layer.parameters(),other.parameters()):\n if a.grad is None or b.grad is None:assert a.grad is None and b.grad is None\n else:\n  gradient_error=max(gradient_error,float((a.grad-b.grad).abs().max()))\n  assert torch.allclose(a.grad,b.grad,rtol=1e-4,atol=1e-6)\ndel layer,other,h,hh,probe,base,alt;torch.cuda.empty_cache()\nrng=np.random.default_rng(18);payers=4096;total=payers+32\nx=rng.normal(size=(4,total,10)).astype('float32');role=np.arange(total)<payers;x[:,:,0]=role;x[:,:,1]=~role\nedge=np.stack([np.arange(payers),payers+rng.integers(32,size=payers)])\nedges=[edge]*4;active=np.ones((4,total),bool)\nMetaLayer.attend_chunk=original\nwarm=AuditHCL(19,'cuda',steps=1).fit(x,edges,active,role);del warm;torch.cuda.empty_cache()\nbase_tensors=AuditHCL.tensors;table_seconds=[]\ndef timed_tensors(self,*args):\n torch.cuda.synchronize();started=time.perf_counter();value=base_tensors(self,*args);torch.cuda.synchronize()\n table_seconds.append(time.perf_counter()-started);return value\nAuditHCL.tensors=timed_tensors\nrows=[];states=[]\nfor name,function in [('zero_padding_index',original),('row_distributed_padding_index',distributed)]:\n MetaLayer.attend_chunk=function;torch.cuda.empty_cache();torch.cuda.reset_peak_memory_stats();table_seconds.clear()\n torch.cuda.synchronize();started=time.perf_counter();m=AuditHCL(42,'cuda',steps=3).fit(x,edges,active,role);torch.cuda.synchronize()\n elapsed=time.perf_counter()-started;rows.append(dict(variant=name,fit_s=elapsed,table_s=sum(table_seconds),\n  fit_excluding_table_s=elapsed-sum(table_seconds),peak_cuda_gb=torch.cuda.max_memory_allocated()/2**30))\n states.append({k:v.detach().cpu().clone() for k,v in m.model.state_dict().items()});del m;torch.cuda.empty_cache()\nstate_delta=max(float((states[0][k]-states[1][k]).abs().max()) for k in states[0] if states[0][k].is_floating_point())\nresult=dict(status='passed',synthetic_performance_diagnostic_only=True,no_target_labels=True,\n source_commit='960673f3a61a4c93fb5033ccbba8f8a3d670ccbd',torch=torch.__version__,gpu=torch.cuda.get_device_name(),\n forward_max_abs=forward_error,gradient_max_abs=gradient_error,trained_state_max_abs=state_delta,steps=3,\n rows=rows,speedup_excluding_table=rows[0]['fit_excluding_table_s']/rows[1]['fit_excluding_table_s'])\n(out/'profile.json').write_text(json.dumps(result,indent=2)+'\\n');print(json.dumps(result,indent=2),flush=True)\n\nPROFILE\n"
+  ],
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 2,
+    "cpus": 4,
+    "ram_gb": 8
+  },
+  "placement": {
+    "target": "kaggle"
+  },
+  "limits": {
+    "max_hours": 0.2,
+    "max_attempts": 1
+  },
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/FinancialAD/zero-label-20261114-padding-profile",
+    "expect": [
+      {
+        "path": "profile.json",
+        "contains": "\"status\": \"passed\""
+      }
+    ],
+    "progress": {
+      "path": "progress.log",
+      "stall_min": 10
+    }
+  }
+}

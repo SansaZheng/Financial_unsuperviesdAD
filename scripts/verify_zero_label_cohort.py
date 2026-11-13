@@ -67,8 +67,8 @@ for (track,dataset,seed),group in sorted(groups.items()):
     assert all(r['checks']['test_target_sha256']==target_sha for r in group)
     checked.append(dict(track=track,dataset=dataset,seed=seed,methods=len(group),
         shared_indices={k:hashlib.sha256(v.astype('<i8').tobytes()).hexdigest() for k,v in indices.items()},
-        preprocessing_recomputed_from_training_only=True,test_target_sha256=target_sha))
+        shared_preprocessing_recomputed_from_training_only=True,test_target_sha256=target_sha))
 args.output.write_text(json.dumps(dict(status='passed',groups=len(checked),runs=len(records),
-    notes='Graph evaluation account indices are paired; graph context information differs as declared in protocol.',
+    notes='The audit verifies the shared train-only robust scaler and paired graph evaluation accounts. EB-GAD additionally re-standardizes each evaluation graph and fits its EB parameters transductively; algorithm-internal transforms are not claimed train-only.',
     verified=checked),indent=2)+'\n')
 print('ZERO_LABEL_COHORT_AND_TRAIN_ONLY_SCALING_VERIFIED',flush=True)
