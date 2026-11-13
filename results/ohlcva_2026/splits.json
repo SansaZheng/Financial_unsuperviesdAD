@@ -1,0 +1,112 @@
+{
+  "xu_pump_1h": {
+    "dataset": "xu_pump_1h",
+    "protocol": "Chronological 60/20/20 by cumulative hourly-bar counts (shared boundaries); features are causal per coin x exchange series; labels mark the signal hour.",
+    "splits": {
+      "train": {
+        "rows": 2212242,
+        "positive": 66,
+        "normal": 2212176,
+        "unknown": 0,
+        "sequences": 921
+      },
+      "calibration": {
+        "rows": 736800,
+        "positive": 62,
+        "normal": 736738,
+        "unknown": 0,
+        "sequences": 921
+      },
+      "test": {
+        "rows": 736800,
+        "positive": 64,
+        "normal": 736736,
+        "unknown": 0,
+        "sequences": 921
+      }
+    },
+    "source": "Xu & Livshits PumpOlymp signals on CryptoCompare exchange candles (CCCAGG excluded)",
+    "temporal": true,
+    "sequence_unit": "coin x exchange series (test period)",
+    "sequence_id_file": "test.seq.i32",
+    "tolerance_rows": 2,
+    "time_boundaries": [
+      "2018-08-24 00:00:00+00:00",
+      "2018-09-26 08:00:00+00:00"
+    ],
+    "bar": "1h",
+    "quote": "BTC",
+    "tolerance_note": "+/-2 hourly bars around the labelled signal hour (pre-pump buying, dump spill-over).",
+    "features": [
+      "log_return",
+      "log_range",
+      "log_body",
+      "log_upper_wick",
+      "log_lower_wick",
+      "log_gap",
+      "log_amount_btc",
+      "rel_amount_24h",
+      "rel_amount_168h",
+      "rel_volume_24h",
+      "past_vol_24h",
+      "return_z_24h",
+      "rel_range_24h",
+      "traded"
+    ]
+  },
+  "b0r0_binance_1h": {
+    "dataset": "b0r0_binance_1h",
+    "protocol": "Chronological 60/20/20 by cumulative hourly-bar counts (shared boundaries); features are causal per coin x exchange series; labels mark the signal hour.",
+    "splits": {
+      "train": {
+        "rows": 139316,
+        "positive": 6,
+        "normal": 139310,
+        "unknown": 0,
+        "sequences": 58
+      },
+      "calibration": {
+        "rows": 46400,
+        "positive": 2,
+        "normal": 46398,
+        "unknown": 0,
+        "sequences": 58
+      },
+      "test": {
+        "rows": 46400,
+        "positive": 10,
+        "normal": 46390,
+        "unknown": 0,
+        "sequences": 58
+      }
+    },
+    "source": "B0R0koko Binance BTC-pair announcements (MIT) on Xu & Livshits Binance candles",
+    "temporal": true,
+    "sequence_unit": "coin x exchange series (test period)",
+    "sequence_id_file": "test.seq.i32",
+    "tolerance_rows": 2,
+    "time_boundaries": [
+      "2018-08-24 00:00:00+00:00",
+      "2018-09-26 08:00:00+00:00"
+    ],
+    "bar": "1h",
+    "quote": "BTC",
+    "tolerance_note": "+/-2 hourly bars around the labelled signal hour (pre-pump buying, dump spill-over).",
+    "features": [
+      "log_return",
+      "log_range",
+      "log_body",
+      "log_upper_wick",
+      "log_lower_wick",
+      "log_gap",
+      "log_amount_btc",
+      "rel_amount_24h",
+      "rel_amount_168h",
+      "rel_volume_24h",
+      "past_vol_24h",
+      "return_z_24h",
+      "rel_range_24h",
+      "traded"
+    ]
+  }
+}

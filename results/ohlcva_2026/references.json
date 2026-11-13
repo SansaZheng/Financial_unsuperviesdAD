@@ -1,0 +1,46 @@
+[
+  {
+    "dataset": "xu_pump_1h",
+    "reference": "rel_amount_24h",
+    "average_precision": 0.019745581223433215,
+    "roc_auc": 0.9346803947580953,
+    "precision_at_n": 0.046875,
+    "best_f1_oracle": 0.07619047619047618,
+    "vus_pr": 0.6667816231603407,
+    "vus_roc": 0.953756400043527,
+    "pate": 0.6555631094402324
+  },
+  {
+    "dataset": "xu_pump_1h",
+    "reference": "log_range",
+    "average_precision": 0.07855000707129729,
+    "roc_auc": 0.9312070084297497,
+    "precision_at_n": 0.109375,
+    "best_f1_oracle": 0.2338709677419355,
+    "vus_pr": 0.6673549134600925,
+    "vus_roc": 0.9514091633340598,
+    "pate": 0.6484108371958035
+  },
+  {
+    "dataset": "b0r0_binance_1h",
+    "reference": "rel_amount_24h",
+    "average_precision": 0.12387033487326622,
+    "roc_auc": 0.9502177193360638,
+    "precision_at_n": 0.1,
+    "best_f1_oracle": 0.3333333333333333,
+    "vus_pr": 0.6552766879318688,
+    "vus_roc": 0.9392586229079869,
+    "pate": 0.6215883597883598
+  },
+  {
+    "dataset": "b0r0_binance_1h",
+    "reference": "log_range",
+    "average_precision": 0.24626848067406068,
+    "roc_auc": 0.9020995904289717,
+    "precision_at_n": 0.4,
+    "best_f1_oracle": 0.4210526315789474,
+    "vus_pr": 0.5980358934507712,
+    "vus_roc": 0.9153589677253721,
+    "pate": 0.5487152777777777
+  }
+]

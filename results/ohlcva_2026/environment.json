@@ -1,0 +1,120 @@
+[
+  {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v445-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.7.2",
+      "torch": "2.15.0",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.8.0",
+      "pythresh": "1.1.1"
+    },
+    "code_git_commit": "9555eeec3d91254dc01d7330de33904e052e780a",
+    "code_fingerprint": "747f238753a6e33a034880ce157572ea4bcfbcd881c724be592b2c9ab94aa1b6",
+    "configuration": {
+      "command": "benchmark",
+      "cache": "/path/to/private/feature_cache",
+      "output": ".local_data/runs_xu_pump_1h",
+      "datasets": [
+        "xu_pump_1h"
+      ],
+      "methods": [
+        "iforest",
+        "lof",
+        "knn",
+        "ocsvm",
+        "pca",
+        "hbos",
+        "gmm",
+        "ae",
+        "vae",
+        "deep_svdd",
+        "rgld2026",
+        "rttad2026"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "train_cap": 8192,
+      "calibration_cap": 100000,
+      "steps": 400,
+      "pretrain_steps": 200,
+      "batch_size": 8192,
+      "risk": 0.01,
+      "initial_quantile": 0.85,
+      "device": "cpu"
+    },
+    "training_labels_used": false,
+    "calibration_labels_used": false,
+    "evaluation_packages": {
+      "TSB-AD": "1.5",
+      "PATE": "0.1.1",
+      "statsmodels": "0.15.0",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v445-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.7.2",
+      "torch": "2.15.0",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.8.0",
+      "pythresh": "1.1.1"
+    },
+    "code_git_commit": "9555eeec3d91254dc01d7330de33904e052e780a",
+    "code_fingerprint": "747f238753a6e33a034880ce157572ea4bcfbcd881c724be592b2c9ab94aa1b6",
+    "configuration": {
+      "command": "benchmark",
+      "cache": "/path/to/private/feature_cache",
+      "output": ".local_data/runs_b0r0_binance_1h",
+      "datasets": [
+        "b0r0_binance_1h"
+      ],
+      "methods": [
+        "iforest",
+        "lof",
+        "knn",
+        "ocsvm",
+        "pca",
+        "hbos",
+        "gmm",
+        "ae",
+        "vae",
+        "deep_svdd",
+        "rgld2026",
+        "rttad2026"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "train_cap": 8192,
+      "calibration_cap": 100000,
+      "steps": 400,
+      "pretrain_steps": 200,
+      "batch_size": 8192,
+      "risk": 0.01,
+      "initial_quantile": 0.85,
+      "device": "cpu"
+    },
+    "training_labels_used": false,
+    "calibration_labels_used": false,
+    "evaluation_packages": {
+      "TSB-AD": "1.5",
+      "PATE": "0.1.1",
+      "statsmodels": "0.15.0",
+      "scikit-learn": "1.7.2"
+    }
+  }
+]

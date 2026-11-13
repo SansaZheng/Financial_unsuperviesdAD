@@ -1,0 +1,47 @@
+{
+  "xu_pump_1h": {
+    "verified_runs": 36,
+    "score_sha256_verified": true,
+    "confusion_matrices_independently_recomputed": true,
+    "sample_indices_unique_and_in_bounds": true,
+    "pot_peak_counts_match_scores": true,
+    "same_seed_sampling_shared_between_methods": true,
+    "input_files_sha256_verified": 0,
+    "checkpoint_predictions_reproduced_on_cpu": {
+      "rows_per_run_up_to": 32,
+      "rtol": 0.0005,
+      "atol": 1e-05
+    },
+    "rgld_stricter_batch_verification": {
+      "verified_runs": 3,
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    "adaptation_pool_indices_verified": 3,
+    "unchanged_base_verified_when_no_update": 3,
+    "raw_rows_in_report": false
+  },
+  "b0r0_binance_1h": {
+    "verified_runs": 36,
+    "score_sha256_verified": true,
+    "confusion_matrices_independently_recomputed": true,
+    "sample_indices_unique_and_in_bounds": true,
+    "pot_peak_counts_match_scores": true,
+    "same_seed_sampling_shared_between_methods": true,
+    "input_files_sha256_verified": 0,
+    "checkpoint_predictions_reproduced_on_cpu": {
+      "rows_per_run_up_to": 32,
+      "rtol": 0.0005,
+      "atol": 1e-05
+    },
+    "rgld_stricter_batch_verification": {
+      "verified_runs": 3,
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    "adaptation_pool_indices_verified": 3,
+    "unchanged_base_verified_when_no_update": 3,
+    "raw_rows_in_report": false
+  },
+  "modern_metrics": "see verification_modern.json"
+}

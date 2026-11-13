@@ -1,0 +1,115 @@
+{
+  "runs_available": 72,
+  "runs_recomputed": 8,
+  "tolerance": 1e-09,
+  "independent_code_paths": [
+    "sklearn average_precision_score/roc_auc_score on the raw score file",
+    "TSB_AD.evaluation.metrics.get_metrics per sequence, macro-averaged"
+  ],
+  "runs": [
+    {
+      "dataset": "b0r0_binance_1h",
+      "method": "ae",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "b0r0_binance_1h",
+      "method": "gmm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "b0r0_binance_1h",
+      "method": "ocsvm",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "b0r0_binance_1h",
+      "method": "rgld2026",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "xu_pump_1h",
+      "method": "iforest",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "xu_pump_1h",
+      "method": "ocsvm",
+      "seed": 42,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "xu_pump_1h",
+      "method": "rgld2026",
+      "seed": 44,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    },
+    {
+      "dataset": "xu_pump_1h",
+      "method": "vae",
+      "seed": 43,
+      "checks": [
+        "pooled_auc_pr",
+        "pooled_auc_roc",
+        "seq_affiliation_f1_pot",
+        "seq_pa_f1_pot",
+        "seq_vus_pr",
+        "seq_vus_roc"
+      ]
+    }
+  ]
+}
