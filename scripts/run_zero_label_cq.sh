@@ -5,6 +5,7 @@ export PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" PIP_CACHE_DIR="$CQ_OUTPUT_DIR
 # pytest tmp_path creates '*current' symlinks; CQ correctly rejects links in
 # collected archives. Remove only links generated in this job's pytest scratch.
 cleanup_test_links() {
+  task_status=$?
   python - <<'CLEAN'
 import os
 from pathlib import Path
@@ -13,6 +14,15 @@ if root.exists():
     for path in root.rglob('*'):
         if path.is_symlink(): path.unlink()
 CLEAN
+  if [[ "$task_status" != 0 ]]; then
+    for diagnostic in tests.txt progress.log; do
+      if [[ -f "$CQ_OUTPUT_DIR/$diagnostic" ]]; then
+        echo "DIAGNOSTIC $diagnostic"
+        tail -n 100 "$CQ_OUTPUT_DIR/$diagnostic"
+      fi
+    done
+  fi
+  return "$task_status"
 }
 trap cleanup_test_links EXIT
 python -m pip install -q 'numpy>=2,<3' 'scipy>=1.15,<2' 'pandas>=2.2,<3' 'scikit-learn==1.7.2' 'torch-geometric==2.6.1' 'pytest>=8' 'joblib>=1.3' 'threadpoolctl>=3'

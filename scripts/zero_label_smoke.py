@@ -20,6 +20,7 @@ s=m.score(x,[e]*4,a,role);ss=AuditHCL.load(args.output/'audit.pt',args.device).s
 assert np.isfinite(s).all() and np.allclose(s,ss,rtol=1e-5,atol=1e-6)
 flat=x.transpose(1,0,2).reshape(n,-1)
 base,info=score_graph(flat,[e]*4,args.output/'spectrum_a')
+json.dumps(info,allow_nan=False)  # Undefined author-library diagnostics must be JSON null, never NaN.
 perm=rng.permutation(n);inv=np.argsort(perm)
 other,other_info=score_graph(flat[perm],[inv[e]]*4,args.output/'spectrum_b')
 rho=float(spearmanr(base,other[inv]).statistic)

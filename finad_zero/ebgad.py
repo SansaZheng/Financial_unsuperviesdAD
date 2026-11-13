@@ -79,6 +79,7 @@ def score_graph(x,edges,cache):
     if not np.isfinite(score).all(): raise ValueError('Nonfinite EB-GAD score')
     info={'method':'ebgad_release_zero','upstream_commit':COMMIT,'selected':selected,
           'gamma_profile':gammas,'fit':fit.as_dict(),'nodes':len(x),'spectrum':'full float64',
-          'transductive':True,'candidates':{k:v.summary() for k,v in candidates.items()},
+          'transductive':True,'candidates':{k:{field:(None if isinstance(value,float) and not np.isfinite(value) else value)
+              for field,value in v.summary().items()} for k,v in candidates.items()},
           'score':'raw selected statistic, matching author entry point; no local-fdr replacement'}
     return score,info
