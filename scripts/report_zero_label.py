@@ -37,7 +37,7 @@ for r in records:
         rows.append(row)
 def save_csv(path,values):
     with path.open('w',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=list(values[0]));writer.writeheader();writer.writerows(values)
+        writer=csv.DictWriter(f,fieldnames=list(values[0]),lineterminator='\n');writer.writeheader();writer.writerows(values)
 save_csv(args.output/'metrics.csv',rows)
 summary=[]
 for key in sorted({(r['track'],r['dataset'],r['method'],r['operating_point']) for r in rows}):
