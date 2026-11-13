@@ -44,7 +44,10 @@ class MetaLayer(nn.Module):
         self.norm = nn.LayerNorm(hidden)
 
     def attend_chunk(self, h, table, start, stop, relation, augment):
-        nb = table[start:stop]; mask = nb >= 0; safe = nb.clamp_min(0)
+        nb = table[start:stop]; mask = nb >= 0
+        # Invalid slots are zero-masked below. Route their (zero) gather
+        # gradients to their own rows, avoiding atomic contention on node 0.
+        safe = torch.where(mask, nb, torch.arange(start, stop, device=nb.device)[:, None])
         q = h[start:stop].reshape(-1,self.heads,self.hidden//self.heads)
         k = h[safe].reshape(len(nb),nb.shape[1],self.heads,-1)
         logits = F.leaky_relu((q*self.att[relation,0]).sum(-1)[:,None]+(k*self.att[relation,1]).sum(-1),.2)

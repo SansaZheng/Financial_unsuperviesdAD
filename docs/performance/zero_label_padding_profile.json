@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "synthetic_performance_diagnostic_only": true,
+  "no_target_labels": true,
+  "source_commit": "960673f3a61a4c93fb5033ccbba8f8a3d670ccbd",
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "forward_max_abs": 0.0,
+  "gradient_max_abs": 0.0,
+  "trained_state_max_abs": 0.0,
+  "steps": 3,
+  "rows": [
+    {
+      "variant": "zero_padding_index",
+      "fit_s": 21.06402769899998,
+      "table_s": 0.8469110860000058,
+      "fit_excluding_table_s": 20.217116612999973,
+      "peak_cuda_gb": 0.7872204780578613
+    },
+    {
+      "variant": "row_distributed_padding_index",
+      "fit_s": 5.311817590999993,
+      "table_s": 0.7573454559999959,
+      "fit_excluding_table_s": 4.5544721349999975,
+      "peak_cuda_gb": 0.7872204780578613
+    }
+  ],
+  "speedup_excluding_table": 4.438959337929945
+}

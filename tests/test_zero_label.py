@@ -3,7 +3,7 @@ import json
 import numpy as np
 import torch
 from finad_zero.cae_if import CAEIF
-from finad_zero.audit_hcl import AuditHCL, path_tables
+from finad_zero.audit_hcl import AuditHCL, MetaLayer, path_tables
 from finad_zero.graph_data import aggregate_targets, make_phase
 
 
@@ -73,6 +73,26 @@ def test_no_fake_paths():
     assert 2 in tables[0,0] and 1 in tables[1,0]
     assert (tables[:,3]==-1).all()
     assert (tables[2,:2]==-1).all()
+
+
+def test_padded_attention_matches_ragged_neighbors_and_gradients():
+    from torch.nn import functional as F
+    torch.manual_seed(31);layer=MetaLayer(hidden=8,heads=2).double()
+    h=torch.randn(5,8,dtype=torch.float64,requires_grad=True)
+    table=torch.tensor([[1,-1,-1,-1],[0,2,-1,-1],[-1,-1,-1,-1],[2,-1,-1,-1],[1,3,-1,-1]])
+    padded=layer.attend_chunk(h,table,0,5,0,False)
+    ragged=[]
+    for i,neighbors in enumerate(table):
+        neighbors=neighbors[neighbors>=0]
+        if not len(neighbors):ragged.append(h[i]);continue
+        q=h[i].reshape(2,4);k=h[neighbors].reshape(-1,2,4)
+        logits=F.leaky_relu((q*layer.att[0,0]).sum(-1)+(k*layer.att[0,1]).sum(-1),.2)
+        ragged.append(F.elu((logits.softmax(0)[:,:,None]*k).sum(0)).reshape(8))
+    ragged=torch.stack(ragged);torch.testing.assert_close(padded,ragged,rtol=1e-12,atol=1e-12)
+    probe=torch.randn_like(padded)
+    ga=torch.autograd.grad((padded*probe).mean(),(h,layer.att))
+    gb=torch.autograd.grad((ragged*probe).mean(),(h,layer.att))
+    for a,b in zip(ga,gb):torch.testing.assert_close(a,b,rtol=1e-12,atol=1e-12)
 
 
 def test_runner_needs_no_training_or_calibration_labels(tmp_path,monkeypatch):

@@ -20,6 +20,12 @@ assert {(r['track'],r['dataset'],r['method'],r['seed']) for r in records}==expec
 for f in ('run_manifest.json','verification.json','complete.json','failures.json'):
     shutil.copyfile(args.runs/f,args.output/f)
 (args.output/'per_seed.json').write_text(json.dumps(records,indent=2,allow_nan=False)+'\n')
+threshold_records=[]
+for r in records:
+    path=args.runs/r['track']/r['dataset']/r['method']/str(r['seed'])/'thresholds.json'
+    threshold_records.append({**{k:r[k] for k in ('track','dataset','method','seed')},
+                              'thresholds':json.loads(path.read_text())})
+(args.output/'thresholds.json').write_text(json.dumps(threshold_records,indent=2,allow_nan=False)+'\n')
 rows=[]
 for r in records:
     for name,op in r['metrics']['operating_points'].items():
@@ -56,7 +62,7 @@ lines=['# 零标签金融异常检测：144次真实运行（2026-11-14）','',
        '**本结果为仓库金融数据上的独立适配实验，不是原论文成绩复刻。** CAE-IF只取得公开摘要；EB-GAD复现作者发布选择器，非论文附录有序选择器；Audit-HCL为真实支付关系和固定200更新预算的公式适配。详见[冻结协议](../../docs/zero_label_protocol_CN.md)。','',
        '数据来自5种完整可用来源：ULB、BankSim、S-FFSD、Sapienza和SD-FMM。Sapienza按3种时间粒度、SD-FMM按stock/crypto/synth分成9个交易/时序任务，并非9个相互独立的数据来源。仅有区间标签的ADMA21、仅有告警表的SynthAML和未生成交易的CardSim输入不纳入。','',
        '种子42/43/44，数值为百分数的均值 ± 样本标准差。所有模型与阈值均不使用标签；POT失败按N/A记录。AP是Average Precision，另在CSV提供梯形PR-AUC。无点调整、无标签阈值搜索。EB为确定性过程，只需计算4个不同的校准/测试图，三种子记录复用这些分数；零标准差不代表三次独立拟合，其缓存命中耗时也不宜与训练模型直接排名。','',
-       '[288套逐种子操作点](metrics.csv) · [96组阈值汇总](summary.csv) · [模型配置与逐种子记录](per_seed.json) · [独立复算核验](verification.json) · [软件/源码版本](run_manifest.json)','']
+       '[288套逐种子操作点](metrics.csv) · [96组阈值汇总](summary.csv) · [模型配置与逐种子记录](per_seed.json) · [阈值、GPD参数及失败原因](thresholds.json) · [独立复算核验](verification.json) · [软件/源码版本](run_manifest.json)','']
 for track,title in [('tabular','交易/时序轨道：9组数据，完整测试分区'),('graph','原生支付关系图轨道：仅评价固定子图中的付款账户')]:
     lines+=['## '+title,'','| 数据集 | 方法 | AP | ROC-AUC | POT F1 | 99%分位 F1 |','|---|---|---:|---:|---:|---:|']
     for row in summary:
