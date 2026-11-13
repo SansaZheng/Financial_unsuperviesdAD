@@ -57,6 +57,12 @@ def test_audit_gradient_reload_permutation(tmp_path):
         assert any(p.grad is not None and torch.count_nonzero(p.grad)>0 for p in block.parameters())
     m.save(tmp_path/'m.pt');loaded=AuditHCL.load(tmp_path/'m.pt')
     score=m.score(x,e,a,r);np.testing.assert_allclose(score,loaded.score(x,e,a,r),rtol=1e-6)
+    xx,tt,aa=m.tensors(x,e,a);rr=torch.as_tensor(r);m.model.train()
+    with torch.no_grad():
+        clean_a=m.model.encode(xx,tt,aa,rr,False)
+        torch.manual_seed(919);clean_b=m.model.encode(xx,tt,aa,rr,False)
+    for first,second in zip(clean_a,clean_b):torch.testing.assert_close(first,second,rtol=0,atol=0)
+    m.model.eval()
     perm=np.random.default_rng(7).permutation(x.shape[1]);inverse=np.argsort(perm)
     ps=m.score(x[:,perm],[inverse[ee] for ee in e],a[:,perm],r[perm])
     np.testing.assert_allclose(score,ps[inverse],rtol=1e-4,atol=2e-5)
