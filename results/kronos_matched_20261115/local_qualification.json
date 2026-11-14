@@ -1,0 +1,16 @@
+{
+  "source_commit": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575",
+  "local_tests_passed": 49,
+  "new_tests_passed": 7,
+  "real_cpu_weights_loaded": true,
+  "real_cpu_repeat_max_abs": 0.0,
+  "formal_financial_scores_examined": false,
+  "label_free_independent_window_formula_checks": {
+    "datasets": 9,
+    "uses_labels": false,
+    "uses_financial_metrics": false,
+    "all_features_checked_on_prespecified_sampled_positions": true,
+    "rtol": 1e-12,
+    "atol": 1e-12
+  }
+}

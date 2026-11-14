@@ -1,0 +1,10 @@
+dataset,test_rows,cold_start_rows,no_history_rows
+ulb,92575,0,0
+banksim,118638,0,0
+s_ffsd,15576,0,0
+sapienza_5S,207267,2472,79
+sapienza_15S,145550,2469,79
+sapienza_25S,119469,2468,79
+sd_stock,960,192,6
+sd_crypto,10880,2176,68
+sd_synth,32000,6400,200

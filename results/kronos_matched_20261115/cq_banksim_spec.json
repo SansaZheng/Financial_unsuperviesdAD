@@ -1,0 +1,56 @@
+{
+  "work": "FinancialAD",
+  "name": "FinancialAD Kronos matched full banksim 20261115",
+  "code": {
+    "github": "SansaZheng/Financial_unsuperviesdAD",
+    "commit": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575"
+  },
+  "env": {
+    "FINAD_CODE_COMMIT": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575"
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 4,
+    "cpus": 4,
+    "ram_gb": 24
+  },
+  "limits": {
+    "max_hours": 4,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "command": [
+    "bash",
+    "scripts/run_kronos_matched_cq.sh",
+    "full",
+    "banksim"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/FinancialAD/kronos-matched-20261115-banksim-v1",
+    "expect": [
+      {
+        "path": "results/complete.json",
+        "contains": "\"finished\": 3"
+      },
+      {
+        "path": "results/verification.json",
+        "contains": "\"status\": \"passed\""
+      },
+      {
+        "path": "results/records.json",
+        "min_lines": 4
+      }
+    ],
+    "progress": {
+      "path": "progress.log",
+      "stall_min": 45
+    }
+  },
+  "depends_on": [
+    "j-1115-e612e5"
+  ]
+}

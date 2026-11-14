@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "target_free": true,
+  "real_weights": true,
+  "exact_input_files": 7,
+  "frozen_assets": {
+    "official_commit": "67b630e67f6a18c9e9be918d9b4337c960db1e9a",
+    "sha256": {
+      "official/model/__init__.py": "f8f856ca3fedadcaac97e196be23d1aeda1c3c9ffe8903d66d43ea3bcac6240c",
+      "official/model/kronos.py": "0a5f90282e2039c2de0771473419715c845def154896dbd0f5747837e6241032",
+      "official/model/module.py": "a07edbadc0e96804c8158c021bbc6063bb7cc43b34d7fc470d5c8ff2005a409f",
+      "weights/Kronos-mini/config.json": "70daca2cb11e3a979dd6b8ac12ee08e2aace877acf28f5b8dfb4fe5609736201",
+      "weights/Kronos-mini/model.safetensors": "a7d5f37e2e9fbd9891f7d7d4f72574512dd1f704fee14223e0a8cd0fbf54197c",
+      "weights/Kronos-Tokenizer-2k/config.json": "0b30a443affb03e05a876a083857de9164f899feb7b4d261da02c485c9a3e3b6",
+      "weights/Kronos-Tokenizer-2k/model.safetensors": "b97ec46b3b72160509e289183eaf7bdf5f0dac5bb9b49522f6d46638a99a8717"
+    }
+  },
+  "repeated_forecast_max_abs": 0.0,
+  "reload_max_abs": 0.0,
+  "batch_size": 1024,
+  "batch_seconds": [
+    0.3045235349999871,
+    0.234778963999986,
+    0.2306112899999846,
+    0.23480984400001148
+  ],
+  "feature_forecasts_per_second": 4387.317295119942,
+  "device": "cuda:0",
+  "torch": "2.11.0+cu130",
+  "cold_start_rule": {
+    "calibration": {
+      "scored": 100000,
+      "cold_start": 0,
+      "no_history": 0
+    },
+    "test": {
+      "scored": 118638,
+      "cold_start": 0,
+      "no_history": 0
+    }
+  },
+  "cuda_devices": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "peak_cuda_allocated_gib": 0.6851773262023926
+}

@@ -36,17 +36,31 @@ savecsv('max_error_ablation_metrics.csv',[
      **{k:v for k,v in r['metrics'].items() if k!='operating_points'},
      **{k:values[k] if values is not None else None for k in ('precision','recall','f1','fpr','tp','fp','fn','tn')}}
     for r in ablation for op,values in r['metrics']['operating_points'].items()])
-metrics=[];thresholds=[];feature_tails=[]
+metrics=[];thresholds=[];feature_tails=[];original_or=[];tail_diagnostics=[]
 for r in records:
     feature_tails.append(dict(dataset=r['dataset'],seed=r['seed'],fitted=json.loads((a.runs/r['dataset']/str(r['seed'])/'feature_pot.json').read_text())))
     thresholds.append(dict(dataset=r['dataset'],seed=r['seed'],thresholds=json.loads((a.runs/r['dataset']/str(r['seed'])/'thresholds.json').read_text())))
+    original=json.loads((a.runs/r['dataset']/str(r['seed'])/'original_or_metrics.json').read_text())
+    original_or.append(dict(dataset=r['dataset'],seed=r['seed'],operating_point='original_or_threshold_1',included_in_common_ranking=False,
+                            **{k:v for k,v in original.items() if k!='operating_points'},**original['operating_points']['original_or']))
+    th=thresholds[-1]['thresholds'];pot=th['pot']
+    with np.load(a.runs/r['dataset']/str(r['seed'])/'scores.npz',allow_pickle=False) as z:cal,test=z['calibration'],z['test']
+    diagnostic=dict(dataset=r['dataset'],seed=r['seed'],active_dimensions=r['model_info']['active_dimensions'],total_dimensions=r['model_info']['total_dimensions'])
+    for phase,scores in [('calibration',cal),('test',test)]:
+        for label,q in [('q50',.5),('q85',.85),('q99',.99),('max',1.)]:diagnostic[phase+'_'+label]=float(np.quantile(scores,q))
+    diagnostic.update(pot_status=pot['status'],pot_shape=pot.get('shape'),pot_threshold=pot.get('threshold'),quantile_threshold=th['quantile']['threshold'],
+                      pot_threshold_over_test_max=pot['threshold']/float(test.max()) if pot['status']=='ok' and test.max()>0 else None,
+                      pot_alarm_count_all_scored=int(np.count_nonzero(test>=pot['threshold'])) if pot['status']=='ok' else None,
+                      quantile_alarm_count_all_scored=int(np.count_nonzero(test>=th['quantile']['threshold'])))
+    tail_diagnostics.append(diagnostic)
     for op,values in r['metrics']['operating_points'].items():
         row={k:r[k] for k in ('track','dataset','method','seed','seconds','device')}
         row.update({k:v for k,v in r['metrics'].items() if k!='operating_points'})
         row.update(operating_point=op,status='ok' if values is not None else 'failed')
         for k in ['precision','recall','f1','fpr','tp','fp','fn','tn','alarm_fraction']:row[k]=values[k] if values is not None else None
         metrics.append(row)
-savecsv('metrics.csv',metrics);write('thresholds.json',thresholds);write('feature_pot.json',feature_tails)
+savecsv('metrics.csv',metrics);write('thresholds.json',thresholds);write('feature_pot.json',feature_tails);savecsv('original_or_metrics.csv',original_or)
+savecsv('threshold_diagnostics.csv',tail_diagnostics)
 summary=[]
 metric_names=['average_precision','pr_auc_trapezoid','roc_auc','precision','recall','f1','fpr']
 for d in tasks:
@@ -110,7 +124,7 @@ ablation_table='\n'.join(ablation_table)
 def meanstd(d,metric,op='pot'):
     r=index[d,'kronos_potratio_matched',op]
     return 'N/A' if r[metric+'_mean'] is None else fmt(r[metric+'_mean'])+' ± '+fmt(r[metric+'_std'])
-ktable='\n'.join(['| 数据集 | 全量已知评价数／异常数 | AP | ROC-AUC | POT F1 | 99%分位F1 | POT FPR |','|---|---:|---:|---:|---:|---:|---:|']+['| '+dn[d]+f" | {index[d,'kronos_potratio_matched','pot']['evaluated']}／{index[d,'kronos_potratio_matched','pot']['positives']} | "+' | '.join([meanstd(d,'average_precision'),meanstd(d,'roc_auc'),meanstd(d,'f1'),meanstd(d,'f1','quantile'),meanstd(d,'fpr')])+' |' for d in tasks])
+ktable='\n'.join(['| 数据集 | 全量已知评价数／异常数（占比） | AP | ROC-AUC | POT F1 | 99%分位F1 | POT FPR |','|---|---:|---:|---:|---:|---:|---:|']+['| '+dn[d]+f" | {index[d,'kronos_potratio_matched','pot']['evaluated']}／{index[d,'kronos_potratio_matched','pot']['positives']}（{100*index[d,'kronos_potratio_matched','pot']['prevalence']:.2f}%） | "+' | '.join([meanstd(d,'average_precision'),meanstd(d,'roc_auc'),meanstd(d,'f1'),meanstd(d,'f1','quantile'),meanstd(d,'fpr')])+' |' for d in tasks])
 apwins=sum('kronos_potratio_matched' in winners(d,'average_precision') for d in tasks)
 f1wins=sum('kronos_potratio_matched' in winners(d,'f1') for d in tasks)
 potok=sum(x['status']=='ok' for x in metrics if x['operating_point']=='pot')
@@ -131,6 +145,8 @@ description=f'''# KronosAD同协议全量对比：27次运行（2026-11-15）
 ## 新增方法结果
 
 数值为百分数，三个种子均值±样本标准差，无点调整、无标签调参。完整表中AP最高的任务数为{apwins}/9，POT F1最高为{f1wins}/9，均为最高均值描述而非统计显著性结论。
+
+异常占比是常数分数的AP参照：AP必须结合它、ROC-AUC和误报率解释，不能把不同数据集的AP直接排成总榜。三个种子的标准差反映本轮固定划分下的随机性，不是独立新时期验证或置信区间。
 
 {ktable}
 
@@ -154,8 +170,11 @@ description=f'''# KronosAD同协议全量对比：27次运行（2026-11-15）
 
 - [54条逐种子指标](metrics.csv)、[18条Kronos汇总](summary.csv)、[216条全部方法汇总](combined_transaction_summary.csv)、[各指标最佳方法](best_methods.csv)。CSV使用0到1比例，POT任一种子失败不以其余成功种子平均冒充完整成绩。
 - [原最大误差消融全部逐种子记录](max_error_ablation_per_seed.json)与[54条消融操作点](max_error_ablation_metrics.csv)完整保留；[逐维POT标尺、失败维度及原因](feature_pot.json)记录主方法的额外无标签校准步骤。
+- [原逐维OR规则的固定比值阈值1](original_or_metrics.csv)仅作补充，不参与共同POT／99%分位排名，不选择其与共同操作点较好的成绩。
+- [校准／测试分数分位、最大值与POT外推](threshold_diagnostics.csv)用于区分数学拟合成功与检测有效；全部评分位置的报警数包含未知标签，不等于已知正常误报数。
 - [逐种子配置与指标](per_seed.json)、[阈值及GPD参数](thresholds.json)、[全量预测／指标独立复算](verification.json)、[输入文件哈希](input_files_sha256.json)、[源码及环境](run_manifest.json)、[冻结权重及官方源码哈希](assets.json)。
 - [冷启动覆盖](cold_start_counts.csv)：不足32步左填训练中位数，不丢弃序列开头测试点、不跨案例拼接；原模型与全量逐特征预测保存在私有CQ归档，不加入Git。
+- [固定阈值下的冷／热启动子集](cold_warm_metrics.csv)、[分数主导特征](dominant_features.csv)、[近恒定历史与误报关联](score_driver_diagnostics.csv)、[事后诊断边界](diagnostics_protocol.json)：只作解释，不重拟合、不剔除难点、不替代完整测试成绩，也不把关联写成已证实因果。
 - 科学源码以运行清单为准，报告导出可以在后续提交完成。经典方法来自此前同缓存实验；账户图表保持独立，不将本方法虚构为账户图模型。旧Kronos历史参考不参与本轮排名。
 - 汇总CSV的`source_kind`区分来源：既有基线的`source_commit/path`指向已发布汇总；新Kronos行指向实际科学代码提交，结果及复算证据在本目录，避免把后续报告提交冒充实际运行版本。
 '''
@@ -163,6 +182,7 @@ description=f'''# KronosAD同协议全量对比：27次运行（2026-11-15）
 if a.update_main_report:
     report=root/'docs/financial_ad_comparison_CN.md';text=report.read_text()
     text=re.sub(r'^整理日期：[^。]+。','整理日期：2026-11-15；包含此前基线、Kronos旧协议参考及本轮同协议全量结果。',text,count=1,flags=re.M)
+    text=text.replace('本文汇总已完成实验，不增加训练、不重新选择阈值，也不改变历史结果。','本文保留历史实验，并新增真实冻结Kronos推理与按预先固定规则进行的无标签阈值校准；没有根据测试标签重选阈值。',1)
     for heading,nextheading,replacement in [('2.1','2.2',table('f1')),('2.2','2.3',table('average_precision'))]:
         pattern=rf'(### {re.escape(heading)} [^\n]+\n\n).*?(?=\n### {re.escape(nextheading)} )'
         text,n=re.subn(pattern,lambda match:match[1]+replacement+'\n',text,flags=re.S);assert n==1
@@ -170,10 +190,25 @@ if a.update_main_report:
     intro='“最佳”只指当前12种方法在相应指标上的最高均值，不是显著性结论。排序能力与固定阈值报警能力分开评价；SD-FMM股票测试仅6条序列，方差和泛化限制需要同时考虑。\n\n原先另有RGLD-ID和RTTAD-TTA，不属于本表10种经典方法，未计入此候选集合；不同候选集合下最佳方法可能改变。旧结果见第1.2节固定源报告。\n\n完整共同指标与标准差见[216条统一交易汇总](../results/kronos_matched_20261115/combined_transaction_summary.csv)，Kronos完整结果见[同协议27次运行报告](../results/kronos_matched_20261115/README_CN.md)。CSV使用原始比例。\n'
     text,n=re.subn(pattern,lambda match:match[1]+best_table+'\n\n'+intro,text,flags=re.S);assert n==1
     text=text.replace('交易／点级轨道有9个共同任务，比较10种经典方法与CAE-IF。','交易／点级轨道有9个共同任务，现比较10种经典方法、CAE-IF与同协议KronosAD-M共12种方法。',1)
-    text=text.replace('以下两张表完整列出10种经典方法及CAE-IF。','以下两张表完整列出10种经典方法、CAE-IF及KronosAD-M；Kronos使用与基线相同缓存、配对校准抽样及完整测试分区，详细方法边界见第10节。',1)
+    text=text.replace('新增方法为CAE-IF核心适配、EB-GAD作者发布版零标签设置、Audit-HCL零标签适配。','新增方法为CAE-IF核心适配、EB-GAD作者发布版零标签设置、Audit-HCL零标签适配，以及本轮真实冻结Kronos-mini的KronosAD-M代理适配。',1)
+    text=text.replace('以下两张表完整列出10种经典方法及CAE-IF。','以下两张表完整列出10种经典方法、CAE-IF及KronosAD-M。**KronosAD-M即本轮同输入、全量测试的KronosAD-Proxy，采用保留源逐维POT标尺的比值聚合；旧小样本Proxy不在主表。** 详细边界见第10节。',1)
     text=text.replace('## 7. 新增：KronosAnomalyDetection结果参考对比（2026-11-15）','## 7. 历史参考：KronosAnomalyDetection旧协议结果（2026-11-15）\n\n**本节保留旧Proxy与11月14日主表的历史参考，表中原11种方法的范围不随新轮更新；当前同输入／同测试位置Kronos结果已加入第2节，完整说明见第10节。**',1)
     text=text.replace('在本表10种经典方法＋CAE-IF范围内，','在原10种经典方法＋CAE-IF的基线范围内，',1)
+    text=text.replace('**经典方法在多数交易任务上仍有优势。** 在原10种经典方法＋CAE-IF的基线范围内，POT F1最高分别为：ULB的PCA、BankSim的VAE、S-FFSD的LOF、Sapienza三种粒度的GMM、股票的OCSVM、加密货币的IF，以及合成数据的CAE-IF。',
+                      '**最佳方法依赖数据集及指标。** 加入KronosAD-M后的12法完整最高名单已更新在第2.3节，分别列出AP、共同POT F1和99%分位F1；不能用一种指标的第一名代表所有检测能力。',1)
+    text=text.replace('超过本表其余方法，但该任务的AP仍低于IF。','超过此前其余10种经典基线，但AP仍低于IF；加入Kronos后的当前最高方法见第2.3节。',1)
     text=text.replace('- **已加入KronosAnomalyDetection结果，但不混排不同协议。** 第7节分别列出原生OHLCVA、原Proxy、固定联合无监督和验证选参方案，提供与现有主表的并排参考；测试划分、样本、特征和标签预算不同，原最佳名单不变。',f'- **KronosAD同协议全量重跑已加入交易主表。** 完成27次运行，POT成功{potok}/27；在当前12种方法中AP最高{apwins}/9、POT F1最高{f1wins}/9。完整测试对象、输入缓存和评价规则已配对核验。第7节仅保留旧协议历史参考，不纳入当前排名。',1)
+    for heading in ['### 7.4 原Kronos-Proxy逐数据版本结果','### 7.5 相同Proxy测试位置下的评分方案对比','### 7.6 与经典方法及CAE-IF并排参考']:
+        text=text.replace(heading+'\n',heading+'\n\n**此处是旧协议小样本历史结果。最新同输入、完整测试的KronosAD结果已进入第2节，并有[独立27次运行报告](../results/kronos_matched_20261115/README_CN.md)。**\n',1)
+    text=text.replace('本次仅整理报告及已有聚合结果，没有重新提交CQ训练任务，没有改变历史实验、原始数据、模型或阈值。','11月14日的11法汇总仅整理既有结果；本轮另有真实Kronos全量冻结推理及无标签评分，详见第10节，不覆盖任何历史实验、原始数据或原阈值。',1)
+    text=text.replace('**第2节、第3节的同协议排名保留；Kronos结果作为不同协议的历史参考，不把较大的数字直接加粗为“全体最佳”。** 本次未重新训练、微调或调用Kronos推理，也没有在新时间段获得独立验证。','**本节保留当时不同协议的历史参考，不参与当前第2节12法排名。** 当时的参考整理没有重新调用Kronos推理；本轮第10节已实际重跑，仍没有在独立新时期获得前瞻验证。',1)
+    text=text.replace('主表最高方法仍只在原11种方法内部选出；Proxy的F1','此历史表左侧最高方法仅在原11种方法内选出，当前12法名单见第2.3节；旧Proxy的F1',1)
+    text=text.replace('## 8. Kronos表现与风险的解释','## 8. 旧协议Kronos结果的解释与风险',1)
+    text=text.replace('## 9. Kronos新增溯源与核验','## 9. 旧协议Kronos参考的溯源与核验',1)
+    text=text.replace('## 6. 可追溯文件及核验范围\n','## 6. 可追溯文件及核验范围\n\n本节原链接保留11月14日的11法基线；当前含Kronos的12法[统一交易汇总](../results/kronos_matched_20261115/combined_transaction_summary.csv)、[最佳方法](../results/kronos_matched_20261115/best_methods.csv)及[全量复算证据](../results/kronos_matched_20261115/verification.json)在新结果目录，不能把旧最佳CSV误认为已更新的12法名单。\n',1)
+    text=text.replace('**不包括Kronos仓库**。','**不包括旧Kronos仓库的缓存**；第10节新增KronosAD-M已另行核对相同81个输入文件。',1)
+    text=text.replace('本文不把这项尚未完成的实验写成已有结论。','本节不把这些旧成绩写成公平比较结论；该共同协议实验现已在第10节实际完成。',1)
+    text=text.replace('本次仅补充中文报告和来源明确的聚合参考数据，现有主表最佳方法、账户图结果、原始数据及历史实验均未改变。','本节所述历史补充仅整理聚合参考数据；当前第2节排名已根据第10节的新实验更新，账户图结果、原始数据及历史实验保留。',1)
     addition=f'''\n\n## 10. KronosAD同协议全量重跑：正式对比结果（2026-11-15）
 
 本节替代“只有不同协议历史参考”的状态，使用与基线完全相同的9任务缓存、特征、划分、种子、校准抽样和全部测试位置，实际完成27次真实冻结模型推理运行。**第2节的AP／POT F1及最佳方法表已重新计算，包含KronosAD-M。** 旧第7节的数据不被混入。

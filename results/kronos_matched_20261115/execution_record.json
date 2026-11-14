@@ -1,0 +1,49 @@
+{
+  "jobs": [
+    {
+      "id": "j-1115-e612e5",
+      "name": "FinancialAD Kronos matched real-weight GPU qualification 20261115",
+      "work": "FinancialAD",
+      "state": "done",
+      "attempts": 1,
+      "created": 1794681054.6203039,
+      "started": 1794681164.2292538,
+      "finished": 1794681228.894569,
+      "exit_code": 0
+    },
+    {
+      "id": "j-1115-b31cbc",
+      "name": "FinancialAD Kronos matched full banksim 20261115",
+      "work": "FinancialAD",
+      "state": "done",
+      "attempts": 1,
+      "created": 1794681310.3551528,
+      "started": 1794681439.0563478,
+      "finished": 1794687549.5406709,
+      "exit_code": 0
+    },
+    {
+      "id": "j-1115-bfb3ef",
+      "name": "FinancialAD Kronos matched full other8 20261115",
+      "work": "FinancialAD",
+      "state": "done",
+      "attempts": 1,
+      "created": 1794681310.906504,
+      "started": 1794687979.359325,
+      "finished": 1794699105.800829,
+      "exit_code": 0
+    }
+  ],
+  "paid_rental_used": false,
+  "paid_rental_allowed": false,
+  "max_usd_per_job": 0,
+  "inference_commit": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575",
+  "scoring_declaration_commit": "762acfdb4277d54fb618fd93a722d96a4296ff88",
+  "initial_max_error_preserved_as_ablation": true,
+  "primary_score_correction_declared_before_first_financial_metrics": true,
+  "bank_preview_repeated_with_full_cohort_exactly_identical": true,
+  "additional_gpu_inference_for_rescoring": false,
+  "full_suite_tests_after_scoring_revision": 51,
+  "matching_scoring_library_tests": 9,
+  "total_feature_forecasts": 87130386
+}

@@ -1,10 +1,19 @@
 # Financial_unsuperviesdAD
 
-金融交易无监督异常检测：10 种经典方法及 2 种 2026 预印本方法核心的金融适配。
+
+## 最新：KronosAD同协议全量重跑（2026-11-15）
+
+**[直接查看Kronos的9任务实验结果](results/kronos_matched_20261115/README_CN.md)** · **[包含Kronos的12法中文对比报告](docs/financial_ad_comparison_CN.md)** · [54条逐种子操作点](results/kronos_matched_20261115/metrics.csv) · [统一汇总CSV](results/kronos_matched_20261115/combined_transaction_summary.csv) · [固定协议与运行命令](docs/kronos_matched_protocol_CN.md)
+
+使用真实冻结Kronos-mini＋Tokenizer-2k，完成9任务×3种子共27次运行。与此前基线使用完全相同的81个缓存文件、训练／校准抽样、全量测试位置和两套无标签阈值；所有逐特征预测到分数、阈值及指标均独立复算。主方法保留源逐维POT比值聚合，另存最大误差消融；不按测试成绩挑版本。它是工程特征代理适配，外部预训练与历史上下文预算另行披露。
+
+KronosAD-M的AP／POT F1均无任务排名第一；ULB的AP为12.09%（12法第2），BankSim的POT因阈值高于全部分数而零报警，加密货币的POT则142个报警全为误报。完整表、标准差、最佳方法及已确认问题／待验证原因已写入报告。账户图检测仍单独比较；旧小样本Kronos成绩只留作历史参考。
+
+金融交易与账户图无监督异常检测：经典方法、2026方法核心适配及冻结Kronos代理基准。
 
 经典方法：**Isolation Forest、LOF、kNN、One-Class SVM、PCA-SPE、HBOS、GMM、Autoencoder、VAE、Deep SVDD**。
 
-提供可运行的算法、统一无标签训练和阈值校准、模型保存／加载、CSV 预测及完整留出评价。算法核心复现与金融特征适配的边界见[方法及原论文](docs/METHODS_CN.md)；正式实验配置见[预先固定的协议](docs/PROTOCOL_CN.md)。模型代码不依赖 Kronos 或预训练权重。
+提供可运行的算法、统一无标签训练和阈值校准、模型保存／加载、CSV 预测及完整留出评价。算法核心复现与金融特征适配的边界见[方法及原论文](docs/METHODS_CN.md)；正式实验配置见[预先固定的协议](docs/PROTOCOL_CN.md)。经典及此前独立神经方法代码不依赖 Kronos；新增KronosAD-M需要真实冻结预训练权重。
 
 本轮已完成 **9 组金融数据、10 个任务配置、10 种方法、3 个种子（42/43/44），共 300 次真实实验**。训练统一最多 8192 条，校准最多 100000 条，**测试全量**；异常标签只用于最后评价。统一报告固定 POT 与预先指定的 99% 校准分位阈值，二者分开；本轮 POT 全部成功。
 
@@ -121,7 +130,7 @@ pytest -q
 新增测试包括重复交易记录的 RGLD 距离／分批稳定性、RTTAD 双符号梯度更新、GammaGMM 随机状态隔离、冻结检查点、无训练／校准标签运行及无损分数归档。
 ## 2026-11-14 零标签金融适配实验
 
-[经典与新增方法综合对比中文报告](docs/financial_ad_comparison_CN.md)：交易／点级与账户图分开，包含完整AP／POT F1表、各任务最佳方法、误报与标签覆盖解读，以及新方法表现不佳的已确认问题和待验证机制；附跨轮来源与输入哈希核验。**2026-11-15补充KronosAnomalyDetection原生K线、原Proxy、固定联合无监督及验证选参结果**，共31条汇总记录；不同协议单独展示，不纳入原同协议最佳排名。
+[经典与新增方法综合对比中文报告](docs/financial_ad_comparison_CN.md)：交易／点级与账户图分开，包含完整AP／POT F1表、各任务最佳方法、误报与标签覆盖解读，以及新方法表现不佳的已确认问题和待验证机制；附跨轮来源与输入哈希核验。2026-11-15保留31条原生K线及旧Proxy历史记录，并新增上述27次同协议全量Kronos运行；当前交易主表已包含KronosAD-M，旧协议成绩单独展示。
 
 CAE-IF、EB-GAD 作者发布版及 Audit-HCL 的新增协议与复现边界见 [零标签协议](docs/zero_label_protocol_CN.md)。独立入口为 `python -m finad_zero.experiment`；与原有结果分开保存，不覆盖历史实验。
 

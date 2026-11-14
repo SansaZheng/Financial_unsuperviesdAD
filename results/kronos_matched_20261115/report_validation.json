@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "primary_runs": 27,
+  "primary_operating_point_records": 54,
+  "combined_method_rows": 216,
+  "source_baseline_rows_preserved": 198,
+  "all_mean_and_sample_std_independently_recomputed": true,
+  "all_best_methods_independently_recomputed": true,
+  "main_AP_and_POT_F1_markdown_cells_checked": 216,
+  "scientific_source_blobs_verified": true,
+  "exact_input_file_count": 81,
+  "all_feature_forecasts_replayed": 87130386,
+  "local_document_links_checked": 97,
+  "no_raw_forecasts_or_weights_published": true
+}

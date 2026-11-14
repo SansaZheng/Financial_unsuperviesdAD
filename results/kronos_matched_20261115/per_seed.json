@@ -1,0 +1,4046 @@
+[
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 948.3958928692155,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 92575,
+      "unknown_excluded": 0,
+      "positives": 115,
+      "normal": 92460,
+      "prevalence": 0.0012422360248447205,
+      "average_precision": 0.11768775266811564,
+      "roc_auc": 0.915610134582287,
+      "pr_auc_trapezoid": 0.11368735930530169,
+      "operating_points": {
+        "quantile": {
+          "tp": 61,
+          "fp": 726,
+          "fn": 54,
+          "tn": 91734,
+          "precision": 0.07750952986022872,
+          "recall": 0.5304347826086957,
+          "f1": 0.1352549889135255,
+          "fpr": 0.007852044127190136,
+          "alarm_fraction": 0.00850121523089387
+        },
+        "pot": {
+          "tp": 61,
+          "fp": 751,
+          "fn": 54,
+          "tn": 91709,
+          "precision": 0.07512315270935961,
+          "recall": 0.5304347826086957,
+          "f1": 0.13160733549083065,
+          "fpr": 0.008122431321652607,
+          "alarm_fraction": 0.008771266540642721
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 47445,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 92575,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 29,
+      "total_dimensions": 29,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421",
+      "source_manifest": {
+        "dataset": "ulb",
+        "protocol": "Time<=86400 train; <=129600 calibration; later test. Time/label excluded from features.",
+        "splits": {
+          "train": {
+            "rows": 144787,
+            "positive": 281,
+            "normal": 144506,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 47445,
+            "positive": 96,
+            "normal": 47349,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 92575,
+            "positive": 115,
+            "normal": 92460,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/ulb_creditcard/ulb_creditcard.zip",
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "log_Amount"
+        ]
+      },
+      "score_sha256": "ba8b06809ff5a2ed99e2441c322d6fa4379d7246cb370aa499a03a01c0943e94",
+      "forecasts_sha256": "f67d23fff5d0553749c8b8b085cf85b91ded6e96629fc008c04d50c0489b8f4a",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "08465f61e916f47e0b6c19d9c6f3e7119f45a57e7d8ece5462aaba0167557c21",
+      "feature_pot_sha256": "59120961a4ecb1eae58b08c25ec92e854dcec2bade41b2b82cf7fd6036ca3446",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 947.6882210581098,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 92575,
+      "unknown_excluded": 0,
+      "positives": 115,
+      "normal": 92460,
+      "prevalence": 0.0012422360248447205,
+      "average_precision": 0.12411693283796632,
+      "roc_auc": 0.9050388887321427,
+      "pr_auc_trapezoid": 0.11996078413344534,
+      "operating_points": {
+        "quantile": {
+          "tp": 64,
+          "fp": 687,
+          "fn": 51,
+          "tn": 91773,
+          "precision": 0.085219707057257,
+          "recall": 0.5565217391304348,
+          "f1": 0.14780600461893764,
+          "fpr": 0.007430240103828683,
+          "alarm_fraction": 0.008112341344855523
+        },
+        "pot": {
+          "tp": 65,
+          "fp": 752,
+          "fn": 50,
+          "tn": 91708,
+          "precision": 0.0795593635250918,
+          "recall": 0.5652173913043478,
+          "f1": 0.13948497854077252,
+          "fpr": 0.008133246809431106,
+          "alarm_fraction": 0.008825276802592492
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 47445,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 92575,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 29,
+      "total_dimensions": 29,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421",
+      "source_manifest": {
+        "dataset": "ulb",
+        "protocol": "Time<=86400 train; <=129600 calibration; later test. Time/label excluded from features.",
+        "splits": {
+          "train": {
+            "rows": 144787,
+            "positive": 281,
+            "normal": 144506,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 47445,
+            "positive": 96,
+            "normal": 47349,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 92575,
+            "positive": 115,
+            "normal": 92460,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/ulb_creditcard/ulb_creditcard.zip",
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "log_Amount"
+        ]
+      },
+      "score_sha256": "3d78989f6a9e1a6b2ce43c834793b7e4f4e4646b426ee0ab3710bc8b283320fb",
+      "forecasts_sha256": "20b412f82b698dd83d95c1ffb84feb55b8451070c4c459d7f795a5aef5db8239",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "e5dbf08884822781eeb705d6b3fc68fab2a05af1c98d642bc05bb16f708b6e83",
+      "feature_pot_sha256": "b875297358a11c937dae874334d26488f4b5d146c490c1e720dfa307731be5f1",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "ulb",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 946.2342723461334,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 92575,
+      "unknown_excluded": 0,
+      "positives": 115,
+      "normal": 92460,
+      "prevalence": 0.0012422360248447205,
+      "average_precision": 0.12089928452049925,
+      "roc_auc": 0.9164423628549127,
+      "pr_auc_trapezoid": 0.1167406341429957,
+      "operating_points": {
+        "quantile": {
+          "tp": 63,
+          "fp": 698,
+          "fn": 52,
+          "tn": 91762,
+          "precision": 0.08278580814717477,
+          "recall": 0.5478260869565217,
+          "f1": 0.14383561643835616,
+          "fpr": 0.00754921046939217,
+          "alarm_fraction": 0.008220361868755063
+        },
+        "pot": {
+          "tp": 63,
+          "fp": 716,
+          "fn": 52,
+          "tn": 91744,
+          "precision": 0.08087291399229782,
+          "recall": 0.5478260869565217,
+          "f1": 0.14093959731543623,
+          "fpr": 0.007743889249405148,
+          "alarm_fraction": 0.008414798811774237
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 47445,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 92575,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 29,
+      "total_dimensions": 29,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3e871e1eec205f78fc7d3b99c6fe9e7004b6d3d40888f2821d313f17e17c9421",
+      "source_manifest": {
+        "dataset": "ulb",
+        "protocol": "Time<=86400 train; <=129600 calibration; later test. Time/label excluded from features.",
+        "splits": {
+          "train": {
+            "rows": 144787,
+            "positive": 281,
+            "normal": 144506,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 47445,
+            "positive": 96,
+            "normal": 47349,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 92575,
+            "positive": 115,
+            "normal": 92460,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/ulb_creditcard/ulb_creditcard.zip",
+        "features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "log_Amount"
+        ]
+      },
+      "score_sha256": "11f0f96dbb8c642593f7b5d676ed3fa683499c777777d75f0f018f9aa82d5305",
+      "forecasts_sha256": "0f387061be29ff362a7a277fe9046a0e942f183302df44d76b0ca704294dfdb5",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "4f6cd08cb5a61ec8b79df1b763ff1103787fd5013c36562a54998620f817ed3b",
+      "feature_pot_sha256": "340b1fc75e292474762e2584d5afa3a5eeb10ac08e8e3898843df3fd3337ac84",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 3036.690993282944,
+    "device": "cuda:0",
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.11698397279610277,
+      "roc_auc": 0.76964094373626,
+      "pr_auc_trapezoid": 0.11732421982438383,
+      "operating_points": {
+        "quantile": {
+          "tp": 183,
+          "fp": 1120,
+          "fn": 1097,
+          "tn": 116238,
+          "precision": 0.14044512663085187,
+          "recall": 0.14296875,
+          "f1": 0.14169570267131243,
+          "fpr": 0.009543448252356038,
+          "alarm_fraction": 0.010982990272931101
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1280,
+          "tn": 117358,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "alarm_fraction": 0.0
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 118638,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 54,
+      "total_dimensions": 61,
+      "failed_dimensions": [
+        {
+          "feature": "category_hash_0",
+          "index": 13,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_1",
+          "index": 14,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_7",
+          "index": 20,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_20",
+          "index": 33,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_22",
+          "index": 35,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_28",
+          "index": 41,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_29",
+          "index": 42,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        }
+      ],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "score_sha256": "728d7f293768964ffe62e8059a93429fa3c4f9618172278fe4320ec2d49b3992",
+      "forecasts_sha256": "53817bc23d8490d280b9137ad1647e0e656847a1c49a9c0e0f9367c2ce5bcda8",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "b5b81ce8960ef4be57a05d09134f5dab8f8471ad7865b183b77869d1b082aa8a",
+      "feature_pot_sha256": "f5767b3a1ef1e79f8decdaac9762ddb7d80afb5e773570f97a9c95d3da8fc7ac",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 3022.3328493661247,
+    "device": "cuda:0",
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.12442697566070637,
+      "roc_auc": 0.7625274700329335,
+      "pr_auc_trapezoid": 0.12559475051355734,
+      "operating_points": {
+        "quantile": {
+          "tp": 183,
+          "fp": 1120,
+          "fn": 1097,
+          "tn": 116238,
+          "precision": 0.14044512663085187,
+          "recall": 0.14296875,
+          "f1": 0.14169570267131243,
+          "fpr": 0.009543448252356038,
+          "alarm_fraction": 0.010982990272931101
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1280,
+          "tn": 117358,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "alarm_fraction": 0.0
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 118638,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 56,
+      "total_dimensions": 61,
+      "failed_dimensions": [
+        {
+          "feature": "category_hash_9",
+          "index": 22,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_15",
+          "index": 28,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_23",
+          "index": 36,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_28",
+          "index": 41,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_29",
+          "index": 42,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        }
+      ],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "score_sha256": "2be03d4b0bd1693f96560384b99fae03cdb5c98db32aa245747d8336b52b706c",
+      "forecasts_sha256": "ea315d94f58e4593d4fc2898afab2ce97efec80d26baa4d027ff509dcd0ef350",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "4df2c8bcfd814f6989776bd9b4a88d324aea5da748ff6e1578d2561174c4714e",
+      "feature_pot_sha256": "ab650d88e90f6bc9f5511a36e0233bfd9ff95ee90861611998ef27690b27517e",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 3098.8550561908633,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.11771281297193725,
+      "roc_auc": 0.7696155007541029,
+      "pr_auc_trapezoid": 0.11810206320738292,
+      "operating_points": {
+        "quantile": {
+          "tp": 183,
+          "fp": 1120,
+          "fn": 1097,
+          "tn": 116238,
+          "precision": 0.14044512663085187,
+          "recall": 0.14296875,
+          "f1": 0.14169570267131243,
+          "fpr": 0.009543448252356038,
+          "alarm_fraction": 0.010982990272931101
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1280,
+          "tn": 117358,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "alarm_fraction": 0.0
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 118638,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 55,
+      "total_dimensions": 61,
+      "failed_dimensions": [
+        {
+          "feature": "category_hash_9",
+          "index": 22,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_13",
+          "index": 26,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_21",
+          "index": 34,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_26",
+          "index": 39,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_28",
+          "index": 41,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        },
+        {
+          "feature": "category_hash_29",
+          "index": 42,
+          "reason": "Risk must be smaller than the observed exceedance fraction"
+        }
+      ],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "score_sha256": "72793dfe29f0621972804e3815ffbcb68c60f368c672492ac8be8d8b690d4746",
+      "forecasts_sha256": "9738325098d4c0397e48ec2119065ad527ac5b994a52f3d5164bf4abb4b11ffc",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "a20b3bfaeac0dbcfca6e5fb5dda00020683e94dee01ae8404ff960382572eb64",
+      "feature_pot_sha256": "9d8fc2b1c09861352413ed1bfa627c4e8bb95d58e3bfc53d891108fea6473a62",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 350.29360894300044,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.35269903944051684,
+      "roc_auc": 0.4838535581982846,
+      "pr_auc_trapezoid": 0.3534534893732507,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 50,
+          "fn": 2385,
+          "tn": 3715,
+          "precision": 0.15254237288135594,
+          "recall": 0.0037593984962406013,
+          "f1": 0.007337953526294333,
+          "fpr": 0.013280212483399735,
+          "alarm_fraction": 0.009579477187855172
+        },
+        "pot": {
+          "tp": 7,
+          "fp": 20,
+          "fn": 2387,
+          "tn": 3745,
+          "precision": 0.25925925925925924,
+          "recall": 0.0029239766081871343,
+          "f1": 0.0057827344072697235,
+          "fpr": 0.005312084993359893,
+          "alarm_fraction": 0.00438382854359474
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 49,
+      "total_dimensions": 49,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "score_sha256": "9d08f83acd74cd0b858367ad5162c1de81e022f76d35ce888d35b76c5427842f",
+      "forecasts_sha256": "d597c472e6c473a904fbb8ea27a87d5ffa07122ce28fc75179de72f7d1dc5031",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "1a026cb6d6a3cced016ca3e690f3570a8cf87b33b5353ea92a1a7f88ee565aea",
+      "feature_pot_sha256": "35ceae9aba9956072b411f2a46b0586025788537ff2b5d24df97fd802da80588",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 349.9822195151355,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.35529395474178366,
+      "roc_auc": 0.48812147677737944,
+      "pr_auc_trapezoid": 0.3558657130280828,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 50,
+          "fn": 2385,
+          "tn": 3715,
+          "precision": 0.15254237288135594,
+          "recall": 0.0037593984962406013,
+          "f1": 0.007337953526294333,
+          "fpr": 0.013280212483399735,
+          "alarm_fraction": 0.009579477187855172
+        },
+        "pot": {
+          "tp": 7,
+          "fp": 20,
+          "fn": 2387,
+          "tn": 3745,
+          "precision": 0.25925925925925924,
+          "recall": 0.0029239766081871343,
+          "f1": 0.0057827344072697235,
+          "fpr": 0.005312084993359893,
+          "alarm_fraction": 0.00438382854359474
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 49,
+      "total_dimensions": 49,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "score_sha256": "bb1c677f4b400289783a2af29b95f78b43e109cb634a03ff516dac247b25a906",
+      "forecasts_sha256": "d0c51d3066e9fcc5acbabbd8a859cacb89c55a705b55183963cb338de8ef3d0d",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "d38c8141a64b3a98d0dead4d75f69ed6cf5f228f020cee9d4521f18613b9c08d",
+      "feature_pot_sha256": "719064ccb2938ceecef2ed0b92880abc4a5bd15285b04445e59082c2d35917ee",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 349.7007906679064,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.35333602067877956,
+      "roc_auc": 0.486036916106113,
+      "pr_auc_trapezoid": 0.3539282971270371,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 50,
+          "fn": 2385,
+          "tn": 3715,
+          "precision": 0.15254237288135594,
+          "recall": 0.0037593984962406013,
+          "f1": 0.007337953526294333,
+          "fpr": 0.013280212483399735,
+          "alarm_fraction": 0.009579477187855172
+        },
+        "pot": {
+          "tp": 7,
+          "fp": 20,
+          "fn": 2387,
+          "tn": 3745,
+          "precision": 0.25925925925925924,
+          "recall": 0.0029239766081871343,
+          "f1": 0.0057827344072697235,
+          "fpr": 0.005312084993359893,
+          "alarm_fraction": 0.00438382854359474
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        },
+        "test": {
+          "scored": 15576,
+          "cold_start": 0,
+          "no_history": 0
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 49,
+      "total_dimensions": 49,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "score_sha256": "0a9dfa111dc9543d3dd0c2fac05033de37a5f5a3964f9e77e81f15832cf59e13",
+      "forecasts_sha256": "63316de8b9ccbaa3afc2779f5d23d16521997e7a272a4d98e62a9c0ffa5b5232",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "764b1e5a86843a1f77f572d8a928ccbc3fcd294775f4e437d7f91ba57e6ae2d4",
+      "feature_pot_sha256": "915e115943ceb986df97fb3f6621db0397110d4681b21247cea48d24a505511c",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 855.6202898470219,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.01219906955100633,
+      "roc_auc": 0.9616742083149727,
+      "pr_auc_trapezoid": 0.010553897681851677,
+      "operating_points": {
+        "quantile": {
+          "tp": 11,
+          "fp": 1898,
+          "fn": 66,
+          "tn": 205292,
+          "precision": 0.005762179151388162,
+          "recall": 0.14285714285714285,
+          "f1": 0.011077542799597181,
+          "fpr": 0.009160673777691973,
+          "alarm_fraction": 0.009210342215596308
+        },
+        "pot": {
+          "tp": 19,
+          "fp": 4737,
+          "fn": 58,
+          "tn": 202453,
+          "precision": 0.003994953742640875,
+          "recall": 0.24675324675324675,
+          "f1": 0.007862611214566521,
+          "fpr": 0.022863072542111104,
+          "alarm_fraction": 0.022946248076152982
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 1031,
+          "no_history": 37
+        },
+        "test": {
+          "scored": 207267,
+          "cold_start": 2472,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "f0079d6e6c10abcbb22fe8da235517b09a510ba0c2a1325f06e950decac7b1ee",
+      "forecasts_sha256": "28800cb1d4520e8f0f175c8cb6b3e6155c35f09f80caf65ebe8994e54eccf60f",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "34fc50a7c46b0e812c1ca257246455a667df59162232b05c3334aa332e235cf2",
+      "feature_pot_sha256": "e9462cea3d0e4263240a3adfd97b58742e47482cd1e76f4521cb7469931bded4",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 855.365961114876,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.008159683786503343,
+      "roc_auc": 0.9486256732793727,
+      "pr_auc_trapezoid": 0.007254039669574639,
+      "operating_points": {
+        "quantile": {
+          "tp": 6,
+          "fp": 1884,
+          "fn": 71,
+          "tn": 205306,
+          "precision": 0.0031746031746031746,
+          "recall": 0.07792207792207792,
+          "f1": 0.006100660904931368,
+          "fpr": 0.009093102948984024,
+          "alarm_fraction": 0.009118673015964914
+        },
+        "pot": {
+          "tp": 19,
+          "fp": 4746,
+          "fn": 58,
+          "tn": 202444,
+          "precision": 0.003987408184679958,
+          "recall": 0.24675324675324675,
+          "f1": 0.00784799669558034,
+          "fpr": 0.02290651093199479,
+          "alarm_fraction": 0.02298967032860996
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 981,
+          "no_history": 37
+        },
+        "test": {
+          "scored": 207267,
+          "cold_start": 2472,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "b01bdc1a6134987ace1b531615346f7784ce54b6140ac2473e80961b1e71ea8f",
+      "forecasts_sha256": "cb4df55cc086ad2c2026bdd31f526d42db961b877cfceae031fde5081f2ec04e",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "b3d3198cb30680c6c984bb30b44595950ac5e55183522a75cbac2fc4939afd74",
+      "feature_pot_sha256": "d4543e04a21ad4265dcf596fcc25bccd2c0d049e3c512dbf892da1843f8b0519",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 855.8752422588877,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.007368538178172757,
+      "roc_auc": 0.9396463062011592,
+      "pr_auc_trapezoid": 0.006578734094932693,
+      "operating_points": {
+        "quantile": {
+          "tp": 5,
+          "fp": 1907,
+          "fn": 72,
+          "tn": 205283,
+          "precision": 0.002615062761506276,
+          "recall": 0.06493506493506493,
+          "f1": 0.005027652086475616,
+          "fpr": 0.009204112167575655,
+          "alarm_fraction": 0.009224816299748634
+        },
+        "pot": {
+          "tp": 19,
+          "fp": 4748,
+          "fn": 58,
+          "tn": 202442,
+          "precision": 0.003985735263268303,
+          "recall": 0.24675324675324675,
+          "f1": 0.007844756399669695,
+          "fpr": 0.022916163907524493,
+          "alarm_fraction": 0.02299931971804484
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 1041,
+          "no_history": 33
+        },
+        "test": {
+          "scored": 207267,
+          "cold_start": 2472,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "c0dc99f97bf8d54d0bd0b4d3b0fd240f08b2398c66121053d2069de9383036f1",
+      "forecasts_sha256": "b8fd8567420a9ac6991a5e46047f4e1e34b418ebc55b9bceb08aae1fcb3a9096",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "4a92542d0eee0a120d526ca27ef24ad4027032ff411ef77277570eef0406f007",
+      "feature_pot_sha256": "7d139b1d8c7d46010dd437d4d4c18f62f0b304c65f68e65c220f8d6c7a62d66d",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 682.2182150981389,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.009582082609816602,
+      "roc_auc": 0.9437819540931458,
+      "pr_auc_trapezoid": 0.00888083450481907,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1230,
+          "fn": 68,
+          "tn": 144243,
+          "precision": 0.007263922518159807,
+          "recall": 0.11688311688311688,
+          "f1": 0.013677811550151976,
+          "fpr": 0.008455177249386485,
+          "alarm_fraction": 0.008512538646513225
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 3875,
+          "fn": 49,
+          "tn": 141598,
+          "precision": 0.0071739687419933385,
+          "recall": 0.36363636363636365,
+          "f1": 0.01407035175879397,
+          "fpr": 0.026637245399489938,
+          "alarm_fraction": 0.026815527310202678
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 1423,
+          "no_history": 50
+        },
+        "test": {
+          "scored": 145550,
+          "cold_start": 2469,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "ae38a00afb67bf34becdf716baabaeaf3a76eec6197c4a731764adaa092c97b7",
+      "forecasts_sha256": "5f57f7994da87998f7a78335bb5c49cf47500f223c04e8e77997abc877f2702e",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "5de0f1a61f8264643d8b7dff8bcec8d0143bd87bf72e0edcd377a0b9d22c529f",
+      "feature_pot_sha256": "b90da08c1c82f72584da58c5a62accfb3c10692a9a580e73ba12ce6672e05e2f",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 682.6048146027606,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.009289303624127564,
+      "roc_auc": 0.9526812714208314,
+      "pr_auc_trapezoid": 0.00861850832171223,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1243,
+          "fn": 68,
+          "tn": 144230,
+          "precision": 0.00718849840255591,
+          "recall": 0.11688311688311688,
+          "f1": 0.013544018058690745,
+          "fpr": 0.00854454091137187,
+          "alarm_fraction": 0.008601855032634833
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 3875,
+          "fn": 49,
+          "tn": 141598,
+          "precision": 0.0071739687419933385,
+          "recall": 0.36363636363636365,
+          "f1": 0.01407035175879397,
+          "fpr": 0.026637245399489938,
+          "alarm_fraction": 0.026815527310202678
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 1459,
+          "no_history": 50
+        },
+        "test": {
+          "scored": 145550,
+          "cold_start": 2469,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "69127cf8826ff90aa713fb90110cd6d05d1505a33cf85e63edb7b93d455c9a6b",
+      "forecasts_sha256": "7a0f1922226ef454637ae7f6db0bfaefa2d4d9c96e167dfee0ff998a2f2f7ff8",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "267cc796174f2a553380162889a0ffd43bf4c43c99cd31743cd435297d625ef8",
+      "feature_pot_sha256": "7ada6e2ef5c438dfd327d3eed542294ac51917cfc79fc550bbfa4a258e6c4214",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 682.6578793090302,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.009968352476040821,
+      "roc_auc": 0.9414880487038206,
+      "pr_auc_trapezoid": 0.009062406027169453,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1288,
+          "fn": 68,
+          "tn": 144185,
+          "precision": 0.006939090208172706,
+          "recall": 0.11688311688311688,
+          "f1": 0.013100436681222707,
+          "fpr": 0.008853876664398205,
+          "alarm_fraction": 0.008911027138440398
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 4206,
+          "fn": 49,
+          "tn": 141267,
+          "precision": 0.006613131790269249,
+          "recall": 0.36363636363636365,
+          "f1": 0.012990025516121549,
+          "fpr": 0.02891258171619476,
+          "alarm_fraction": 0.029089659910683612
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 100000,
+          "cold_start": 1448,
+          "no_history": 47
+        },
+        "test": {
+          "scored": 145550,
+          "cold_start": 2469,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "9eeb4d4bf0676ad79ac9a9b89563f5dca8aee360b1e025e7b5ef90e5d98db90e",
+      "forecasts_sha256": "cd71423b5592061055e11b8635ebdcaf1af5742e7116b4e7cd2bb6d7f35cdfd1",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "e128db83cc2140c3e02f8e4dbeb933ed219ae656f5f48daf49c736dbaa001938",
+      "feature_pot_sha256": "ae6620dad9950ac181be9ac3f86fc13e93b0a1c946ed99223571aa80d435b406",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 583.6991693698801,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.01382398275060994,
+      "roc_auc": 0.9684951372669143,
+      "pr_auc_trapezoid": 0.01242197836472366,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1035,
+          "fn": 68,
+          "tn": 118357,
+          "precision": 0.008620689655172414,
+          "recall": 0.11688311688311688,
+          "f1": 0.016057091882247992,
+          "fpr": 0.00866892254087376,
+          "alarm_fraction": 0.008738668608593025
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 2746,
+          "fn": 49,
+          "tn": 116646,
+          "precision": 0.010093727469358327,
+          "recall": 0.36363636363636365,
+          "f1": 0.019642230796211857,
+          "fpr": 0.022999865987670867,
+          "alarm_fraction": 0.023219412567276866
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 90927,
+          "cold_start": 1611,
+          "no_history": 55
+        },
+        "test": {
+          "scored": 119469,
+          "cold_start": 2468,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "1ea9da7c6b761727629a5fb66f46a5f65b9c13f4798bc77a4eca87679a35bd8c",
+      "forecasts_sha256": "fe476bad3a4b9c858ddbd9736e88b85ad81f773bea1bf01a95d63ce9117fda3f",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "f1a5ab4d94213e590ac51e3b3174ba67fe44ab11e62a2594f13422ebec7d9d55",
+      "feature_pot_sha256": "e796a38227d379e386fbd5bbb044f80202e2d18850210fb77b2b1e692a8cba60",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 583.887981412001,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.012170338169851178,
+      "roc_auc": 0.9611300067528291,
+      "pr_auc_trapezoid": 0.010999300593934228,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1039,
+          "fn": 68,
+          "tn": 118353,
+          "precision": 0.008587786259541985,
+          "recall": 0.11688311688311688,
+          "f1": 0.016,
+          "fpr": 0.008702425623157331,
+          "alarm_fraction": 0.008772150097514836
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 3325,
+          "fn": 49,
+          "tn": 116067,
+          "precision": 0.008350730688935281,
+          "recall": 0.36363636363636365,
+          "f1": 0.0163265306122449,
+          "fpr": 0.027849437148217637,
+          "alarm_fraction": 0.028065858088709206
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 90927,
+          "cold_start": 1611,
+          "no_history": 55
+        },
+        "test": {
+          "scored": 119469,
+          "cold_start": 2468,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "a51fbd9ccf8b065acb635d072dba6481a87bbf82af2c3e44a4083f7fc1619d8b",
+      "forecasts_sha256": "6fd5845418fe4e4dca29cf2b066ef2ac8ff27a263fa7911cabe1cdd185c153f5",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "103c98b04b61a01cf70eb92e595c75581574311bb8211794b24e5fe2ef2e2e34",
+      "feature_pot_sha256": "63874c8777d9da690825f21ba3fde04cf3f8134c0284869b81e4916d2ab35f22",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 584.9091400690377,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.012984667060265426,
+      "roc_auc": 0.9557537954206072,
+      "pr_auc_trapezoid": 0.011692984464709214,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1037,
+          "fn": 68,
+          "tn": 118355,
+          "precision": 0.008604206500956023,
+          "recall": 0.11688311688311688,
+          "f1": 0.016028495102404273,
+          "fpr": 0.008685674082015546,
+          "alarm_fraction": 0.00875540935305393
+        },
+        "pot": {
+          "tp": 28,
+          "fp": 3337,
+          "fn": 49,
+          "tn": 116055,
+          "precision": 0.008320950965824666,
+          "recall": 0.36363636363636365,
+          "f1": 0.016269610691458453,
+          "fpr": 0.027949946395068346,
+          "alarm_fraction": 0.028166302555474643
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 90927,
+          "cold_start": 1611,
+          "no_history": 55
+        },
+        "test": {
+          "scored": 119469,
+          "cold_start": 2468,
+          "no_history": 79
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 12,
+      "total_dimensions": 12,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "score_sha256": "c9d3da978ebedebe435203b5488eefe144eb6fe184c8c7e2efcdf0cdcb14370c",
+      "forecasts_sha256": "f04dedde1ae70f7d942c6e2afb86241e6a8c58c6430f38c4844a93abd2d206b3",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "cfc2e58545206e371a49f3545709005832eeb6aa9323e7d88eddeef5030cd97a",
+      "feature_pot_sha256": "46edef8560dec8eff765a640667fcc8c70b9150b3aefd3f4bcbf7afff184372d",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 4.60704671102576,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.11736751830005611,
+      "roc_auc": 0.5369373174251223,
+      "pr_auc_trapezoid": 0.11466447782501488,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 99,
+          "tn": 851,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.011614401858304297,
+          "alarm_fraction": 0.010416666666666666
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 98,
+          "tn": 845,
+          "precision": 0.058823529411764705,
+          "recall": 0.010101010101010102,
+          "f1": 0.017241379310344827,
+          "fpr": 0.018583042973286876,
+          "alarm_fraction": 0.017708333333333333
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 800,
+          "cold_start": 160,
+          "no_history": 5
+        },
+        "test": {
+          "scored": 960,
+          "cold_start": 192,
+          "no_history": 6
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "5a6846720b661fd1f2611e4bdf65fb8485faa2123d05b363f6f8ba7b8ca68319",
+      "forecasts_sha256": "8bb8f9d4dc2cf5d521cdb01a2518c0d8f1aaee3dd910d2c478577728dc6106db",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "247e692299f997f62e62fddd119a00c6c81c8cb8a718a90ab5dfb0e98366a17d",
+      "feature_pot_sha256": "c71d33e261e6167e9673250f36312e7eb1bab3ffdafd863ef19a614ba6f5f19a",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 4.605072203092277,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.11305036013402527,
+      "roc_auc": 0.5119956827273902,
+      "pr_auc_trapezoid": 0.11035129398891147,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 99,
+          "tn": 851,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.011614401858304297,
+          "alarm_fraction": 0.010416666666666666
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 98,
+          "tn": 845,
+          "precision": 0.058823529411764705,
+          "recall": 0.010101010101010102,
+          "f1": 0.017241379310344827,
+          "fpr": 0.018583042973286876,
+          "alarm_fraction": 0.017708333333333333
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 800,
+          "cold_start": 160,
+          "no_history": 5
+        },
+        "test": {
+          "scored": 960,
+          "cold_start": 192,
+          "no_history": 6
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "33b9b8175403285062f2fc289912f9f48afca858929ccaf85574473a1b6773bf",
+      "forecasts_sha256": "3edab125d63cb18fd5ef7545eac6fbb1cd8e4bf6b6e05881163f6cd29ee3a2c8",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "c2b1419e3f239478b231b9dcdbe414fa13aaadd432dd267c903ebf15de91a348",
+      "feature_pot_sha256": "8814ac45aab3354b39a0cff7a94b9e735a1e8356df63c2562b33a054fb0f85ce",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 4.608481609961018,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.11175254022810205,
+      "roc_auc": 0.5043583336266263,
+      "pr_auc_trapezoid": 0.10907464221156701,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 99,
+          "tn": 851,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.011614401858304297,
+          "alarm_fraction": 0.010416666666666666
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 98,
+          "tn": 845,
+          "precision": 0.058823529411764705,
+          "recall": 0.010101010101010102,
+          "f1": 0.017241379310344827,
+          "fpr": 0.018583042973286876,
+          "alarm_fraction": 0.017708333333333333
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 800,
+          "cold_start": 160,
+          "no_history": 5
+        },
+        "test": {
+          "scored": 960,
+          "cold_start": 192,
+          "no_history": 6
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "9dc0f193486e6506934613fe2828d99d6825a9550b62c552c4090f81d6ad437a",
+      "forecasts_sha256": "8b74ac55596fc29c8d5ac89ec8d1c55c02fe92db260982105bd0c99050b13e39",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "dc6967fb6c86a8d9557368df5aac35db3a6681c9ccdc471d96f1e4d1be3321fe",
+      "feature_pot_sha256": "b8230af853041e128fea5651303a3a4ed8c1b179dd4cf404e187d5afd5ad7a7d",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 55.254454280016944,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.08229689017975375,
+      "roc_auc": 0.9514904463450197,
+      "pr_auc_trapezoid": 0.08066613692678479,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 108,
+          "fn": 68,
+          "tn": 10704,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.009988901220865706,
+          "alarm_fraction": 0.009926470588235294
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 142,
+          "fn": 68,
+          "tn": 10670,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.01313355530891602,
+          "alarm_fraction": 0.013051470588235295
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 10720,
+          "cold_start": 2144,
+          "no_history": 67
+        },
+        "test": {
+          "scored": 10880,
+          "cold_start": 2176,
+          "no_history": 68
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "ebe09ec48dbd7d08f872a64bdf5c6e56f01353c9b78fd7123295a0e0816bb6a2",
+      "forecasts_sha256": "c8498b7c0fe6e3a250666afa30739eb0cfacfbfd43ecf3c4615430e915a85c97",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "9d98985308a615b7810f896572663cb1b895f6772e31fb72a9b5195c249055fc",
+      "feature_pot_sha256": "cb7009797c8c285a847b6191dc262654bc436b28a2a8dd0c5b5c345727f25a93",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 55.225741028087214,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.08494708809494886,
+      "roc_auc": 0.9464592718330396,
+      "pr_auc_trapezoid": 0.08328575560567236,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 108,
+          "fn": 68,
+          "tn": 10704,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.009988901220865706,
+          "alarm_fraction": 0.009926470588235294
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 142,
+          "fn": 68,
+          "tn": 10670,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.01313355530891602,
+          "alarm_fraction": 0.013051470588235295
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 10720,
+          "cold_start": 2144,
+          "no_history": 67
+        },
+        "test": {
+          "scored": 10880,
+          "cold_start": 2176,
+          "no_history": 68
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "f4ce344d43ee136cfe41fd23e24550afa0414b2bf028b0b224e6b884c7dba116",
+      "forecasts_sha256": "712e275d0f671e95a5cb6d77bdb79f0d662c309902a654b4eb5776ed45211a66",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "a2e547066ea312b07469df74c6531f897738555e24191ee55f74590b1a4e222f",
+      "feature_pot_sha256": "d143485e2edc408fc1c52f6bf00ac81dfe8ad584b08d5c489e582a1ac68d00b9",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 55.2213095780462,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.08649713494072118,
+      "roc_auc": 0.9446176361776676,
+      "pr_auc_trapezoid": 0.08482113695936587,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 108,
+          "fn": 68,
+          "tn": 10704,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.009988901220865706,
+          "alarm_fraction": 0.009926470588235294
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 142,
+          "fn": 68,
+          "tn": 10670,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.01313355530891602,
+          "alarm_fraction": 0.013051470588235295
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 10720,
+          "cold_start": 2144,
+          "no_history": 67
+        },
+        "test": {
+          "scored": 10880,
+          "cold_start": 2176,
+          "no_history": 68
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "0d8e0c7ba2a1f2a6c170c9d211c50109cac2a9c38f8b4523c412a2da004410cc",
+      "forecasts_sha256": "4382b6333b4f8789028af6ef70987a74df1baabb0246c39e461003cd642bbab3",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "3f7b6a2b135d96bcb47593b96c80ef84c237c584ed8be6a690738ed608accfa7",
+      "feature_pot_sha256": "be9e159262af93b7920e1ccbd6ac6d0ec23600d953886dc149e8a648e83d0426",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "kronos_potratio_matched",
+    "seed": 42,
+    "seconds": 163.55139455082826,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.15331947394655474,
+      "roc_auc": 0.7900170020209184,
+      "pr_auc_trapezoid": 0.1530626743581909,
+      "operating_points": {
+        "quantile": {
+          "tp": 4,
+          "fp": 314,
+          "fn": 1585,
+          "tn": 30097,
+          "precision": 0.012578616352201259,
+          "recall": 0.0025173064820641915,
+          "f1": 0.004195070791819612,
+          "fpr": 0.01032521127223702,
+          "alarm_fraction": 0.0099375
+        },
+        "pot": {
+          "tp": 6,
+          "fp": 397,
+          "fn": 1583,
+          "tn": 30014,
+          "precision": 0.01488833746898263,
+          "recall": 0.003775959723096287,
+          "f1": 0.006024096385542169,
+          "fpr": 0.01305448686330604,
+          "alarm_fraction": 0.01259375
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        },
+        "test": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "dadc9515a8806a8a14f4e35657cc41de412128a02ce5b5ee2dfe76a2d9da1f81",
+      "forecasts_sha256": "4ff5660e375047dd33505075f515cde20dffce9221649804d278d9e268438df7",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "df69bf8d9093ba9b2263ba2b1639306248542f00955903c510f29b7ff4ca019b",
+      "feature_pot_sha256": "c5ba8cc3de86d4326ffa6aa331264a52a0659ae8186176a958fdf9b7ad2ed309",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "kronos_potratio_matched",
+    "seed": 43,
+    "seconds": 163.73814184311777,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.1523399329704409,
+      "roc_auc": 0.7908917393281168,
+      "pr_auc_trapezoid": 0.1520683224839634,
+      "operating_points": {
+        "quantile": {
+          "tp": 4,
+          "fp": 318,
+          "fn": 1585,
+          "tn": 30093,
+          "precision": 0.012422360248447204,
+          "recall": 0.0025173064820641915,
+          "f1": 0.004186289900575615,
+          "fpr": 0.010456742626023478,
+          "alarm_fraction": 0.0100625
+        },
+        "pot": {
+          "tp": 6,
+          "fp": 396,
+          "fn": 1583,
+          "tn": 30015,
+          "precision": 0.014925373134328358,
+          "recall": 0.003775959723096287,
+          "f1": 0.006027122049221497,
+          "fpr": 0.013021604024859426,
+          "alarm_fraction": 0.0125625
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        },
+        "test": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "a8b8bb0282092c99d7fec44dd15797cce2e11f1e5b37132a1a6301f63ce57ee0",
+      "forecasts_sha256": "8546c433a69410ce8fe83ab4817a62e2aa74422c63dab709aef086670e3ea8dc",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "04fb41da96f7347d09be1939e14a146bffc3faab8b4ac18f19a1aad4c663679d",
+      "feature_pot_sha256": "538aa069fac3132835d6d68333a32877cffec16cfd366395b11e93af942b2bb8",
+      "same_frozen_forecasts": true
+    }
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "kronos_potratio_matched",
+    "seed": 44,
+    "seconds": 163.44704949483275,
+    "device": "cuda:1",
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.15089276782914834,
+      "roc_auc": 0.7844860423732519,
+      "pr_auc_trapezoid": 0.15063632351514883,
+      "operating_points": {
+        "quantile": {
+          "tp": 5,
+          "fp": 315,
+          "fn": 1584,
+          "tn": 30096,
+          "precision": 0.015625,
+          "recall": 0.0031466331025802393,
+          "f1": 0.005238344683080147,
+          "fpr": 0.010358094110683634,
+          "alarm_fraction": 0.01
+        },
+        "pot": {
+          "tp": 6,
+          "fp": 395,
+          "fn": 1583,
+          "tn": 30016,
+          "precision": 0.014962593516209476,
+          "recall": 0.003775959723096287,
+          "f1": 0.006030150753768844,
+          "fpr": 0.01298872118641281,
+          "alarm_fraction": 0.01253125
+        }
+      }
+    },
+    "model_info": {
+      "method": "kronos_potratio_matched",
+      "frozen_weights": true,
+      "representation": "one engineered feature copied into OHLC slots; volume/amount zero placeholders",
+      "observed_features": "the shared train-only clipped baseline feature space",
+      "lookback": 32,
+      "sample_count": 1,
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "top_k": 0,
+      "batch_size": 1024,
+      "epsilon": 1e-06,
+      "scalar_score": "max over valid dimensions of standardized squared residual / per-feature POT threshold",
+      "history": "strictly past; stream history crosses chronological splits; event/case histories reset",
+      "cold_start": "left-pad with training medians (zero in shared centered space), never omit a test row",
+      "extra_information": "frozen pretraining and preceding observed feature rows; no future rows or labels",
+      "cold_start_counts": {
+        "calibration": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        },
+        "test": {
+          "scored": 32000,
+          "cold_start": 6400,
+          "no_history": 200
+        }
+      },
+      "feature_pot": {
+        "initial_quantile": 0.9,
+        "risk": 0.01,
+        "min_peaks": 30
+      },
+      "active_dimensions": 11,
+      "total_dimensions": 11,
+      "failed_dimensions": [],
+      "original_max_error_variant": "preserved as an ablation; not selected by metrics"
+    },
+    "checks": {
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "score_sha256": "11b42812610d22ad6ba31d86ea2c69c1c9fa34c56a7350781757463510ce5d65",
+      "forecasts_sha256": "98a189f3a09826a83ad37b463ce728ee9ee17334e2ae9c11a037174acd41b552",
+      "train_preprocessing_reloaded": true,
+      "full_test_scored": true,
+      "raw_max_error_score_sha256": "ee1456402e38d00a6339120017991168bd8c0aee133a7db6a26d4492d5fc0a74",
+      "feature_pot_sha256": "97ebee36ae0dec497aef6cb99d715719f2212f37d99606ae8d9e8dc799ec295d",
+      "same_frozen_forecasts": true
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": 43626997813,
+  "html_url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/43626997813",
+  "head_sha": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "tests (3.10)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "tests (3.12)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

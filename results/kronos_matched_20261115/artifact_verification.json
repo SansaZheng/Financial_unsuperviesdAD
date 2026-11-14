@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "source_commit": "782ff9dc4ffd7ac3cabf15817cbabd8f2f5e0575",
+  "source_sha256": {
+    "finad_kronos/__init__.py": "e983c51daab67d20a66df598196aade4fbe990bab1e9fca7f297522c3d710e9c",
+    "finad_kronos/adapter.py": "c0ba055deccf5e01b04e379a22120d1201fe1c4221628a9a6ecbd1862c9dfb9d",
+    "finad_kronos/assets.py": "0dba79ed53bd36e6da24584fb7422530d9f921ed9e3db1533c4a10e693596cf3",
+    "finad_kronos/experiment.py": "6773380b4b6b1df209597cfbd233ff316e51d6a4ec39e836a232d76241535927",
+    "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+    "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+    "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+    "scripts/prepare_repo_data.py": "b0868d2f8c61e7cb9cad5e99341cda31c4eddc111ddac99d75602155c2e5324f"
+  },
+  "shards": [
+    {
+      "job": "j-1115-b31cbc",
+      "input_archive": {
+        "file": "prepared_inputs.tar.gz",
+        "bytes": 4436776,
+        "sha256": "f7e09d60e9dc7d5cdc17adf0b00af35c6779c45dd1da2d01fd96f5330284cb33"
+      },
+      "exact_input_files": 7
+    },
+    {
+      "job": "j-1115-bfb3ef",
+      "input_archive": {
+        "file": "prepared_inputs.tar.gz",
+        "bytes": 49517136,
+        "sha256": "e750a65610f3e927812a7dddb00cbb30b503040cc9cd844e09691cc937e6d101"
+      },
+      "exact_input_files": 74
+    }
+  ],
+  "all_81_inputs_identical": true,
+  "shards_disjoint_and_complete": true
+}

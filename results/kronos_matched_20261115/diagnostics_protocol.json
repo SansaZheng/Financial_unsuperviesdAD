@@ -1,0 +1,11 @@
+{
+  "type": "Post-hoc descriptive strata and score drivers, not a causal ablation",
+  "no_refitting": true,
+  "no_model_selection": true,
+  "thresholds_unchanged": true,
+  "cold_start_rule": "fewer than 32 past rows in the same stream/case/event",
+  "near_constant_rule": "dominant residual feature has past-window population std <= 1e-8 in shared feature units",
+  "argmax_ties": "First feature in the fixed schema order",
+  "main_evaluation": "Full test remains primary; warm-only metrics are never substituted",
+  "runs": 27
+}
