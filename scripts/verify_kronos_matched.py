@@ -50,6 +50,15 @@ for r in records:
     assert sha(run/'scores.npz') == r['checks']['score_sha256']
     assert sha(run/'forecasts.npz') == r['checks']['forecasts_sha256']
     with np.load(run/'scores.npz', allow_pickle=False) as z: cal, score = z['calibration'], z['test']
+    feature_fit = json.loads((run/'feature_pot.json').read_text()) if (run/'feature_pot.json').exists() else None
+    calibration_errors = None
+    if feature_fit:
+        assert sha(run/'feature_pot.json') == r['checks']['feature_pot_sha256']
+        assert feature_fit['quantile']==.90 and feature_fit['risk']==.01 and feature_fit['min_peaks']==30
+        active=np.array(feature_fit['active_indices']);assert list(active)==sorted(set(active.tolist()))
+        assert feature_fit['active_features']==[meta['features'][j] for j in active]
+        dimension_thresholds=np.array([feature_fit['tails'][name]['threshold'] for name in feature_fit['active_features']])
+        calibration_errors=np.empty((len(cal),values.shape[1]),dtype=np.float64)
     with np.load(run/'forecasts.npz', allow_pickle=False) as z:
         for phase, positions, stored in [('calibration', nt+ci, cal), ('test', nt+nc+test_indices, score)]:
             predicted = z[phase]; assert predicted.shape == (len(positions), values.shape[1])
@@ -60,7 +69,15 @@ for r in records:
                 h[~mask] = 0
                 std = h.std(axis=1, ddof=0)
                 residual = ((values[t].astype(np.float64)-predicted[a:a+len(t)])/(std+1e-6))**2
-                np.testing.assert_allclose(residual.max(axis=1), stored[a:a+len(t)], rtol=1e-12, atol=1e-12)
+                expected=(residual[:,active]/dimension_thresholds).max(axis=1) if feature_fit else residual.max(axis=1)
+                np.testing.assert_allclose(expected, stored[a:a+len(t)], rtol=1e-12, atol=1e-12)
+                if feature_fit and phase=='calibration':calibration_errors[a:a+len(t)]=residual
+    if feature_fit:
+        for j,name in zip(active,feature_fit['active_features']):
+            tail=feature_fit['tails'][name];u=float(np.quantile(calibration_errors[:,j],.90));peaks=calibration_errors[calibration_errors[:,j]>u,j]-u
+            assert len(peaks)>=30 and np.ptp(peaks)>0 and tail['n_peaks']==len(peaks) and tail['n_calibration']==len(cal)
+            expected=u+float(genpareto.isf(.01*len(cal)/len(peaks),tail['shape'],loc=0,scale=tail['scale']))
+            assert np.isclose(expected,tail['threshold'],rtol=1e-12,atol=1e-12) and tail['threshold']>0
     # Labels are opened only for this post-experiment evaluation replay.
     y = np.fromfile(data/'test.y.i8', dtype=np.int8)
     assert sha(data/'test.y.i8') == r['checks']['test_target_sha256'] and len(y) == len(score)

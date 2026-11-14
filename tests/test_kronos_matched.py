@@ -91,3 +91,22 @@ def test_full_run_opens_test_labels_only_after_frozen_artifacts(tmp_path, monkey
     record = json.loads((output/'toy/42/result.json').read_text())
     assert len(opened)==1 and record['metrics']['evaluated']==9
     assert record['metrics']['unknown_excluded']==1 and record['checks']['full_test_scored']
+
+
+def test_original_tail_ratio_normalization_and_failed_dimensions():
+    from finad_kronos.rescore import fit_feature_tails, aggregate_ratio
+    rng = np.random.default_rng(515)
+    errors = np.column_stack([rng.exponential(size=1000), rng.exponential(size=1000)*1000, np.zeros(1000)])
+    fitted = fit_feature_tails(errors, ['small', 'large', 'constant'])
+    assert fitted['active_indices']==[0,1] and fitted['failed'][0]['feature']=='constant'
+    thresholds=np.array([fitted['tails'][name]['threshold'] for name in fitted['active_features']])
+    query=np.array([[thresholds[0]*2, thresholds[1]*.5, 1e30], [thresholds[0]*.2, thresholds[1]*3, 1e30]])
+    np.testing.assert_allclose(aggregate_ratio(query,fitted),[2.,3.])
+    assert fitted['quantile']==.90 and fitted['min_peaks']==30
+
+
+def test_all_feature_tail_failures_are_explicit():
+    import pytest
+    from finad_kronos.rescore import fit_feature_tails
+    with pytest.raises(ValueError,match='All original per-feature'):
+        fit_feature_tails(np.zeros((100,2)),['a','b'])
