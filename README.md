@@ -121,7 +121,7 @@ pytest -q
 新增测试包括重复交易记录的 RGLD 距离／分批稳定性、RTTAD 双符号梯度更新、GammaGMM 随机状态隔离、冻结检查点、无训练／校准标签运行及无损分数归档。
 ## 2026-11-14 零标签金融适配实验
 
-[经典与新增方法综合对比中文报告](docs/financial_ad_comparison_CN.md)：交易／点级与账户图分开，包含完整AP／POT F1表、各任务最佳方法、误报与标签覆盖解读，以及新方法表现不佳的已确认问题和待验证机制；附跨轮来源与输入哈希核验。
+[经典与新增方法综合对比中文报告](docs/financial_ad_comparison_CN.md)：交易／点级与账户图分开，包含完整AP／POT F1表、各任务最佳方法、误报与标签覆盖解读，以及新方法表现不佳的已确认问题和待验证机制；附跨轮来源与输入哈希核验。**2026-11-15补充KronosAnomalyDetection原生K线、原Proxy、固定联合无监督及验证选参结果**，共31条汇总记录；不同协议单独展示，不纳入原同协议最佳排名。
 
 CAE-IF、EB-GAD 作者发布版及 Audit-HCL 的新增协议与复现边界见 [零标签协议](docs/zero_label_protocol_CN.md)。独立入口为 `python -m finad_zero.experiment`；与原有结果分开保存，不覆盖历史实验。
 

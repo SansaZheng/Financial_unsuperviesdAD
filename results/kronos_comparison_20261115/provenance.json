@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-15",
+  "source_repository": "https://github.com/SansaZheng/KronosAnomalyDetection",
+  "source_commit": "33d8a376aa2bd83725f75d74329cb3c5fa669f1c",
+  "main_comparison_commit": "c4f78286c30fe01e59a824a8121a9c5415fd6ff1",
+  "source_files": [
+    {
+      "path": "results/2026-11-06/kronos_proxy/all_metrics.json",
+      "sha256": "0cf3ef6585f1e4d73a82d4b916dc8b1437ef4e0807a6db146d68d1a3b28253cd",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_proxy/all_metrics.json",
+      "source_git_blob_sha1": "caf8d5fbee8e0766d47e05296f1e62582569a968"
+    },
+    {
+      "path": "results/2026-11-06/kronos_tuning/all_metrics.json",
+      "sha256": "01ef5e9082e81f64f002235a19d434f23866e26e87e63c8d4e94920976e297a6",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_tuning/all_metrics.json",
+      "source_git_blob_sha1": "14d1ba19fe3378a06046b1edca17439a050602c8"
+    },
+    {
+      "path": "results/2026-11-06/kronos/summary.json",
+      "sha256": "26942c2f045d83b5016aa0b6ed9f824a2f01674c09c89951b731b1d57923e538",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos/summary.json",
+      "source_git_blob_sha1": "9d58f6d13e6dbee683d64515deaa47e89885777f"
+    },
+    {
+      "path": "results/2026-11-06/kronos_proxy/summary.csv",
+      "sha256": "095569e9dbaaf7d418bdcbef2c87c13bbfe7318c08908ffcce46d5fb77a837dc",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_proxy/summary.csv",
+      "source_git_blob_sha1": "d7a35859345722f4e6848b0390a9bfc81ced311f"
+    },
+    {
+      "path": "results/2026-11-06/kronos_tuning/comparison.csv",
+      "sha256": "9e18f860cbb4bfe81e3f645b1c302a0009645283e675e26c1067e6122e566754",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_tuning/comparison.csv",
+      "source_git_blob_sha1": "bd140df85da5abd55eecd093c9d38f20b1f7df4f"
+    },
+    {
+      "path": "results/2026-11-06/kronos_proxy/README.md",
+      "sha256": "3ac1651a401bc26bdf68bae8d83c2c025372c105447fa2bf80229136d38c9370",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_proxy/README.md",
+      "source_git_blob_sha1": "47643e212f9917d32432b63d75a6bf3d8715a16b"
+    },
+    {
+      "path": "results/2026-11-06/kronos_tuning/README.md",
+      "sha256": "4df191d24a3a55a65895561173736a9c022408642e0098b2b2011b2421bf8b0f",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/kronos_tuning/README.md",
+      "source_git_blob_sha1": "cd681d78c7279f590d3d066eeb1d6bddd86cb638"
+    },
+    {
+      "path": "results/2026-11-06/input_manifest.json",
+      "sha256": "2fd40dba2faae318c8f4f7c9677a4901d024b4e6b6a053ea81609d47f9120dec",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/results/2026-11-06/input_manifest.json",
+      "source_git_blob_sha1": "b7af16146b6351fb0114f365185f9b5e5d24339a"
+    },
+    {
+      "path": "scripts/run_kronos_proxy.py",
+      "sha256": "e9638346bdb5dd5fc5256e1f872f1a52ba38c42f3016ff6a5f219ef16fe75a97",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/scripts/run_kronos_proxy.py",
+      "source_git_blob_sha1": "271e7486e24186b34f217529720ee7d6bffd4408"
+    },
+    {
+      "path": "scripts/run_benchmarks.py",
+      "sha256": "8cd4106b1aae265cf4b24a901221c23238206d80813c8ff4ddc7f13dfcde968e",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/scripts/run_benchmarks.py",
+      "source_git_blob_sha1": "94ada81e30a6d01caa0e84a0a18647cd76d54d31"
+    },
+    {
+      "path": "scripts/tune_kronos_proxy.py",
+      "sha256": "86f89f8e8e53779d0486642e664adb9e4d1d5ba9af348fc602c60c37a94f9535",
+      "url": "https://github.com/SansaZheng/KronosAnomalyDetection/blob/33d8a376aa2bd83725f75d74329cb3c5fa669f1c/scripts/tune_kronos_proxy.py",
+      "source_git_blob_sha1": "06bfdfc99768d7a4adf6755986cb8de33f192625"
+    }
+  ],
+  "rows": 31,
+  "variant_rows": {
+    "proxy_original": 10,
+    "joint_unsupervised": 10,
+    "validation_selected": 10,
+    "native_ohlcva": 1
+  },
+  "confusion_matrix_derived_metrics_checked": 31,
+  "metric_check": "Precision/recall/F1/FPR, known counts and prevalence recomputed from published TP/FP/FN/TN. AP/ROC-AUC copied from pinned source; no new score-level replay or model inference.",
+  "validation_selected_label_using_datasets": [
+    "s_ffsd",
+    "sd_stock",
+    "sd_prices",
+    "sd_synthetic"
+  ],
+  "main_winners_recomputed_with_kronos": false,
+  "zero_positive_policy": "Recall/F1/AP/ROC-AUC shown as NA; original source zero_division=0 F1 is not treated as evidence.",
+  "native_warning": "Single retrospective case. Labels are mapped from published 25-second feature chunks, not exhaustive market-fraud ground truth. Unannotated bars remain unknown. Pretrained model may have seen 2018 data.",
+  "limitations": [
+    "Different splits/features/preprocessing/test selections and seed budgets from main comparison",
+    "Proxy single seed 42 and at most 512 calibration / 1024 test positions per version",
+    "Joint score threshold is empirical order-statistic, not POT",
+    "Validation-selected family includes label-using tuning and fallback-to-fixed cases",
+    "Native OHLCVA results are one weakly labeled retrospective case, not account graph evaluation",
+    "Prior 81-file cache identity audit does not cover this Kronos repository"
+  ],
+  "source_git_blob_identity_verified": true
+}
