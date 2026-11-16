@@ -1,0 +1,5 @@
+# Tested numerical stack for CPU scoring, Python 3.12; not a full GPU environment lock.
+numpy==2.1.3
+scipy==1.16.3
+pandas==2.3.3
+scikit-learn==1.7.2

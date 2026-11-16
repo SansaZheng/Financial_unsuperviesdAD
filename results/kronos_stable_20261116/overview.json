@@ -1,0 +1,22 @@
+{
+  "scoring_configurations": 162,
+  "operating_point_records": 486,
+  "factorial_records": 216,
+  "combined_method_rows": 270,
+  "AP_improved_vs_original_tasks": 7,
+  "common_POT_F1_improved_vs_original_tasks": 7,
+  "AP_best_in_15_methods_tasks": 0,
+  "common_POT_F1_best_in_15_methods_tasks": 1,
+  "guard_fallbacks_by_variant": {
+    "legacy": 24,
+    "n": 19,
+    "c": 24,
+    "nc": 12,
+    "prior": 9,
+    "persist": 13
+  },
+  "nc_AP_exceeds_prior_tasks": 2,
+  "nc_AP_exceeds_persistence_tasks": 4,
+  "no_new_backbone_inference": true,
+  "retrospective_development": true
+}

@@ -1,9 +1,19 @@
 # Financial_unsuperviesdAD
 
+## 最新：稳定残差、冷启动与POT护栏（2026-11-16）
 
-## 最新：KronosAD同协议全量重跑（2026-11-15）
+**[查看改进结果与完整消融中文报告](results/kronos_stable_20261116/README_CN.md)** · **[15法综合对比](docs/financial_ad_comparison_CN.md)** · [486条逐种子操作点](results/kronos_stable_20261116/metrics.csv) · [2×2×2因素实验](results/kronos_stable_20261116/factorial_metrics.csv) · [预先固定方案](docs/kronos_stable_protocol_CN.md)
 
-**[直接查看Kronos的9任务实验结果](results/kronos_matched_20261115/README_CN.md)** · **[包含Kronos的12法中文对比报告](docs/financial_ad_comparison_CN.md)** · [54条逐种子操作点](results/kronos_matched_20261115/metrics.csv) · [统一汇总CSV](results/kronos_matched_20261115/combined_transaction_summary.csv) · [固定协议与运行命令](docs/kronos_matched_protocol_CN.md)
+相同81个缓存、数据划分、校准抽样和完整测试位置，复用27组真实冻结Kronos预测，完成162条评分配置和486条操作点评价；另有训练先验／持续值两个无骨干对照。所有分数、护栏和指标独立复算，原版27条结果重现，评分及阈值哈希在新指标评价前封存。
+
+N+C评分相对原版在7／9任务提高AP、7／9提高共同POT F1；加密货币共同POT F1从0到34.46%，是15法最高均值。但持续值对照AP 33.65%高于Kronos的33.16%，S-FFSD退步，护栏也会降低部分任务F1，报告全部保留。
+
+**这轮是同一已查看测试集上的回顾性开发评估，不是新的独立验证。** 共同原POT排名与护栏结果分开，未按测试成绩选择各数据集最优消融。无需新增骨干推理或GPU作业；本地62项测试和CQ CPU资格检查通过。
+
+
+## 2026-11-15：原KronosAD同协议全量重跑
+
+**[直接查看Kronos的9任务实验结果](results/kronos_matched_20261115/README_CN.md)** · **[综合中文报告（当前15法，原版见第10节）](docs/financial_ad_comparison_CN.md)** · [54条逐种子操作点](results/kronos_matched_20261115/metrics.csv) · [统一汇总CSV](results/kronos_matched_20261115/combined_transaction_summary.csv) · [固定协议与运行命令](docs/kronos_matched_protocol_CN.md)
 
 使用真实冻结Kronos-mini＋Tokenizer-2k，完成9任务×3种子共27次运行。与此前基线使用完全相同的81个缓存文件、训练／校准抽样、全量测试位置和两套无标签阈值；所有逐特征预测到分数、阈值及指标均独立复算。主方法保留源逐维POT比值聚合，另存最大误差消融；不按测试成绩挑版本。它是工程特征代理适配，外部预训练与历史上下文预算另行披露。
 

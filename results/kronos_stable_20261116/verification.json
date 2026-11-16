@@ -1,0 +1,1147 @@
+{
+  "status": "passed",
+  "runs": 162,
+  "operating_point_records": 486,
+  "exact_input_files": 81,
+  "original_27_reproduced": true,
+  "all_scores_independently_replayed": true,
+  "all_guards_calibration_only_verified": true,
+  "unchanged_full_test_coverage": true,
+  "new_backbone_inference": false,
+  "verified": [
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 92575,
+      "matched_original": true
+    },
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 92575,
+      "matched_original": true
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 92575,
+      "matched_original": true
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "ulb",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 92575,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 118638,
+      "matched_original": true
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 118638,
+      "matched_original": true
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 118638,
+      "matched_original": true
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "banksim",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 118638,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 15576,
+      "matched_original": true
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 15576,
+      "matched_original": true
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 15576,
+      "matched_original": true
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "s_ffsd",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 15576,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 207267,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 207267,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 207267,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_5S",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 207267,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 145550,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 145550,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 145550,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_15S",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 145550,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 119469,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 119469,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 119469,
+      "matched_original": true
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sapienza_25S",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 119469,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 960,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 960,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 960,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_stock",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 960,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 10880,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 10880,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 10880,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_crypto",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 10880,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "legacy",
+      "test_rows": 32000,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "n",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "c",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "nc",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "prior",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 42,
+      "variant": "persist",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "legacy",
+      "test_rows": 32000,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "n",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "c",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "nc",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "prior",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 43,
+      "variant": "persist",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "legacy",
+      "test_rows": 32000,
+      "matched_original": true
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "n",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "c",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "nc",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "prior",
+      "test_rows": 32000,
+      "matched_original": false
+    },
+    {
+      "dataset": "sd_synth",
+      "seed": 44,
+      "variant": "persist",
+      "test_rows": 32000,
+      "matched_original": false
+    }
+  ]
+}

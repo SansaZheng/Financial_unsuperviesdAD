@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "type": "synthetic label-free CPU qualification only",
+  "financial_metrics": false,
+  "new_backbone_inference": false,
+  "source": {
+    "git_commit": "8b7e5d68764a61cb8afd523f6846be21d99798eb",
+    "source_sha256": {
+      "finad_kronos/stable.py": "cdffd3db02c418538226998fe29aa9350957273140c0675e022e448c143b59a9",
+      "finad_kronos/stable_experiment.py": "e3e54fabea414013a651e5fcb1a84ba070c4c4218c2abdf482793b4b0f3ae275",
+      "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+      "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+      "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c"
+    },
+    "python": "3.13.18",
+    "packages": {
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  "checks": [
+    {
+      "variant": "legacy",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    },
+    {
+      "variant": "n",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    },
+    {
+      "variant": "c",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    },
+    {
+      "variant": "nc",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    },
+    {
+      "variant": "prior",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    },
+    {
+      "variant": "persist",
+      "finite_scores": 20000,
+      "active_dimensions": 61
+    }
+  ],
+  "seconds": 12.318501598000012,
+  "peak_rss_bytes": 297697280,
+  "synthetic_calibration_rows": 20000,
+  "features": 61
+}

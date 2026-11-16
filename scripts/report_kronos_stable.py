@@ -238,7 +238,7 @@ if a.update_main_report:
     text=text.replace(marker,note+marker,1)
     text=text.replace('## 10. KronosAD同协议全量重跑：正式对比结果（2026-11-15）','## 10. 11月15日原KronosAD-M同协议重跑（历史12法）\n\n**本节保留当时12法集合的原版结果与解释。当前第2节已加入新评分和两个对照，改进实验见第11节；本节旧排名不随新候选集合改变。**',1)
     text=text.replace('**第2节的AP／POT F1及最佳方法表已重新计算，包含KronosAD-M。**','当时的AP／POT F1及最佳方法表包含KronosAD-M；当前表还包括第11节的新评分与对照。',1)
-    text+='\n\n## 11. KronosAD稳定评分、冷启动与POT护栏改进（2026-11-16）\n\n'+body[body.index('**这是'):body.index('## 文件和评价边界')]
+    text+='\n\n## 11. KronosAD稳定评分、冷启动与POT护栏改进（2026-11-16）\n\n'+body[body.index('**这是'):body.index('## 文件和评价边界')].replace('\n## ','\n### ').replace('../../docs/kronos_stable_protocol_CN.md','kronos_stable_protocol_CN.md')
     text+='\n完整逐种子指标、护栏回退审计、训练先验参数、冷／热启动诊断、独立复算及复现命令见[改进与消融中文报告](../results/kronos_stable_20261116/README_CN.md)。原数据、原实验目录和账户图六方法结果保持不变。\n'
     report.write_text(text)
 print(json.dumps(overview),flush=True)
