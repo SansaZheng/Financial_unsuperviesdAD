@@ -94,6 +94,7 @@ def test_synthetic_targets_are_exact_injected_support():
     altered, mask, original, changed = synthesize(x, np.random.default_rng(8))
     np.testing.assert_array_equal(altered[mask == 0], x[mask == 0])
     assert np.all(mask.sum(1) == 13)
+    assert np.all(mask[:, -13:] == 1) and np.all(mask[:, :-13] == 0)
     assert np.max(np.abs(changed-original)) > .1
     assert np.isfinite(altered).all()
 
@@ -130,3 +131,42 @@ def test_target_access_after_checkpoint_scores_and_thresholds(tmp_path):
         return np.array([0, 1, -1])
     result = finish(tmp_path, np.linspace(0, 1, 200), np.array([.1, .9, .5]), read_test)
     assert result['unknown_excluded'] == 1
+
+
+@pytest.mark.parametrize('method', ['himvh_zero_reconstruction', 'sdfmm_zero_synthetic'])
+def test_full_tabular_runner_with_no_training_or_calibration_label_files(method, tmp_path, monkeypatch):
+    pytest.importorskip('pywt')
+    import json
+    import finad_recent.experiment as runner
+    data = tmp_path/'data'; out = tmp_path/'output'; data.mkdir(); out.mkdir()
+    rng = np.random.default_rng(8)
+    for phase in ['train', 'calibration', 'test']:
+        rng.normal(size=(12, 3)).astype(np.float32).tofile(data/f'{phase}.x.f32')
+        np.repeat(np.arange(3), 4).astype(np.int32).tofile(data/f'{phase}.seq.i32')
+    np.tile([0, 1], 6).astype(np.int8).tofile(data/'test.y.i8')
+    (data/'manifest.json').write_text(json.dumps(dict(features=['a', 'b', 'c'], splits={s: {'rows': 12} for s in ['train', 'calibration', 'test']})))
+    views = [hyperedges(np.repeat(np.arange(3), 4)) for _ in range(4)]
+    monkeypatch.setattr(runner, 'transaction_keys', lambda *a: (views, 12))
+    args = SimpleNamespace(himvh_steps=2, sd_steps=2)
+    result, _, _ = runner.tabular_run(data, out, 's_ffsd', method, 42, 'cpu', args)
+    assert result['evaluated'] == 12
+    assert not (data/'train.y.i8').exists() and not (data/'calibration.y.i8').exists()
+
+
+def test_full_graph_runner_with_no_training_or_calibration_label_files(tmp_path):
+    pytest.importorskip('pywt')
+    import json
+    from finad_recent.experiment import graph_run
+    data = tmp_path/'graphs'; out = tmp_path/'output'; data.mkdir(); out.mkdir()
+    rng = np.random.default_rng(9)
+    for phase in ['train', 'calibration', 'test']:
+        x = rng.normal(size=(4, 12, 10)).astype(np.float32)
+        x[:, :, 0] = np.r_[np.ones(8), np.zeros(4)]
+        x[:, :, 1] = 1-x[:, :, 0]
+        e = np.array([[0, 1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 8, 9, 10, 11]])
+        np.savez(data/f'{phase}.graph.npz', x=x, active=np.ones((4, 12), bool), **{f'e{i}': e for i in range(4)})
+    np.save(data/'test.y.npy', np.tile([0, 1], 6).astype(np.int8))
+    (data/'manifest.json').write_text(json.dumps({'fixture': True}))
+    result, _, _ = graph_run(data, out, 42, 'cpu', SimpleNamespace(huge_steps=2))
+    assert result['evaluated'] == 8
+    assert not (data/'train.y.npy').exists() and not (data/'calibration.y.npy').exists()

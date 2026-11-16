@@ -41,7 +41,10 @@ generator, which cannot be transferred without annotated anomaly examples.
     masks = np.zeros(windows.shape[:2], np.float32)
     original_fragments, changed_fragments = [], []
     for i in range(len(windows)):
-        begin = int(rng.integers(0, LENGTH-13+1)); end = begin+13
+        # Evaluation is at the window endpoint. Corrupting a uniformly random
+        # interval would give that endpoint only 1/148 positive coverage, versus
+        # 13/148 in the interior. Align corruption support to the target time.
+        begin, end = LENGTH-13, LENGTH
         fragment = windows[i, begin:end].copy()
         coefficients = pywt.wavedec(fragment, 'db2', axis=0, level=2, mode='symmetric')
         amplitude = np.maximum(np.std(fragment, axis=0), .1)
@@ -90,7 +93,7 @@ class SDFMMZero:
         self.info = dict(method='sdfmm_zero_synthetic', steps=steps, batch=16, lr=.001,
                          context=160, patch=4, hidden=64, heads=4, layers=2, feedforward=128,
                          dropout=.2, contrastive_weight=.5, temperature=.5, fragment_length=13,
-                         generator='db2 unlabeled local detail corruption', causal=True,
+                         generator='db2 unlabeled endpoint fragment detail corruption', causal=True,
                          upstream_commit='0d1a2158ee849fdc31a127bd049e622174f5c893')
 
     def fit(self, x, starts, indices):
