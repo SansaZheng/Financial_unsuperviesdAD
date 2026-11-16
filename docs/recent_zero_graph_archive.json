@@ -1,0 +1,8 @@
+{
+  "source_job": "j-1114-2e8178",
+  "path": "data/derived/zero_label_20261114_graphs.tar.gz",
+  "bytes": 1255636,
+  "sha256": "d96bce88c776d6010c244fa6173114f586b09db1ba84d1ab3b8289227f1ea734",
+  "files": 20,
+  "reason": "Reuse actual prior formal graph bytes; local development S-FFSD test x had rounding differences."
+}

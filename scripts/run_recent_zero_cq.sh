@@ -29,6 +29,14 @@ elif [[ "$mode" == smoke ]]; then
   python scripts/recent_zero_smoke.py --device cuda --resource-profile --output "$CQ_OUTPUT_DIR/qualification" > "$CQ_OUTPUT_DIR/progress.log" 2>&1
 else
   python scripts/prepare_repo_data.py --output "$CQ_OUTPUT_DIR/inputs/tabular" --datasets ulb banksim s_ffsd sapienza_5S sapienza_15S sapienza_25S sd_stock sd_crypto sd_synth > "$CQ_OUTPUT_DIR/progress.log" 2>&1
-  python -m finad_zero.graph_data --output "$CQ_OUTPUT_DIR/inputs/graphs" >> "$CQ_OUTPUT_DIR/progress.log" 2>&1
+  python - <<'STAGE' >> "$CQ_OUTPUT_DIR/progress.log" 2>&1
+import hashlib,json,os,tarfile
+from pathlib import Path
+meta=json.loads(Path('docs/recent_zero_graph_archive.json').read_text())
+p=Path(meta['path']);assert hashlib.sha256(p.read_bytes()).hexdigest()==meta['sha256']
+out=Path(os.environ['CQ_OUTPUT_DIR'])/'inputs/graphs';out.mkdir(parents=True)
+with tarfile.open(p) as archive: archive.extractall(out,filter='data')
+print('Staged exact prior formal graph archive',flush=True)
+STAGE
   python -m finad_recent.experiment --device cuda --data "$CQ_OUTPUT_DIR/inputs/tabular" --graphs "$CQ_OUTPUT_DIR/inputs/graphs" --output "$CQ_OUTPUT_DIR/results" >> "$CQ_OUTPUT_DIR/progress.log" 2>&1
 fi
