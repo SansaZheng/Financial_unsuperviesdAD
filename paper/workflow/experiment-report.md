@@ -1,0 +1,5 @@
+# Experiment report / 实验说明
+
+**中文：** 在同一批金融交易、行情点和付款账户上，新跑HUGE金融归纳端口、HIMVH-Zero与SD-FMM-Zero共30次。训练与校准不用真实标签，测试对象、划分和共同特征保持一致。相同POT/q99与未经点调整的指标独立复算通过。本轮新方法未超过既有最佳。两种原本有标签的方法改为零标签目标后效果明显不足，且图／历史预算、源异常污染、有限训练更新和合成目标错位仍可能影响成绩；没有消融可以证明某个唯一原因。完整中文表格、最佳方法和指标文件已经生成，发表状态见current.md。
+
+**English:** We fitted30 new seeded runs of a financial inductive HUGE port and explicit zero-real-label HIMVH/SD-FMM adaptations. Evaluation units, shared preprocessed observations and target cohorts match the previous financial benchmark. Checkpoints, scores and both prespecified threshold policies pass independent checks. None of the new variants is best by mean AP or either mean F1 on its eligible tasks. These results characterize the stated fixed-budget adaptations; they neither refute original supervised papers nor establish a unique causal reason for poor performance. Graph/history/pretraining information and test-time adaptation budgets remain disclosed differences. See the full Chinese report and current.md for publication state.

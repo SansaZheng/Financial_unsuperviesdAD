@@ -1,0 +1,3935 @@
+[
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "huge_financial_inductive",
+    "seed": 42,
+    "seconds": 21.502057484000034,
+    "metrics": {
+      "evaluated": 4082,
+      "unknown_excluded": 0,
+      "positives": 648,
+      "normal": 3434,
+      "prevalence": 0.15874571288584027,
+      "average_precision": 0.40753075437723074,
+      "roc_auc": 0.6732484522962099,
+      "pr_auc_trapezoid": 0.40713958677526796,
+      "operating_points": {
+        "quantile": {
+          "tp": 38,
+          "fp": 1,
+          "fn": 610,
+          "tn": 3433,
+          "precision": 0.9743589743589743,
+          "recall": 0.05864197530864197,
+          "f1": 0.11062590975254731,
+          "fpr": 0.00029120559114735004,
+          "alarm_fraction": 0.009554140127388535
+        },
+        "pot": {
+          "tp": 41,
+          "fp": 1,
+          "fn": 607,
+          "tn": 3433,
+          "precision": 0.9761904761904762,
+          "recall": 0.06327160493827161,
+          "f1": 0.11884057971014493,
+          "fpr": 0.00029120559114735004,
+          "alarm_fraction": 0.0102890739833415
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.489149808883667,
+      "loss_last": 1.0713355541229248
+    },
+    "checks": {
+      "checkpoint_max_abs": 4.470348358154297e-07,
+      "source_manifest": {
+        "dataset": "banksim",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          114.0,
+          147.0
+        ],
+        "raw_sha256": "3bfd0c2bfbdec83ad36eed499eaf38c6951c36be864ecbe30f3bcb7d84895f66",
+        "splits": {
+          "train": {
+            "nodes": 4146,
+            "edges": 58603,
+            "evaluated_source_accounts": 4096,
+            "positive": 1159,
+            "normal": 2987,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              33.0,
+              62.0,
+              89.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4122,
+            "edges": 32923,
+            "evaluated_source_accounts": 4072,
+            "positive": 713,
+            "normal": 3409,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              123.0,
+              131.0,
+              139.0
+            ]
+          },
+          "test": {
+            "nodes": 4131,
+            "edges": 33289,
+            "evaluated_source_accounts": 4082,
+            "positive": 676,
+            "normal": 3455,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              156.0,
+              164.0,
+              172.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 70902,
+        "calibration": 35700,
+        "test": 35850
+      }
+    },
+    "checkpoint_sha256": "bccf8b093059384d3b10f7917e32ce10b748101df2c78272149bc8f3f1e4a829",
+    "score_sha256": "8018594875d8f0f1ab292dd787c6ac25edda8af26fb356aeee1075fd61b7180e",
+    "peak_cuda_gb": 0.5269646644592285
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "huge_financial_inductive",
+    "seed": 43,
+    "seconds": 11.674548185999981,
+    "metrics": {
+      "evaluated": 4082,
+      "unknown_excluded": 0,
+      "positives": 648,
+      "normal": 3434,
+      "prevalence": 0.15874571288584027,
+      "average_precision": 0.4030528425452122,
+      "roc_auc": 0.6611701611337604,
+      "pr_auc_trapezoid": 0.40268623408378623,
+      "operating_points": {
+        "quantile": {
+          "tp": 38,
+          "fp": 0,
+          "fn": 610,
+          "tn": 3434,
+          "precision": 1.0,
+          "recall": 0.05864197530864197,
+          "f1": 0.11078717201166181,
+          "fpr": 0.0,
+          "alarm_fraction": 0.009309162175404213
+        },
+        "pot": {
+          "tp": 40,
+          "fp": 1,
+          "fn": 608,
+          "tn": 3433,
+          "precision": 0.975609756097561,
+          "recall": 0.06172839506172839,
+          "f1": 0.11611030478955008,
+          "fpr": 0.00029120559114735004,
+          "alarm_fraction": 0.010044096031357178
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.5328338146209717,
+      "loss_last": 1.1233971118927002
+    },
+    "checks": {
+      "checkpoint_max_abs": 3.8743019104003906e-07,
+      "source_manifest": {
+        "dataset": "banksim",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          114.0,
+          147.0
+        ],
+        "raw_sha256": "3bfd0c2bfbdec83ad36eed499eaf38c6951c36be864ecbe30f3bcb7d84895f66",
+        "splits": {
+          "train": {
+            "nodes": 4146,
+            "edges": 58603,
+            "evaluated_source_accounts": 4096,
+            "positive": 1159,
+            "normal": 2987,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              33.0,
+              62.0,
+              89.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4122,
+            "edges": 32923,
+            "evaluated_source_accounts": 4072,
+            "positive": 713,
+            "normal": 3409,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              123.0,
+              131.0,
+              139.0
+            ]
+          },
+          "test": {
+            "nodes": 4131,
+            "edges": 33289,
+            "evaluated_source_accounts": 4082,
+            "positive": 676,
+            "normal": 3455,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              156.0,
+              164.0,
+              172.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 70902,
+        "calibration": 35700,
+        "test": 35850
+      }
+    },
+    "checkpoint_sha256": "74619b14aeec0ab8d1e4eec7709f836903e11ec4933a9a50263589de0f466ea3",
+    "score_sha256": "9f538eda4ff85adf7c099aad72a00b3e3e6a1e96018c0198edde38e7ba2f0be1",
+    "peak_cuda_gb": 0.5278849601745605
+  },
+  {
+    "track": "graph",
+    "dataset": "banksim",
+    "method": "huge_financial_inductive",
+    "seed": 44,
+    "seconds": 11.714237962000027,
+    "metrics": {
+      "evaluated": 4082,
+      "unknown_excluded": 0,
+      "positives": 648,
+      "normal": 3434,
+      "prevalence": 0.15874571288584027,
+      "average_precision": 0.37395527635478987,
+      "roc_auc": 0.6465258453949969,
+      "pr_auc_trapezoid": 0.3735045258604389,
+      "operating_points": {
+        "quantile": {
+          "tp": 32,
+          "fp": 1,
+          "fn": 616,
+          "tn": 3433,
+          "precision": 0.9696969696969697,
+          "recall": 0.04938271604938271,
+          "f1": 0.09397944199706314,
+          "fpr": 0.00029120559114735004,
+          "alarm_fraction": 0.008084272415482607
+        },
+        "pot": {
+          "tp": 35,
+          "fp": 1,
+          "fn": 613,
+          "tn": 3433,
+          "precision": 0.9722222222222222,
+          "recall": 0.05401234567901234,
+          "f1": 0.1023391812865497,
+          "fpr": 0.00029120559114735004,
+          "alarm_fraction": 0.008819206271435572
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.5229617357254028,
+      "loss_last": 1.0899509191513062
+    },
+    "checks": {
+      "checkpoint_max_abs": 3.2782554626464844e-07,
+      "source_manifest": {
+        "dataset": "banksim",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          114.0,
+          147.0
+        ],
+        "raw_sha256": "3bfd0c2bfbdec83ad36eed499eaf38c6951c36be864ecbe30f3bcb7d84895f66",
+        "splits": {
+          "train": {
+            "nodes": 4146,
+            "edges": 58603,
+            "evaluated_source_accounts": 4096,
+            "positive": 1159,
+            "normal": 2987,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              33.0,
+              62.0,
+              89.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4122,
+            "edges": 32923,
+            "evaluated_source_accounts": 4072,
+            "positive": 713,
+            "normal": 3409,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              123.0,
+              131.0,
+              139.0
+            ]
+          },
+          "test": {
+            "nodes": 4131,
+            "edges": 33289,
+            "evaluated_source_accounts": 4082,
+            "positive": 676,
+            "normal": 3455,
+            "unknown": 0,
+            "snapshot_boundaries": [
+              156.0,
+              164.0,
+              172.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "24c4c411230d0771306b0f498ea607141a19c91506998c2862124ed4b40c9f6d",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 70902,
+        "calibration": 35700,
+        "test": 35850
+      }
+    },
+    "checkpoint_sha256": "b8d3015ef623b1b3a50676af125001983b097be6fd8b5f75a1d1d1d15535cfd5",
+    "score_sha256": "b898e222257576ba7a2e7162726e3e554207c0cb5f369f2efaa1f4afc0c5b1b9",
+    "peak_cuda_gb": 0.5278849601745605
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "huge_financial_inductive",
+    "seed": 42,
+    "seconds": 3.5494903889999705,
+    "metrics": {
+      "evaluated": 1070,
+      "unknown_excluded": 3026,
+      "positives": 936,
+      "normal": 134,
+      "prevalence": 0.874766355140187,
+      "average_precision": 0.8217665135685063,
+      "roc_auc": 0.38206802525832373,
+      "pr_auc_trapezoid": 0.8181248536845738,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 2,
+          "fn": 935,
+          "tn": 132,
+          "precision": 0.3333333333333333,
+          "recall": 0.0010683760683760685,
+          "f1": 0.002129925452609159,
+          "fpr": 0.014925373134328358,
+          "alarm_fraction": 0.002803738317757009
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 935,
+          "tn": 131,
+          "precision": 0.25,
+          "recall": 0.0010683760683760685,
+          "f1": 0.002127659574468085,
+          "fpr": 0.022388059701492536,
+          "alarm_fraction": 0.003738317757009346
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.3770829439163208,
+      "loss_last": 1.14713716506958
+    },
+    "checks": {
+      "checkpoint_max_abs": 4.76837158203125e-07,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          46728.0,
+          62304.0
+        ],
+        "raw_sha256": "7dadda00a45162b648ccb98e1c2d21861358c61665abad517ff392ba11e3e434",
+        "splits": {
+          "train": {
+            "nodes": 4435,
+            "edges": 5314,
+            "evaluated_source_accounts": 4096,
+            "positive": 289,
+            "normal": 241,
+            "unknown": 3905,
+            "snapshot_boundaries": [
+              11829.0,
+              22410.0,
+              34789.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4364,
+            "edges": 5058,
+            "evaluated_source_accounts": 4096,
+            "positive": 324,
+            "normal": 358,
+            "unknown": 3682,
+            "snapshot_boundaries": [
+              50736.0,
+              54401.0,
+              58270.0
+            ]
+          },
+          "test": {
+            "nodes": 4322,
+            "edges": 5118,
+            "evaluated_source_accounts": 4096,
+            "positive": 971,
+            "normal": 167,
+            "unknown": 3184,
+            "snapshot_boundaries": [
+              66192.0,
+              69773.0,
+              73705.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 9272,
+        "calibration": 8726,
+        "test": 9344
+      }
+    },
+    "checkpoint_sha256": "cac82443669987dc4e803f666d5dd928e01136575e0ba409b7ec6b5b18448828",
+    "score_sha256": "f6bf48e494199d195bc1ec14df4e455cd87ec4f0286fb70921a13f005b3cf3be",
+    "peak_cuda_gb": 0.11328697204589844
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "huge_financial_inductive",
+    "seed": 43,
+    "seconds": 3.5667740640000147,
+    "metrics": {
+      "evaluated": 1070,
+      "unknown_excluded": 3026,
+      "positives": 936,
+      "normal": 134,
+      "prevalence": 0.874766355140187,
+      "average_precision": 0.8711982113063157,
+      "roc_auc": 0.5091649126164052,
+      "pr_auc_trapezoid": 0.8688773096671457,
+      "operating_points": {
+        "quantile": {
+          "tp": 2,
+          "fp": 3,
+          "fn": 934,
+          "tn": 131,
+          "precision": 0.4,
+          "recall": 0.002136752136752137,
+          "f1": 0.004250797024442083,
+          "fpr": 0.022388059701492536,
+          "alarm_fraction": 0.004672897196261682
+        },
+        "pot": {
+          "tp": 2,
+          "fp": 3,
+          "fn": 934,
+          "tn": 131,
+          "precision": 0.4,
+          "recall": 0.002136752136752137,
+          "f1": 0.004250797024442083,
+          "fpr": 0.022388059701492536,
+          "alarm_fraction": 0.004672897196261682
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.452202558517456,
+      "loss_last": 1.1517078876495361
+    },
+    "checks": {
+      "checkpoint_max_abs": 2.384185791015625e-07,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          46728.0,
+          62304.0
+        ],
+        "raw_sha256": "7dadda00a45162b648ccb98e1c2d21861358c61665abad517ff392ba11e3e434",
+        "splits": {
+          "train": {
+            "nodes": 4435,
+            "edges": 5314,
+            "evaluated_source_accounts": 4096,
+            "positive": 289,
+            "normal": 241,
+            "unknown": 3905,
+            "snapshot_boundaries": [
+              11829.0,
+              22410.0,
+              34789.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4364,
+            "edges": 5058,
+            "evaluated_source_accounts": 4096,
+            "positive": 324,
+            "normal": 358,
+            "unknown": 3682,
+            "snapshot_boundaries": [
+              50736.0,
+              54401.0,
+              58270.0
+            ]
+          },
+          "test": {
+            "nodes": 4322,
+            "edges": 5118,
+            "evaluated_source_accounts": 4096,
+            "positive": 971,
+            "normal": 167,
+            "unknown": 3184,
+            "snapshot_boundaries": [
+              66192.0,
+              69773.0,
+              73705.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 9272,
+        "calibration": 8726,
+        "test": 9344
+      }
+    },
+    "checkpoint_sha256": "ebccef9812da8bdb87f2d0733c8241023af2432241b910f55983d5e4869e8704",
+    "score_sha256": "a0e40c5c1085a03bee364793377ceacd4ed4dc211c9fccbbac7ea02306e4c266",
+    "peak_cuda_gb": 0.11328697204589844
+  },
+  {
+    "track": "graph",
+    "dataset": "s_ffsd",
+    "method": "huge_financial_inductive",
+    "seed": 44,
+    "seconds": 3.555997689000037,
+    "metrics": {
+      "evaluated": 1070,
+      "unknown_excluded": 3026,
+      "positives": 936,
+      "normal": 134,
+      "prevalence": 0.874766355140187,
+      "average_precision": 0.8310154197364592,
+      "roc_auc": 0.37309047710167115,
+      "pr_auc_trapezoid": 0.8266801613990499,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 936,
+          "tn": 132,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.014925373134328358,
+          "alarm_fraction": 0.001869158878504673
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 936,
+          "tn": 132,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.014925373134328358,
+          "alarm_fraction": 0.001869158878504673
+        }
+      }
+    },
+    "model_info": {
+      "method": "huge_financial_inductive",
+      "steps": 300,
+      "hidden": 128,
+      "lr": 0.0005,
+      "kd_param": 0.5,
+      "rank_batch": 512,
+      "upstream_commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+      "loss_first": 1.4435805082321167,
+      "loss_last": 1.1491624116897583
+    },
+    "checks": {
+      "checkpoint_max_abs": 1.7881393432617188e-07,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "unit": "role-typed account active during phase",
+        "features": [
+          "source_role",
+          "target_role",
+          "log_out_count",
+          "log_in_count",
+          "out_mean_log_amount",
+          "in_mean_log_amount",
+          "out_std_log_amount",
+          "in_std_log_amount",
+          "out_max_log_amount",
+          "in_max_log_amount"
+        ],
+        "time_boundaries": [
+          46728.0,
+          62304.0
+        ],
+        "raw_sha256": "7dadda00a45162b648ccb98e1c2d21861358c61665abad517ff392ba11e3e434",
+        "splits": {
+          "train": {
+            "nodes": 4435,
+            "edges": 5314,
+            "evaluated_source_accounts": 4096,
+            "positive": 289,
+            "normal": 241,
+            "unknown": 3905,
+            "snapshot_boundaries": [
+              11829.0,
+              22410.0,
+              34789.0
+            ]
+          },
+          "calibration": {
+            "nodes": 4364,
+            "edges": 5058,
+            "evaluated_source_accounts": 4096,
+            "positive": 324,
+            "normal": 358,
+            "unknown": 3682,
+            "snapshot_boundaries": [
+              50736.0,
+              54401.0,
+              58270.0
+            ]
+          },
+          "test": {
+            "nodes": 4322,
+            "edges": 5118,
+            "evaluated_source_accounts": 4096,
+            "positive": 971,
+            "normal": 167,
+            "unknown": 3184,
+            "snapshot_boundaries": [
+              66192.0,
+              69773.0,
+              73705.0
+            ]
+          }
+        },
+        "graph_budget": "4096 SHA256-selected paying accounts per phase; retain all counterparties; evaluate payers only"
+      },
+      "test_target_sha256": "7f6db1931e48e63cda79c8d03137a500f1b08f77d6d10bb2515a7cf696c5d1a7",
+      "information_budget": "all train graph nodes; fixed trained weights transfer to independent phase graphs; evaluated payers unchanged",
+      "undirected_edges": {
+        "train": 9272,
+        "calibration": 8726,
+        "test": 9344
+      }
+    },
+    "checkpoint_sha256": "f43de5dcbbcd2eebc93fc6917a8b1863e7d9cf2b10b9f19654fa9ea5708ade56",
+    "score_sha256": "3991cd646694cc10862f334d77f765c10a104dadfe97bb69e53b9f0634c2b113",
+    "peak_cuda_gb": 0.11328697204589844
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "himvh_zero_reconstruction",
+    "seed": 42,
+    "seconds": 40.607151903000045,
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.19406432657262512,
+      "roc_auc": 0.6446123486735034,
+      "pr_auc_trapezoid": 0.1938474915112712,
+      "operating_points": {
+        "quantile": {
+          "tp": 311,
+          "fp": 815,
+          "fn": 969,
+          "tn": 116543,
+          "precision": 0.2761989342806394,
+          "recall": 0.24296875,
+          "f1": 0.25852036575228593,
+          "fpr": 0.006944562790776939,
+          "alarm_fraction": 0.009491056828334935
+        },
+        "pot": {
+          "tp": 336,
+          "fp": 966,
+          "fn": 944,
+          "tn": 116392,
+          "precision": 0.25806451612903225,
+          "recall": 0.2625,
+          "f1": 0.26026336173508907,
+          "fpr": 0.008231224117657084,
+          "alarm_fraction": 0.010974561270419259
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.5244044065475464,
+      "loss_last": 0.035995639860630035,
+      "train_hyperedges": [
+        1166,
+        8068,
+        8147,
+        8180
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 2.086162567138672e-06,
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "phase_hyperedges": {
+        "train": [
+          1166,
+          8068,
+          8147,
+          8180
+        ],
+        "calibration": [
+          106806,
+          118720,
+          118824,
+          118857
+        ],
+        "test": [
+          106496,
+          118491,
+          118593,
+          118626
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "28377527bd5130ab6269985fa8e41610dbeb423f6e14025c02afa0dee341b3e5",
+    "score_sha256": "6a506762364858b518d732fadccd515f605cdb0c45f68fa70cf2505a8b237222",
+    "peak_cuda_gb": 1.8463082313537598
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "himvh_zero_reconstruction",
+    "seed": 43,
+    "seconds": 39.97112996699997,
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.0959440138409525,
+      "roc_auc": 0.718438263555744,
+      "pr_auc_trapezoid": 0.09521739426500958,
+      "operating_points": {
+        "quantile": {
+          "tp": 182,
+          "fp": 958,
+          "fn": 1098,
+          "tn": 116400,
+          "precision": 0.15964912280701754,
+          "recall": 0.1421875,
+          "f1": 0.15041322314049588,
+          "fpr": 0.008163056630140254,
+          "alarm_fraction": 0.009609062863500733
+        },
+        "pot": {
+          "tp": 179,
+          "fp": 942,
+          "fn": 1101,
+          "tn": 116416,
+          "precision": 0.15967885816235505,
+          "recall": 0.13984375,
+          "f1": 0.14910453977509372,
+          "fpr": 0.008026721655106596,
+          "alarm_fraction": 0.00944891181577572
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.5701804161071777,
+      "loss_last": 0.03655122220516205,
+      "train_hyperedges": [
+        1188,
+        8062,
+        8147,
+        8180
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 5.781650543212891e-06,
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "phase_hyperedges": {
+        "train": [
+          1188,
+          8062,
+          8147,
+          8180
+        ],
+        "calibration": [
+          106806,
+          118720,
+          118824,
+          118857
+        ],
+        "test": [
+          106496,
+          118491,
+          118593,
+          118626
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "8ccdc30aff7abc38d0ebb62fe3d1c66e371f84642d40191f12d4a80b112bc0b9",
+    "score_sha256": "3bfc1876e5fb5b72aa4a5bb3b89e84ac9354ab0d54fee832ecaa792e58220f6d",
+    "peak_cuda_gb": 1.8489999771118164
+  },
+  {
+    "track": "tabular",
+    "dataset": "banksim",
+    "method": "himvh_zero_reconstruction",
+    "seed": 44,
+    "seconds": 40.05508511199997,
+    "metrics": {
+      "evaluated": 118638,
+      "unknown_excluded": 0,
+      "positives": 1280,
+      "normal": 117358,
+      "prevalence": 0.010789123215158718,
+      "average_precision": 0.006905508508593548,
+      "roc_auc": 0.06335213353584758,
+      "pr_auc_trapezoid": 0.006766278043945129,
+      "operating_points": {
+        "quantile": {
+          "tp": 16,
+          "fp": 926,
+          "fn": 1264,
+          "tn": 116432,
+          "precision": 0.016985138004246284,
+          "recall": 0.0125,
+          "f1": 0.0144014401440144,
+          "fpr": 0.00789038668007294,
+          "alarm_fraction": 0.00794012036615587
+        },
+        "pot": {
+          "tp": 16,
+          "fp": 447,
+          "fn": 1264,
+          "tn": 116911,
+          "precision": 0.03455723542116631,
+          "recall": 0.0125,
+          "f1": 0.01835915088927137,
+          "fpr": 0.003808858365002812,
+          "alarm_fraction": 0.0039026281629831925
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.5585736036300659,
+      "loss_last": 0.03969632461667061,
+      "train_hyperedges": [
+        1155,
+        8068,
+        8147,
+        8180
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 1.0311603546142578e-05,
+      "source_manifest": {
+        "dataset": "banksim",
+        "protocol": "Chronological 60/20/20 by cumulative time-only row counts over whole simulation steps. No customer ID; merchant hashed; constant zip codes dropped; label never read for features.",
+        "splits": {
+          "train": {
+            "rows": 357136,
+            "positive": 4600,
+            "normal": 352536,
+            "unknown": 0
+          },
+          "calibration": {
+            "rows": 118869,
+            "positive": 1320,
+            "normal": 117549,
+            "unknown": 0
+          },
+          "test": {
+            "rows": 118638,
+            "positive": 1280,
+            "normal": 117358,
+            "unknown": 0
+          }
+        },
+        "source": "data/raw/banksim/banksim.zip:bs140513_032310.csv",
+        "time_boundaries": [
+          114,
+          147
+        ],
+        "features": [
+          "log_amount",
+          "age_0",
+          "age_1",
+          "age_2",
+          "age_3",
+          "age_4",
+          "age_5",
+          "age_6",
+          "age_U",
+          "gender_F",
+          "gender_M",
+          "gender_E",
+          "gender_U",
+          "category_hash_0",
+          "category_hash_1",
+          "category_hash_2",
+          "category_hash_3",
+          "category_hash_4",
+          "category_hash_5",
+          "category_hash_6",
+          "category_hash_7",
+          "category_hash_8",
+          "category_hash_9",
+          "category_hash_10",
+          "category_hash_11",
+          "category_hash_12",
+          "category_hash_13",
+          "category_hash_14",
+          "category_hash_15",
+          "category_hash_16",
+          "category_hash_17",
+          "category_hash_18",
+          "category_hash_19",
+          "category_hash_20",
+          "category_hash_21",
+          "category_hash_22",
+          "category_hash_23",
+          "category_hash_24",
+          "category_hash_25",
+          "category_hash_26",
+          "category_hash_27",
+          "category_hash_28",
+          "category_hash_29",
+          "category_hash_30",
+          "category_hash_31",
+          "merchant_hash_0",
+          "merchant_hash_1",
+          "merchant_hash_2",
+          "merchant_hash_3",
+          "merchant_hash_4",
+          "merchant_hash_5",
+          "merchant_hash_6",
+          "merchant_hash_7",
+          "merchant_hash_8",
+          "merchant_hash_9",
+          "merchant_hash_10",
+          "merchant_hash_11",
+          "merchant_hash_12",
+          "merchant_hash_13",
+          "merchant_hash_14",
+          "merchant_hash_15"
+        ]
+      },
+      "test_target_sha256": "9cf9860f4f344a0bf2ea3ca380d044da553dae986f6041afc28524ad40d0cf1c",
+      "phase_hyperedges": {
+        "train": [
+          1155,
+          8068,
+          8147,
+          8180
+        ],
+        "calibration": [
+          106806,
+          118720,
+          118824,
+          118857
+        ],
+        "test": [
+          106496,
+          118491,
+          118593,
+          118626
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "17ea344b618a8e779e960f5131297a7c65c4aad56f1bd7864e9aa2eb1f1d169a",
+    "score_sha256": "d92e58e9de7a83341a07b2fd7cf984e1d199e1c95aff170b362dd106b9e800de",
+    "peak_cuda_gb": 1.8451151847839355
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "himvh_zero_reconstruction",
+    "seed": 42,
+    "seconds": 29.59347043400004,
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.2821371199167335,
+      "roc_auc": 0.28622419261966336,
+      "pr_auc_trapezoid": 0.28188485178243244,
+      "operating_points": {
+        "quantile": {
+          "tp": 10,
+          "fp": 58,
+          "fn": 2384,
+          "tn": 3707,
+          "precision": 0.14705882352941177,
+          "recall": 0.004177109440267335,
+          "f1": 0.008123476848090982,
+          "fpr": 0.015405046480743692,
+          "alarm_fraction": 0.011040753369053418
+        },
+        "pot": {
+          "tp": 3,
+          "fp": 45,
+          "fn": 2391,
+          "tn": 3720,
+          "precision": 0.0625,
+          "recall": 0.0012531328320802004,
+          "f1": 0.002457002457002457,
+          "fpr": 0.01195219123505976,
+          "alarm_fraction": 0.007793472966390648
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.9057998657226562,
+      "loss_last": 0.0719403326511383,
+      "train_hyperedges": [
+        2108,
+        7399,
+        8000,
+        7941
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 2.1457672119140625e-06,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "phase_hyperedges": {
+        "train": [
+          2108,
+          7399,
+          8000,
+          7941
+        ],
+        "calibration": [
+          5141,
+          14790,
+          15391,
+          15310
+        ],
+        "test": [
+          3799,
+          14868,
+          15465,
+          15349
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "58c394cee32cb0f534446710df6bc7ab83f23806d622dbcf66bf6db95d0b75d8",
+    "score_sha256": "22c1890958b1f3831e874257799ab9891684a43a34b6f63737fc685b5f47c7ff",
+    "peak_cuda_gb": 1.8457093238830566
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "himvh_zero_reconstruction",
+    "seed": 43,
+    "seconds": 29.52954364900006,
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.3587783973440669,
+      "roc_auc": 0.5119223468143578,
+      "pr_auc_trapezoid": 0.35843019312989954,
+      "operating_points": {
+        "quantile": {
+          "tp": 4,
+          "fp": 49,
+          "fn": 2390,
+          "tn": 3716,
+          "precision": 0.07547169811320754,
+          "recall": 0.001670843776106934,
+          "f1": 0.0032693093583980384,
+          "fpr": 0.01301460823373174,
+          "alarm_fraction": 0.00860529306705634
+        },
+        "pot": {
+          "tp": 4,
+          "fp": 60,
+          "fn": 2390,
+          "tn": 3705,
+          "precision": 0.0625,
+          "recall": 0.001670843776106934,
+          "f1": 0.0032546786004882017,
+          "fpr": 0.01593625498007968,
+          "alarm_fraction": 0.010391297288520864
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.8892102837562561,
+      "loss_last": 0.06304063647985458,
+      "train_hyperedges": [
+        2057,
+        7398,
+        7997,
+        7940
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 1.3113021850585938e-06,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "phase_hyperedges": {
+        "train": [
+          2057,
+          7398,
+          7997,
+          7940
+        ],
+        "calibration": [
+          5141,
+          14790,
+          15391,
+          15310
+        ],
+        "test": [
+          3799,
+          14868,
+          15465,
+          15349
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "66a2832504a7249abb3d1ea3933c97b7023635029b1b51f806400bbebd7cc8e7",
+    "score_sha256": "e53514ec1597858f9a8c4529be117b21861a516eda362385544da7cd0a602a40",
+    "peak_cuda_gb": 1.8434462547302246
+  },
+  {
+    "track": "tabular",
+    "dataset": "s_ffsd",
+    "method": "himvh_zero_reconstruction",
+    "seed": 44,
+    "seconds": 29.48848983000005,
+    "metrics": {
+      "evaluated": 6159,
+      "unknown_excluded": 9417,
+      "positives": 2394,
+      "normal": 3765,
+      "prevalence": 0.3886994641987336,
+      "average_precision": 0.4399848813467347,
+      "roc_auc": 0.6452573443347189,
+      "pr_auc_trapezoid": 0.4396244214830252,
+      "operating_points": {
+        "quantile": {
+          "tp": 4,
+          "fp": 45,
+          "fn": 2390,
+          "tn": 3720,
+          "precision": 0.08163265306122448,
+          "recall": 0.001670843776106934,
+          "f1": 0.003274662300450266,
+          "fpr": 0.01195219123505976,
+          "alarm_fraction": 0.007955836986523787
+        },
+        "pot": {
+          "tp": 4,
+          "fp": 52,
+          "fn": 2390,
+          "tn": 3713,
+          "precision": 0.07142857142857142,
+          "recall": 0.001670843776106934,
+          "f1": 0.0032653061224489797,
+          "fpr": 0.013811420982735724,
+          "alarm_fraction": 0.009092385127455756
+        }
+      }
+    },
+    "model_info": {
+      "method": "himvh_zero_reconstruction",
+      "steps": 200,
+      "hidden": 256,
+      "layers": 3,
+      "window": 4,
+      "beta": 1,
+      "lr": 0.001,
+      "mask_probability": 0.2,
+      "training": "denoising MSE",
+      "scoring": "clean input reconstruction MSE",
+      "label_discrepancy": 0,
+      "label_embedding": 0,
+      "official_code": false,
+      "loss_first": 0.9061909914016724,
+      "loss_last": 0.07059301435947418,
+      "train_hyperedges": [
+        2017,
+        7398,
+        7980,
+        7940
+      ]
+    },
+    "checks": {
+      "checkpoint_max_abs": 2.682209014892578e-06,
+      "source_manifest": {
+        "dataset": "s_ffsd",
+        "protocol": "Chronological 60/20/20 by cumulative Time counts. Label 2 (unlabelled) kept as unknown (-1) during fitting/calibration and masked only for evaluation. No Source account IDs.",
+        "splits": {
+          "train": {
+            "rows": 46729,
+            "positive": 2090,
+            "normal": 14876,
+            "unknown": 29763
+          },
+          "calibration": {
+            "rows": 15576,
+            "positive": 772,
+            "normal": 5746,
+            "unknown": 9058
+          },
+          "test": {
+            "rows": 15576,
+            "positive": 2394,
+            "normal": 3765,
+            "unknown": 9417
+          }
+        },
+        "source": "data/raw/s_ffsd/data/S-FFSD.zip:S-FFSD.csv",
+        "time_boundaries": [
+          46728,
+          62304
+        ],
+        "features": [
+          "log_amount",
+          "location_hash_0",
+          "location_hash_1",
+          "location_hash_2",
+          "location_hash_3",
+          "location_hash_4",
+          "location_hash_5",
+          "location_hash_6",
+          "location_hash_7",
+          "location_hash_8",
+          "location_hash_9",
+          "location_hash_10",
+          "location_hash_11",
+          "location_hash_12",
+          "location_hash_13",
+          "location_hash_14",
+          "location_hash_15",
+          "type_hash_0",
+          "type_hash_1",
+          "type_hash_2",
+          "type_hash_3",
+          "type_hash_4",
+          "type_hash_5",
+          "type_hash_6",
+          "type_hash_7",
+          "type_hash_8",
+          "type_hash_9",
+          "type_hash_10",
+          "type_hash_11",
+          "type_hash_12",
+          "type_hash_13",
+          "type_hash_14",
+          "type_hash_15",
+          "target_hash_0",
+          "target_hash_1",
+          "target_hash_2",
+          "target_hash_3",
+          "target_hash_4",
+          "target_hash_5",
+          "target_hash_6",
+          "target_hash_7",
+          "target_hash_8",
+          "target_hash_9",
+          "target_hash_10",
+          "target_hash_11",
+          "target_hash_12",
+          "target_hash_13",
+          "target_hash_14",
+          "target_hash_15"
+        ]
+      },
+      "test_target_sha256": "fe1bd872b78f907c3f7b54a5a7ae38843680fb08d083f1168c39109133c45694",
+      "phase_hyperedges": {
+        "train": [
+          2017,
+          7398,
+          7980,
+          7940
+        ],
+        "calibration": [
+          5141,
+          14790,
+          15391,
+          15310
+        ],
+        "test": [
+          3799,
+          14868,
+          15465,
+          15349
+        ]
+      },
+      "information_budget": "offline phase-specific native transaction views, no cross-partition edges"
+    },
+    "checkpoint_sha256": "219db95b81eb504bc9ab14e041954673a6b36f16255e3ecf2b0c80c7b48efeb7",
+    "score_sha256": "de8cf1faf997b3b7b7f8edf03c6a44b53f89eca34a3ae889006381fe1fe856e0",
+    "peak_cuda_gb": 1.8435187339782715
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 13.301174038,
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.00024151230545797398,
+      "roc_auc": 0.23656885611613154,
+      "pr_auc_trapezoid": 0.00023112771022980127,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 2233,
+          "fn": 76,
+          "tn": 204957,
+          "precision": 0.0004476275738585497,
+          "recall": 0.012987012987012988,
+          "f1": 0.0008654262224145391,
+          "fpr": 0.010777547178917901,
+          "alarm_fraction": 0.010778367998764879
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 2251,
+          "fn": 76,
+          "tn": 204939,
+          "precision": 0.0004440497335701599,
+          "recall": 0.012987012987012988,
+          "f1": 0.0008587376556462001,
+          "fpr": 0.010864423958685265,
+          "alarm_fraction": 0.01086521250367883
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7664146423339844,
+      "loss_last": 0.4179841876029968
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "dbd180cf50307be32506de6ed57a350895be32a7c2a807b771b320147f529241",
+    "score_sha256": "6a971663c1537814ff2c07dd86d527b6218cc2d3f037ccadda00173fd8100be9",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 11.042374742999982,
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.0028229714115827077,
+      "roc_auc": 0.7143903613158886,
+      "pr_auc_trapezoid": 0.002216969411004064,
+      "operating_points": {
+        "quantile": {
+          "tp": 5,
+          "fp": 1961,
+          "fn": 72,
+          "tn": 205229,
+          "precision": 0.00254323499491353,
+          "recall": 0.06493506493506493,
+          "f1": 0.004894762604013705,
+          "fpr": 0.009464742506877745,
+          "alarm_fraction": 0.009485349814490488
+        },
+        "pot": {
+          "tp": 4,
+          "fp": 1881,
+          "fn": 73,
+          "tn": 205309,
+          "precision": 0.002122015915119363,
+          "recall": 0.05194805194805195,
+          "f1": 0.004077471967380225,
+          "fpr": 0.009078623485689464,
+          "alarm_fraction": 0.009094549542377706
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.8057186603546143,
+      "loss_last": 0.22140106558799744
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "778e1fd1a718b9e10920d70870a17a68efb26798a33f710f27e471f546227514",
+    "score_sha256": "7c57e56410310225c6683f9cc62c5304eee2a587c2a3dfb20b4728e279242304",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_5S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 11.091747907000013,
+    "metrics": {
+      "evaluated": 207267,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 207190,
+      "prevalence": 0.00037150149324301506,
+      "average_precision": 0.0024095114995995597,
+      "roc_auc": 0.8246170307321907,
+      "pr_auc_trapezoid": 0.00227103965436449,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 2099,
+          "fn": 68,
+          "tn": 205091,
+          "precision": 0.004269449715370019,
+          "recall": 0.11688311688311688,
+          "f1": 0.008237986270022883,
+          "fpr": 0.010130797818427531,
+          "alarm_fraction": 0.010170456464367218
+        },
+        "pot": {
+          "tp": 9,
+          "fp": 2205,
+          "fn": 68,
+          "tn": 204985,
+          "precision": 0.0040650406504065045,
+          "recall": 0.11688311688311688,
+          "f1": 0.00785683107813182,
+          "fpr": 0.010642405521502004,
+          "alarm_fraction": 0.010681874104416043
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.9060088396072388,
+      "loss_last": 0.2030559480190277
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_5S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 456267,
+            "positive": 190,
+            "normal": 456077,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 157773,
+            "positive": 50,
+            "normal": 157723,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 207267,
+            "positive": 77,
+            "normal": 207190,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_5S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 24,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "b8f23f2adfb6db0af2247dacb1f5466d25adb0327c3e4e76c7e224cb1463d8de",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "4cd1771bf42d2fc3a08e0e5c10b99fd516fca63597d0e915e59a9b7733810960",
+    "score_sha256": "7edbce8d9b41766e782b61bed54aa509cc4bd5eb94eccfef00170876d5bd85e0",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 10.108639566999955,
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.002475707152220466,
+      "roc_auc": 0.6548362480081769,
+      "pr_auc_trapezoid": 0.0023810886775061752,
+      "operating_points": {
+        "quantile": {
+          "tp": 11,
+          "fp": 2379,
+          "fn": 66,
+          "tn": 143094,
+          "precision": 0.004602510460251046,
+          "recall": 0.14285714285714285,
+          "f1": 0.008917713822456425,
+          "fpr": 0.016353550143325565,
+          "alarm_fraction": 0.01642047406389557
+        },
+        "pot": {
+          "tp": 14,
+          "fp": 2748,
+          "fn": 63,
+          "tn": 142725,
+          "precision": 0.005068790731354091,
+          "recall": 0.18181818181818182,
+          "f1": 0.009862627685804861,
+          "fpr": 0.01889010331814151,
+          "alarm_fraction": 0.018976296805221574
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7444097995758057,
+      "loss_last": 0.23119956254959106
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "b0147d4c0111d234f9e5fc166e83168653b78b6b6c0c6609e89eaf32cf165f63",
+    "score_sha256": "a06c014bc4e8a3e9d0c7a701ea214da211e2b568bd12f0b3a631bd0b3bf761b1",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 10.069390043999988,
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.00029373310094896285,
+      "roc_auc": 0.14202247197029735,
+      "pr_auc_trapezoid": 0.0002872035478509941,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 1752,
+          "fn": 77,
+          "tn": 143721,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.012043471984491967,
+          "alarm_fraction": 0.012037100652696668
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 1928,
+          "fn": 77,
+          "tn": 143545,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.013253318485217188,
+          "alarm_fraction": 0.013246307110958434
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7777807712554932,
+      "loss_last": 0.23903286457061768
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "a8675d8d7834ffb9505f15b1348a7e5088fb553a7c9f646328642487d5f59ee0",
+    "score_sha256": "4d92916f5a984d62bf036b40eba5f29a0bb96a452daf0e62f116f04edc52a6ca",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_15S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 10.01680531799991,
+    "metrics": {
+      "evaluated": 145550,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 145473,
+      "prevalence": 0.0005290278254895225,
+      "average_precision": 0.0003033856831284286,
+      "roc_auc": 0.15475509758985045,
+      "pr_auc_trapezoid": 0.00029476722603838975,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 1393,
+          "fn": 77,
+          "tn": 144080,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.009575660088126318,
+          "alarm_fraction": 0.00957059429749227
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 1331,
+          "fn": 77,
+          "tn": 144142,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.00914946416173448,
+          "alarm_fraction": 0.009144623840604603
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.894600510597229,
+      "loss_last": 0.32150012254714966
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_15S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 327103,
+            "positive": 190,
+            "normal": 326913,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 111451,
+            "positive": 50,
+            "normal": 111401,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 145550,
+            "positive": 77,
+            "normal": 145473,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_15S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 8,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "bc510bc5d98219a390ecc0d62531e7a524fa55e11c14a3eb5f9cc47c82bc8359",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "902efa46fe0a8208f7831ae66abf9f3ccdf72615c38e5ceb63291a473fa4a027",
+    "score_sha256": "245256d6754407c004cbb11810444f588cadc72ed95a298e9e781bfa5cf59fd6",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 9.488727651999966,
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.0020525296268287902,
+      "roc_auc": 0.5811979832014675,
+      "pr_auc_trapezoid": 0.001946352717503943,
+      "operating_points": {
+        "quantile": {
+          "tp": 9,
+          "fp": 1917,
+          "fn": 68,
+          "tn": 117475,
+          "precision": 0.004672897196261682,
+          "recall": 0.11688311688311688,
+          "f1": 0.008986520219670495,
+          "fpr": 0.016056352184400966,
+          "alarm_fraction": 0.016121336915852647
+        },
+        "pot": {
+          "tp": 9,
+          "fp": 2124,
+          "fn": 68,
+          "tn": 117268,
+          "precision": 0.004219409282700422,
+          "recall": 0.11688311688311688,
+          "f1": 0.008144796380090498,
+          "fpr": 0.017790136692575717,
+          "alarm_fraction": 0.017854003967556438
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7646379470825195,
+      "loss_last": 0.18886777758598328
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "90b7b0de4863151ffc418d80819a1b2d9b9e2223c1e765c60bc3ca5ddf9d2ba0",
+    "score_sha256": "0140026b12e585d90c73ebe55d444b94cf8bb4f9f0892bfd337b78163aba8540",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 9.483468706000053,
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.0016570488684462775,
+      "roc_auc": 0.6806615640457103,
+      "pr_auc_trapezoid": 0.0015675616584305168,
+      "operating_points": {
+        "quantile": {
+          "tp": 6,
+          "fp": 1822,
+          "fn": 71,
+          "tn": 117570,
+          "precision": 0.0032822757111597373,
+          "recall": 0.07792207792207792,
+          "f1": 0.006299212598425197,
+          "fpr": 0.015260653980166175,
+          "alarm_fraction": 0.015301040437268246
+        },
+        "pot": {
+          "tp": 7,
+          "fp": 2177,
+          "fn": 70,
+          "tn": 117215,
+          "precision": 0.003205128205128205,
+          "recall": 0.09090909090909091,
+          "f1": 0.006191950464396285,
+          "fpr": 0.01823405253283302,
+          "alarm_fraction": 0.018280892951309545
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.804595708847046,
+      "loss_last": 0.25451919436454773
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "86a64093761dd82369aa67da658925a9cdf838f05edd72a0c94114630d99d3c3",
+    "score_sha256": "ebed7e444e5f2a02ad44bc902a1d3f4c1a4c992f37f65a8423028637cb2a0c4b",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sapienza_25S",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 9.572438199999965,
+    "metrics": {
+      "evaluated": 119469,
+      "unknown_excluded": 0,
+      "positives": 77,
+      "normal": 119392,
+      "prevalence": 0.0006445186617448878,
+      "average_precision": 0.0003933833798987986,
+      "roc_auc": 0.23727731327905544,
+      "pr_auc_trapezoid": 0.00038307614673611213,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 1809,
+          "fn": 77,
+          "tn": 117583,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.015151768962744573,
+          "alarm_fraction": 0.015142003364889637
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 2035,
+          "fn": 77,
+          "tn": 117357,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.017044693111766283,
+          "alarm_fraction": 0.017033707488972035
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.9112951755523682,
+      "loss_last": 0.15121173858642578
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sapienza_25S",
+        "protocol": "Existing coin-group split; same event/coin never split by row.",
+        "splits": {
+          "train": {
+            "rows": 271761,
+            "positive": 190,
+            "normal": 271571,
+            "unknown": 0,
+            "sequences": 193
+          },
+          "calibration": {
+            "rows": 90927,
+            "positive": 50,
+            "normal": 90877,
+            "unknown": 0,
+            "sequences": 55
+          },
+          "test": {
+            "rows": 119469,
+            "positive": 77,
+            "normal": 119392,
+            "unknown": 0,
+            "sequences": 79
+          }
+        },
+        "source": "data/raw/sapienza_pump_dump/labeled_features/features_25S.csv.gz",
+        "temporal": true,
+        "sequence_unit": "pump_index",
+        "sequence_id_file": "test.seq.i32",
+        "tolerance_rows": 5,
+        "tolerance_note": "Publisher states the labelled chunk may precede the announced pump by up to 120 s; rows are not uniformly spaced in time (empty chunks are absent).",
+        "features": [
+          "std_rush_order",
+          "avg_rush_order",
+          "std_trades",
+          "std_volume",
+          "avg_volume",
+          "std_price",
+          "avg_price",
+          "avg_price_max",
+          "hour_sin",
+          "hour_cos",
+          "minute_sin",
+          "minute_cos"
+        ]
+      },
+      "test_target_sha256": "3cd979a45d861449a9b5d7e25555e51834a68d3d90ebc38d6714ed3c7558617b",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "89bffab524ebd2e927ff23a9a49fa7a922ff6621d1c05a61c5e885e33ff55703",
+    "score_sha256": "5667f66dca7e473bccaa605580874c67fe965e57c50f8955f7f3efa23089d64d",
+    "peak_cuda_gb": 0.04045724868774414
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 6.328101215000061,
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.06730900810841414,
+      "roc_auc": 0.28160818404720844,
+      "pr_auc_trapezoid": 0.06628780348256222,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 55,
+          "fn": 98,
+          "tn": 806,
+          "precision": 0.017857142857142856,
+          "recall": 0.010101010101010102,
+          "f1": 0.012903225806451613,
+          "fpr": 0.06387921022067364,
+          "alarm_fraction": 0.058333333333333334
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 46,
+          "fn": 99,
+          "tn": 815,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.053426248548199766,
+          "alarm_fraction": 0.04791666666666667
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7800796031951904,
+      "loss_last": 0.12100722640752792
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "98d986c99a570416f20f2d2542ce1eed1430802114c60b47ab63bc18eb12e00c",
+    "score_sha256": "edc303bd48488e0d202f24034037f7e188ba46760db6bbd40b93475f582bf5c5",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 6.35594793100006,
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.0670481765935033,
+      "roc_auc": 0.2839076009807717,
+      "pr_auc_trapezoid": 0.06614643339872342,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 99,
+          "tn": 857,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.004645760743321719,
+          "alarm_fraction": 0.004166666666666667
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 99,
+          "tn": 857,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.004645760743321719,
+          "alarm_fraction": 0.004166666666666667
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.93965744972229,
+      "loss_last": 0.1915370672941208
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "46e222c6331b41666fd924b327717846250e4a1acafe59b0ac7003d9c525fcb6",
+    "score_sha256": "45ce52ee85df28d9f411cd8379b2d7b85a156a3b30ec25bd53273c28db8f3f7a",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_stock",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 6.409537256000021,
+    "metrics": {
+      "evaluated": 960,
+      "unknown_excluded": 0,
+      "positives": 99,
+      "normal": 861,
+      "prevalence": 0.103125,
+      "average_precision": 0.06616581890494545,
+      "roc_auc": 0.23743826182850575,
+      "pr_auc_trapezoid": 0.06441201959534838,
+      "operating_points": {
+        "quantile": {
+          "tp": 2,
+          "fp": 27,
+          "fn": 97,
+          "tn": 834,
+          "precision": 0.06896551724137931,
+          "recall": 0.020202020202020204,
+          "f1": 0.03125,
+          "fpr": 0.0313588850174216,
+          "alarm_fraction": 0.030208333333333334
+        },
+        "pot": {
+          "tp": 2,
+          "fp": 24,
+          "fn": 97,
+          "tn": 837,
+          "precision": 0.07692307692307693,
+          "recall": 0.020202020202020204,
+          "f1": 0.032,
+          "fpr": 0.027874564459930314,
+          "alarm_fraction": 0.027083333333333334
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.8427915573120117,
+      "loss_last": 0.2884886562824249
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_stock",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 2560,
+            "positive": 333,
+            "normal": 2227,
+            "unknown": 0,
+            "sequences": 16
+          },
+          "calibration": {
+            "rows": 800,
+            "positive": 61,
+            "normal": 739,
+            "unknown": 0,
+            "sequences": 5
+          },
+          "test": {
+            "rows": 960,
+            "positive": 99,
+            "normal": 861,
+            "unknown": 0,
+            "sequences": 6
+          }
+        },
+        "source": "data/raw/sd_fmm/stock cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "d00a756d1a9f7edf7240b2fe775da7d12f5c015b440100b506e7f89f2f512814",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "305d86f12bda0d0ad2cbf8dd24ff2eecb6d70a33f5c73a115294dd15274e0277",
+    "score_sha256": "9f51ed873e4b5e7288e0d0fcd9979f87a67d67b71ee5c7c37c79539952d24b95",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 6.660266456000045,
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.0037198304591527158,
+      "roc_auc": 0.16419392396248175,
+      "pr_auc_trapezoid": 0.0035699444990272113,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 144,
+          "fn": 67,
+          "tn": 10668,
+          "precision": 0.006896551724137931,
+          "recall": 0.014705882352941176,
+          "f1": 0.009389671361502348,
+          "fpr": 0.013318534961154272,
+          "alarm_fraction": 0.01332720588235294
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 180,
+          "fn": 67,
+          "tn": 10632,
+          "precision": 0.0055248618784530384,
+          "recall": 0.014705882352941176,
+          "f1": 0.008032128514056224,
+          "fpr": 0.016648168701442843,
+          "alarm_fraction": 0.016636029411764706
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7802221775054932,
+      "loss_last": 0.26634740829467773
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "865c96eba1699038dbca392762235cb1d24b328f1f2a56608f1b7a49eeccf7e5",
+    "score_sha256": "785a4cc2ac69cbfc91603e1ec81965c1ca6d7038a515defcc194b0b08a5e229d",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 6.762543402000006,
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.004224779147539175,
+      "roc_auc": 0.2236376792670453,
+      "pr_auc_trapezoid": 0.0039003235236034295,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 109,
+          "fn": 67,
+          "tn": 10703,
+          "precision": 0.00909090909090909,
+          "recall": 0.014705882352941176,
+          "f1": 0.011235955056179775,
+          "fpr": 0.010081391046984831,
+          "alarm_fraction": 0.01011029411764706
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 147,
+          "fn": 67,
+          "tn": 10665,
+          "precision": 0.006756756756756757,
+          "recall": 0.014705882352941176,
+          "f1": 0.009259259259259259,
+          "fpr": 0.013596004439511655,
+          "alarm_fraction": 0.013602941176470588
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.944219946861267,
+      "loss_last": 0.27933135628700256
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "59324a2b1cd296f4531df740b11e459bec4490534b27979046ad5631201c734a",
+    "score_sha256": "639749f746a555702b81ce7357e9017aae3067b5c555b744cd3f11e219048dbb",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_crypto",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 6.572144161000097,
+    "metrics": {
+      "evaluated": 10880,
+      "unknown_excluded": 0,
+      "positives": 68,
+      "normal": 10812,
+      "prevalence": 0.00625,
+      "average_precision": 0.0053856183854593676,
+      "roc_auc": 0.3675192052403648,
+      "pr_auc_trapezoid": 0.00491937432464953,
+      "operating_points": {
+        "quantile": {
+          "tp": 1,
+          "fp": 137,
+          "fn": 67,
+          "tn": 10675,
+          "precision": 0.007246376811594203,
+          "recall": 0.014705882352941176,
+          "f1": 0.009708737864077669,
+          "fpr": 0.012671106178320384,
+          "alarm_fraction": 0.012683823529411765
+        },
+        "pot": {
+          "tp": 1,
+          "fp": 142,
+          "fn": 67,
+          "tn": 10670,
+          "precision": 0.006993006993006993,
+          "recall": 0.014705882352941176,
+          "f1": 0.009478672985781991,
+          "fpr": 0.01313355530891602,
+          "alarm_fraction": 0.013143382352941177
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.8162333965301514,
+      "loss_last": 0.28914403915405273
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_crypto",
+        "protocol": "Existing deduplicated sequence-group split; offline retrospective task.",
+        "splits": {
+          "train": {
+            "rows": 32320,
+            "positive": 202,
+            "normal": 32118,
+            "unknown": 0,
+            "sequences": 202
+          },
+          "calibration": {
+            "rows": 10720,
+            "positive": 67,
+            "normal": 10653,
+            "unknown": 0,
+            "sequences": 67
+          },
+          "test": {
+            "rows": 10880,
+            "positive": 68,
+            "normal": 10812,
+            "unknown": 0,
+            "sequences": 68
+          }
+        },
+        "source": "data/raw/sd_fmm/cryptocurrency cases",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "bb3a49a2ee43949ebb8e449e728b3d1d68b55a28ea5a59ca8317eb781a9529df",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "1cdec0defb0001ff592285060d7b308e85dcbe6367274270adb45c46d8c0f812",
+    "score_sha256": "112768478454ba749b6c9324bdba5ed86f7c6297b50a75945642ccd4c5249653",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 42,
+    "seconds": 7.260347733999993,
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.027003558648369386,
+      "roc_auc": 0.13020687278639675,
+      "pr_auc_trapezoid": 0.026965999437261242,
+      "operating_points": {
+        "quantile": {
+          "tp": 8,
+          "fp": 442,
+          "fn": 1581,
+          "tn": 29969,
+          "precision": 0.017777777777777778,
+          "recall": 0.005034612964128383,
+          "f1": 0.00784698381559588,
+          "fpr": 0.014534214593403703,
+          "alarm_fraction": 0.0140625
+        },
+        "pot": {
+          "tp": 5,
+          "fp": 366,
+          "fn": 1584,
+          "tn": 30045,
+          "precision": 0.013477088948787063,
+          "recall": 0.0031466331025802393,
+          "f1": 0.00510204081632653,
+          "fpr": 0.012035118871460984,
+          "alarm_fraction": 0.01159375
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.7645869255065918,
+      "loss_last": 0.179193913936615
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "64ad6809d7603aa1deb4140e910b977ec48a29907621c71a370d8bc169f9b190",
+    "score_sha256": "9c9c872357c877c5d37249906eb49b247587cb5425166acd66fa936e919986ec",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 43,
+    "seconds": 7.3387613940000165,
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.03046755662978732,
+      "roc_auc": 0.17110771232106298,
+      "pr_auc_trapezoid": 0.0303498871139625,
+      "operating_points": {
+        "quantile": {
+          "tp": 15,
+          "fp": 238,
+          "fn": 1574,
+          "tn": 30173,
+          "precision": 0.05928853754940711,
+          "recall": 0.009439899307740718,
+          "f1": 0.016286644951140065,
+          "fpr": 0.007826115550294301,
+          "alarm_fraction": 0.00790625
+        },
+        "pot": {
+          "tp": 14,
+          "fp": 213,
+          "fn": 1575,
+          "tn": 30198,
+          "precision": 0.06167400881057269,
+          "recall": 0.00881057268722467,
+          "f1": 0.015418502202643172,
+          "fpr": 0.007004044589128933,
+          "alarm_fraction": 0.00709375
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.9289319515228271,
+      "loss_last": 0.20438846945762634
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "4173f351bbb030857af4c345383da8eb7a9644f6d2d9164a3e02db98dc29f870",
+    "score_sha256": "75fe7468cfa9293b241dd06dcc446f9f9341a5ee7662552f004a9eea3fd0f0c9",
+    "peak_cuda_gb": 0.04045438766479492
+  },
+  {
+    "track": "tabular",
+    "dataset": "sd_synth",
+    "method": "sdfmm_zero_synthetic",
+    "seed": 44,
+    "seconds": 7.322208693999983,
+    "metrics": {
+      "evaluated": 32000,
+      "unknown_excluded": 0,
+      "positives": 1589,
+      "normal": 30411,
+      "prevalence": 0.04965625,
+      "average_precision": 0.027923397810984157,
+      "roc_auc": 0.17868982437977513,
+      "pr_auc_trapezoid": 0.027900056023483277,
+      "operating_points": {
+        "quantile": {
+          "tp": 0,
+          "fp": 255,
+          "fn": 1589,
+          "tn": 30156,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.008385123803886752,
+          "alarm_fraction": 0.00796875
+        },
+        "pot": {
+          "tp": 0,
+          "fp": 277,
+          "fn": 1589,
+          "tn": 30134,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.009108546249712276,
+          "alarm_fraction": 0.00865625
+        }
+      }
+    },
+    "model_info": {
+      "method": "sdfmm_zero_synthetic",
+      "steps": 400,
+      "batch": 16,
+      "lr": 0.001,
+      "context": 160,
+      "patch": 4,
+      "hidden": 64,
+      "heads": 4,
+      "layers": 2,
+      "feedforward": 128,
+      "dropout": 0.2,
+      "contrastive_weight": 0.5,
+      "temperature": 0.5,
+      "fragment_length": 13,
+      "generator": "db2 unlabeled endpoint fragment detail corruption",
+      "causal": true,
+      "upstream_commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+      "loss_first": 1.8435864448547363,
+      "loss_last": 0.14389273524284363
+    },
+    "checks": {
+      "checkpoint_max_abs": 0.0,
+      "source_manifest": {
+        "dataset": "sd_synth",
+        "protocol": "Deterministic hash-group 60/20/20 split of the publisher synthetic sequences (all_DTWsim); synthetic anomalies, not real manipulation.",
+        "splits": {
+          "train": {
+            "rows": 95840,
+            "positive": 4675,
+            "normal": 91165,
+            "unknown": 0,
+            "sequences": 599
+          },
+          "calibration": {
+            "rows": 32000,
+            "positive": 1468,
+            "normal": 30532,
+            "unknown": 0,
+            "sequences": 200
+          },
+          "test": {
+            "rows": 32000,
+            "positive": 1589,
+            "normal": 30411,
+            "unknown": 0,
+            "sequences": 200
+          }
+        },
+        "source": "data/raw/sd_fmm/systhesis",
+        "temporal": true,
+        "sequence_unit": "sequence_index",
+        "sequence_id_file": "test.seq.i32",
+        "sequence_length": 160,
+        "tolerance_rows": 8,
+        "features": [
+          "publisher_value",
+          "change",
+          "mean_4",
+          "std_4",
+          "range_4",
+          "mean_16",
+          "std_16",
+          "range_16",
+          "mean_32",
+          "std_32",
+          "range_32"
+        ]
+      },
+      "test_target_sha256": "831b5bbf28a9618826786d929f22fe0c16d956f1c6256bc9dc9303fcef54e24c",
+      "information_budget": "160-row past/current context within phase and sequence; train target indices unchanged"
+    },
+    "checkpoint_sha256": "9f617de3611db7f6c1947b2c40e0831f6a0b2555cbbdd2d6b113cd6c5a7469a1",
+    "score_sha256": "0cc9a9bedc4f79d5b68b3f10bdf45758f2f6ab48030afdbd48cb22baab2afab8",
+    "peak_cuda_gb": 0.04045438766479492
+  }
+]

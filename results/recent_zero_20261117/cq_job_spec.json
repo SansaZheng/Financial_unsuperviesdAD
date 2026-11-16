@@ -1,0 +1,687 @@
+{
+  "work": "FinancialAD",
+  "name": "FinancialAD HUGE HIMVH-Zero SDFMM-Zero matched full 30 runs 20261117",
+  "code": {
+    "github": "SansaZheng/Financial_unsuperviesdAD",
+    "commit": "bff38e70725f67092feface4c6f9753cf76f8569"
+  },
+  "env": {
+    "FINAD_CODE_COMMIT": "bff38e70725f67092feface4c6f9753cf76f8569"
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 4,
+    "cpus": 4,
+    "ram_gb": 12
+  },
+  "limits": {
+    "max_hours": 2,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "depends_on": [
+    "j-1117-c75129"
+  ],
+  "command": [
+    "bash",
+    "scripts/run_recent_zero_cq.sh",
+    "full"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-zero-20261117-full",
+    "expect": [
+      {
+        "path": "results/complete.json",
+        "contains": "\"finished\": 30"
+      },
+      {
+        "path": "results/records.json",
+        "contains": "sdfmm_zero_synthetic"
+      },
+      {
+        "path": "results/input_files_sha256.json"
+      },
+      {
+        "path": "results/run_manifest.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/result.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/model.pt"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/scores.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/indices.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/thresholds.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/42/label_access_gate.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/result.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/model.pt"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/scores.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/indices.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/thresholds.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/43/label_access_gate.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/result.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/model.pt"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/scores.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/indices.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/thresholds.json"
+      },
+      {
+        "path": "results/graph/banksim/huge_financial_inductive/44/label_access_gate.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/result.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/model.pt"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/scores.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/indices.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/thresholds.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/42/label_access_gate.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/result.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/model.pt"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/scores.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/indices.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/thresholds.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/43/label_access_gate.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/result.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/model.pt"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/scores.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/indices.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/preprocessor.npz"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/thresholds.json"
+      },
+      {
+        "path": "results/graph/s_ffsd/huge_financial_inductive/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/result.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/model.pt"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/result.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/model.pt"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/result.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/model.pt"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/banksim/himvh_zero_reconstruction/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/result.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/model.pt"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/result.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/model.pt"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/result.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/model.pt"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/s_ffsd/himvh_zero_reconstruction/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_5S/sdfmm_zero_synthetic/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_15S/sdfmm_zero_synthetic/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sapienza_25S/sdfmm_zero_synthetic/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_stock/sdfmm_zero_synthetic/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_crypto/sdfmm_zero_synthetic/44/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/result.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/42/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/result.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/43/label_access_gate.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/result.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/model.pt"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/scores.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/indices.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/preprocessor.npz"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/thresholds.json"
+      },
+      {
+        "path": "results/tabular/sd_synth/sdfmm_zero_synthetic/44/label_access_gate.json"
+      }
+    ],
+    "progress": {
+      "path": "progress.log",
+      "stall_min": 30
+    }
+  }
+}

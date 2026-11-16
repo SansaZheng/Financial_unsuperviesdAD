@@ -1,0 +1,38 @@
+{
+  "upstream_sd": {
+    "status": "passed",
+    "train_source_sha256": "3167eb5c50613ae9a827d51c58d5163f54500fcdac733d4d23e6b452c1588dd7",
+    "forward_max_abs": 0.0,
+    "lengths": [
+      13,
+      160
+    ],
+    "branches": [
+      "risk",
+      "contrastive"
+    ]
+  },
+  "models": {
+    "huge": {
+      "seconds": 5.330197435000002,
+      "rows": 512,
+      "reload_max_abs": 5.960464477539063e-08,
+      "peak_cuda_gb": 0.03173494338989258
+    },
+    "himvh": {
+      "seconds": 8.731619937999994,
+      "rows": 120000,
+      "reload_max_abs": 3.5762786865234375e-07,
+      "peak_cuda_gb": 2.264803886413574
+    },
+    "sdfmm": {
+      "seconds": 0.13781545000000506,
+      "rows": 512,
+      "reload_max_abs": 0.0,
+      "peak_cuda_gb": 0.0397038459777832
+    }
+  },
+  "status": "passed",
+  "device": "cuda",
+  "torch": "2.11.0+cu130"
+}

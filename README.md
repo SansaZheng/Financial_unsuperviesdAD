@@ -1,6 +1,23 @@
 # Financial_unsuperviesdAD
 
-## 最新：稳定残差、冷启动与POT护栏（2026-11-16）
+## 最新：HUGE、HIMVH-Zero、SD-FMM-Zero（2026-11-17）
+
+**[查看完整中文报告与对比图](results/recent_zero_20261117/README_CN.md)** · [更新后的综合报告](docs/financial_ad_comparison_CN.md) · [60条新操作点指标](results/recent_zero_20261117/metrics.csv) · [各任务最佳方法](results/recent_zero_20261117/best_methods.csv) · [固定零标签协议](docs/recent_zero_protocol_CN.md)
+
+完成30次真实CUDA运行：HUGE在2组原生账户图、HIMVH-Zero在2组交易数据、SD-FMM-Zero在6组行情时序，各3种子。复用101个正式输入文件，核对共同缩放后的float32逐行特征、抽样索引和测试对象；模型重载检查通过，保存文件、原POT／q99及全部评价指标独立核验通过。额外历史和关系上下文的差异另行披露。本地76项测试通过，CQ同提交CPU／GPU门禁通过。账户图与交易／行情任务分开排名。
+
+**本轮三种方法在各自适用任务上均未超过既有最佳AP、原POT F1或q99 F1。** S-FFSD交易级HIMVH-Zero的AP为36.03%，既有HBOS为56.11%；Sapienza 15S的SD-FMM-Zero为0.10%，kNN为82.56%。HIMVH、SD-FMM明确为去除真实标签后的新适配，HUGE为金融归纳端口；结果不能代替原论文设置，也不代表已充分调优。
+
+完整榜单还补入同81个缓存的RGLD-ID／RTTAD-TTA历史成绩，保留其测试时信息预算差异；旧轮总体标准差统一转换为样本标准差，所有历史均值不变。共350条方法／任务／操作点汇总，逐种子、阈值审计、适配局限和复核命令见报告。
+
+```bash
+pip install -e '.[recent2026,test,report]'
+# 用封存的正式缓存目录，另选全新输出目录；不覆盖已有运行。
+python -m finad_recent.experiment --data /path/to/exact/tabular \
+  --graphs /path/to/exact/graphs --output /path/to/new/results --device cuda
+```
+
+## 2026-11-16：稳定残差、冷启动与POT护栏
 
 **[查看改进结果与完整消融中文报告](results/kronos_stable_20261116/README_CN.md)** · **[15法综合对比](docs/financial_ad_comparison_CN.md)** · [486条逐种子操作点](results/kronos_stable_20261116/metrics.csv) · [2×2×2因素实验](results/kronos_stable_20261116/factorial_metrics.csv) · [预先固定方案](docs/kronos_stable_protocol_CN.md)
 

@@ -1,0 +1,26 @@
+[
+  {
+    "method": "huge_financial_inductive",
+    "track": "graph",
+    "tasks": 2,
+    "ap_first": 0,
+    "pot_f1_first": 0,
+    "q99_f1_first": 0
+  },
+  {
+    "method": "himvh_zero_reconstruction",
+    "track": "tabular",
+    "tasks": 2,
+    "ap_first": 0,
+    "pot_f1_first": 0,
+    "q99_f1_first": 0
+  },
+  {
+    "method": "sdfmm_zero_synthetic",
+    "track": "tabular",
+    "tasks": 6,
+    "ap_first": 0,
+    "pot_f1_first": 0,
+    "q99_f1_first": 0
+  }
+]

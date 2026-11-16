@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "new_runs": 30,
+  "new_operating_records": 60,
+  "transaction_summary_rows": 322,
+  "graph_summary_rows": 28,
+  "all_summary_rows": 350,
+  "source_science": "bff38e70725f67092feface4c6f9753cf76f8569",
+  "source_historical": "bd9c5e85846e4a6b43bc9f8ca0ef386e0ff96f4d",
+  "reporting_source_sha256": {
+    "scripts/report_recent_zero.py": "26c25eac21c4c194b8af0d7b70b46db6b330f89fcd353549452363d392509f77",
+    "scripts/verify_recent_zero.py": "1b7963b84f3bbd4dcedf36c5dcfc0c680f4b57c74e3a3326dd86c7992e68d7cb",
+    "scripts/plot_recent_zero.py": "3cbba3e6cfd2eaaba17e12759887d761fa68e3ef81a7e64cbe136a697931be03"
+  },
+  "comparability": "Same targets/splits/float32 preprocessing, differing graph/history/pretraining and TTA budgets disclosed"
+}

@@ -85,10 +85,27 @@ def main():
         assert r['checks']['test_target_sha256'] == sha(label_file)
         old = json.loads((prior/'result.json').read_text())
         assert old['checks']['test_target_sha256'] == sha(label_file)
-        arrays_equal(run/'preprocessor.npz', prior/'preprocessor.npz')
         saved = Preprocessor.load(run/'preprocessor.npz')
-        for k in ['keep', 'missing', 'center', 'scale']:
+        previous_scaler = Preprocessor.load(prior/'preprocessor.npz')
+        for k in ['keep', 'missing']:
             np.testing.assert_array_equal(getattr(saved, k), getattr(fitted, k))
+            np.testing.assert_array_equal(getattr(saved, k), getattr(previous_scaler, k))
+        parameter_max_abs = 0.
+        for k in ['center', 'scale']:
+            for other in [fitted, previous_scaler]:
+                np.testing.assert_allclose(getattr(saved, k), getattr(other, k), rtol=1e-14, atol=1e-14)
+            parameter_max_abs = max(parameter_max_abs, float(np.max(np.abs(getattr(saved, k)-getattr(previous_scaler, k)))))
+        # Old NumPy 2.1.3 and new 2.3.5 can differ by one float64 ULP in std.
+        # Require bitwise equality of the ACTUAL float32 model inputs at all
+        # phases, rather than relaxing feature matching by a tolerance.
+        for phase in ['train', 'calibration', 'test']:
+            if track == 'tabular':
+                observations = np.memmap(source/f'{phase}.x.f32', mode='r', dtype='float32', shape=(meta['splits'][phase]['rows'], width))
+            else:
+                with np.load(source/f'{phase}.graph.npz', allow_pickle=False) as z:
+                    observations = z['x'].reshape(-1, 10)
+            np.testing.assert_array_equal(saved.transform(observations), previous_scaler.transform(observations))
+            np.testing.assert_array_equal(saved.transform(observations), fitted.transform(observations))
         assert len(cal) == len(indices['calibration']) and len(y) == len(score)
         assert np.isfinite(cal).all() and np.isfinite(score).all()
         known = y != -1; s = score[known]; y = y[known]; m = r['metrics']
@@ -129,7 +146,8 @@ def main():
                 equal(op[k], v)
         verified.append(dict(track=track, dataset=task, method=method, seed=seed, test_rows=len(score),
                              test_target_sha256=sha(label_file), paired_baseline='ae',
-                             reload_max_abs=r['checks']['checkpoint_max_abs']))
+                             reload_max_abs=r['checks']['checkpoint_max_abs'],
+                             scaler_parameter_max_abs=parameter_max_abs, shared_float32_observations_bitwise_equal=True))
     expected = {(track, task, method, seed)
                 for track, tasks, method in [('graph', ['banksim', 's_ffsd'], 'huge_financial_inductive'),
                    ('tabular', ['banksim', 's_ffsd'], 'himvh_zero_reconstruction'),
@@ -139,6 +157,7 @@ def main():
     report = dict(status='passed', runs=len(records), operating_records=2*len(records), input_files=len(inputs),
                   checks=['pinned_scientific_source', 'input_bytes_SHA256', 'checkpoint_and_score_SHA256', 'prelabel_save_gate',
                           'same_baseline_training_calibration_test_indices', 'same_baseline_test_targets', 'train_only_common_scaler',
+                          'bitwise_same_shared_float32_observations_all_phases',
                           'unknown_mask', 'AP', 'trapezoid_PR_AUC', 'ROC_AUC', 'refitted_POT', 'q99', 'confusion_counts_and_rates'],
                   verified=verified)
     (args.runs/'verification.json').write_text(json.dumps(report, indent=2)+'\n')

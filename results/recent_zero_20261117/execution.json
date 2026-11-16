@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-17",
+  "status": "completed_and_independently_verified",
+  "scientific_commit": "bff38e70725f67092feface4c6f9753cf76f8569",
+  "job": "j-1117-527aac",
+  "cq_reason": "outputs verified (Kaggle, 0.16 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-527aac/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-zero-20261117-full",
+  "cpu_gate": "j-1117-9bee95",
+  "gpu_gate": "j-1117-c75129",
+  "cq_new_method_tests": 14,
+  "local_total_tests": 76,
+  "limits": {
+    "max_usd": 0,
+    "max_hours": 2,
+    "gpu_mem_gb": 4,
+    "cpus": 4,
+    "ram_gb": 12
+  },
+  "runs": 30,
+  "operating_records": 60,
+  "prior_recent_records_reused": 54,
+  "new_financial_source_mixed": false,
+  "inputs": 101,
+  "scaler_parameter_max_abs": 1.1102230246251565e-16,
+  "fetch": "cq fetch j-1117-527aac",
+  "private_local_archive": "Sibling experiment workspace recent_zero_20261117/cq_results/j-1117-527aac",
+  "scientific_ci": {
+    "status": "success",
+    "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/43972304879",
+    "commit": "bff38e70725f67092feface4c6f9753cf76f8569"
+  },
+  "unused_qualification_jobs": [
+    "j-1117-fb0f64",
+    "j-1117-8d4b47"
+  ],
+  "notes": [
+    "Earlier jobs are synthetic diagnostics only; no financial results combined across revisions.",
+    "Full financial job and final CPU/GPU gates use the same scientific commit.",
+    "No test-driven tuning or score sign reversal after financial outcomes were inspected.",
+    "Historical population SD converted to sample SD; historical means unchanged.",
+    "No paid rental provisioned."
+  ],
+  "shared_preprocessed_float32_observations_bitwise_equal": true
+}

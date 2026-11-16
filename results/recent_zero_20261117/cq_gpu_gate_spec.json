@@ -1,0 +1,47 @@
+{
+  "work": "FinancialAD",
+  "name": "FinancialAD recent zero final endpoint smoke 20261117",
+  "code": {
+    "github": "SansaZheng/Financial_unsuperviesdAD",
+    "commit": "bff38e70725f67092feface4c6f9753cf76f8569"
+  },
+  "env": {
+    "FINAD_CODE_COMMIT": "bff38e70725f67092feface4c6f9753cf76f8569"
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 14,
+    "cpus": 4,
+    "ram_gb": 12
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "command": [
+    "bash",
+    "scripts/run_recent_zero_cq.sh",
+    "smoke"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-zero-20261117-endpoint-smoke",
+    "expect": [
+      {
+        "path": "qualification/qualification.json",
+        "contains": "\"status\": \"passed\""
+      }
+    ],
+    "progress": {
+      "path": "progress.log",
+      "stall_min": 20
+    }
+  },
+  "depends_on": [
+    "j-1117-9bee95"
+  ]
+}
