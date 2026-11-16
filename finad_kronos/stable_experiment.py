@@ -87,12 +87,12 @@ def score_all(a):
     original_records=json.loads((a.original_runs/'records.json').read_text())
     expected={(d,s) for d in TASKS for s in SEEDS}
     assert {(r['dataset'],r['seed']) for r in original_records}==expected
-    manifest={**sources(),tasks=list(TASKS),seeds=list(SEEDS),variants=list(VARIANTS),
+    manifest=dict(**sources(),tasks=list(TASKS),seeds=list(SEEDS),variants=list(VARIANTS),
               protocol_sha256=sha(ROOT/'docs/kronos_stable_protocol_CN.md'),
               original_scoring_commit=original['git_commit'],inference_commit=original['inference_source_commit'],
               assessment='Retrospective development on previously inspected test splits; not independent validation',
               reused_frozen_forecasts=True,new_backbone_inference=False,primary_variant='nc',
-              label_policy='All 162 score files and calibration rules completed before separate target decoding stage'}
+              label_policy='All 162 score files and calibration rules completed before separate target decoding stage')
     p=a.output/'run_manifest.json'
     if p.exists() and json.loads(p.read_text())!=manifest:raise ValueError('Source/environment/config changed; choose new output')
     write(p,manifest);write(a.output/'input_files_sha256.json',check_inputs(a.data))
