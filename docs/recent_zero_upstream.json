@@ -1,0 +1,21 @@
+{
+  "HUGE-GAD": {
+    "commit": "bdf8d2aec6455b48d7322c0713e31d2f6fecc1b7",
+    "files": {
+      "main.py": "d1cda20d04e280898691ae4a62f0bd490f6cdd7887eee062f8a78d921cea7e9b",
+      "modules/model.py": "b2df24fa26b5cd505a9af2ffd2ac9f1d90b5ed70527cf76bb7b2124db71b8396",
+      "modules/loss.py": "eb40ac3a8bd35ca20777ebe2496eef0850817f572db796b283840ee5a7b0fd87",
+      "modules/node_heterophily.py": "b6f84a742f84823aff9837a5b1cea9b6d3b706369b8ecd928bd8a326229da9e6",
+      "modules/utils.py": "3f7e6c515be838db25238798821177f4afd1996bc4e097fae572ea22bd90ed61",
+      "modules/ranking.py": "1b4453444daa996770d1cb73ef57cc858a41f3f88e6856d96e9a426f3ec16514"
+    }
+  },
+  "SD-FMM": {
+    "commit": "0d1a2158ee849fdc31a127bd049e622174f5c893",
+    "files": {
+      "train.py": "3167eb5c50613ae9a827d51c58d5163f54500fcdac733d4d23e6b452c1588dd7",
+      "DWT.py": "61169121a90e885b69d637340b5e220700faf9002d3bf6ca410a58b6fee9df76",
+      "README.md": "21dc2c1d106ac1fee50275f9c4d5ebf2617d54f763419d281bda8b7a29823bf6"
+    }
+  }
+}
