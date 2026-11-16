@@ -39,5 +39,38 @@
     "Historical population SD converted to sample SD; historical means unchanged.",
     "No paid rental provisioned."
   ],
-  "shared_preprocessed_float32_observations_bitwise_equal": true
+  "shared_preprocessed_float32_observations_bitwise_equal": true,
+  "publication": {
+    "analysis_commit": "c76649c3663d782c4ca354a67de535a6deab27f7",
+    "branches": [
+      "main",
+      "codex/classic-financial-ad",
+      "codex/huge-himvh-sdfmm-zero"
+    ],
+    "ci": {
+      "commit": "c76649c3663d782c4ca354a67de535a6deab27f7",
+      "workflow_id": 43978530585,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/43978530585",
+      "jobs": [
+        {
+          "name": "tests (3.10)",
+          "conclusion": "success",
+          "id": 133688665373
+        },
+        {
+          "name": "tests (3.12)",
+          "conclusion": "success",
+          "id": 133688664820
+        }
+      ]
+    },
+    "note": "Subsequent completion-record commits do not change trained code, scores, metrics or report tables."
+  },
+  "historical_shared_core_code_identical": [
+    "finad/preprocessing.py",
+    "finad/thresholds.py",
+    "finad/evaluation.py"
+  ]
 }

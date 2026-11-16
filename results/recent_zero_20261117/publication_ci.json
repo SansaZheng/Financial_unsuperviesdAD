@@ -1,0 +1,19 @@
+{
+  "commit": "c76649c3663d782c4ca354a67de535a6deab27f7",
+  "workflow_id": 43978530585,
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/43978530585",
+  "jobs": [
+    {
+      "name": "tests (3.10)",
+      "conclusion": "success",
+      "id": 133688665373
+    },
+    {
+      "name": "tests (3.12)",
+      "conclusion": "success",
+      "id": 133688664820
+    }
+  ]
+}
