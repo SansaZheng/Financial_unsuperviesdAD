@@ -1,0 +1,7 @@
+{
+  "source_job": "j-1114-2e8178",
+  "path": "data/derived/zero_label_20261114_tabular.tar.gz",
+  "bytes": 53954523,
+  "sha256": "ab36533057d62c8cff003b7d9efb457a8dced77ef3f8953d4a10725e8c54fe37",
+  "reason": "Exact 81 paired baseline files; avoid regeneration rounding differences."
+}
