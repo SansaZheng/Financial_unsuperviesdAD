@@ -1,14 +1,14 @@
 {
-  "revision": 2,
+  "revision": 3,
   "project_path": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/source",
   "venue": null,
   "research": {
-    "topic": "零标签金融异常检测公平对比",
-    "route_id": "recent-repair-20261117",
-    "method_name": "HUGE / HIMVH-Zero / SD-FMM-Zero",
-    "route": "Implementation audit and controlled zero-label adaptation ablations"
+    "topic": "\u96f6\u6807\u7b7e\u91d1\u878d\u5f02\u5e38\u68c0\u6d4b\u516c\u5e73\u5bf9\u6bd4",
+    "route_id": "roleweight-20261117",
+    "method_name": "HUGE / HIMVH-Zero",
+    "route": "Train-only role adapters and label-free field score calibration"
   },
-  "output_root": "results/recent_repair_20261117",
+  "output_root": "results/roleweight_20261117",
   "languages": {
     "reports": [
       "Chinese",
