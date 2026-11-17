@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "status": "awaiting_CQ_control_host_disk_space",
+  "status": "formal_running_storage_tight",
   "scientific_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
   "jobs": {
     "huge": "j-1117-1b741c",
@@ -104,6 +104,15 @@
     ],
     "user_notified": true,
     "requested_free_gb": 5,
-    "other_project_files_untouched": true
+    "other_project_files_untouched": true,
+    "partial_recovery_observed_free_gb": 1.5,
+    "now": "two_HIM_shards_running_one_queued"
+  },
+  "partial_transport_verified_configurations": 132,
+  "tooling_ci": {
+    "commit": "e6ad54b746320b7b571a72d3b48a23b5da7f9fff",
+    "id": 44007717893,
+    "conclusion": "success",
+    "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/44007717893"
   }
 }

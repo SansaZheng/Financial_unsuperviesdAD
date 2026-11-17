@@ -1,7 +1,7 @@
 {
   "status": "partial_transport_integrity_passed",
   "financial_metrics_inspected": false,
-  "configurations": 96,
+  "configurations": 132,
   "jobs": [
     {
       "job": "j-1117-1b741c",
@@ -17,6 +17,12 @@
     },
     {
       "job": "j-1117-6bc0e5",
+      "configurations": 36,
+      "source_and_artifact_SHA_passed": true,
+      "AE_reference_indices_equal": true
+    },
+    {
+      "job": "j-1117-b4531c",
       "configurations": 36,
       "source_and_artifact_SHA_passed": true,
       "AE_reference_indices_equal": true
