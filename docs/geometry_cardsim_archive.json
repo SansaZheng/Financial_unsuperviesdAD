@@ -1,0 +1,131 @@
+{
+  "path": "data/derived/geometry_20261117_cardsim.tar.gz",
+  "sha256": "b33663316052d419511904b21514ebed9575844ae06a8ab010b9e3fde10be777",
+  "bytes": 3181119,
+  "files": {
+    "graphs/cardsim/calibration.graph.npz": {
+      "bytes": 161311,
+      "sha256": "6752d1c0a60c3249d1aac7124517b9858cd310f87484921eb4022a84c8bbf779"
+    },
+    "graphs/cardsim/calibration.ids.json": {
+      "bytes": 18260,
+      "sha256": "d7251a9d41b7bded2775c6fb71213a9a12e20d29f55f6579e9a99bb03a3728f8"
+    },
+    "graphs/cardsim/calibration.y.npy": {
+      "bytes": 2176,
+      "sha256": "b8a21df1515024a5418cf943dde61a571227d9c6610142b04fad864d1540bb88"
+    },
+    "graphs/cardsim/manifest.json": {
+      "bytes": 1158,
+      "sha256": "98e357ba42e0197a78c3c77e55be7f94f3b585657a14c38990edc142dca4d197"
+    },
+    "graphs/cardsim/test.graph.npz": {
+      "bytes": 161579,
+      "sha256": "f096526f85a5a346c8cdd4a0eab40741c0d2410233ddff3e5e6e8e4189edd71b"
+    },
+    "graphs/cardsim/test.ids.json": {
+      "bytes": 18260,
+      "sha256": "d7251a9d41b7bded2775c6fb71213a9a12e20d29f55f6579e9a99bb03a3728f8"
+    },
+    "graphs/cardsim/test.y.npy": {
+      "bytes": 2176,
+      "sha256": "933e6553b64fc6939fd40f7cb9dc676ef13e25682a872b8a863dfacf4ee35476"
+    },
+    "graphs/cardsim/train.graph.npz": {
+      "bytes": 235128,
+      "sha256": "77275dbf711a2b8608f13651213b8140c98b5365b582c014b6c850e73b9899a5"
+    },
+    "graphs/cardsim/train.ids.json": {
+      "bytes": 18260,
+      "sha256": "d7251a9d41b7bded2775c6fb71213a9a12e20d29f55f6579e9a99bb03a3728f8"
+    },
+    "graphs/cardsim/train.y.npy": {
+      "bytes": 2176,
+      "sha256": "d461487257ee5aa719e7e55b2bf2c1bbb388ecb01cacee5d9fc662372dc10395"
+    },
+    "tabular/cardsim/calibration.keys.npz": {
+      "bytes": 86274,
+      "sha256": "1c215c1b7c4028567e747d803cbdf6488a4c3f1245d21c45e7ab7eae063470c1"
+    },
+    "tabular/cardsim/calibration.rows.i64": {
+      "bytes": 128168,
+      "sha256": "e542003aa0f3d2098fae05848753087f84d4f45ea47f8e42c2ac9d0dab7655bd"
+    },
+    "tabular/cardsim/calibration.views.npz": {
+      "bytes": 165046,
+      "sha256": "60992d5074f8c8e4685fd598d4c8dce00fd7c012b4f4d36fe08b8157f050e9e6"
+    },
+    "tabular/cardsim/calibration.x.f32": {
+      "bytes": 1538016,
+      "sha256": "dd530569b1464eca135782f14725cb48ae140b17ca3a2a3cddbdca18724f77ed"
+    },
+    "tabular/cardsim/calibration.y.i8": {
+      "bytes": 16021,
+      "sha256": "1f6a5cf1fee39d9e6bf508304ff034a26f566638bb730889a9eb85f3bace7a89"
+    },
+    "tabular/cardsim/manifest.json": {
+      "bytes": 1002,
+      "sha256": "8157ea15693074430ca173bb499a348c3182960f699a833291f8c7f98b00d653"
+    },
+    "tabular/cardsim/test.keys.npz": {
+      "bytes": 86195,
+      "sha256": "26d6079338b5d469e642b46ab105c32c0b4059d8217cba86741c43eb7ce132ad"
+    },
+    "tabular/cardsim/test.rows.i64": {
+      "bytes": 128168,
+      "sha256": "0476cffd7239dd20e8aefadcd4cc90c5e7b0503362287a70cee3da42098f7b6e"
+    },
+    "tabular/cardsim/test.views.npz": {
+      "bytes": 164983,
+      "sha256": "b09b65aebb53677ac4c6587cc13ab02d9416d0305055d8e034d7ef21759c876c"
+    },
+    "tabular/cardsim/test.x.f32": {
+      "bytes": 1538016,
+      "sha256": "3c45db3abef561e938e21e3aad9a61dc9835f8c277149009c781237a88527a55"
+    },
+    "tabular/cardsim/test.y.i8": {
+      "bytes": 16021,
+      "sha256": "cf4660da17fb6fcb1b10da08094c529e7c2a380a8c766b1103e42ed1d6f96cc5"
+    },
+    "tabular/cardsim/train.keys.npz": {
+      "bytes": 255391,
+      "sha256": "d3af5cd6f5d3b6c43c8136a34dfae19fa6abb16820f50a2338f23317a6b1c3e3"
+    },
+    "tabular/cardsim/train.rows.i64": {
+      "bytes": 384520,
+      "sha256": "080c3a40546dd84710f0af60bec8a3ef3204f7f3ed430e0617fe5bdf5e164c68"
+    },
+    "tabular/cardsim/train.views.npz": {
+      "bytes": 500452,
+      "sha256": "5b4c56f8d5a0f25985e670aec60ce39ebb9cad16eeded3924a28ecdd749b1888"
+    },
+    "tabular/cardsim/train.x.f32": {
+      "bytes": 4614240,
+      "sha256": "c066fd25a14bb7303e09fac71e589d3363151e4d9543ccbcbf09fab792486b7a"
+    },
+    "tabular/cardsim/train.y.i8": {
+      "bytes": 48065,
+      "sha256": "e0a5f76a9d1f3b988e3d1e4dd10d83c7fc7b7b63326625ce06c32f98f5a0aa79"
+    }
+  },
+  "generation": {
+    "status": "complete",
+    "seed": 2026111707,
+    "n_payers": 1024,
+    "n_days": 90,
+    "payer_payee_factor": 1,
+    "rows": 80107,
+    "input_files": 23,
+    "generator_zip_sha256": "9ec5a12589f5fb2b9fcb4cfbf0f0b779293bea536b17ccc9117fdb97f3eaccea",
+    "archive_sha256": "cd77b1bb131953e935c7644ce88d8dbc5adc9018bc679b302342fc7bc475151d",
+    "archive_bytes": 2777321,
+    "raw_sha256": "3b50238731061dfb203163271e64e73e70783067a48883705b9b07f719d5b1c9",
+    "source": "https://www.federalreserve.gov/econres/feds/cardsim-a-bayesian-simulator-for-payment-card-fraud-detection-research.htm",
+    "labels_used_for_learning": false,
+    "outcomes_inspected": false
+  },
+  "generator_source_commit": "2f5d44176bb5252f5d266a7d726cf79b547a95f4",
+  "generation_CQ_job": "j-1117-809e35",
+  "key_postprocessing": "Added exact sampled-view keys from raw feature columns only; no fraud column read; original feature/target files preserved",
+  "independent_outcomes_inspected": false
+}

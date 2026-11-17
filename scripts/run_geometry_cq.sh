@@ -32,7 +32,7 @@ PY
   return "$task_status"
 }
 trap cleanup EXIT
-python -m pip install -q 'numpy==2.3.5' 'scipy==1.15.3' 'pandas==2.3.3' 'scikit-learn==1.7.2' 'PyWavelets==1.8.0' 'pytest>=8' 'joblib>=1.3' 'threadpoolctl>=3' 'pythresh==1.1.1' 'numba>=0.63'
+python -m pip install -q 'numpy==2.3.5' 'scipy==1.15.3' 'pandas==2.3.3' 'scikit-learn==1.7.2' 'PyWavelets==1.8.0' 'pytest>=8' 'joblib>=1.3' 'threadpoolctl>=3' 'pythresh==1.1.1' 'numba>=0.63' 'torch-geometric==2.6.1'
 mode="${1:-env}"
 if [[ "$#" -gt 0 ]]; then shift; fi
 if [[ "$mode" == env ]]; then

@@ -29,6 +29,7 @@ def prepare(output):
     for k,s in enumerate(PHASES):
         mask=split==k;f=d.loc[mask];xx=x[mask];xx.tofile(tab/f'{s}.x.f32');y=f.fraud.to_numpy(dtype='i1');y.tofile(tab/f'{s}.y.i8');np.flatnonzero(mask).astype('i8').tofile(tab/f'{s}.rows.i64')
         views=[hyperedges(f[c].astype(str).to_numpy(),4) for c in ['payer_id','payee_id','credit_card','remote']];np.savez_compressed(tab/f'{s}.views.npz',**{f'e{i}':v for i,v in enumerate(views)})
+        np.savez_compressed(tab/f'{s}.keys.npz',**{f'k{i}':f[c].astype(str).to_numpy(dtype='U') for i,c in enumerate(['payer_id','payee_id','credit_card','remote'])})
         meta['splits'][s]=dict(rows=len(f))
         sources=sorted(f.payer_id.unique(),key=lambda a:hashlib.sha256(('financial-zero-20261114:'+str(a)).encode()).hexdigest())[:4096];gf=f.loc[f.payer_id.isin(sources)];tt=pd.to_datetime(gf.date_time).astype('int64').to_numpy()
         gx,edges,active,src,dst,ids,sb=make_phase(gf.payer_id,gf.payee_id,tt,gf.amount.to_numpy());np.savez_compressed(graph/f'{s}.graph.npz',x=gx,active=active,**{f'e{i}':e for i,e in enumerate(edges)});(graph/f'{s}.ids.json').write_text(json.dumps(ids));np.save(graph/f'{s}.y.npy',aggregate_targets(src,dst,gf.fraud.to_numpy(),len(ids)),allow_pickle=False)
