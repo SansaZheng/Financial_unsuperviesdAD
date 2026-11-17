@@ -20,3 +20,4 @@
 {"time": "2026-11-17T06:22:50.361462+00:00", "stage": "006", "event": "started", "revision": 3}
 {"time": "2026-11-17T06:26:56.029979+00:00", "stage": "006", "event": "all_144_verified_and_reported", "revision": 3, "source": "5a072a436b7bbbb55943159216ec0e7196e8bff9"}
 {"time": "2026-11-17T06:30:05.147410+00:00", "stage": "006", "event": "complete_verified_and_published", "revision": 3, "analysis_commit": "04d300211f67a4c40d54de5663ebfb96de8aa9b6", "branches": ["main", "codex/classic-financial-ad"], "CI": "success"}
+{"timestamp": "2026-11-17T13:06:36.494700+00:00", "run_id": "geometry-20261117", "prompt_id": "007", "revision": 4, "executor": "Codex", "status": "prepared", "inputs": ["original101", "CardSim official ZIP", "verified HIM parents"], "outputs": ["results/geometry_20261117"]}

@@ -1,0 +1,5 @@
+# Stage007 — local task specification
+
+Executor: Codex primary agent directly; no external model invocation or delegation. Revision4,venue none,route geometry-skill-independent-20261117. Goal: user-authorized HUGE teacher/HIM weight refinement, unchanged old cohorts, independent validation, full comparisons/ablations, Chinese report and push.
+
+Implement exactly [frozen protocol](../../../docs/geometry_protocol_CN.md). Inputs: original101 sealed caches,verified previous HIM parents,official untouched CardSim ZIP. No new label-derived choices. Before independent generation pin architecture,hyperparameters,score variants,simulator seed/size,split and baseline set. Execute CPU gate and new input provenance,then same-source GPU gates/full CQ runs at $0. Independently verify all231 configs/462 operations,54 newfits and18 HIM models;retain failures/negative results. Outputs results/geometry_20261117 separate from history. Publish all comparisons, independent synthetic-validation limits and bilingual explanation;never claim real-world external validation or exact supervised-paper reproduction.

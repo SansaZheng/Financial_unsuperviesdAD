@@ -1,0 +1,22 @@
+{
+  "revision": 3,
+  "project_path": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/source",
+  "venue": null,
+  "research": {
+    "topic": "\u96f6\u6807\u7b7e\u91d1\u878d\u5f02\u5e38\u68c0\u6d4b\u516c\u5e73\u5bf9\u6bd4",
+    "route_id": "roleweight-20261117",
+    "method_name": "HUGE / HIMVH-Zero",
+    "route": "Train-only role adapters and label-free field score calibration"
+  },
+  "output_root": "results/roleweight_20261117",
+  "languages": {
+    "reports": [
+      "Chinese",
+      "English"
+    ]
+  },
+  "compute": {
+    "budget_usd": 0,
+    "policy": "CQ managed free resources; no paid rental authorized"
+  }
+}
