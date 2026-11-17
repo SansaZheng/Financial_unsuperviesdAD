@@ -10,6 +10,18 @@ from finad_repair.hypergraph import NativeContext, block_forward, assignments, m
 from finad_repair.roles import RoleNormalizer, canonical, score_without_self
 
 
+def test_reload_checks_all_tensors_and_exact_cpu_forward():
+    from types import SimpleNamespace
+    from finad_repair.experiment import reload_net
+    net=HimvhNet(3,4,hidden=8,layers=3)
+    model=SimpleNamespace(net=net);loaded=SimpleNamespace(net=copy.deepcopy(net))
+    x=np.random.default_rng(8).normal(size=(24,3)).astype(np.float32)
+    assert reload_net(model,loaded,x,'cpu')==0
+    with torch.no_grad():
+        next(iter(loaded.net.parameters())).view(-1)[0]+=1e-6
+    with pytest.raises(AssertionError):reload_net(model,loaded,x,'cpu')
+
+
 def test_native_ego_matches_full_forward_and_parameter_gradients():
     torch.set_num_threads(2);torch.manual_seed(3)
     x=np.random.default_rng(3).normal(size=(20,3)).astype(np.float32)

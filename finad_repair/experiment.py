@@ -6,6 +6,7 @@ from pathlib import Path
 import platform
 import time
 import shutil
+import copy
 import numpy as np
 import scipy
 import torch
@@ -42,14 +43,22 @@ def raw_values(data, meta):
 
 
 def reload_net(model, loaded, x, device):
-    # No labels and no mutable original BN buffers are read/changed.
+    # CUDA scatter reductions are order-dependent even for identical weights.
+    # Check every persisted tensor bitwise, then compare CPU evaluation exactly;
+    # do not weaken tolerances or alter the training/scoring implementation.
     model.net.eval(); loaded.net.eval()
+    state = model.net.state_dict(); restored = loaded.net.state_dict()
+    assert state.keys() == restored.keys()
+    for name in state:
+        assert torch.equal(state[name].detach().cpu(), restored[name].detach().cpu()), name
     width = x.shape[1]; probe = x[:min(64, len(x))]
     views = [hyperedges(np.arange(len(probe))//8) for _ in range(4)]
-    enhanced = torch.as_tensor(discrepancies(probe, views), device=device)
-    edges = [torch.as_tensor(e, device=device) for e in views]
-    with torch.no_grad(): a = model.net(enhanced, edges); b = loaded.net(enhanced, edges)
-    np.testing.assert_allclose(a.cpu(), b.cpu(), rtol=1e-5, atol=1e-6)
+    enhanced = torch.as_tensor(discrepancies(probe, views))
+    edges = [torch.as_tensor(e) for e in views]
+    original_cpu = copy.deepcopy(model.net).cpu()
+    restored_cpu = copy.deepcopy(loaded.net).cpu()
+    with torch.no_grad(): a = original_cpu(enhanced, edges); b = restored_cpu(enhanced, edges)
+    np.testing.assert_array_equal(a.numpy(), b.numpy())
     return float((a-b).abs().max())
 
 
