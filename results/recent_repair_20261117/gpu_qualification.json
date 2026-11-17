@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "financial_metrics": false,
+  "real_targets_read": false,
+  "train_features_only": true,
+  "models": {
+    "huge": {
+      "seconds": 7.140479849999991,
+      "checkpoint_reload_max_abs": 5.066394805908203e-07,
+      "peak_cuda_gb": 0.5258712768554688,
+      "peak_rss_linux_gb": 1.46319580078125
+    },
+    "himvh": {
+      "seconds": 23.353288964,
+      "checkpoint_reload_max_abs": 0.0,
+      "peak_cuda_gb": 1.6843156814575195,
+      "peak_rss_linux_gb": 2.608959197998047
+    },
+    "sdfmm": {
+      "seconds": 1.9316234209999834,
+      "checkpoint_reload_max_abs": 0.0,
+      "peak_cuda_gb": 0.03826427459716797,
+      "peak_rss_linux_gb": 2.608959197998047
+    }
+  },
+  "torch": "2.11.0+cu130"
+}

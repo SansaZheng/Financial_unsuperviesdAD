@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-17",
+  "status": "awaiting_CQ_control_host_disk_space",
+  "scientific_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+  "jobs": {
+    "huge": "j-1117-1b741c",
+    "himvh": {
+      "42": "j-1117-19115b",
+      "43": "j-1117-cc6f56",
+      "44": "j-1117-d60491"
+    },
+    "sdfmm": {
+      "42": "j-1117-b4531c",
+      "43": "j-1117-6bc0e5",
+      "44": "j-1117-3e8c3c"
+    }
+  },
+  "cpu_gate": "j-1117-ead7fb",
+  "gpu_gate": "j-1117-875617",
+  "gates_same_scientific_source": true,
+  "local_total_tests": 92,
+  "cq_cpu_total_tests": 92,
+  "planned_configurations": 174,
+  "planned_actual_fits": 156,
+  "planned_operating_records": 348,
+  "inputs_per_family": 101,
+  "max_usd": 0,
+  "paid_rental": false,
+  "scientific_ci": {
+    "id": 43998519732,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/43998519732"
+  },
+  "superseded_jobs": [
+    {
+      "id": "j-1117-b9148b",
+      "status": "failed_output_gate",
+      "reason": "Expected91 tests count absent; optional dependencies added and logs exposed before successful replacement; no financial fit"
+    },
+    {
+      "id": "j-1117-79b402",
+      "status": "cancelled_obsolete_gpu_gate"
+    },
+    {
+      "id": "j-1117-16b403",
+      "status": "cancelled_queued",
+      "reason": "Output-spec filename corrected; replaced before execution"
+    },
+    {
+      "id": "j-1117-d35918",
+      "status": "failed_before_first_metric",
+      "reason": "CUDA repeated forward scatter roundoff8.7e-6 exceeded original1e-6 reload tolerance; exact tensor/CPU gate added, no training/scoring change"
+    },
+    {
+      "id": "j-1117-421a30",
+      "status": "cancelled_with_verified_outputs_not_exportable",
+      "reason": "Uniform source rerun after reload-gate fix; no outcomes viewed or reused"
+    },
+    {
+      "id": "j-1117-1bb02c",
+      "status": "cancelled_provider_terminal_archive_size_failure",
+      "reason": "Provider completed but archive exceeds500MiB; no model-performance failure inferred, no financial metrics received"
+    },
+    {
+      "id": "j-1117-7982b9",
+      "status": "cancelled_before_execution",
+      "reason": "Source-equivalence reuse considered before outcomes, but cancelled-job CQ export409 made reuse unavailable; fresh job1b741c required."
+    },
+    {
+      "id": "j-1117-9e0a75",
+      "status": "failed_archive_limit",
+      "reason": "Archive exceeds500MiB; no fitted metrics received or inspected; replaced by3 seed shards with identical model/configuration source."
+    }
+  ],
+  "notes": [
+    "Primary role/cm/ge and all factorials frozen before new financial outcomes.",
+    "Previous test outcomes motivated development: retrospective evaluation, not a new blind test.",
+    "No financial metrics inspected while formal jobs were pending.",
+    "Final CPU/GPU gates and all formal jobs use exactly the same scientific commit.",
+    "Additional protocol clarification explains existing full-graph HUGE training; no setting changed.",
+    "Only the current formal job installation cache is removed after successful execution; scientific artifacts/inputs and all previous jobs are retained.",
+    "Replacement SD-FMM submission waits until obsolete provider job termination is confirmed, preventing duplicate execution.",
+    "A pre-outcome AST audit proved218f086→09de7f3 changes only HIMVH reload helper, its copy import, tests and protocol, with no fitting/scoring change.",
+    "Reusing complete cancelled outputs was considered to avoid repeats, but CQ export409 disallowed receiving them; no administrative bypass attempted. Final analysis retains the uniform09de7f3 rerun rule.",
+    "CQ Kaggle retry-in-place was refused; a fresh own job/destination was submitted instead.",
+    "Obsolete SD archive exceeded CQ500MiB uncompressed retrieval cap; provider finished, no metrics were received.",
+    "Final SD108 configurations are split into3 independent36-configuration seed jobs using unchanged source09de7f3 CLI. Each shard stages exact inputs with existing train-feature-only smoke; diagnostic fits excluded from final156 count.",
+    "HUGE24 done and scientific files received by partial --path results transport; independent verification will validate every required scientific artifact and paired immutable inputs.",
+    "HIMVH42 archive also exceeded500MiB.3 new14-configuration shards submitted after terminal failure; same09de7f3, same settings.",
+    "HIMVH shards remove only their own temporary unpacked input copies and installation cache after saving all scientific artifacts. Original101-byte-matched input archives and source files retained.",
+    "Native Kaggle archive access diagnostic returned BackendError; no metrics read. Read-only control-host SSH probe failed host-key verification; no trust override or authentication bypass attempted. No further recovery attempts; normal CQ shards are used."
+  ],
+  "superseded_scientific_commit": "218f086bc8720a795d50d453971464c7f6a08987",
+  "frozen_protocol_file": "frozen_protocol_at_scientific_commit.txt",
+  "frozen_protocol_sha256": "b30ad6359916e6685c7709fe189be66f4271031566536cf5154b6cff73e2c0e6",
+  "archive_access_probe": "j-1117-452360",
+  "storage_block": {
+    "error": "No space left on device",
+    "pending_jobs": [
+      "j-1117-19115b",
+      "j-1117-cc6f56",
+      "j-1117-d60491"
+    ],
+    "user_notified": true,
+    "requested_free_gb": 5,
+    "other_project_files_untouched": true
+  }
+}

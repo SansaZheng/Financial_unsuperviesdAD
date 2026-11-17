@@ -1,0 +1,49 @@
+==> stdout (reported 09:46:28) <==
+Staged101 exact prior input files
+RUN 1/42 himvh/banksim/legacy/42
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/cq-src/finad_repair/experiment.py", line 181, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/tmp/cq-src/finad_repair/experiment.py", line 169, in main
+    result,info,checks=graph_run(a,task,variant,seed,out,cache) if family=='huge' else tabular_run(a,task,family,variant,seed,out,cache)
+                                                                                       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/cq-src/finad_repair/experiment.py", line 120, in tabular_run
+    probe_error=reload_net(model,loaded,x['train'][ti],args.device)
+  File "/tmp/cq-src/finad_repair/experiment.py", line 52, in reload_net
+    np.testing.assert_allclose(a.cpu(), b.cpu(), rtol=1e-5, atol=1e-6)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/numpy/testing/_private/utils.py", line 1711, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/numpy/testing/_private/utils.py", line 919, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-05, atol=1e-06
+
+Mismatched elements: 184 / 3904 (4.71%)
+Max absolute difference among violations: 8.702278e-06
+Max relative difference among violations: 0.00259087
+ ACTUAL: array([[-1.429583,  1.537442,  0.6117  , ..., -0.729077,  0.148432,
+         3.074434],
+       [ 0.690886,  1.350461,  0.031166, ..., -0.755635,  0.077492,...
+ DESIRED: array([[-1.429581,  1.53744 ,  0.6117  , ..., -0.729076,  0.148434,
+         3.074434],
+       [ 0.690884,  1.350461,  0.031167, ..., -0.755635,  0.07749 ,...
+==> stderr (reported 09:46:28) <==
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+bigframes 2.51.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+ydata-profiling 4.18.4 requires numba<0.63,>=0.60, but you have numba 0.68.1 which is incompatible.
+dopamine-rl 4.1.2 requires gym<=0.25.2, but you have gym 0.26.2 which is incompatible.
+moviepy 1.0.3 requires decorator<5.0,>=4.0.2, but you have decorator 5.3.1 which is incompatible.
+cuml-cu13 26.6.0 requires numba<0.65.0,>=0.60.0, but you have numba 0.68.1 which is incompatible.
+cudf-cu13 26.6.0 requires numba<0.65.0,>=0.60.0, but you have numba 0.68.1 which is incompatible.
+ydf 0.15.0 requires protobuf<7.0.0,>=5.29.1, but you have protobuf 7.36.2 which is incompatible.
+gradio 6.30.0 requires pillow<13.0,>=8.0, but you have pillow 13.0.0 which is incompatible.
+pytensor 2.38.3 requires numba<=0.65.1,>=0.58, but you have numba 0.68.1 which is incompatible.

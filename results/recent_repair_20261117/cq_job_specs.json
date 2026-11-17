@@ -1,0 +1,4371 @@
+{
+  "huge": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final complete HUGE repair24 v4 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nbash scripts/run_repair_cq.sh huge\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True)'"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-huge-v4",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 24"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_long/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role_noself/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_long/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role_noself/44/role_1.npz"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ],
+    "replaces": [
+      "j-1117-7982b9"
+    ]
+  },
+  "cpu": {
+    "work": "FinancialAD",
+    "name": "FinancialAD repair92 tests exact reload gate 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 4
+    },
+    "limits": {
+      "max_hours": 0.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_repair_cq.sh",
+      "env"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-env-v3",
+      "expect": [
+        {
+          "path": "tests.txt",
+          "contains": "92 passed"
+        }
+      ],
+      "progress": {
+        "path": "tests.txt",
+        "stall_min": 20
+      }
+    }
+  },
+  "gpu": {
+    "work": "FinancialAD",
+    "name": "FinancialAD repaired exact reload GPU shape gate 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 6,
+      "cpus": 4,
+      "ram_gb": 16
+    },
+    "limits": {
+      "max_hours": 0.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_repair_cq.sh",
+      "smoke"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-smoke-v3",
+      "expect": [
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 20
+      }
+    },
+    "depends_on": [
+      "j-1117-ead7fb"
+    ]
+  },
+  "sdfmm_seed42": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final SD-FMM repair36 seed42 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family sdfmm --seeds 42 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed42",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 36"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/42/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/42/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ]
+  },
+  "sdfmm_seed43": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final SD-FMM repair36 seed43 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family sdfmm --seeds 43 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed43",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 36"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/43/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/43/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ]
+  },
+  "sdfmm_seed44": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final SD-FMM repair36 seed44 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family sdfmm --seeds 44 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed44",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 36"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_5S/sdfmm/ge_nocontrast/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_15S/sdfmm/ge_nocontrast/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sapienza_25S/sdfmm/ge_nocontrast/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_stock/sdfmm/ge_nocontrast/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_crypto/sdfmm/ge_nocontrast/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/e/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/g/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge/44/result.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/model.pt"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/sd_synth/sdfmm/ge_nocontrast/44/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ]
+  },
+  "himvh_seed42": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final HIMVH repair14 seed42 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 6,
+      "cpus": 4,
+      "ram_gb": 16
+    },
+    "limits": {
+      "max_hours": 1.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family himvh --seeds 42 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True);shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"inputs\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed42",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 14"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/42/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/42/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/42/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/42/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/42/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/42/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/42/components.npz"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ],
+    "replaces": [
+      "j-1117-9e0a75"
+    ]
+  },
+  "himvh_seed43": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final HIMVH repair14 seed43 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 6,
+      "cpus": 4,
+      "ram_gb": 16
+    },
+    "limits": {
+      "max_hours": 1.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family himvh --seeds 43 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True);shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"inputs\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed43",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 14"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/43/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/43/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/43/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/43/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/43/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/43/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/43/components.npz"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ]
+  },
+  "himvh_seed44": {
+    "work": "FinancialAD",
+    "name": "FinancialAD final HIMVH repair14 seed44 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "09de7f313d57470293f1309ed611914a88cbe62c"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 6,
+      "cpus": 4,
+      "ram_gb": 16
+    },
+    "limits": {
+      "max_hours": 1.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$PWD\"\ntrap 'tail -n 80 \"$CQ_OUTPUT_DIR/progress.log\" >&2' ERR\nbash scripts/run_repair_cq.sh smoke\npython -m finad_repair.experiment --family himvh --seeds 44 --device cuda --data \"$CQ_OUTPUT_DIR/inputs/tabular\" --graphs \"$CQ_OUTPUT_DIR/inputs/graphs\" --output \"$CQ_OUTPUT_DIR/results\" >> \"$CQ_OUTPUT_DIR/progress.log\" 2>&1\npython -c 'import os,shutil;shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"pip-cache\"),ignore_errors=True);shutil.rmtree(os.path.join(os.environ[\"CQ_OUTPUT_DIR\"],\"inputs\"),ignore_errors=True)'\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed44",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 14"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "09de7f313d57470293f1309ed611914a88cbe62c"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/f00/44/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/c/44/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m/44/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm/44/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/m_flat/44/components.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/model.pt"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/result.json"
+        },
+        {
+          "path": "results/tabular/banksim/himvh/cm_flat/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/legacy/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/f00/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/c/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/m_flat/44/components.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/model.pt"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/result.json"
+        },
+        {
+          "path": "results/tabular/s_ffsd/himvh/cm_flat/44/components.npz"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-875617"
+    ]
+  }
+}
