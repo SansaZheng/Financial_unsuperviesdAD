@@ -1,0 +1,1694 @@
+{
+  "envA": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry114 CPU gate",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "2f5d44176bb5252f5d266a7d726cf79b547a95f4"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "2f5d44176bb5252f5d266a7d726cf79b547a95f4"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 0.25,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "env"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-envA",
+      "expect": [
+        {
+          "path": "tests.txt",
+          "contains": "114 passed"
+        }
+      ]
+    }
+  },
+  "generate": {
+    "work": "FinancialAD",
+    "name": "FinancialAD sealed independent CardSim generation",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "2f5d44176bb5252f5d266a7d726cf79b547a95f4"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "2f5d44176bb5252f5d266a7d726cf79b547a95f4"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 0.75,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "generate"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-generation",
+      "expect": [
+        {
+          "path": "validation/generation.json",
+          "contains": "\"status\": \"complete\""
+        },
+        {
+          "path": "validation/cardsim_inputs.tar.gz"
+        },
+        {
+          "path": "validation/input_files_sha256.json"
+        },
+        {
+          "path": "validation/raw_transactions.csv.gz"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 30
+      }
+    },
+    "depends_on": [
+      "j-1117-0de846"
+    ]
+  },
+  "envB": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry final source114 CPU gate",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 0.25,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "env"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-envB",
+      "expect": [
+        {
+          "path": "tests.txt",
+          "contains": "114 passed"
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry actual shape GPU and EB gate",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 8,
+      "cpus": 4,
+      "ram_gb": 12
+    },
+    "limits": {
+      "max_hours": 0.5,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "smoke"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-smoke",
+      "expect": [
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 25
+      }
+    },
+    "depends_on": [
+      "j-1117-938eec"
+    ]
+  },
+  "huge": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry full huge",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 8,
+      "cpus": 4,
+      "ram_gb": 12
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "huge"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-huge",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 72"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/dual.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/components.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/calibrator.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/42/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/dual.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/components.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/calibrator.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/43/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/dual.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/components.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/calibrator.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/44/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/dual.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/components.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/calibrator.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/42/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/dual.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/components.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/calibrator.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/43/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/dual.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/components.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/calibrator.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/44/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/dual.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/indices.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/components.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/calibrator.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/42/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/dual.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/indices.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/components.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/calibrator.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/43/legacy_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/dual.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/role_decoupled.pt"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/indices.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/components.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/calibrator.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/train_teachers.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/dual_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/dual_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/dual_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/dual_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/role_decoupled_embed/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/role_decoupled_embed/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/role_decoupled_embed/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/role_decoupled_embed/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/teacher_only/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/teacher_only/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/teacher_only/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/teacher_only/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/native_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/native_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/native_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/native_fusion/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_fusion/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_fusion/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_fusion/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/huge/44/legacy_fusion/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 50
+      }
+    },
+    "depends_on": [
+      "j-1117-6df49a"
+    ]
+  },
+  "validation": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry full validation",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 8,
+      "cpus": 4,
+      "ram_gb": 12
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_geometry_cq.sh",
+      "validation"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-validation",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 15"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/42/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/42/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/42/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/42/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/42/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/42/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/42/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/42/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/42/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/42/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/42/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/42/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/42/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/42/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/42/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/42/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/42/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/42/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/43/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/43/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/43/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/43/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/43/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/43/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/43/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/43/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/43/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/43/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/43/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/43/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/43/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/43/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/43/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/43/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/43/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/43/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/44/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/44/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/m/44/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/44/model.pt"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/44/components.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/44/indices.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/44/preprocessor.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/himvh/cm/44/parent_info.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/hbos/44/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/lof/44/result.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/44/scores.npz"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/44/thresholds.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/44/label_access_gate.json"
+        },
+        {
+          "path": "results/tabular/cardsim/baseline/vae/44/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/44/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/ebgad_release_zero/44/result.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/44/scores.npz"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/cardsim/baseline/audit_hcl_zero_adapted/44/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 50
+      }
+    },
+    "depends_on": [
+      "j-1117-6df49a"
+    ]
+  },
+  "CPU_smoke": {
+    "work": "FinancialAD",
+    "name": "FinancialAD geometry CPU actual-shape fallback gate",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "a683fcb152b8db48d5d6398f45e44331f605ac91"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 12
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "-c",
+      "set -euo pipefail\nbash scripts/run_geometry_cq.sh env\npython - <<'CPU_GATE'\nimport os,json,tarfile,shutil,time,resource\nfrom pathlib import Path\nfrom types import SimpleNamespace\nimport numpy as np\nimport torch\nfrom finad_recent.data import sha,write\nfrom finad_geometry.experiment import inputs,source,huge_group,him_parent_group\nfrom finad_zero.graph_data import load_phase\nfrom finad.preprocessing import Preprocessor\nfrom finad_zero.audit_hcl import AuditHCL\nfrom finad_zero.ebgad import fetch_upstream,score_graph\nroot=Path(os.environ['CQ_OUTPUT_DIR']);base=root/'inputs';base.mkdir()\nfor name,sub in [('tabular',''),('graph','graphs')]:\n m=json.loads(Path('docs/recent_zero_'+name+'_archive.json').read_text());p=Path(m['path']);assert sha(p)==m['sha256'];dest=base/sub;dest.mkdir(exist_ok=True)\n with tarfile.open(p) as tar:tar.extractall(dest,filter='data')\nm=json.loads(Path('docs/geometry_cardsim_archive.json').read_text());assert sha(m['path'])==m['sha256']\nwith tarfile.open(m['path']) as tar:tar.extractall(base,filter='data')\na=SimpleNamespace(data=base/'tabular',graphs=base/'graphs',output=root/'qualification',device='cpu');a.output.mkdir();torch.set_num_threads(4);inputs(a);started=time.monotonic();checks=[]\nfor task in ['banksim','s_ffsd','cardsim']:checks.append(huge_group(a,task,42,steps=2,qualify=True))\nfor mode in ['m','cm']:checks.append(him_parent_group(a,'cardsim',42,mode,steps=2,qualify=True))\nx,e,act=load_phase(a.graphs/'cardsim','train');r=x[0,:,0]>.5;pre=Preprocessor().fit(x.reshape(-1,10));z=pre.transform(x.reshape(-1,10)).reshape(x.shape);model=AuditHCL(42,'cpu',2).fit(z,e,act,r);assert np.isfinite(model.score(z,e,act,r)).all();checks.append({'kind':'AuditHCL'})\nfetch_upstream(a.output/'scratch/upstream');flat=z.transpose(1,0,2).reshape(len(r),-1);ss,info=score_graph(flat,e,a.output/'scratch/eb');assert np.isfinite(ss).all();checks.append({'kind':'EBGAD'});shutil.rmtree(a.output/'scratch')\nwrite(a.output/'qualification.json',dict(status='passed',device='cpu',real_targets_read=False,financial_metrics=False,seconds=time.monotonic()-started,checks=checks,peak_rss_linux_gb=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/2**20,source=source('CPU_smoke')));shutil.rmtree(base)\n\nCPU_GATE\n"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/geometry-20261117-CPU-smoke-fallback",
+      "expect": [
+        {
+          "path": "tests.txt",
+          "contains": "114 passed"
+        },
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        }
+      ],
+      "progress": {
+        "path": "tests.txt",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-938eec"
+    ]
+  }
+}

@@ -13,3 +13,6 @@ Completed: all174 replay, paired effects,370 comparison summaries, Chinese repor
 
 ## Revision3 audit
 144 full configurations independently verified: source/input hashes; original AE indices and common observations; independently rebuilt role features; full graph CPU score replay;12 frozen-parent checkpoint/field-error probes; full independent empirical tail counting and normalizer/correlation weights;field/flat controls bitwise;all thresholds and metrics.108 tests pass;16 real-shape GPU gates. 54 field and16 geometric diagnostics are evaluation-only. All288 operating records complete,zero POT failures,96 ablation summaries and378 main summaries. Public checkpoints not duplicated; private raw artifacts retained with published SHA256manifest.
+
+## Revision4 current evidence status
+Revision4: 114tests andactual-shape checks pass;26 newCardSim files from80107 rows sealed,old101 unchanged. ProviderQUEUED andunconfirmedcancel block both fullruns/CPUslots. No complete science outputs verified. Need externalCQslot release andremaining experiments before numerical claims.

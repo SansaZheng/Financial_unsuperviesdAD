@@ -22,3 +22,6 @@ All short evidence filenames above refer to results/recent_repair_20261117. Fina
 | Field calibration reduces scale domination; alignment compression harms Bank graph | paired_effects.csv; posthoc_field_diagnostics.csv; posthoc_role_geometry.csv | Diagnostic labels evaluation-only; dimension and geometry changes not separately causal. |
 
 All short filenames in this section are inresults/roleweight_20261117.
+
+## Revision4 current evidence status
+Revision4: source/protocol/input/qualification claims supported by geometry_20261117 artifacts; all new AP/F1,improvement and independent performance claims pending.231/462/54 are planned counts,not results.

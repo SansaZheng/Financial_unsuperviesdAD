@@ -6,3 +6,6 @@
 
 ## Revision3 / roleweight-20261117
 [Chinese full report](../../results/roleweight_20261117/README_CN.md). HUGE dual worsens Bank/SFFSD AP by0.13/3.30pp vs fresh role anchors;HIM cm_tail improves7.23/2.00pp vs frozen cm_field. Fixed primaries retained, negative outcomes complete. No true labels used for training, weights or thresholds. Statistical rarity still differs from fraud relevance; role channel information retention does not preserve HALO geometry. Needs independent future holdout before broader claims.
+
+## Revision4 current evidence status
+Revision4 / 中文：方法、固定协议、独立模拟数据和资格检查已完成；完整实验被提供方队列与槽位阻塞，暂无AP/F1结果或改善结论。English: Implementation and qualification are complete; provider slots block the full experiments. No complete new benchmark results or performance claims are available.

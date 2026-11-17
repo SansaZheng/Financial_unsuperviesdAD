@@ -1,5 +1,11 @@
 # Financial_unsuperviesdAD
 
+## 进行中：HALO教师、字段权重与独立模拟验证（尚无完整成绩）
+
+[中文进展报告](results/geometry_20261117/README_CN.md) · [固定协议](docs/geometry_protocol_CN.md) · [当前状态](paper/workflow/current.md)
+
+方法与独立CardSim数据已准备：80107笔新交易、26个封存输入；114项测试和真实形状资格检查通过。**完整实验被Kaggle提供方队列和CQ槽位阻塞，暂无本轮AP/F1或验证成功结论。** 预登记231配置／462操作点不是已完成数量。下方为上一轮已完成的结果；旧数据和实验保留。
+
 ## 最新：HUGE角色适配与HIMVH字段评分（2026-11-17）
 
 **[本轮完整中文报告](results/roleweight_20261117/README_CN.md)** · [全部消融](results/roleweight_20261117/summary.csv) · [逐种子评价](results/roleweight_20261117/metrics.csv) · [配对效应](results/roleweight_20261117/paired_effects.csv) · [最佳方法](results/roleweight_20261117/best_methods.csv) · [独立核验](results/roleweight_20261117/verification.json)
