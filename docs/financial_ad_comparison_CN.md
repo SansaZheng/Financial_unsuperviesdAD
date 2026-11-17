@@ -2,7 +2,7 @@
 
 **最新角色／评分改进：** [HUGE与HIMVH新一轮144配置及中文报告](../results/roleweight_20261117/README_CN.md)，见第14节。旧报告及旧结果保留。
 
-**最新修正与消融：** [三方法审计修正、174组配置与完整中文报告](../results/recent_repair_20261117/README_CN.md)。新主榜见第13节；前文保留历史结果。
+**上轮修正与消融：** [三方法审计修正、174组配置与完整中文报告](../results/recent_repair_20261117/README_CN.md)。新主榜见第13节；前文保留历史结果。
 
 **同日上轮扩展（历史记录）：** [HUGE、HIMVH-Zero、SD-FMM-Zero完整中文报告](../results/recent_zero_20261117/README_CN.md)。该轮结果见第12节及该报告；下文11月16日和此前表格保留为历史结果。
 

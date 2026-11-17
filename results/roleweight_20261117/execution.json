@@ -1,5 +1,5 @@
 {
-  "status": "scientific_results_verified_publication_pending",
+  "status": "complete",
   "scientific_source_commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9",
   "parent_HIM_scientific_source_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
   "frozen_protocol": "docs/roleweight_protocol_CN.md",
@@ -45,9 +45,25 @@
   "test_reuse": "retrospective development; previous test outcomes informed this round; primaries frozen before new outcomes",
   "threshold_failures": 0,
   "CI": {
-    "status": "pending"
+    "status": "success",
+    "scientific_source_run": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/44028920928",
+    "analysis_run": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/44031381985",
+    "python_versions": [
+      "3.10",
+      "3.12"
+    ]
   },
   "publication": {
-    "status": "pending"
+    "status": "published",
+    "analysis_commit": "04d300211f67a4c40d54de5663ebfb96de8aa9b6",
+    "verified_branches": [
+      "main",
+      "codex/classic-financial-ad",
+      "codex/huge-himvh-roleweight"
+    ],
+    "verified_branch_head": "04d300211f67a4c40d54de5663ebfb96de8aa9b6",
+    "report_blob_sha": "45dd6b0dfd539cd1a5844d272d81ce1a767f257e",
+    "report_url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/blob/main/results/roleweight_20261117/README_CN.md",
+    "completion_metadata": "Subsequent metadata-only commits do not change scientific outputs or this report blob."
   }
 }
