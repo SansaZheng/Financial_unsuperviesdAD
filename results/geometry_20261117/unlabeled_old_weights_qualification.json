@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "real_labels_read": false,
+  "test_components_read": false,
+  "new_validation_used": false,
+  "seconds": 5.433224790962413,
+  "source_commit": "a683fcb152b8db48d5d6398f45e44331f605ac91",
+  "models": [
+    {
+      "dataset": "banksim",
+      "base": "m",
+      "seed": 42,
+      "positive_skill_fields": 4,
+      "fields": 5,
+      "weights_sha256": "082c93dfa77e7965a51943d198c64e665038c37b4e23b7f453bedb7d780e55de",
+      "parent_component_sha256": "7a2228ceae335f9379127fb4b44dd4eecd8af56d5882996f933f75e7be267036"
+    },
+    {
+      "dataset": "banksim",
+      "base": "cm",
+      "seed": 42,
+      "positive_skill_fields": 0,
+      "fields": 5,
+      "weights_sha256": "00b7de4e86c493f7fb2d7b82f6bda2e238032c50d2015d739cc567edcfc6fa75",
+      "parent_component_sha256": "08a93b74c5e077448350da82701700fde434528443319ff444b3c9444e68fe34"
+    },
+    {
+      "dataset": "banksim",
+      "base": "m",
+      "seed": 43,
+      "positive_skill_fields": 5,
+      "fields": 5,
+      "weights_sha256": "57ee467ae9fe9b5acdb07a46ff316584a18e5c5369cc7574449bf4aab92864c0",
+      "parent_component_sha256": "b7913ae4803f42228d21a6ff47ceab7d582d16eeb5e9f197b7c0ada29b70f29e"
+    },
+    {
+      "dataset": "banksim",
+      "base": "cm",
+      "seed": 43,
+      "positive_skill_fields": 2,
+      "fields": 5,
+      "weights_sha256": "0291dc6587e8fa0409456ba53ee41b95315273247517064b74e1c6a7b01bcf75",
+      "parent_component_sha256": "0df8f81713fca4f89703b0a12bea8cfc98eca3fb524db2ee474a12231bd51640"
+    },
+    {
+      "dataset": "banksim",
+      "base": "m",
+      "seed": 44,
+      "positive_skill_fields": 4,
+      "fields": 5,
+      "weights_sha256": "3380b66b72c366eb597e057a7958b2648e75adfbf2e8f946e4c32c8a583d421b",
+      "parent_component_sha256": "48eae3476b19c94bfb53861b4dbecfecb8c5ad17bb1b95245cf1e141e4ccb5f9"
+    },
+    {
+      "dataset": "banksim",
+      "base": "cm",
+      "seed": 44,
+      "positive_skill_fields": 2,
+      "fields": 5,
+      "weights_sha256": "c219ff90be03a129d435067e13d7c14dcd9c32271a06935db58eddf777ee5639",
+      "parent_component_sha256": "59a260adff6d81ae002dd72a003f5cd4b1513db3879bd99afb94f6dc7597e626"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "m",
+      "seed": 42,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "22d9743c7ad1df905abc537e85017157cfb1c08b930c94187ecc32e61c9f34ab",
+      "parent_component_sha256": "c6a0c6ca54535e2681e67e4ccbcc1c14ea706f17916c4784a1a16c88712d48de"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "cm",
+      "seed": 42,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "59759d878cd43d30b5a94873bcadcb37c71c0c1e30d1580e332b2c5354f936a4",
+      "parent_component_sha256": "b888f970ec2b16417e8756773bac65b86b8975b6a2810ebe800c1620cd7b86f7"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "m",
+      "seed": 43,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "aaef35ba6663e0f399c078c5c06490c29a7caa4f64a065cfc9a33cfa85626d7f",
+      "parent_component_sha256": "f52bca5cdcf410be1a60d7681764034dce81bd92e84bce0e3ca2ef7b4ca1e54b"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "cm",
+      "seed": 43,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "69f071b0d918e56dc7d2d57deefe5e482a153fc601817862d846ea7bde493b23",
+      "parent_component_sha256": "5b97bddbb927da902403e3946dc9f5987016007ce08f991c0e7104bef674d46c"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "m",
+      "seed": 44,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "ef447c4ed6005221e1ee2096646f3a76c4e4618d3782972c1329bfbb7c2f953c",
+      "parent_component_sha256": "06438200d4ae303fe280dcd08610c6f1ba343263066a08aded0a9c0b4c42162f"
+    },
+    {
+      "dataset": "s_ffsd",
+      "base": "cm",
+      "seed": 44,
+      "positive_skill_fields": 4,
+      "fields": 4,
+      "weights_sha256": "6c36dfb74cc4f1957402a9f66cd34b73272c4f09f43f841ddf92f963d1ba791d",
+      "parent_component_sha256": "c1080904b25294a86c1ad5715443f58041a6c849a52d5daadb86ba2f0b367ab6"
+    }
+  ]
+}
