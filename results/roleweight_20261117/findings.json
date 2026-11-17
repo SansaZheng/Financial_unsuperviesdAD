@@ -1,0 +1,18 @@
+[
+  {
+    "family": "huge",
+    "AP_improved_vs_previous_primary": 0,
+    "tasks": 2,
+    "AP_first": 0,
+    "POT_F1_first": 0,
+    "q99_F1_first": 0
+  },
+  {
+    "family": "himvh",
+    "AP_improved_vs_previous_primary": 2,
+    "tasks": 2,
+    "AP_first": 0,
+    "POT_F1_first": 0,
+    "q99_F1_first": 0
+  }
+]

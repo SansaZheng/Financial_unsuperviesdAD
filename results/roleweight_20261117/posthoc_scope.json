@@ -1,0 +1,17 @@
+{
+  "purpose": "evaluation_only_interpretation",
+  "after_all_runs_and_verification": true,
+  "model_selection": false,
+  "score_or_threshold_changes": false,
+  "primaries_unchanged": [
+    "huge_dual",
+    "himvh_cm_tail"
+  ],
+  "labels_used": "test labels only for posthoc field AP and input teacher geometry diagnostics; not for scoring",
+  "field_mapping": "native semantic feature groups; raw error and tail error, not raw feature utility",
+  "source_files": {
+    "finad_roleweight/adapters.py": "4956c2efad3c567842c49fbfe9c3a10b11e440f18fa56ff8e277270ba21017c1",
+    "finad_roleweight/fields.py": "d41c36117944ab6faed5312d0c5c64eb7477fbd92068b41db3f5abe62659f7f7",
+    "scripts/diagnose_roleweight.py": "da1fdea1315e7f6894450568afdf14ca30eaa11fa0b68a4bf8af4c03e381ac21"
+  }
+}

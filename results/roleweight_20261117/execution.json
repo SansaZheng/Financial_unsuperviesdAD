@@ -1,0 +1,53 @@
+{
+  "status": "scientific_results_verified_publication_pending",
+  "scientific_source_commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9",
+  "parent_HIM_scientific_source_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+  "frozen_protocol": "docs/roleweight_protocol_CN.md",
+  "configs": 144,
+  "operating_records": 288,
+  "actual_new_HUGE_fits": 48,
+  "actual_new_HIM_fits": 0,
+  "frozen_HIM_parent_checkpoints": 12,
+  "HIM_fresh_score_configs": 96,
+  "paid_compute_usd": 0,
+  "tests": 108,
+  "independent_verification_seconds": 43.89256491698325,
+  "CQ_jobs": {
+    "env": "j-1117-68cc34",
+    "smoke": "j-1117-192810",
+    "huge": "j-1117-c289a7"
+  },
+  "all_CQ_jobs_done": true,
+  "gates": {
+    "CPU_tests": 108,
+    "GPU_actual_graph_shapes": 16,
+    "peak_CUDA_GiB": 0.5280203819274902
+  },
+  "HUGE_CQ_archive": {
+    "job": "j-1117-c289a7",
+    "destination": "~/.local/share/cq/kaggle/FinancialAD/roleweight-20261117-huge48",
+    "result_subdirectory": "results",
+    "local_fetch": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/roleweight_20261117/cq_results/j-1117-c289a7/results"
+  },
+  "HIM_local_artifact_root": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/roleweight_20261117/himvh/results",
+  "HIM_frozen_parent_root": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/recent_repair_20261117/family_outputs/himvh/results",
+  "HIM_artifact_policy": "Parent models/components retained without copying; new calibrators/scores retained locally, per-file hashes published. No new HIM network fitting or inference in score experiment; independent CPU probes rerun.",
+  "prior_exact_inputs": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/recent_zero_20261117/cq_results/j-1117-527aac/inputs",
+  "prior_AE_cohort_artifacts": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/zero_label_20261114/cq_results/j-1114-2e8178/results",
+  "GPU_full_fit_seconds": 383.25323389700014,
+  "reused_baseline_report": "results/recent_repair_20261117",
+  "main_comparison_summaries": 378,
+  "ablation_summaries": 96,
+  "posthoc_only": [
+    "posthoc_field_diagnostics.csv",
+    "posthoc_role_geometry.csv"
+  ],
+  "test_reuse": "retrospective development; previous test outcomes informed this round; primaries frozen before new outcomes",
+  "threshold_failures": 0,
+  "CI": {
+    "status": "pending"
+  },
+  "publication": {
+    "status": "pending"
+  }
+}

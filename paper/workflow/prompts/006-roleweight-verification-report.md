@@ -1,0 +1,5 @@
+# Stage006 — independent replay and Chinese evidence report
+
+Executor: current primary agent, no delegation. Revision3 route roleweight-20261117, venue none. Preserve frozen scientific source5a072a436b7bbbb55943159216ec0e7196e8bff9 and protocol.
+
+Verify all144 configurations: source and101 input hashes, identical AE cohorts/indices, train-only graph channels, full graph CPU score replay,12 frozen HIM parent checkpoint/component lineage and CPU probes, full-field CDF/normalizer/weight replay with independent unique-count implementation, previous field/flat identity, every POT/q99 and AP/PR/ROC/confusion metric. Do not change models or fixed primaries in response to results. Build all96 ablation summaries and378 primary-only fair comparison summaries, paired seed effects, Chinese interpretation, graph/transaction tables and scientific figure. Preserve all negative effects; explain empirical findings separately from untested hypotheses. Update main report and workflow evidence then push main and default, verify remote refs/CI. Report weights-only HIM rescoring accurately, retrospective evaluation and source limits. No paid compute.

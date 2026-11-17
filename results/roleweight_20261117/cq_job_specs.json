@@ -1,0 +1,1727 @@
+{
+  "env": {
+    "work": "FinancialAD",
+    "name": "FinancialAD roleweight CPU environment 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 0.25,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_roleweight_cq.sh",
+      "env"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/roleweight-20261117-env",
+      "expect": [
+        {
+          "path": "tests.txt",
+          "contains": "108 passed"
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "work": "FinancialAD",
+    "name": "FinancialAD roleweight actual graph GPU gate 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 0.25,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_roleweight_cq.sh",
+      "smoke"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/roleweight-20261117-smoke",
+      "expect": [
+        {
+          "path": "qualification/qualification.json",
+          "contains": "\"status\": \"passed\""
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 15
+      }
+    },
+    "depends_on": [
+      "j-1117-68cc34"
+    ]
+  },
+  "huge": {
+    "work": "FinancialAD",
+    "name": "FinancialAD roleweight full48 HUGE 20261117",
+    "code": {
+      "github": "SansaZheng/Financial_unsuperviesdAD",
+      "commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "env": {
+      "FINAD_CODE_COMMIT": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+    },
+    "placement": {
+      "target": "kaggle",
+      "allow_rent": false
+    },
+    "resources": {
+      "gpus": 1,
+      "gpu_mem_gb": 2,
+      "cpus": 4,
+      "ram_gb": 8
+    },
+    "limits": {
+      "max_hours": 1,
+      "max_attempts": 1,
+      "max_usd": 0
+    },
+    "command": [
+      "bash",
+      "scripts/run_roleweight_cq.sh",
+      "huge"
+    ],
+    "outputs": {
+      "dest": "~/.local/share/cq/kaggle/FinancialAD/roleweight-20261117-huge48",
+      "expect": [
+        {
+          "path": "results/complete.json",
+          "contains": "\"finished\": 48"
+        },
+        {
+          "path": "results/run_manifest.json",
+          "contains": "5a072a436b7bbbb55943159216ec0e7196e8bff9"
+        },
+        {
+          "path": "results/input_files_sha256.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/legacy/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/role/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/numeric/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/aligned/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/centered/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_center/44/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/42/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/43/result.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/model.pt"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/adapter.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/banksim/huge/dual_role/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/legacy/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/role/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/numeric/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/aligned/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/centered/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_center/44/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/42/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/43/result.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/model.pt"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/scores.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/indices.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/preprocessor.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/pooled.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/role_0.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/role_1.npz"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/adapter.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/thresholds.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/label_access_gate.json"
+        },
+        {
+          "path": "results/graph/s_ffsd/huge/dual_role/44/result.json"
+        }
+      ],
+      "progress": {
+        "path": "progress.log",
+        "stall_min": 45
+      }
+    },
+    "depends_on": [
+      "j-1117-192810"
+    ]
+  }
+}

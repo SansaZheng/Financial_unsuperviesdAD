@@ -1,0 +1,9 @@
+dataset,variant,operating_point,AP_difference,F1_difference
+banksim,legacy,pot,-0.00041415426243590625,0.0
+banksim,legacy,quantile,-0.00041415426243590625,-0.0009193249771232703
+banksim,role,pot,-2.2123186097511294e-06,1.2700831904489344e-06
+banksim,role,quantile,-2.2123186097511294e-06,0.0
+s_ffsd,legacy,pot,0.0007353484583851877,0.0007062099090500915
+s_ffsd,legacy,quantile,0.0007353484583851877,0.0
+s_ffsd,role,pot,-3.7020789629749196e-05,0.0
+s_ffsd,role,quantile,-3.7020789629749196e-05,0.0

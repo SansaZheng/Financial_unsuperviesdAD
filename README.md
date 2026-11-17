@@ -1,6 +1,17 @@
 # Financial_unsuperviesdAD
 
-## 最新：三方法实现审计、修正与消融（2026-11-17）
+## 最新：HUGE角色适配与HIMVH字段评分（2026-11-17）
+
+**[本轮完整中文报告](results/roleweight_20261117/README_CN.md)** · [全部消融](results/roleweight_20261117/summary.csv) · [逐种子评价](results/roleweight_20261117/metrics.csv) · [配对效应](results/roleweight_20261117/paired_effects.csv) · [最佳方法](results/roleweight_20261117/best_methods.csv) · [独立核验](results/roleweight_20261117/verification.json)
+
+保持零标签、原划分和评价：48次HUGE新训练＋96组HIMVH冻结模型重评分，共144配置／288操作点。角色标识、对齐压缩、分角色中心与尺度拆开消融；字段比较原始误差、均值／中位数归一化、经验上尾证据及聚合权重。主方案预先固定，其他消融不参与挑选主榜版本。
+
+- **HIMVH-cm-tail：** BankSim交易AP 2.78%→10.01%，POT F1 3.90%→19.79%；S-FFSD交易AP 30.66%→32.66%。它仍不及所有已有评分对照；字段尺度校准不是最优欺诈权重的保证。
+- **HUGE-dual：** BankSim账户AP 9.18%→9.05%，S-FFSD账户89.41%→86.10%，本轮主方案未改善。BankSim主要损失出现在方向字段对齐压缩，而不只是分角色尺度；恢复原数值通道也没有自动修好教师几何。
+
+108项测试和全部独立指标复核通过。交易／账户分开，主榜378条汇总保留KronosAD及此前方法，原数据和实验不覆盖。**两个新主方案都没有取得共同候选池最高AP或任一F1；旧测试诊断驱动的回顾性开发，不是独立盲测。** HIMVH复用12个冻结模型，不能称为新训练96个网络。完整来源见[执行记录](results/roleweight_20261117/execution.json)。
+
+## 上轮：三方法实现审计、修正与消融（2026-11-17）
 
 **[完整中文报告与对比图](results/recent_repair_20261117/README_CN.md)** · [综合对比报告](docs/financial_ad_comparison_CN.md) · [348条逐种子操作点](results/recent_repair_20261117/metrics.csv) · [完整消融](results/recent_repair_20261117/summary.csv) · [配对效应](results/recent_repair_20261117/paired_effects.csv) · [各任务最佳方法](results/recent_repair_20261117/best_methods.csv)
 

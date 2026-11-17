@@ -1,0 +1,1034 @@
+{
+  "status": "passed",
+  "runs": 144,
+  "operating_records": 288,
+  "actual_new_fits": 48,
+  "frozen_parent_checkpoints": 12,
+  "parent_component_reuse": true,
+  "input_files": 101,
+  "seconds": 43.89256491698325,
+  "verified": [
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "numeric",
+      "seed": 42,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "aligned",
+      "seed": 42,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "centered",
+      "seed": 42,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual",
+      "seed": 42,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_center",
+      "seed": 42,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_role",
+      "seed": 42,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "numeric",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "aligned",
+      "seed": 43,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "centered",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual",
+      "seed": 43,
+      "cpu_score_max_abs": 2.086162567138672e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_center",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_role",
+      "seed": 43,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 44,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 44,
+      "cpu_score_max_abs": 2.384185791015625e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "numeric",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "aligned",
+      "seed": 44,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "centered",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual",
+      "seed": 44,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_center",
+      "seed": 44,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "dual_role",
+      "seed": 44,
+      "cpu_score_max_abs": 1.7881393432617188e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 42,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 42,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "numeric",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "aligned",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "centered",
+      "seed": 42,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_center",
+      "seed": 42,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_role",
+      "seed": 42,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 43,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 43,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "numeric",
+      "seed": 43,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "aligned",
+      "seed": 43,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "centered",
+      "seed": 43,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual",
+      "seed": 43,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_center",
+      "seed": 43,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_role",
+      "seed": 43,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 44,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "numeric",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "aligned",
+      "seed": 44,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "centered",
+      "seed": 44,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_center",
+      "seed": 44,
+      "cpu_score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "dual_role",
+      "seed": 44,
+      "cpu_score_max_abs": 2.980232238769531e-07
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_field",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_mean_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_median_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_max",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_corr",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_field",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_mean_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_median_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_max",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_corr",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.384185791015625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_field",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_mean_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_median_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_max",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_corr",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 3.814697265625e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_field",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_mean_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_median_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_max",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_corr",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 6.854534149169922e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_field",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_mean_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_median_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_max",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_tail_corr",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.245208740234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_field",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_mean_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_median_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_max",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_tail_corr",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 1.1920928955078125e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_field",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_mean_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_median_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_max",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_corr",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 2.9802322387695312e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_field",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_mean_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_median_scale",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_flat",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_max",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_corr",
+      "seed": 42,
+      "parent_component_cpu_probe_max_abs": 4.76837158203125e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_field",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_mean_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_median_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_max",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_corr",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 5.7220458984375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_field",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_mean_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_median_scale",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_flat",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_max",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_corr",
+      "seed": 43,
+      "parent_component_cpu_probe_max_abs": 1.0013580322265625e-05
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_field",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_mean_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_median_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_max",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_tail_corr",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 3.5762786865234375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_field",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_mean_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_median_scale",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_flat",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_max",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_tail_corr",
+      "seed": 44,
+      "parent_component_cpu_probe_max_abs": 5.4836273193359375e-06
+    }
+  ],
+  "checks": [
+    "frozen_source",
+    "101_exact_input_hashes",
+    "same_AE_indices_and_cohorts",
+    "shared_float32_observations",
+    "independent_role_features_train_only",
+    "full_graph_CPU_score_replay",
+    "12_frozen_HIM_component_CPU_probes",
+    "independent_empirical_tail_counts_all_rows",
+    "all_weights_and_normalizers",
+    "old_field_flat_bitwise_identity",
+    "parent_model_component_calibrator_score_threshold_hash_gates",
+    "independent_POT_q99_refit_and_full_metrics"
+  ]
+}

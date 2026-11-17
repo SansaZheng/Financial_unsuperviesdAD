@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "financial_metrics": false,
+  "real_targets_read": false,
+  "train_features_only": true,
+  "models": [
+    {
+      "task": "banksim",
+      "variant": "legacy",
+      "seconds": 8.144808527999999,
+      "peak_cuda_gb": 0.5269646644592285,
+      "peak_rss_linux_gb": 1.5794219970703125
+    },
+    {
+      "task": "banksim",
+      "variant": "role",
+      "seconds": 0.2710693979999803,
+      "peak_cuda_gb": 0.5274806022644043,
+      "peak_rss_linux_gb": 1.5802497863769531
+    },
+    {
+      "task": "banksim",
+      "variant": "numeric",
+      "seconds": 0.2657411600000046,
+      "peak_cuda_gb": 0.5277504920959473,
+      "peak_rss_linux_gb": 1.5802497863769531
+    },
+    {
+      "task": "banksim",
+      "variant": "aligned",
+      "seconds": 0.23316391700001304,
+      "peak_cuda_gb": 0.5274806022644043,
+      "peak_rss_linux_gb": 1.5802497863769531
+    },
+    {
+      "task": "banksim",
+      "variant": "centered",
+      "seconds": 0.2527309769999988,
+      "peak_cuda_gb": 0.5274806022644043,
+      "peak_rss_linux_gb": 1.5802497863769531
+    },
+    {
+      "task": "banksim",
+      "variant": "dual",
+      "seconds": 0.25217258800000764,
+      "peak_cuda_gb": 0.5280203819274902,
+      "peak_rss_linux_gb": 1.5802497863769531
+    },
+    {
+      "task": "banksim",
+      "variant": "dual_center",
+      "seconds": 0.2446000189999893,
+      "peak_cuda_gb": 0.5280203819274902,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "banksim",
+      "variant": "dual_role",
+      "seconds": 0.23445125300000313,
+      "peak_cuda_gb": 0.5280203819274902,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "legacy",
+      "seconds": 0.09371727499998883,
+      "peak_cuda_gb": 0.11328744888305664,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "role",
+      "seconds": 0.08565321000000381,
+      "peak_cuda_gb": 0.11285686492919922,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "numeric",
+      "seconds": 0.09242699700001822,
+      "peak_cuda_gb": 0.1131439208984375,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "aligned",
+      "seconds": 0.08523348299999611,
+      "peak_cuda_gb": 0.11285686492919922,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "centered",
+      "seconds": 0.08868273499999191,
+      "peak_cuda_gb": 0.11285686492919922,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "dual",
+      "seconds": 0.08994033499999432,
+      "peak_cuda_gb": 0.11343145370483398,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "dual_center",
+      "seconds": 0.0907470900000078,
+      "peak_cuda_gb": 0.11343145370483398,
+      "peak_rss_linux_gb": 1.5812416076660156
+    },
+    {
+      "task": "s_ffsd",
+      "variant": "dual_role",
+      "seconds": 0.09128242399998499,
+      "peak_cuda_gb": 0.11343145370483398,
+      "peak_rss_linux_gb": 1.5812416076660156
+    }
+  ],
+  "source": {
+    "git_commit": "5a072a436b7bbbb55943159216ec0e7196e8bff9",
+    "source_sha256": {
+      "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+      "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+      "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+      "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+      "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+      "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+      "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+      "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+      "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+      "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+      "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+      "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+      "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+      "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+      "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b",
+      "finad_roleweight/__init__.py": "7f50549388a23396912d8b4b3ec0bca19f90d92142789bfe4e84ded0f9c7b8d8",
+      "finad_roleweight/adapters.py": "4956c2efad3c567842c49fbfe9c3a10b11e440f18fa56ff8e277270ba21017c1",
+      "finad_roleweight/experiment.py": "b15e3c52f748726d1a5d95da04e668b600a93f7f7be3a96555ee0a76220f6674",
+      "finad_roleweight/fields.py": "d41c36117944ab6faed5312d0c5c64eb7477fbd92068b41db3f5abe62659f7f7"
+    },
+    "family": "huge",
+    "python": "3.13.16",
+    "numpy": "2.3.5",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.2",
+    "torch": "2.11.0+cu130",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "primary": "dual"
+  }
+}
