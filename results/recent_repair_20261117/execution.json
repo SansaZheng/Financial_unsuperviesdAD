@@ -179,5 +179,33 @@
       "started": "2026-11-17T02:32:20Z",
       "submitted": "2026-11-17T02:25:29Z"
     }
+  },
+  "publication": {
+    "analysis_commit": "734f50dac7076009bc398eec0659b55ea00b7408",
+    "branches": [
+      "main",
+      "codex/classic-financial-ad",
+      "codex/recent-zero-repair-ablation"
+    ],
+    "ci": {
+      "commit": "734f50dac7076009bc398eec0659b55ea00b7408",
+      "id": 44014929314,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/44014929314",
+      "jobs": [
+        {
+          "name": "tests (3.10)",
+          "id": 133810446604,
+          "conclusion": "success"
+        },
+        {
+          "name": "tests (3.12)",
+          "id": 133810446854,
+          "conclusion": "success"
+        }
+      ]
+    },
+    "note": "Subsequent completion-record/wording commits do not alter numerical modules, trained checkpoints, scores, metrics, primary choices or comparison rankings."
   }
 }

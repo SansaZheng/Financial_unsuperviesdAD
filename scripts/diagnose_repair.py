@@ -41,12 +41,12 @@ def main():
     def ap(f,d,v):return np.mean([r['metrics']['average_precision'] for r in records if (r['family'],r['dataset'],r['variant'])==(f,d,v)])
     def field(task,v,name,key):return np.mean([r[key] for r in rows if (r['dataset'],r['variant'],r['field'])==(task,v,name)])
     def label_ap(f,d,v):return fmt(ap(f,d,v))+'%'
-    text=['## 后验机制诊断：为什么修正仍未全面奏效','','本节在全部模型和分数固定、174配置独立复核通过后分析。字段AP使用测试标签作解释，**不是训练、选模或阈值依据**；不新增获胜方法、不替换预先固定主版本，也不改变370条主榜。字段分数是后验观察，不能解释为欺诈的因果因素。',
+    text=['## 后验机制诊断：为什么修正仍未全面奏效','','本节在全部模型和分数固定、174配置独立复核通过后分析。字段AP使用测试标签作解释，**不是训练、选模或阈值依据**；不新增获胜方法、不替换预先固定主版本，也不改变370条主榜。下表AP以单字段重构误差作分数，不代表原始字段值的预测性能。字段分数是后验观察，不能解释为欺诈的因果因素。',
           '', '**本轮不支持直接把三个主修正版整体替换旧适配。** SD-FMM有明显数值改善，但HUGE／HIMVH没有一致收益；三个主修正版在候选池中均未取得最高均值AP或任一F1。修复目标／约束不一致，只是必要的机制检查，不是性能保证。',
           '', '**HUGE：角色重参数化有数据集代价，增加更新未补回。** BankSim的role主版AP为'+label_ap('huge','banksim','role')+'，旧复跑为'+label_ap('huge','banksim','legacy')+'，1200更新仍为'+label_ap('huge','banksim','role_long')+'；S-FFSD则从'+label_ap('huge','s_ffsd','legacy')+'升至'+label_ap('huge','s_ffsd','role')+'。这支持“本角色／缩放组合不具有普遍收益”，不支持“单纯多训练就能解决”。对齐、去角色列和分角色缩放是成组改变，尚不能单独断言哪个子环节抹掉了有用信号。',
-          '', '**HIMVH：字段等权放大了不善于区分欺诈的误差，完整上下文也非必然有益。** BankSim的cm与cm_flat复用同一个检查点和同一批字段误差，仅换评分权重，AP由'+label_ap('himvh','banksim','cm')+'变为'+label_ap('himvh','banksim','cm_flat')+'；S-FFSD由'+label_ap('himvh','s_ffsd','cm')+'变为'+label_ap('himvh','s_ffsd','cm_flat')+'。BankSim的cm金额字段在校准平均总分中的贡献由按维数加权的'+fmt(field('banksim','cm','金额','flat_cal_share'))+'%升至等字段的'+fmt(field('banksim','cm','金额','macro_cal_share'))+'%，但金额单字段测试AP仅'+fmt(field('banksim','cm','金额','test_field_AP'))+'%；交易类别／商户字段的单字段AP更高，却被降权。等语义权重不等于等噪声尺度。',
+          '', '**HIMVH：字段等权放大了不善于区分欺诈的误差，完整上下文也非必然有益。** BankSim的cm与cm_flat复用同一个检查点和同一批字段误差，仅换评分权重，AP由'+label_ap('himvh','banksim','cm')+'变为'+label_ap('himvh','banksim','cm_flat')+'；S-FFSD由'+label_ap('himvh','s_ffsd','cm')+'变为'+label_ap('himvh','s_ffsd','cm_flat')+'。BankSim的cm金额字段在校准平均总分中的贡献由按维数加权的'+fmt(field('banksim','cm','金额','flat_cal_share'))+'%升至等字段的'+fmt(field('banksim','cm','金额','macro_cal_share'))+'%，但金额字段的重构误差单独评分时，测试AP仅'+fmt(field('banksim','cm','金额','test_field_AP'))+'%；交易类别／商户字段的单字段AP更高，却被降权。等语义权重不等于等噪声尺度。',
           '', '同一新求解器与一致遮蔽下，BankSim由抽样上下文m的'+label_ap('himvh','banksim','m')+'变为完整上下文cm的'+label_ap('himvh','banksim','cm')+'；S-FFSD则由'+label_ap('himvh','s_ffsd','m')+'变为'+label_ap('himvh','s_ffsd','cm')+'。它测出了上下文效应的方向差异，但没有单独证明“过平滑”或某一种邻居类型是根因。BankSim的m_flat达到'+label_ap('himvh','banksim','m_flat')+'，属于消融证据，**不能事后替换预先指定主版本以宣称成功**。',
-          '', '| 任务／固定检查点 | 字段 | 字段等权时校准贡献 | 按维数加权时校准贡献 | 单字段测试AP（后验） |','|---|---|---:|---:|---:|']
+          '', '| 任务／固定检查点 | 字段 | 字段等权时校准贡献 | 按维数加权时校准贡献 | 单字段重构误差AP（后验） |','|---|---|---:|---:|---:|']
     for task,names in labels.items():
         for v in ['m','cm']:
             for name in names:text.append('| '+task+'/'+v+' | '+name+' | '+fmt(field(task,v,name,'macro_cal_share'))+' | '+fmt(field(task,v,name,'flat_cal_share'))+' | '+fmt(field(task,v,name,'test_field_AP'))+' |')
