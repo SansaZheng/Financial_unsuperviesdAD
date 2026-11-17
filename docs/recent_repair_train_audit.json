@@ -1,0 +1,33 @@
+{
+  "real_training_labels_used": false,
+  "calibration_labels_used": false,
+  "test_labels_used": false,
+  "score_direction": "Original higher-risk directions retained; no outcome-dependent sign flips",
+  "sdfmm": {
+    "source": "train only,64 sampled warm windows",
+    "original_clock_violation_fraction": 0.0,
+    "legacy_clock_violation_fraction": 0.9987980769230769,
+    "repaired_clock_violation_fraction": 0.0,
+    "repaired_clock_coordinates_unchanged": true,
+    "legacy_synthetic_positive_fraction": 0.040625,
+    "endpoint_target_positive_fraction": 0.5,
+    "endpoint_gradient_dilution_factor": 160
+  },
+  "himvh": {
+    "clean_aux_hidden_target_influence_max": 0.5448309183120728,
+    "repaired_masked_aux_influence_max": 0.0,
+    "banksim_train_hyperedges_selected": [
+      1166,
+      8068,
+      8147,
+      8180
+    ],
+    "banksim_train_hyperedges_native": [
+      344813,
+      356988,
+      357091,
+      357124
+    ]
+  },
+  "interpretation": "Confirmed adaptation counterexamples, not proof of each cause of observed financial AP; controlled ablations required. No original score-orientation bug established."
+}

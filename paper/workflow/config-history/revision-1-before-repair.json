@@ -1,0 +1,9 @@
+{
+  "revision": 1,
+  "project_path": "/Users/zyy/FinancialADExperiments/Financial_unsuperviesdAD/source",
+  "venue": null,
+  "research": {"topic": "零标签金融异常检测公平对比", "route_id": "recent-zero-20261117", "method_name": "HUGE / HIMVH-Zero / SD-FMM-Zero"},
+  "output_root": "results/recent_zero_20261117",
+  "languages": {"reports": ["Chinese", "English"]},
+  "compute": {"budget_usd": 0, "policy": "CQ managed free resources; no paid rental authorized"}
+}
