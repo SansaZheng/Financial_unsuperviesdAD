@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "row_counts": {
+    "summary.csv": 116,
+    "metrics.csv": 348,
+    "combined_transaction_summary.csv": 338,
+    "combined_account_graph_summary.csv": 32,
+    "paired_effects.csv": 144,
+    "best_methods.csv": 44,
+    "posthoc_field_diagnostics.csv": 54,
+    "bounded_POT_diagnostics.csv": 108,
+    "trivial_references.csv": 11
+  },
+  "operating_statuses": {
+    "ok": 348
+  },
+  "markdown_local_links_valid": true,
+  "report_table_columns_valid": true,
+  "figure_png_visually_inspected": true
+}

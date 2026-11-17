@@ -1,13 +1,13 @@
-# Bounded claim map
+# Bounded claim map — revision2
 
-| ID | Supported statement | Evidence | Boundary |
+| ID | Current supported statement | Evidence | Boundary |
 |---|---|---|---|
-| C1 |30 new runs,60 operation records completed and independently verified | results/recent_zero_20261117/complete.json, verification.json | Other old methods reused; not30 runs per method/dataset. |
-| C2 | Same evaluation cohorts and shared preprocessed row observations | verification.json, input_files_sha256.json | Native relations, derived representations, context length and pretraining budgets differ. Not identical full model input tensors. |
-| C3 | No new port/adaptation is best by mean AP or either mean F1 | findings.json, best_methods.csv, combined summaries | Only the specified eligible tasks/methods, three seeds, fixed budgets; no global-SOTA or significance claim. |
-| C4 | Real training/calibration labels not used for fitting or thresholds | fit APIs, test_recent.py absent-label end-to-end cases, saved gates | Synthetic targets/rank guidance are self-generated; byte hashes of labels are integrity checks. Training can contain anomalies. |
-| C5 | SD-FMM core forward architecture matches author's pinned weights on the checked univariate cases | gpu_qualification.json | Multivariate inputs, synthetic generator/objective, splits and schedules adapted. Not a replication of original supervised scores. |
-| C6 |54 older recent-method records have matching inputs and aggregate consistency | historical_recent_reference.json, historical_recent_summary.csv | Prior published verification retained; full old models/scores not independently replayed now. |
-| C7 | Threshold failure alone cannot explain very low AP |30/30 POT success, threshold_audit.csv, AP tables | AP is threshold-independent. Specific causal failure mechanisms remain hypotheses without ablations. |
+| R1 | Completed174-config matrix and frozen role/cm/ge primaries | docs/recent_repair_protocol_CN.md; finad_repair.experiment.planned | verification.json establishes174 complete.156 refers to final analysis fits, excluding superseded/diagnostic compute. |
+| R2 |92 tests and final CPU/GPU qualification pass | cq_cpu_tests.txt; gpu_qualification.json; tests/test_repair.py | Tests check specified invariants, not financial superiority. |
+| R3 | Specific training-only adaptation counterexamples are repaired | train_only_audit.json; dedicated gradient/constraint/ego tests | Paired ablations are reported; grouped changes do not isolate every subcomponent. |
+| R4 |All174 configs pass source/artifact/gate, original sampling, normalizer, CPU checkpoint and full metric/threshold replay | verification.json | Same common observations/cohorts; method-specific contexts and representations differ. |
+| R5 | No real train/calibration labels used in fitting or thresholds | fit APIs, absent-label pipeline tests, save-before-label gates | Artificial intervention targets remain; unlabeled source data can be anomalous. |
+| R6 | New source/core settings fixed before viewing newly fitted financial outcomes | frozen protocol snapshot; cq_job_specs.json; workflow events | Previous test results motivated development; this is retrospective. |
+| R7 | Oversized/cancelled technical batches are not evidence of poor detection | execution.json; superseded_reload_gate_failure.txt | No cancelled-job status/trust override or score-based selection. |
 
-All paths above are relative to results/recent_zero_20261117 unless stated otherwise. No pending positive-effect, new-method-superiority, original-paper-reproduction or deployment claim is made.
+All short evidence filenames above refer to results/recent_repair_20261117. Financial effects and best-method counts are complete in findings.json / paired_effects.csv / README_CN.md. SD primaryAP improves5/6,HUGE1/2,HIM0/2; no primary wins AP or eitherF1. Posthoc fields are evaluation-only and do not change primaries. Publication/CI remains pending. Original paper claims and globalSOTA are not claimed. Revision1 claim map preserved in config-history/revision-1-claim-map.md.

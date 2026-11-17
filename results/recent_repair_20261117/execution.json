@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "status": "formal_running_storage_tight",
+  "status": "completed_and_independently_verified",
   "scientific_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
   "jobs": {
     "huge": "j-1117-1b741c",
@@ -89,7 +89,8 @@
     "HUGE24 done and scientific files received by partial --path results transport; independent verification will validate every required scientific artifact and paired immutable inputs.",
     "HIMVH42 archive also exceeded500MiB.3 new14-configuration shards submitted after terminal failure; same09de7f3, same settings.",
     "HIMVH shards remove only their own temporary unpacked input copies and installation cache after saving all scientific artifacts. Original101-byte-matched input archives and source files retained.",
-    "Native Kaggle archive access diagnostic returned BackendError; no metrics read. Read-only control-host SSH probe failed host-key verification; no trust override or authentication bypass attempted. No further recovery attempts; normal CQ shards are used."
+    "Native Kaggle archive access diagnostic returned BackendError; no metrics read. Read-only control-host SSH probe failed host-key verification; no trust override or authentication bypass attempted. No further recovery attempts; normal CQ shards are used.",
+    "Final controlled matrix is unchanged;54 field-level AP diagnostics are explicitly posthoc, evaluation-only and excluded from method selection/rank pool."
   ],
   "superseded_scientific_commit": "218f086bc8720a795d50d453971464c7f6a08987",
   "frozen_protocol_file": "frozen_protocol_at_scientific_commit.txt",
@@ -106,7 +107,7 @@
     "requested_free_gb": 5,
     "other_project_files_untouched": true,
     "partial_recovery_observed_free_gb": 1.5,
-    "now": "two_HIM_shards_running_one_queued"
+    "now": "resolved_for_this_run_all_final_jobs_completed"
   },
   "partial_transport_verified_configurations": 132,
   "tooling_ci": {
@@ -114,5 +115,69 @@
     "id": 44007717893,
     "conclusion": "success",
     "url": "https://github.com/SansaZheng/Financial_unsuperviesdAD/actions/runs/44007717893"
+  },
+  "configurations": 174,
+  "actual_fits": 156,
+  "operating_records": 348,
+  "comparison_summaries": 370,
+  "ablation_summaries": 116,
+  "formal_jobs": 7,
+  "new_financial_source_mixed": false,
+  "shared_preprocessed_float32_observations_bitwise_equal": true,
+  "all_final_numerical_modules_match_scientific_source": true,
+  "retrospective": true,
+  "posthoc_diagnostics": {
+    "exploratory_posthoc": true,
+    "additional_fits": 0,
+    "train_labels_used": false,
+    "calibration_labels_used": false,
+    "test_labels_used_for_evaluation_only": true,
+    "primary_selection_changed": false,
+    "field_rows": 54,
+    "bounded_threshold_rows": 108
+  },
+  "job_completion": {
+    "j-1117-1b741c": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.11 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-1b741c/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-huge-v4",
+      "started": "2026-11-17T02:22:09Z",
+      "submitted": "2026-11-17T02:13:40Z"
+    },
+    "j-1117-19115b": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.31 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-19115b/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed42",
+      "started": "2026-11-17T03:29:28Z",
+      "submitted": "2026-11-17T02:50:41Z"
+    },
+    "j-1117-cc6f56": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.29 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-cc6f56/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed43",
+      "started": "2026-11-17T03:10:44Z",
+      "submitted": "2026-11-17T02:50:42Z"
+    },
+    "j-1117-d60491": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.31 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-d60491/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-himvh-seed44",
+      "started": "2026-11-17T03:10:44Z",
+      "submitted": "2026-11-17T02:50:42Z"
+    },
+    "j-1117-b4531c": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.29 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-b4531c/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed42",
+      "started": "2026-11-17T02:51:23Z",
+      "submitted": "2026-11-17T02:25:28Z"
+    },
+    "j-1117-6bc0e5": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.21 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-6bc0e5/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed43",
+      "started": "2026-11-17T02:46:10Z",
+      "submitted": "2026-11-17T02:25:28Z"
+    },
+    "j-1117-3e8c3c": {
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.21 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1117-3e8c3c/out; copied to /Users/sudingli/.local/share/cq/kaggle/FinancialAD/recent-repair-20261117-sdfmm-seed44",
+      "started": "2026-11-17T02:32:20Z",
+      "submitted": "2026-11-17T02:25:29Z"
+    }
   }
 }

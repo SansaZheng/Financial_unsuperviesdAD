@@ -25,8 +25,17 @@ def close(a,b,tol=1e-10):
     else: np.testing.assert_allclose(a,b,rtol=tol,atol=tol)
 
 
-def probe_him(model,x,views,rows,legacy):
-    ctx=NativeContext(x,views);plan=ctx.plan(rows)
+def checkpoint_rows(n):
+    """Label-independent coverage of cold starts, warm history and final rows."""
+    return np.unique(np.r_[np.arange(min(16,n)),np.linspace(0,n-1,min(17,n),dtype=np.int64)])
+
+
+def probe_him(model,x,views,rows,legacy,ctx=None):
+    # Adjacency/identity depend only on phase keys; feature-dependent HCDP is
+    # always recomputed below from this model's actual preprocessed input.
+    ctx=NativeContext(x,views) if ctx is None else ctx
+    assert ctx.n==len(x)
+    plan=ctx.plan(rows)
     needed=np.unique(np.concatenate([b[0][0] for b in plan]));model.net.eval()
     groups=[np.arange(x.shape[1])] if legacy else model.groups
     result=np.zeros((len(rows),len(groups)))
@@ -55,6 +64,7 @@ def main():
         for name,h in manifest['source_sha256'].items():
             data=subprocess.check_output(['git','-C',str(root),'show',manifest['git_commit']+':'+name]);import hashlib
             assert hashlib.sha256(data).hexdigest()==h
+            assert sha(root/name)==h,('Current numerical module differs from frozen source',name)
         for name in ['scripts/prepare_repo_data.py','finad_zero/graph_data.py',
                      'data/raw/banksim/banksim.zip','data/raw/s_ffsd/data/S-FFSD.zip']:
             data=subprocess.check_output(['git','-C',str(root),'show',manifest['git_commit']+':'+name])
@@ -80,7 +90,7 @@ def main():
                 assert digest_json(original)==part['manifest_sha256']
                 assert digest_json(values)==part['records_sha256']
                 assert digest_json(dict(finished=n,expected=n,failed=0))==part['complete_sha256']
-        contexts={};views_cache={}
+        contexts={};views_cache={};probe_contexts={};preprocess_checks=set()
         for r in family_records:
             track,task,v,seed=r['track'],r['dataset'],r['variant'],r['seed'];key=(family,task,v,seed)
             assert key not in seen;seen.add(key)
@@ -116,10 +126,14 @@ def main():
                 for k in ['center','scale']:np.testing.assert_allclose(getattr(previous,k),getattr(pre,k),rtol=1e-14,atol=1e-14)
                 contexts.clear();contexts[group]=context
             ctx=contexts[group];raw=ctx['raw'];pre=Preprocessor.load(folder/'preprocessor.npz')
-            for s in PHASES:
-                observation=raw[s][0].reshape(-1,10) if track=='graph' else raw[s]
+            pre_hash=sha(folder/'preprocessor.npz')
+            paired=(task,pre_hash,sha(old/'preprocessor.npz'))
+            if paired not in preprocess_checks:
                 previous=Preprocessor.load(old/'preprocessor.npz')
-                np.testing.assert_array_equal(pre.transform(observation),previous.transform(observation))
+                for s in PHASES:
+                    observation=raw[s][0].reshape(-1,10) if track=='graph' else raw[s]
+                    np.testing.assert_array_equal(pre.transform(observation),previous.transform(observation))
+                preprocess_checks.add(paired)
             model_probe=[]
             if track=='graph':
                 roles=ctx['roles'];label=ctx['source']/'test.y.npy';y=np.load(label,allow_pickle=False)[roles['test']]
@@ -136,16 +150,19 @@ def main():
             else:
                 label=ctx['source']/'test.y.i8';y=np.fromfile(label,dtype=np.int8)
                 np.testing.assert_array_equal(idx['test'],np.arange(len(y)))
-                rows=np.arange(min(32,len(y)))
+                rows=checkpoint_rows(len(y))
                 if family=='sdfmm':
                     starts=sequence_starts(np.fromfile(ctx['source']/'test.seq.i32',dtype=np.int32))
                     if v=='legacy':m=SDFMMZero.load(folder/'model.pt');pred=m.score(pre.transform(raw['test']),starts,rows)
                     else:m=SDRepair.load(folder/'model.pt');pred=m.score_raw(raw['test'],starts,rows,pre)
                 else:
                     if task not in views_cache:views_cache[task]=transaction_keys(task,'test')[0]
-                    x=pre.transform(raw['test']);view=views_cache[task]
+                    if ctx.get('normalized_test_pre_hash')!=pre_hash:
+                        ctx['normalized_test']=pre.transform(raw['test']);ctx['normalized_test_pre_hash']=pre_hash
+                    x=ctx['normalized_test'];view=views_cache[task]
+                    if task not in probe_contexts:probe_contexts[task]=NativeContext(x,view)
                     m=HIMVHZero.load(folder/'model.pt') if v=='legacy' else HIMVHRepair.load(folder/'model.pt')
-                    comp=probe_him(m,x,view,rows,v=='legacy')
+                    comp=probe_him(m,x,view,rows,v=='legacy',probe_contexts[task])
                     pred=comp if v=='legacy' else m.score_components(comp,flat=v.endswith('_flat'))
                     if v!='legacy':
                         with np.load(folder/'components.npz',allow_pickle=False) as z:
@@ -183,7 +200,9 @@ def main():
     a.output.mkdir(parents=True,exist_ok=True);write(a.output/'records.json',records);write(a.output/'run_manifests.json',manifests)
     write(a.output/'shard_provenance.json',shards)
     write(a.output/'verification.json',dict(status='passed',runs=174,operating_records=348,actual_fits=156,input_files_per_family=101,
-          checkpoint_cpu_probe_tolerance=dict(rtol=5e-4,atol=2e-5),verified=verified,native_key_dependencies=dependencies,
+          checkpoint_cpu_probe_tolerance=dict(rtol=5e-4,atol=2e-5),
+          checkpoint_probe_selection='first16 plus17 evenly spaced test positions, deduplicated; no label-based selection; graph scores replayed fully',
+          verified=verified,native_key_dependencies=dependencies,
           checks=['frozen_source','input_SHA256','checkpoint_score_gate_SHA256','same_target_sampling_and_cohorts','shared_float32_observations',
                   'role_train_normalizers','CPU_checkpoint_probes','exact_ego_forward_gradient_unit_tests','field_score_aggregation','AP_ROC_PR','refit_POT_q99','confusion_counts','derived_checkpoint_identity']))
     print('VERIFIED174/174 configurations and348 operating points; no new fitting')

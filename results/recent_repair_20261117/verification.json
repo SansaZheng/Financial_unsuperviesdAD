@@ -1,0 +1,1439 @@
+{
+  "status": "passed",
+  "runs": 174,
+  "operating_records": 348,
+  "actual_fits": 156,
+  "input_files_per_family": 101,
+  "checkpoint_cpu_probe_tolerance": {
+    "rtol": 0.0005,
+    "atol": 2e-05
+  },
+  "checkpoint_probe_selection": "first16 plus17 evenly spaced test positions, deduplicated; no label-based selection; graph scores replayed fully",
+  "verified": [
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_long",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_noself",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_long",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_noself",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 3.5762786865234375e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_long",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "banksim",
+      "variant": "role_noself",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_long",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 3.5762786865234375e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_noself",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_long",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_noself",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_long",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 3.5762786865234375e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "huge",
+      "dataset": "s_ffsd",
+      "variant": "role_noself",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.0579824447631836e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 9.802521252266772e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "c",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.1590561163353783e-05,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.799135685078063e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 6.128102540969849e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 3.593378379573853e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 4.479142486246701e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.344650268554688e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 7.462744809894062e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "c",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 6.957929961637355e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 5.662441253662109e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.6279518604278564e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.271664989067951e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.745735656255576e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 3.337860107421875e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.6306267409893493e-05,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "c",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.0988751395935026e-05,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 7.407739758269472e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.4259090423139895e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 5.457244935669348e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.0189852010799036e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1026859283447266e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 8.6000987459256e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "c",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 6.352760353878217e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1064112186431885e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.302229404449463e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 5.653318093656878e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.1142923102290823e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 7.271766662597656e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 6.36401723630442e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "c",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.0021397324866399e-05,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.0982155800309812e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.3305416108065913e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 6.384292586952833e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.31383276766417e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.6987323760986328e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 8.432840814531772e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "c",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 5.368979609718383e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.3150274753570557e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.2069940567016602e-06,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 7.748603820800781e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "himvh",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 4.476430465194525e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 3.8743019104003906e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.210719347000122e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.043081283569336e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "legacy",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 2.682209014892578e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "f00",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "e",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 6.05359673500061e-09,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "g",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge_nocontrast",
+      "seed": 42,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.341104507446289e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.682209014892578e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.9371509552001953e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.2665987014770508e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 7.450580596923828e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.682209014892578e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 8.195638656616211e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "legacy",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "f00",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "e",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 2.0954757928848267e-09,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "g",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge_nocontrast",
+      "seed": 43,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_5S",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.2351741790771484e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_15S",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.6391277313232422e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.384185791015625e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 7.82310962677002e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sapienza_25S",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.086162567138672e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 7.450580596923828e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_stock",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.9371509552001953e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 3.3527612686157227e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.1920928955078125e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 5.960464477539063e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_crypto",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "legacy",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 2.980232238769531e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "f00",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "e",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 7.450580596923828e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "g",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.4901161193847656e-07,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 8.940696716308594e-08,
+      "shared_float32_observations_bitwise_equal": true
+    },
+    {
+      "family": "sdfmm",
+      "dataset": "sd_synth",
+      "variant": "ge_nocontrast",
+      "seed": 44,
+      "checkpoint_cpu_probe_max_abs": 1.7881393432617188e-07,
+      "shared_float32_observations_bitwise_equal": true
+    }
+  ],
+  "native_key_dependencies": {
+    "scripts/prepare_repo_data.py": {
+      "sha256": "b0868d2f8c61e7cb9cad5e99341cda31c4eddc111ddac99d75602155c2e5324f",
+      "bytes": 18115
+    },
+    "finad_zero/graph_data.py": {
+      "sha256": "bbccc0717f9597068b920f5ad3f37fa30e0dbdd577795cf4e7b61c01f9a05bdd",
+      "bytes": 6287
+    },
+    "data/raw/banksim/banksim.zip": {
+      "sha256": "3bfd0c2bfbdec83ad36eed499eaf38c6951c36be864ecbe30f3bcb7d84895f66",
+      "bytes": 13712256
+    },
+    "data/raw/s_ffsd/data/S-FFSD.zip": {
+      "sha256": "7dadda00a45162b648ccb98e1c2d21861358c61665abad517ff392ba11e3e434",
+      "bytes": 581456
+    }
+  },
+  "checks": [
+    "frozen_source",
+    "input_SHA256",
+    "checkpoint_score_gate_SHA256",
+    "same_target_sampling_and_cohorts",
+    "shared_float32_observations",
+    "role_train_normalizers",
+    "CPU_checkpoint_probes",
+    "exact_ego_forward_gradient_unit_tests",
+    "field_score_aggregation",
+    "AP_ROC_PR",
+    "refit_POT_q99",
+    "confusion_counts",
+    "derived_checkpoint_identity"
+  ]
+}

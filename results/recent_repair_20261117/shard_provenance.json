@@ -1,0 +1,285 @@
+{
+  "himvh": [
+    {
+      "seed": 42,
+      "job_directory": "j-1117-19115b",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "himvh",
+        "seeds": [
+          42
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "c",
+          "m",
+          "cm",
+          "m_flat",
+          "cm_flat"
+        ],
+        "primary": "cm"
+      },
+      "manifest_sha256": "6498119dc9abfeff7b3ab299241068104eb03cebc7707434a0abd95d9a3cb784",
+      "records_sha256": "2f900b9696dd371983f4694105dc0619bdbb3fb851a3750b62ef5f91919e4c38",
+      "complete_sha256": "c5859763f7ca82942eadbde4b19c5167fce008b40a6adf3447c3779e24ab9830"
+    },
+    {
+      "seed": 43,
+      "job_directory": "j-1117-cc6f56",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "himvh",
+        "seeds": [
+          43
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "c",
+          "m",
+          "cm",
+          "m_flat",
+          "cm_flat"
+        ],
+        "primary": "cm"
+      },
+      "manifest_sha256": "d62b80bba7f30b13d43f6e5d4c5e5b95ab5df1b100f7c806d06793f635940e6d",
+      "records_sha256": "fcb7a3d806cfb825f2bd4891ac155aaa4584979d40f2981dab985645fb4fceb8",
+      "complete_sha256": "c5859763f7ca82942eadbde4b19c5167fce008b40a6adf3447c3779e24ab9830"
+    },
+    {
+      "seed": 44,
+      "job_directory": "j-1117-d60491",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "himvh",
+        "seeds": [
+          44
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "c",
+          "m",
+          "cm",
+          "m_flat",
+          "cm_flat"
+        ],
+        "primary": "cm"
+      },
+      "manifest_sha256": "33292c8d53299b072dfd0e042a3e4039e7fade745944653b74bbb8a0859bb1ee",
+      "records_sha256": "317b5a523f84aa6c4d080f2d5feca9a52fe12273f3749882c738eedbf1b6e1e1",
+      "complete_sha256": "c5859763f7ca82942eadbde4b19c5167fce008b40a6adf3447c3779e24ab9830"
+    }
+  ],
+  "sdfmm": [
+    {
+      "seed": 42,
+      "job_directory": "j-1117-b4531c",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "sdfmm",
+        "seeds": [
+          42
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "e",
+          "g",
+          "ge",
+          "ge_nocontrast"
+        ],
+        "primary": "ge"
+      },
+      "manifest_sha256": "f9128d4b8cdbbcd6da116c51c1c336b3542ffc3619cfd832763c525b6ae292d4",
+      "records_sha256": "f6fc0f2a2fa23b3d5222607ee36d0f1692dff41026e57f14a789161cccbdcdae",
+      "complete_sha256": "fc72c190873dd8d5a78e79b3dbeae7fe17a9e5c233178ffb20e3666b676daa3c"
+    },
+    {
+      "seed": 43,
+      "job_directory": "j-1117-6bc0e5",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "sdfmm",
+        "seeds": [
+          43
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "e",
+          "g",
+          "ge",
+          "ge_nocontrast"
+        ],
+        "primary": "ge"
+      },
+      "manifest_sha256": "f7cebbf9068f354a6ba45b67ddc0bc45054b8b74cfa27f31f889bb7a575d32e7",
+      "records_sha256": "3589c7dc7d41dbd7ccd4a8bab979c04b004613c74a66888dea366f9e11d477ce",
+      "complete_sha256": "fc72c190873dd8d5a78e79b3dbeae7fe17a9e5c233178ffb20e3666b676daa3c"
+    },
+    {
+      "seed": 44,
+      "job_directory": "j-1117-3e8c3c",
+      "manifest": {
+        "git_commit": "09de7f313d57470293f1309ed611914a88cbe62c",
+        "source_sha256": {
+          "finad/evaluation.py": "46244c0c80a77ed0a50fa40de2783ec3c3c2176ce9e557ab04ee55db978dce9c",
+          "finad/preprocessing.py": "ae807b6df9c6cf6e9f5496167335587860e9f1e3db22c6596150a7833a8f541c",
+          "finad/thresholds.py": "7b628daa1dc62e25489ccf9a3126f718644958444d717b5a36cf6f426e95e506",
+          "finad_recent/__init__.py": "74f78c5604067456e6e248c6010b05060f9b3f1f0264e3895ff67ab556df6d0d",
+          "finad_recent/data.py": "484faf8d0bbce7fef9fe5f4f5ca457764913f26775fe9a2410146d02e6fb0c4f",
+          "finad_recent/experiment.py": "bd840b698a70f4be2be33d96bf085b48de984f55b0d170b5feb490e74313f8e2",
+          "finad_recent/himvh.py": "82d3c34b4dafbf606c0f42cd8b2cc8bcb00c5e6770635a8b25935e6ba8d09b9a",
+          "finad_recent/huge.py": "57bfe22ed858b556d28024c0bd27e8afef879d18469f1bb9dac590795cd6403e",
+          "finad_recent/sdfmm.py": "f35306f99f0b4520cceac430941c65956e4de9ded3538b0fffbc1005188bb7d3",
+          "finad_repair/__init__.py": "26268d0c061d33719c8e4fa76550191db7e760e637edd128c4b08f48af497321",
+          "finad_repair/experiment.py": "f0392d70cd169f82db3c572df74ac4ef6cb403b1c9f8ff4fd59d7bfb862e26ca",
+          "finad_repair/himvh.py": "7f3ae7f9faa48bd2944475dfd8e3556cbc2525ec9c18812baba893f06902f7ee",
+          "finad_repair/hypergraph.py": "4f1ca4e839f215282b83c60ac82f1083250747dde3bc309f3fe1dbf4d1575eae",
+          "finad_repair/roles.py": "085074ae08d90eb5cf33a1b171901b7325f709c32c00453b1a9a408ade5fc940",
+          "finad_repair/sdfmm.py": "a49fe6dae366cd0d98e94f2468c5626fde5846ab8a7c46fe24eae5e9d081ec1b"
+        },
+        "python": "3.13.16",
+        "numpy": "2.3.5",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.2",
+        "torch": "2.11.0+cu130",
+        "pywavelets": "1.8.0",
+        "family": "sdfmm",
+        "seeds": [
+          44
+        ],
+        "variants": [
+          "legacy",
+          "f00",
+          "e",
+          "g",
+          "ge",
+          "ge_nocontrast"
+        ],
+        "primary": "ge"
+      },
+      "manifest_sha256": "b4b540953184955da0685f851ccf05c730a2b9d813c9f5521f2bda3e1e1b252d",
+      "records_sha256": "18a1fe398e71172fa955ca5dcc8b13ebeac3344d762786e88119c44f572f6c83",
+      "complete_sha256": "fc72c190873dd8d5a78e79b3dbeae7fe17a9e5c233178ffb20e3666b676daa3c"
+    }
+  ]
+}

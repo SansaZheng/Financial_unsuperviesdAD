@@ -1,6 +1,20 @@
 # Financial_unsuperviesdAD
 
-## 最新：HUGE、HIMVH-Zero、SD-FMM-Zero（2026-11-17）
+## 最新：三方法实现审计、修正与消融（2026-11-17）
+
+**[完整中文报告与对比图](results/recent_repair_20261117/README_CN.md)** · [综合对比报告](docs/financial_ad_comparison_CN.md) · [348条逐种子操作点](results/recent_repair_20261117/metrics.csv) · [完整消融](results/recent_repair_20261117/summary.csv) · [配对效应](results/recent_repair_20261117/paired_effects.csv) · [各任务最佳方法](results/recent_repair_20261117/best_methods.csv)
+
+完成174配置、156次实际拟合；同101个封存输入、原训练／校准抽样与全量测试，原POT／q99及未经点调整的评价保持不变。检查点、分数、阈值和指标全部独立复核通过，92项测试通过。交易／行情与账户图分别排名；其他方法复用已核验的同协议成绩，形成370条主榜汇总。原代码／旧结果保留。
+
+- **SD-FMM：** 6个任务中5个AP提高。股票AP从旧复跑6.68%到37.60%，加密货币0.44%到5.87%；Sapienza25S退步。约束生成器在15S／25S并不优于只改末点损失。
+- **HUGE：** S-FFSD账户AP84.01%→89.41%，BankSim39.44%→9.18%；增加训练预算未补回BankSim损失。
+- **HIMVH：** 主版本在两个任务均退步。BankSim相同检查点仅改评分权重，AP2.78%→14.70%，揭示等字段权重放大弱信号的问题；完整邻居上下文也没有普遍收益。
+
+**三个预先固定主修正版都没有取得候选池最高均值AP或任一F1，不能宣称为一次全面性能升级。** 全部消融、负结果和后验机制诊断公开；没有根据每个数据集的测试成绩替换主版本。这是旧测试诊断驱动的回顾性开发，不是新的独立盲测，也不是原有标签论文成绩的复刻。
+
+复现数据、科学源提交、7份最终CQ作业和归档见[执行记录](results/recent_repair_20261117/execution.json)／[作业规格](results/recent_repair_20261117/cq_job_specs.json)。最新启动脚本支持按种子分片，并只在新输出目录中清理可重建的临时输入／安装缓存；所有模型、分数及源数据保留。独立核验和报告命令见完整中文报告。
+
+## 上轮：HUGE、HIMVH-Zero、SD-FMM-Zero（历史记录，2026-11-17）
 
 **[查看完整中文报告与对比图](results/recent_zero_20261117/README_CN.md)** · [更新后的综合报告](docs/financial_ad_comparison_CN.md) · [60条新操作点指标](results/recent_zero_20261117/metrics.csv) · [各任务最佳方法](results/recent_zero_20261117/best_methods.csv) · [固定零标签协议](docs/recent_zero_protocol_CN.md)
 

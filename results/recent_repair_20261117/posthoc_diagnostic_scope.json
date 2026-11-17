@@ -1,0 +1,10 @@
+{
+  "exploratory_posthoc": true,
+  "additional_fits": 0,
+  "train_labels_used": false,
+  "calibration_labels_used": false,
+  "test_labels_used_for_evaluation_only": true,
+  "primary_selection_changed": false,
+  "field_rows": 54,
+  "bounded_threshold_rows": 108
+}

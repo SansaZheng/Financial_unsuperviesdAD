@@ -1,0 +1,232 @@
+{
+  "status": "partial_CPU_checkpoint_probes_passed",
+  "financial_metrics_inspected": false,
+  "configurations": 28,
+  "seconds": 5.663460707990453,
+  "probes": [
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 3.933906555175781e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "f00",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.2366498102878154e-05
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "c",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.0988751395935026e-05
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "m",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.195073127790991e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "cm",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 3.212690353304737e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.4054726381607097e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.6747928056060069e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.4603137969970703e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "f00",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 9.34211575265298e-07
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "c",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 6.352760353878217e-07
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "m",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.0728836059570312e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "cm",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 8.174351280310077e-07
+    },
+    {
+      "job": "j-1117-cc6f56",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 43,
+      "rows": 32,
+      "max_abs": 1.5034967542071342e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "legacy",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 6.67572021484375e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "f00",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 5.032195419474306e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "c",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.131901975548466e-05
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "m",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.7121434212619135e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "cm",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.8537044526034663e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "m_flat",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 6.287801461168918e-07
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "banksim",
+      "variant": "cm_flat",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 2.31383276766417e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "legacy",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.6987323760986328e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "f00",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 8.857067750334124e-07
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "c",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 8.885957756832319e-07
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "m",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.1567026376724243e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "cm",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 7.748603820800781e-07
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "m_flat",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.3526605100455669e-06
+    },
+    {
+      "job": "j-1117-d60491",
+      "dataset": "s_ffsd",
+      "variant": "cm_flat",
+      "seed": 44,
+      "rows": 32,
+      "max_abs": 1.1397867787366067e-06
+    }
+  ]
+}

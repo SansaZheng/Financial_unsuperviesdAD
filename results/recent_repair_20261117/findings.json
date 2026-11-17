@@ -1,0 +1,26 @@
+[
+  {
+    "family": "huge",
+    "tasks": 2,
+    "AP_improved": 1,
+    "AP_first": 0,
+    "POT_F1_first": 0,
+    "q99_F1_first": 0
+  },
+  {
+    "family": "himvh",
+    "tasks": 2,
+    "AP_improved": 0,
+    "AP_first": 0,
+    "POT_F1_first": 0,
+    "q99_F1_first": 0
+  },
+  {
+    "family": "sdfmm",
+    "tasks": 6,
+    "AP_improved": 5,
+    "AP_first": 0,
+    "POT_F1_first": 0,
+    "q99_F1_first": 0
+  }
+]
